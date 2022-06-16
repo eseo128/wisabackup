@@ -1,0 +1,141 @@
+		</div>
+	</div>
+	<!-- //중앙 -->
+	<!-- 하단 -->
+	<div id="footer">
+		<!-- 하단메뉴 -->
+		<div class="wrap_inner2">
+			<div class="cs">
+				<img src="{{$이미지경로}}/logo/logo.png">
+				<p>Copyright ⓒ 2022 자임당<br>All right reserved.</p>
+				<ul>
+					<li><span>서울특별시 강남구 도산대로 163 자임당</span></li>
+					<li><span>T. {{$회사전화번호}}</span></li>
+					<li><span>E. {{$회사이메일}}</span></li>
+					<li><span>E. {{$회사전화번호}}</span></li>
+				</ul>
+				
+			</div>
+			<div class="info">
+				<h3>{{$회사전화번호}}</h3>
+				<ul>
+					<li><span>상호 : {{$회사명}}</span></li>
+					<li><span>대표자 : {{$대표자성명}}</span></li>
+					<li><span>사업자등록번호 : {{$사업자등록번호}} </span></li>
+					<li><span>통신판매업신고번호 : {{$통신판매신고번호}}</span></li>
+				</ul>
+				
+			</div>
+			<div class="about">
+				<ul>
+					<li><a href="/content/content.php?cont=company">회사소개</a></li>
+					<li><a href="/content/content.php?cont=guide">이용안내</a></li>
+					<li><a href="/content/content.php?cont=uselaw">이용약관</a></li>
+					<li><a href="/content/content.php?cont=privacy">개인정보처리방침</a></li>
+				</ul>
+			</div>
+			<div class="share">
+				<ul>
+					<li><a href="https://www.instagram.com/wisa.co.kr" target="_blank">카카오톡</a></li>
+					<li><a href="https://www.facebook.com/wisa.co.kr" target="_blank">인스타그램</a></li>
+					<li><a href="http://blog.naver.com/wisacorp/" target="_blank">자임당 블로그</a></li>
+					<li><a href="http://twitter.com" target="_blank">뉴스/언론보도</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="btn_scroll">
+			{{if(최근상품리스트)}}
+			<div id="recent_layer" class="recent_layer">
+				<div class="inner">
+					<p class="title"><a href="/shop/click_prd.php">최근 본 상품</a></p>
+					<div class="list">
+						{{$최근상품리스트}}
+					</div>
+				</div>
+			</div>
+			{{endif(최근상품리스트)}}
+		</div>
+	</div>
+	<!-- //하단 -->
+</div>
+<div class="dim" style="display: none;"></div>
+<!-- placeholder 스크립트 (삭제하시면 ie 하위브라우저에서 구현되지 않습니다.) -->
+<script src="{{$이미지경로}}/../placeholder.js"></script>
+<script type="text/javascript" src="{{$이미지경로}}/../ScrollToPlugin.js"></script>
+<script>
+	//검색버튼 클릭시 2depth 숨김처리
+	function notScroll(){
+		$(".toggle_search").click(function(){
+			if($(".toggle_search").hasClass("active")){
+				$("body").addClass("not_scroll");
+			}else {
+				$("body").removeClass("not_scroll");
+			}
+		});
+	}
+
+	//dim 터치시 gnb 닫아짐
+    function closeGnb(){
+    	$('#header .box').css('display','none');
+		setTimeout(function(){
+			$('.dim').fadeOut();
+			$('#header').removeClass('sub_on');
+			$(".sub_link").removeClass("active");
+		}, 0);
+		setTimeout(function(){
+			$('#header .box').hide();		
+		}, 0);
+    }
+
+	//gnb 열림
+	function subLink(){
+		$(".sub_link").click(function(){
+			if($(".sub_link").hasClass("active")){
+				$("#header").addClass("sub_on");
+				$('.dim').fadeIn();
+			}else {
+				$("#header").removeClass("sub_on");
+				$('.dim').fadeOut();
+			}
+
+			$(document).on('mouseenter','.dim',function(){
+				closeGnb();
+			});
+		});
+
+		$(".sub_brand").click(function(){
+			if($(".sub_shop").hasClass("active")){
+				$(".sub_shop").removeClass("active");
+				$("#box_shop").css("display","none");
+			}else if($(".sub_info").hasClass("active")){
+				$(".sub_info").removeClass("active");
+				$("#box_info").css("display","none");
+			}
+		});
+
+		$(".sub_shop").click(function(){
+			if($(".sub_brand").hasClass("active")){
+				$(".sub_brand").removeClass("active");
+				$("#box_brand").css("display","none");
+			}else if($(".sub_info").hasClass("active")){
+				$(".sub_info").removeClass("active");
+				$("#box_info").css("display","none");
+			}
+		});
+
+		$(".sub_info").click(function(){
+			if($(".sub_brand").hasClass("active")){
+				$(".sub_brand").removeClass("active");
+				$("#box_brand").css("display","none");
+			}else if($(".sub_shop").hasClass("active")){
+				$(".sub_shop").removeClass("active");
+				$("#box_shop").css("display","none");
+			}
+		});
+	}
+	
+	$(document).ready(function (){
+		notScroll();
+		subLink();
+	});
+</script>
