@@ -58,6 +58,7 @@
 	</div>
 	<!-- //하단 -->
 </div>
+<div class="dim2" style="display: none;"></div>
 <div class="dim" style="display: none;"></div>
 <!-- placeholder 스크립트 (삭제하시면 ie 하위브라우저에서 구현되지 않습니다.) -->
 <script src="{{$이미지경로}}/../placeholder.js"></script>

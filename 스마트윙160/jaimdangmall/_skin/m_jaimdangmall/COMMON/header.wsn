@@ -8,63 +8,94 @@
 		<a class="logo" href="/"></a>
 		<ul class="gnb">
 			<li class="category"><a href="#" onclick="toggle_nav('lnb'); return false;">카테고리</a></li>
-			<li class="search"><a onclick="toggle_view('box_search',this)">검색</a></li>
+			<li class="search"><a class="toggle_search" onclick="toggle_view('box_search',this)">검색</a></li>
 			<li class="cart"><a href="/shop/cart.php">장바구니<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
 		</ul>
 		<div id="box_search" class="box_search">
 			{{$상품검색폼시작}}
+			<a class="close" onclick="toggle_view('box_search',this)">닫기</a>
+			<p>SEARCH</p>
 			<div class="box">
 				<input type="search" name="search_str" value="" class="form_input block basic_search" autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="검색어를 입력해주세요">
-				<input type="image" src="{{$이미지경로}}/common/hd_search.png" alt="검색" class="btn">
+				<input type="image" src="{{$이미지경로}}/common/search_brown.png" alt="검색" class="btn">
 			</div>
 			{{$상품검색폼끝}}
 		</div>
 	</div>
 	<nav class="lnb">
-		<ul class="category">
-			<li class="promotion"><a href="/shop/promotion.php">프로모션</a></li>
-			<li><a href="/shop/big_section.php?cno1=1009">NEW 5%</a></li>
-			<li><a href="/shop/big_section.php?cno1=1010">BEST</a></li>
-			{{$사용자리스트5}}
+		<ul class="language">
+			<li><a href="#">kr</a></li>
+			<li><a href="https://en.jaimdangmall.com/">en</a></li>
 		</ul>
-		<ul class="board">
-			<li><a href="/board?db=basic_1">NOTICE</a></li>
-			<li><a href="/board?db=basic_2">FAQ</a></li>
-			<li><a href="/shop/product_qna_list.php">Q&A</a></li>
-			<li><a href="/shop/product_review_list.php">REVIEW</a></li>
-			<li><a href="/board?db=gallery_1">EVENT</a></li>
-		</ul>
-		<ul class="share">
-			<li><a href="https://www.instagram.com/wisa.co.kr" target="_blank"><img src="{{$이미지경로}}/common/icon_instagram.png" alt="instagram"></a></li>
-			<li><a href="https://www.facebook.com/wisapr" target="_blank"><img src="{{$이미지경로}}/common/icon_facebook.png" alt="facebook"></a></li>
-			<li><a href="http://twitter.com" target="_blank"><img src="{{$이미지경로}}/common/icon_twitter.png" alt="twitter"></a></li>
-			<li><a href="http://blog.naver.com/wisacorp/" target="_blank"><img src="{{$이미지경로}}/common/icon_blog.png" alt="blog"></a></li>
-		</ul>
-		<a class="close" onclick="toggle_nav('lnb'); return false;">닫기</a>
-	</nav>
-	<nav class="mypage">
 		<ul class="login">
 			{{$로그인전1}}
 			{{$로그인후1}}
 		</ul>
-		<ul class="list">
-			<li><a href="/mypage/order_list.php">주문내역</a></li>
-			<li class="dn{{$정기배송적용여부}}"><a href="/mypage/order_list.php?sbscr=Y">정기주문내역</a></li>
-			<li><a href="/mypage/wish_list.php">관심상품</a></li>
-			<li><a href="/shop/click_prd.php">최근 본 상품</a></li>
-			<li class="dn{{$적립금사용유무}}"><a href="/mypage/milage.php">적립금</a></li>
-			<li class="dn{{$예치금사용유무}}"><a href="/mypage/emoney.php">예치금</a></li>
-			<li><a href="/mypage/coupon_down_list.php">쿠폰</a></li>
-			<li><a href="/mypage/sccoupon.php">소셜 쿠폰</a></li>
-			<li><a href="/mypage/counsel_list.php">1:1문의</a></li>
-			<li><a href="/mypage/qna_list.php">나의 상품문의</a></li>
-			<li><a href="/mypage/review_list.php">나의 상품후기</a></li>
-			<li><a href="/mypage/attend_list.php">출석체크</a></li>
-			<li class="dn{{$재입고알림사용유무}}"><a href="/mypage/notify_restock.php">재입고 알림 신청 내역</a></li>
-			<li><a href="/member/edit_step1.php">나의 정보수정</a></li>
-			<li><a href="/mypage/withdraw_step1.php">회원 탈퇴</a></li>
-		</ul>
-		<a class="close" onclick="toggle_nav('mypage'); return false;">닫기</a>
+		<div class="tabcnt_lnbcate tabcnt_lnbcate0">
+			<ul class="big_cate">
+				<li class="big tab">
+					<a>BRAND</a>
+					<ul class="mid_cate">
+						<li><a href="/content/content.php?cont=brandstory">BRAND STROY</a></li> 
+						<li><a href="/content/content.php?cont=koreanherbs">KOREAN HERBS</a></li> 
+						<li><a href="/content/content.php?cont=history">HISTORY</a></li> 
+					</ul>
+				</li>
+				<li class="big tab">
+					<a>SHOP</a>
+					<ul class="mid_cate">
+						<li class="mid"><a href="/shop/big_section.php?cno1=1009">BEST</a></li>
+						<li class="mid"><a href="/shop/big_section.php?cno1=1010">NEW</a></li>
+						<li class="mid">
+							<a>공미</a>
+							<ul class="sml_cate">
+								<li class="sml_title"><a href="/shop/big_section.php?cno1=1020">유형별</a></li>
+								<li><a href="/shop/big_section.php?cno1=1012">차</a></li>
+								<li><a href="/shop/big_section.php?cno1=1019">효소</a></li>
+								<li><a href="/shop/big_section.php?cno1=1020">전체보기</a></li>
+							</ul>
+							<ul class="sml_cate">
+								<li class="sml_title"><a href="/shop/big_section.php?cno1=1013">고민별</a></li>
+								<li><a href="/shop/big_section.php?cno1=1021">붓기</a></li>
+								<li><a href="/shop/big_section.php?cno1=1022">체력</a></li>
+								<li><a href="/shop/big_section.php?cno1=1023">디톡스</a></li>
+								<li><a href="/shop/big_section.php?cno1=1013">전체보기</a></li>
+							</ul>
+						</li>
+						<li class="mid">
+							<a>한방</a>
+							<ul class="sml_cate">
+								<li class="bold"><a href="/shop/big_section.php?cno1=1017">유형별</a></li>
+								<li><a href="/shop/big_section.php?cno1=1024">소환</a></li>
+								<li><a href="/shop/big_section.php?cno1=1025">대환</a></li>
+								<li><a href="/shop/big_section.php?cno1=1017">전체보기</a></li>
+							</ul>
+							<ul class="sml_cate">
+								<li class="bold"><a href="/shop/big_section.php?cno1=1018">고민별</a></li>
+								<li><a href="/shop/big_section.php?cno1=1026">피부</a></li>
+								<li><a href="/shop/big_section.php?cno1=1027">체력</a></li>
+								<li><a href="/shop/big_section.php?cno1=1028">여성건강</a></li>
+								<li><a href="/shop/big_section.php?cno1=1029">남성건강</a></li>
+								<li><a href="/shop/big_section.php?cno1=1030">노화</a></li>
+								<li><a href="/shop/big_section.php?cno1=1031">관절</a></li>
+								<li><a href="/shop/big_section.php?cno1=1018">전체보기</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="big"><a href="/board/?db=gallery_1">EVENT</a></li>
+				<li class="big"><a href="#">CLINIC</a></li>
+				<li class="big tab">
+					<a>INFO</a>
+					<ul class="mid_cate">
+						<li><a href="/shop/product_review_list.php">REVIEW</a></li>
+						<li><a href="/shop/product_qna_list.php">QNA</a></li>
+						<li><a href="/board/?db=basic_1">NOTICE</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<a class="close" onclick="toggle_nav('lnb'); return false;">닫기</a>
 	</nav>
 </header>
 <section id="cnt">

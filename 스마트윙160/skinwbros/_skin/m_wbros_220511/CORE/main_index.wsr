@@ -1,0 +1,111 @@
+<div id="main">
+	<div class="swiper-container swiper_visual">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><a href="#"><img src="{{$이미지경로}}/banner/visual_01.jpg" alt="배너처리"></a></div>
+			<div class="swiper-slide"><a href="#"><img src="{{$이미지경로}}/banner/visual_02.jpg" alt="배너처리"></a></div>
+			<div class="swiper-slide"><a href="#"><img src="{{$이미지경로}}/banner/visual_03.jpg" alt="배너처리"></a></div>
+		</div>
+      	<div class="arrow prev"></div>
+		<div class="arrow next"></div>
+		<div class="swiper-pagination"></div>
+	</div>
+	{{$사용자리스트12}}
+	<ul class="banner_box wrap_inner2">
+		<li><a href="#"><img src="{{$이미지경로}}/banner/banner_box_01.jpg" alt="배너처리"></a></li>
+		<li><a href="#"><img src="{{$이미지경로}}/banner/banner_box_02.jpg" alt="배너처리"></a></li>
+	</ul>
+	{{$사용자리스트13}}
+	{{$사용자리스트14}}
+	<div class="all_product wrap_inner2">
+		<h2 class="subtitle">All Product</h2>
+		<div class="tab_product">
+			<ul>
+				<li><a onclick="tabover('product', 0)">#Set</a></li>
+				<li><a onclick="tabover('product', 1)">#Energy</a></li>
+				<li><a onclick="tabover('product', 2)">#Diet</a></li>
+				<li><a onclick="tabover('product', 3)">#ACC</a></li>
+				<li><a onclick="tabover('product', 4)">#Fitness</a></li>
+			</ul>
+		</div>
+		{{$사용자리스트15}}
+		{{$사용자리스트16}}
+		{{$사용자리스트17}}
+		{{$사용자리스트18}}
+		{{$사용자리스트19}}
+	</div>
+	<div class="event">
+		<h2 class="subtitle">Event</h2>
+		<div class="swiper-container swiper_event">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="img"><img src="{{$이미지경로}}/banner/event_img_01.jpg" alt="배너처리"></div>
+					<div class="content">
+						<p class="title">프로틴 세트 사시면 쉐이커 무료증정!</p>
+						<p class="sub">10년차 헬스장인이 만든 진짜 프로틴</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="img"><img src="{{$이미지경로}}/banner/event_img_02.jpg" alt="배너처리"></div>
+					<div class="content">
+						<p class="title">헬스매니아가 추천하는 홈트용품</p>
+						<p class="sub">10년차 헬스장인이 홈트 물품을 추천합니다.</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="img"><img src="{{$이미지경로}}/banner/event_img_03.jpg" alt="배너처리"></div>
+					<div class="content">
+						<p class="title">집 요가할 때 필요한 용품</p>
+						<p class="sub">10년차 헬스장인이 홈트 물품을 추천합니다.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main_more black2"><a href="/shop/product_review_list.php"><span>Read More</span></a></div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<!-- 인스타그램 연동 후 사용자리스트20 사용 -->
+	<div class="instagram wrap_inner2">
+		<h2 class="subtitle">Instagram</h2>
+		<ul class="api">
+			<li><a href="#" target="_blank"><img src="{{$이미지경로}}/banner/insta_banner_01.jpg" alt="instagram"></a></li>
+			<li><a href="#" target="_blank"><img src="{{$이미지경로}}/banner/insta_banner_02.jpg" alt="instagram"></a></li>
+			<li><a href="#" target="_blank"><img src="{{$이미지경로}}/banner/insta_banner_03.jpg" alt="instagram"></a></li>
+		</ul>
+		<div class="main_more white"><a href="https://www.instagram.com/wisa.co.kr" target="_blank"><span>@W_Bros</span></a></div>
+	</div>
+	<!-- //인스타그램 연동 후 사용자리스트20 사용 -->
+</div>
+<!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<div class="crema-popup"></div>
+<script>
+	// 비주얼 배너
+	var swiper_visual = new Swiper('.swiper_visual', {
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		pagination: {
+		  el: '.swiper_visual .swiper-pagination',
+		  type: 'fraction',
+		},
+		navigation: {
+		  nextEl: '.swiper_visual .swiper-button-next',
+		  prevEl: '.swiper_visual .swiper-button-prev',
+		},
+	});
+
+	// event 배너
+	var swiper_event = new Swiper('.swiper_event', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		centeredSlides: true,
+		pagination: {
+		  el: '.event .swiper-pagination',
+		},
+	});
+
+	$(document).ready(function(){
+		tabover('product', 0);
+	});
+</script>

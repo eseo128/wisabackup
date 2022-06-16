@@ -20,7 +20,9 @@
 			{{if(사용자배너9)}}<div class="swiper-slide">{{$사용자배너9}}</div>{{endif(사용자배너9)}}
 			{{if(사용자배너10)}}<div class="swiper-slide">{{$사용자배너10}}</div>{{endif(사용자배너10)}}
 		</div>
-		<div class="swiper-pagination swiper-pagination-white"></div>
+		<div class="arrow prev"></div>
+		<div class="arrow next"></div>
+		<div class="swiper-pagination"></div>
 	</div>
 	{{$사용자리스트12}}
 	{{$사용자리스트13}}
@@ -33,6 +35,7 @@
 <!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
 <div class="crema-popup"></div>
 <script>
+	// 비주얼 배너
 	var swiper_visual = new Swiper('.swiper_visual', {
 		loop: true,
 		autoplay: {
@@ -40,8 +43,12 @@
 			disableOnInteraction: false,
 		},
 		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
+		  el: '.swiper_visual .swiper-pagination',
+		  type: 'fraction',
+		},
+		navigation: {
+		  nextEl: '.swiper_visual .swiper-button-next',
+		  prevEl: '.swiper_visual .swiper-button-prev',
 		},
 	});
 </script>

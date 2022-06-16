@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="{{$이미지경로}}/../swiper.css">
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<script src="{{$이미지경로}}/../swiper.min.js"></script>
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<!-- crema.me / 로그인 회원 정보 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="top_pop">
+	<p><a href="#">셀럽들의 다이어트 비법은?</a></p>
+	<a onclick="todayclose()" class="btn_close">닫기</a>
+</div>
+<header>
+	<div class="fix">
+		<h1><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a></h1>
+		<ul class="gnb">
+			<li class="category"><a href="#" onclick="toggle_nav('lnb'); return false;">카테고리</a></li>
+			<li class="search"><a onclick="toggle_view('box_search',this)">검색</a></li>
+			<li class="cart"><a href="/shop/cart.php">장바구니<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
+		</ul>
+		<div id="box_search" class="box_search">
+			{{$상품검색폼시작}}
+			<div class="box">
+				<input type="search" name="search_str" value="" class="form_input block basic_search" autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="검색어를 입력해주세요">
+				<input type="image" src="{{$이미지경로}}/common/icon_search.png" alt="검색" class="btn">
+			</div>
+			{{$상품검색폼끝}}
+		</div>
+	</div>
+	<nav class="lnb">
+		<div class="white_inner">
+			<ul class="login">
+				{{$로그인전1}}
+				{{$로그인후1}}
+			</ul>
+			<ul class="tab_lnbcate">
+				<li><a onclick="tabover('lnbcate', 0)">Category</a></li>
+				<li><a onclick="tabover('lnbcate', 1)">Community</a></li>
+			</ul>
+		</div>
+		<div class="tabcnt_lnbcate tabcnt_lnbcate0">
+			<ul class="big_cate">
+				<li class="big">
+					<a>Brand</a>
+					<ul class="mid_cate">
+						<li><a href="/content/content.php?cont=company">CEO메시지</a></li> 
+						<li><a href="/content/content.php?cont=company">회사소개</a></li> 
+						<li><a href="/content/content.php?cont=company">오시는길</a></li> 
+					</ul>
+				</li>
+				<li class="big">
+					<a>Product</a>
+					<ul class="mid_cate">
+						<li class="mid">
+							<a>SET</a>
+							<ul class="sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1001">전체보기</a></li>
+								<li><a href="/shop/big_section.php?cno1=1012">에너지 패키지</a></li>
+								<li><a href="/shop/big_section.php?cno1=1013">다이어트 패키지</a></li>
+								<li><a href="/shop/big_section.php?cno1=1017">홈트 패키지</a></li>
+							</ul>
+						</li>
+						<li class="mid">
+							<a>Energy</a>
+							<ul class="sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1002">전체보기</a></li>
+								<li><a href="/shop/big_section.php?cno1=1018">식단관리</a></li>
+								<li><a href="/shop/big_section.php?cno1=1019">단백질</a></li>
+								<li><a href="/shop/big_section.php?cno1=1020">보충제</a></li>
+							</ul>
+						</li>
+						<li class="mid">
+							<a>Diet</a>
+							<ul class="sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1003">전체보기</a></li>
+								<li><a href="/shop/big_section.php?cno1=1021">다이어트 식단</a></li>
+								<li><a href="/shop/big_section.php?cno1=1022">다이어트 도시락</a></li>
+								<li><a href="/shop/big_section.php?cno1=1023">다이어트 간식</a></li>
+							</ul>
+						</li>
+						<li class="mid">
+							<a>ACC</a>
+							<ul class="sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1004">전체보기</a></li>
+								<li><a href="/shop/big_section.php?cno1=1024">쉐이커</a></li>
+								<li><a href="/shop/big_section.php?cno1=1025">텀블러</a></li>
+							</ul>
+						</li>
+						<li class="mid">
+							<a>Fitness</a>
+							<ul class="sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1005">전체보기</a></li>
+								<li><a href="/shop/big_section.php?cno1=1026">아령</a></li>
+								<li><a href="/shop/big_section.php?cno1=1027">요가매트</a></li>
+								<li><a href="/shop/big_section.php?cno1=1028">벤치프레스</a></li>
+								<li><a href="/shop/big_section.php?cno1=1029">레그프레스</a></li>
+								<li><a href="/shop/big_section.php?cno1=1030">짐볼</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="/board/?db=gallery_1">Event</a></li> 
+				<li><a href="/shop/promotion.php">Promotion</a></li> 
+			</ul>
+		</div>
+		<div class="tabcnt_lnbcate tabcnt_lnbcate1">
+			<ul class="big_cate">
+				<li><a href="/board/?db=basic_1">Notice</a></li> 
+				<li><a href="/board/?db=basic_2">FAQ</a></li> 
+				<li><a href="/shop/product_qna_list.php">Q&A</a></li> 
+				<li><a href="/shop/product_review_list.php">Review</a></li> 
+			</ul>
+		</div>
+		<a class="close" onclick="toggle_nav('lnb'); return false;">닫기</a>
+	</nav>
+</header>
+<section id="cnt">
+	<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+	{{$사용자HTML1}}
+	<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+	<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+	{{$사용자HTML3}}
+	<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+	<!-- 마이페이지 메뉴 -->
+	{{$사용자HTML4}}
+	<!-- //마이페이지 메뉴 -->
