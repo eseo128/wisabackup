@@ -12,7 +12,7 @@
 					<li><span>서울특별시 강남구 도산대로 163 자임당</span></li>
 					<li><span>T. {{$회사전화번호}}</span></li>
 					<li><span>E. {{$회사이메일}}</span></li>
-					<li><span>E. {{$회사전화번호}}</span></li>
+					<li><span>F. {{$회사팩스번호}}</span></li>
 				</ul>
 				
 			</div>

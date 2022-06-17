@@ -1,5 +1,5 @@
 <!-- 반복문시작 -->
-<div class="tab_best3">
+<div class="tabcnt_best tabcnt_best3">
 	<div class="frame_swiper">
 		<div class="swiper-container swiper_best3">
 			<div class="swiper-wrapper">
@@ -9,6 +9,7 @@
 				</div>
 <!-- 반복구문끝 -->
 			</div>
+			<div class="wrap_inner2"><div class="swiper-pagination"></div></div>
 		</div>
 	</div>
 </div>
@@ -17,6 +18,14 @@
 		slidesPerView: 3,	// 한 페이지 노출 상품 갯수
 		slidesPerGroup: 1,	// 스와이프 되는 상품 갯수
 		spaceBetween: 0,	// 상품 사이 간격
+		autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+		pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
 		
 	});
 </script>

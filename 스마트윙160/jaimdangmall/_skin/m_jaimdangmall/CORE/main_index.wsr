@@ -34,11 +34,13 @@
 		<div class="shop_btn"><a href="#"><span>SHOP NOW</span></a></div>
 	</div>
 	<div class="best">
-		<ul>
-			<li><a onclick="tabover('tab_best',0);">#프리미엄</a></li>
-			<li><a onclick="tabover('tab_best',1);">#공미</a></li>
-			<li><a onclick="tabover('tab_best',2);">#체력증진</a></li>
-			<li><a onclick="tabover('tab_best',3);">#다이어트</a></li>
+		<h2 class="subtitle">BEST</h2>
+		<p class="summary">키워드 별 가장 사랑 받고 있는 자임당 베스트</p>
+		<ul class="tab_best">
+			<li><a onclick="tabover('best',0);">#프리미엄</a></li>
+			<li><a onclick="tabover('best',1);">#공미</a></li>
+			<li><a onclick="tabover('best',2);">#체력증진</a></li>
+			<li><a onclick="tabover('best',3);">#다이어트</a></li>
 		</ul>
 		<div class="tab_wrap">
 			{{$사용자리스트13}}
@@ -47,7 +49,11 @@
 			{{$사용자리스트16}}
 		</div>
 	</div>
-	
+	<div class="crema-popup"></div>
+	<div class="story">
+		<h2 class="subtitle">JAIMDANG STORY</h2>
+		<p>한방 전문가가 직접 만드는 건강식품 브랜드<br>자연에 가까운 제품을 만듭니다.</p>
+	</div>
 </div>
 <!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
 <div class="crema-popup"></div>
@@ -67,5 +73,9 @@
 		  nextEl: '.swiper_visual .swiper-button-next',
 		  prevEl: '.swiper_visual .swiper-button-prev',
 		},
+	});
+
+	$(document).ready(function(){
+		tabover('best', 0);
 	});
 </script>

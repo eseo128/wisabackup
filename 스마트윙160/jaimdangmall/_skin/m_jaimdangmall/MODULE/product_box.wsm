@@ -2,7 +2,7 @@
 	<div class="img">
 		<div class="prdimg">{{$상품이미지(링크포함)}}</div>
 		<!-- 상품품절 영역 -->
-		<div class="soldout" onclick="location.href='{{$상품링크}}'">Sold out</div>
+		<div class="soldout" onclick="location.href='{{$상품링크}}'">SOLD OUT</div>
 		<!-- //상품품절 영역 -->
 		<div class="icon">{{$상품아이콘}}</div>
 		{{if(할인및인하율)}}<span class="saleper">{{$할인및인하율}}%</span>{{endif(할인및인하율)}}

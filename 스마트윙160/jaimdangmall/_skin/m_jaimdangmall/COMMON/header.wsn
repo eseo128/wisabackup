@@ -48,7 +48,7 @@
 						<li class="mid"><a href="/shop/big_section.php?cno1=1009">BEST</a></li>
 						<li class="mid"><a href="/shop/big_section.php?cno1=1010">NEW</a></li>
 						<li class="mid flex">
-							<a>공미</a>
+							<a href="/shop/big_section.php?cno1=1001">공미</a>
 							<ul class="sml_cate">
 								<li class="sml_title"><a href="/shop/big_section.php?cno1=1020">유형별</a></li>
 								<li><a href="/shop/big_section.php?cno1=1012">차</a></li>
@@ -64,7 +64,7 @@
 							</ul>
 						</li>
 						<li class="mid flex">
-							<a>한방</a>
+							<a href="/shop/big_section.php?cno1=1002">한방</a>
 							<ul class="sml_cate">
 								<li class="sml_title"><a href="/shop/big_section.php?cno1=1017">유형별</a></li>
 								<li><a href="/shop/big_section.php?cno1=1024">소환</a></li>

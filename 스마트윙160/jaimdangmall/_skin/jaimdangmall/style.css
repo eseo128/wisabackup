@@ -466,7 +466,7 @@ input[type=radio]:checked {background-image:url('{{$이미지경로}}/common/rad
 /* .prd_basic .box .img:hover .prdimg {-ms-transform:scale(1.1,1.1); -webkit-transform:scale(1.1,1.1); transform:scale(1.1,1.1);} */
 .prd_basic .box .img .soldout {display:none;}
 .prd_basic .box.out .img .prdimg {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity:.5;}
-.prd_basic .box.out .img .soldout {display:inline-block; position:absolute; left:30%; top:40%; z-index:5; padding:27px 40px; border-radius:100px; background:rgba(0,0,0,0.12); color:#fff; font-size:20px; font-weight:700; letter-spacing:0.5px; line-height:1; text-align:center; cursor:pointer;} /* 품절시 soldout 출력 */
+.prd_basic .box.out .img .soldout {display:inline-block; position:absolute; left:calc(50% - 100px); top:40%; z-index:5; padding:27px 40px; border-radius:100px; background:rgba(0,0,0,0.3); color:#fff; font-size:20px; font-weight:700; letter-spacing:0.5px; line-height:1; text-align:center; cursor:pointer;} /* 품절시 soldout 출력 */
 .prd_basic .box .img .icon {position:absolute; top:10px; left:10px; padding-top:20px;}
 .prd_basic .box .img .icon img {display:block; margin:0 0 5px; vertical-align:middle;}
 .prd_basic .box .img .saleper {display: flex; align-items: center; justify-content: center; position:absolute; top:10px; right:10px; width:16%; height:16%; min-width: 55px; min-height: 55px; border:2px solid #936053; border-radius:50%; color:#936053; font-family:'TrajanPro'; font-size:1.833rem; font-weight:700; letter-spacing:-0.03rem;}
@@ -475,8 +475,9 @@ input[type=radio]:checked {background-image:url('{{$이미지경로}}/common/rad
 .prd_basic .box .name > a {color:#3f2625; font-size:18px; font-weight:700;}
 .prd_basic .box .price {padding-top:5px;}
 .prd_basic .box .price span {word-break:break-all; word-wrap:break-word;}
-.prd_basic .box .price span .won {font-family: 'NanumMyeongjo'; font-weight: 11px;}
+.prd_basic .box .price span .won {font-family: 'NanumMyeongjo'; font-size: 11px;}
 .prd_basic .box .price .consumer {padding:0 10px; text-decoration:line-through; color:#777; font-size:15px;}
+.prd_basic .box .price .consumer .won {color:#777;}
 .prd_basic .box .price .consumerY {display:none;}
 .prd_basic .box .price .sell {color:#3f2625; font-size:17px;}
 .prd_basic .box .price .sell .won {color:#3f2625; font-size:13px;}
@@ -709,7 +710,7 @@ body.not_scroll .dim{display:block !important;}
 #main .best .tab_best .title_section .summary {padding:0 0 25px 0; color:#3f2625; font-size:16px; line-height:1; letter-spacing:0.08rem; text-align:left;}
 #main .best .tab_best ul > li > a {display:inline-block; width:284px; height:65px; margin-bottom:10px; border:1px solid #a46c69; border-radius:30px; background-color:#f9f5f4; color:#a46b66; font-family:'NanumMyeongjo'; font-size:26px; line-height:65px; text-align:center;}
 #main .best .tab_best ul > li > a.active {border:0; background-color:#a46c69; color:#fff;}
-#main .best .tab_wrap {width:calc(100% - 480px); min-width:900px;}
+#main .best .tab_wrap {width:calc(100% - 480px); min-width:700px;}
 #main .best .tab_wrap .tabcnt_best {position:relative;}
 #main .tab_wrap .tabcnt_best .slick-prev {display:inline-block; position:absolute; top:-30px; right:185px; width:28px; height:28px; border:1px solid #ebeff5; background:url('{{$이미지경로}}/button/best_arrow_prev.png') no-repeat center; z-index:5; }
 #main .tab_wrap .tabcnt_best .slick-next {display:inline-block; position:absolute; top:-30px; right:158px; width:28px; height:28px; border:1px solid #ebeff5; background:url('{{$이미지경로}}/button/best_arrow_next.png') no-repeat center; z-index:5;}
