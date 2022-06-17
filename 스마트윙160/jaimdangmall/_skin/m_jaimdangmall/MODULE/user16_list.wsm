@@ -1,0 +1,27 @@
+<!-- 반복문시작 -->
+<div class="tab_best3">
+	<div class="frame_swiper">
+		<div class="swiper-container swiper_best3">
+			<div class="swiper-wrapper">
+<!-- 반복구문시작 -->
+				<div class="swiper-slide prd_basic">
+				{{$기본상품박스}}
+				</div>
+<!-- 반복구문끝 -->
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var swiper_best3 = new Swiper('.swiper_best3', {
+		slidesPerView: 3,	// 한 페이지 노출 상품 갯수
+		slidesPerGroup: 1,	// 스와이프 되는 상품 갯수
+		spaceBetween: 0,	// 상품 사이 간격
+		
+	});
+</script>
+<!-- 반복문끝 -->
+
+<!-- 데이터없음시작 -->
+
+<!-- 데이터없음끝 -->

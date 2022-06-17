@@ -467,33 +467,28 @@ input[type=radio]:checked {background-image:url('{{$이미지경로}}/common/rad
 .prd_basic .box .img .soldout {display:none;}
 .prd_basic .box.out .img .prdimg {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity:.5;}
 .prd_basic .box.out .img .soldout {display:inline-block; position:absolute; left:30%; top:40%; z-index:5; padding:27px 40px; border-radius:100px; background:rgba(0,0,0,0.12); color:#fff; font-size:20px; font-weight:700; letter-spacing:0.5px; line-height:1; text-align:center; cursor:pointer;} /* 품절시 soldout 출력 */
+.prd_basic .box .img .icon {position:absolute; top:10px; left:10px; padding-top:20px;}
+.prd_basic .box .img .icon img {display:block; margin:0 0 5px; vertical-align:middle;}
+.prd_basic .box .img .saleper {display: flex; align-items: center; justify-content: center; position:absolute; top:10px; right:10px; width:16%; height:16%; min-width: 55px; min-height: 55px; border:2px solid #936053; border-radius:50%; color:#936053; font-family:'TrajanPro'; font-size:1.833rem; font-weight:700; letter-spacing:-0.03rem;}
 .prd_basic .box .info {text-align:center;}
-.prd_basic .box .quick {padding:20px 0 0 2px; padding-left:2px; font-size:0;}
-.prd_basic .box .quick li {display:inline-block; text-align:center; vertical-align:top;}
-.prd_basic .box .quick li a {display:block; width:32px; height:32px; margin-left:-1px; border:1px solid #dbdbdb; background-color:#fff; background-repeat:no-repeat; background-position:center; text-indent:-9999px; transition:all .3s ease;}
-.prd_basic .box .quick li a:hover {background-color:#f6f6f6;}
-.prd_basic .box .quick li.preview a {background-image:url('{{$이미지경로}}/shop/icon_preview.png');}
-.prd_basic .box .quick li.cart a {background-image:url('{{$이미지경로}}/shop/icon_cart.png');}
-.prd_basic .box .quick li.wish a {background-image:url('{{$이미지경로}}/shop/icon_wish.png');}
-.prd_basic .box .quick li.wish a.wish_on {background-image:url('{{$이미지경로}}/shop/icon_wish_on.png');}
+.prd_basic .box .summary {padding-top:42px; color:#3f2625; font-size:16px; word-break:break-all; word-wrap:break-word;}
 .prd_basic .box .name > a {color:#3f2625; font-size:18px; font-weight:700;}
 .prd_basic .box .price {padding-top:5px;}
-.prd_basic .box .price p {word-break:break-all; word-wrap:break-word;}
+.prd_basic .box .price span {word-break:break-all; word-wrap:break-word;}
+.prd_basic .box .price span .won {font-family: 'NanumMyeongjo'; font-weight: 11px;}
 .prd_basic .box .price .consumer {padding:0 10px; text-decoration:line-through; color:#777; font-size:15px;}
 .prd_basic .box .price .consumerY {display:none;}
 .prd_basic .box .price .sell {color:#3f2625; font-size:17px;}
-.prd_basic .box .price .sellY {padding:0 10px; text-decoration:line-through; color:#777; font-size:15px;}
-.prd_basic .box .price .sellY {font-weight:400;}
+.prd_basic .box .price .sell .won {color:#3f2625; font-size:13px;}
+.prd_basic .box .price .sellY {padding:0 10px; text-decoration:line-through; color:#777; font-size:15px; font-weight:400;}
+.prd_basic .box .price .sellY .won {color:#777;}
 .prd_basic .box .price .discount {display:none;}
 .prd_basic .box .price .discountY {display:inline-block; color:#3f2625; font-size:17px;}
-.prd_basic .box .summary {padding-top:42px; color:#3f2625; font-size:16px; word-break:break-all; word-wrap:break-word;}
+.prd_basic .box .price .discountY .won {color:#3f2625; font-size:13px;}
 .prd_basic .box .count {padding-top:20px; font-size:0;}
 .prd_basic .box .count li {display:inline; position:relative; padding:0 10px; color:#888; font-size:11px;}
 .prd_basic .box .count li:after {position:absolute; left:0; top:3px; width:1px; height:10px; background:#d2d2d2; content:'';}
 .prd_basic .box .count li:first-child:after {display:none;}
-.prd_basic .box .icon {position:absolute; top:10px; left:10px; padding-top:20px;}
-.prd_basic .box .icon img {display:block; margin:0 0 5px; vertical-align:middle;}
-.prd_basic .box .saleper {position:absolute; top:10px; right:10px; width:80px; height:80px; border:2px solid #936053; border-radius:50%; color:#936053; font-family:'TrajanPro'; font-size:22px; font-weight:700; letter-spacing:-0.03rem; line-height:80px;}
 .prd_basic .box .today {display:inline-block; margin:15px auto 0; padding:3px; background-color:#ebebeb;}
 .prd_basic .box .today > span {padding-left:5px; color:#666;}
 
@@ -704,8 +699,8 @@ body.not_scroll .dim{display:block !important;}
 #main .signature .visual_progress_label {position:absolute; overflow:hidden; width:1px; height:1px; padding:0; margin:-1px; border:0; clip:rect(0,0,0,0);}
 #main .mid_bnr {position:relative;}
 #main .mid_bnr img {width:100%;}
-#main .mid_bnr .shop_btn {display:block; width:100%; min-width:83.3%; position:absolute; bottom:75px; text-align:center;}
-#main .mid_bnr .shop_btn > a > span {display:inline-block; width:250px; height:60px; border:1px solid #fff; color:#fff; font-size:22px; line-height:60px;}
+#main .mid_bnr .shop_btn {display:block; width:100%; min-width:1200px; position:absolute; bottom:75px; text-align:center;}
+#main .mid_bnr .shop_btn > a > span {display:inline-block; width:250px; height:60px; border:1px solid #fff; color:#fff; font-family: 'TrajanPro'; font-size:22px; line-height:60px;}
 #main .best .wrap_inner {padding:160px 0 210px; background:#f9f5f4;}
 #main .best .wrap_inner {display:flex; justify-content:center;}
 #main .best .tab_best {display:flex; flex-direction:column; padding-left:160px; width:480px; min-width:480px; margin-top:45px;}

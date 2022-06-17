@@ -54,6 +54,7 @@
 		</div>
 	</div>
 </footer>
+</div>
 <div id="dimmed"></div>
 <script>
 //검색버튼 클릭시 2depth 숨김처리

@@ -3,6 +3,7 @@
 <!-- crema.me / 로그인 회원 정보 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
 <i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
 <i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
 <header>
 	<div class="gnb_box">
 		<a class="logo" href="/"></a>
@@ -22,31 +23,31 @@
 			{{$상품검색폼끝}}
 		</div>
 	</div>
-	<nav class="lnb">
+	<nav class="lnb wrap_inner2">
 		<ul class="language">
-			<li><a href="#">kr</a></li>
+			<li class="underline"><a href="#">kr</a></li>
 			<li><a href="https://en.jaimdangmall.com/">en</a></li>
 		</ul>
 		<ul class="login">
 			{{$로그인전1}}
 			{{$로그인후1}}
 		</ul>
-		<div class="tabcnt_lnbcate tabcnt_lnbcate0">
+		<div>
 			<ul class="big_cate">
 				<li class="big tab">
-					<a>BRAND</a>
-					<ul class="mid_cate">
-						<li><a href="/content/content.php?cont=brandstory">BRAND STROY</a></li> 
-						<li><a href="/content/content.php?cont=koreanherbs">KOREAN HERBS</a></li> 
-						<li><a href="/content/content.php?cont=history">HISTORY</a></li> 
+					<a onclick="toggle_view('mid_brand',this)">BRAND</a>
+					<ul id="mid_brand" class="mid_cate">
+						<li class="mid"><a href="/content/content.php?cont=brandstory">BRAND STROY</a></li> 
+						<li class="mid"><a href="/content/content.php?cont=koreanherbs">KOREAN HERBS</a></li> 
+						<li class="mid"><a href="/content/content.php?cont=history">HISTORY</a></li> 
 					</ul>
 				</li>
 				<li class="big tab">
-					<a>SHOP</a>
-					<ul class="mid_cate">
+					<a onclick="toggle_view('mid_shop',this)">SHOP</a>
+					<ul id="mid_shop" class="mid_cate">
 						<li class="mid"><a href="/shop/big_section.php?cno1=1009">BEST</a></li>
 						<li class="mid"><a href="/shop/big_section.php?cno1=1010">NEW</a></li>
-						<li class="mid">
+						<li class="mid flex">
 							<a>공미</a>
 							<ul class="sml_cate">
 								<li class="sml_title"><a href="/shop/big_section.php?cno1=1020">유형별</a></li>
@@ -62,16 +63,16 @@
 								<li><a href="/shop/big_section.php?cno1=1013">전체보기</a></li>
 							</ul>
 						</li>
-						<li class="mid">
+						<li class="mid flex">
 							<a>한방</a>
 							<ul class="sml_cate">
-								<li class="bold"><a href="/shop/big_section.php?cno1=1017">유형별</a></li>
+								<li class="sml_title"><a href="/shop/big_section.php?cno1=1017">유형별</a></li>
 								<li><a href="/shop/big_section.php?cno1=1024">소환</a></li>
 								<li><a href="/shop/big_section.php?cno1=1025">대환</a></li>
 								<li><a href="/shop/big_section.php?cno1=1017">전체보기</a></li>
 							</ul>
 							<ul class="sml_cate">
-								<li class="bold"><a href="/shop/big_section.php?cno1=1018">고민별</a></li>
+								<li class="sml_title"><a href="/shop/big_section.php?cno1=1018">고민별</a></li>
 								<li><a href="/shop/big_section.php?cno1=1026">피부</a></li>
 								<li><a href="/shop/big_section.php?cno1=1027">체력</a></li>
 								<li><a href="/shop/big_section.php?cno1=1028">여성건강</a></li>
@@ -86,8 +87,8 @@
 				<li class="big"><a href="/board/?db=gallery_1">EVENT</a></li>
 				<li class="big"><a href="#">CLINIC</a></li>
 				<li class="big tab">
-					<a>INFO</a>
-					<ul class="mid_cate">
+					<a onclick="toggle_view('mid_info',this)">INFO</a>
+					<ul id="mid_info" class="mid_cate">
 						<li><a href="/shop/product_review_list.php">REVIEW</a></li>
 						<li><a href="/shop/product_qna_list.php">QNA</a></li>
 						<li><a href="/board/?db=basic_1">NOTICE</a></li>
@@ -95,6 +96,12 @@
 				</li>
 			</ul>
 		</div>
+		<ul class="sns">
+			<li><a href="#">인스타그램</a></li>
+			<li><a href="#">카카오플친</a></li>
+			<li><a href="#">네이버블로그</a></li>
+			<li><a href="#">자임당바이오</a></li>
+		</ul>
 		<a class="close" onclick="toggle_nav('lnb'); return false;">닫기</a>
 	</nav>
 </header>
