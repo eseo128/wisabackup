@@ -1,0 +1,20 @@
+<!-- 반복문시작 -->
+<span class="detail_title" onclick="toggle_view('detail2_first',this)">제품 정보</span>
+<table id="detail2_first" class="detail_summary tbl_prdinfo" style="display: none;">
+	<caption class="hidden">상품정보고시</caption>
+	<colgroup>
+		<col style="width:32%;">
+		<col>
+	</colgroup>
+	<tbody>
+<!-- 반복구문시작 -->
+		<tr>
+			<th scope="row">{{$항목명}}</th>
+			<td>{{$항목값}}</td>
+		</tr>
+<!-- 반복구문끝 -->
+	</tbody>
+</table>
+<!-- 반복문끝 -->
+<!-- 데이터없음시작 -->
+<!-- 데이터없음끝 -->

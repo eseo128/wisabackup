@@ -1,0 +1,10 @@
+<!-- 반복문시작 -->
+<!-- 반복구문시작 -->
+<span class="detail_title">{{$항목명}}</span>
+<div class="detail_summary" style="display: none;">
+	{{$항목값}}
+</div>
+<!-- 반복구문끝 -->
+<!-- 반복문끝 -->
+<!-- 데이터없음시작 -->
+<!-- 데이터없음끝 -->

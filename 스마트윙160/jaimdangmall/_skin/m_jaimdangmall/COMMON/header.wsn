@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{$이미지경로}}/../swiper-bundle.css">
 <script src="{{$이미지경로}}/../swiper-bundle.min.js"></script>
+<script src="{{$이미지경로}}/../TweenMax.min.js"></script>
 <!-- crema.me / 로그인 회원 정보 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
 <i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
 <i id="crema-login-name" style="display:none;">{{$회원명}}</i>
@@ -9,12 +10,12 @@
 		<a class="logo" href="/"></a>
 		<ul class="gnb">
 			<li class="category"><a href="#" onclick="toggle_nav('lnb'); return false;">카테고리</a></li>
-			<li class="search"><a class="toggle_search" onclick="toggle_view('box_search',this)">검색</a></li>
+			<li class="search"><a class="toggle_search" href="#" onclick="toggle_search('box_right'); return false;">검색</a></li>
 			<li class="cart"><a href="/shop/cart.php">장바구니<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
 		</ul>
-		<div id="box_search" class="box_search">
+		<div id="box_search" class="box_search box_right">
 			{{$상품검색폼시작}}
-			<a class="close" onclick="toggle_view('box_search',this)">닫기</a>
+			<a class="close" onclick="toggle_search('box_right'); return false;">닫기</a>
 			<p>SEARCH</p>
 			<div class="box">
 				<input type="search" name="search_str" value="" class="form_input block basic_search" autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="검색어를 입력해주세요">

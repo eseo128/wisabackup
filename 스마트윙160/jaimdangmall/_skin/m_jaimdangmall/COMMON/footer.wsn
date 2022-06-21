@@ -29,7 +29,7 @@
 		</ul>
 		<p class="copyright">Copyright ⓒ 2022 자임당 All right reserved.</p>
 		<div class="btn_scroll">
-			<a class="up" onclick="scrollup()">up</a>
+			<a class="up" onclick="scrollup()">TOP</a>
 		</div>
 	</div>
 </footer>

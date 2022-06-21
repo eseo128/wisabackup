@@ -1510,13 +1510,13 @@ body.not_scroll .dim{display:block !important;}
 #login .joinfind .join a {display:inline-block; width:100%; height:55px; border:1px solid #936053; color:#936053; font-size:17px; line-height:55px;}
 #login .simple {margin-bottom:35px; padding-top:20px; text-align:center;}
 #login .simple a {display:block; width:100%; height:60px; margin-top:10px; background-color:#fff; background-repeat:no-repeat; background-position:left 25px center; color:#191919; font-size:17px; letter-spacing:-0.03rem; line-height:49px;}
-#login .simple a.kakao {border:0; background-color:#fee500; }
+#login .simple a.kakao {border:0; background-color:#fee500;}
 #login .simple a.kakao > span {padding-left:30px; background:url('{{$이미지경로}}/member/icon_kakao.png') no-repeat left; color:#3f2625; font-size:17px; font-weight:700; line-height:60px;}
-#login .simple a.naver {background-image:url('{{$이미지경로}}/member/icon_naver.png');}
-#login .simple a.facebook {background-image:url('{{$이미지경로}}/member/icon_facebook.png');}
-#login .simple a.payco {background-image:url('{{$이미지경로}}/member/icon_payco.png');}
-#login .simple a.wemake {background-image:url('{{$이미지경로}}/member/icon_wemake.png');}
-#login .simple a.apple {background-image:url('{{$이미지경로}}/member/icon_apple.png');}
+#login .simple a.naver > span {padding-left:30px; background-image:url('{{$이미지경로}}/member/icon_naver.png'); color:#3f2625; font-size:17px; font-weight:700; line-height:60px;}
+#login .simple a.facebook > span {padding-left:30px; background-image:url('{{$이미지경로}}/member/icon_facebook.png'); color:#3f2625; font-size:17px; font-weight:700; line-height:60px;}
+#login .simple a.payco > span {padding-left:30px; background-image:url('{{$이미지경로}}/member/icon_payco.png'); color:#3f2625; font-size:17px; font-weight:700; line-height:60px;}
+#login .simple a.wemake > span {padding-left:30px; background-image:url('{{$이미지경로}}/member/icon_wemake.png'); color:#3f2625; font-size:17px; font-weight:700; line-height:60px;}
+#login .simple a.apple > span {padding-left:30px; background-image:url('{{$이미지경로}}/member/icon_apple.png'); color:#3f2625; font-size:17px; font-weight:700; line-height:60px;}
 #login .adult_certify {padding-top:35px; border-top:1px solid #e0e0e0; text-align:center;}
 #login .adult_certify h5 {padding-bottom:5px; color:#000; font-size:18px; font-weight:400;}
 #login .adult_certify p {padding-bottom:20px; color:#888; letter-spacing:-0.08rem;}

@@ -108,11 +108,12 @@
 		<div id="optbox" class="optbox">
 			<div class="optbox_wrap">
 				<a class="btn_close" onclick="toggle_slide('optbox',this), showFakebtn()">옵션창닫기</a>
+				<!-- {{$일반상품항목}} -->
 				<div class="opt_ea">
 					<div class="name_qty">수량</div>
 					<div class="box_qty">
 						<a href="javascript:eaChg(1);" class="plus"></a>
-						<input type="number" name="buy_ea" value="{{$최소주문수량}}" class="form_input block">
+						<input type="number" name="buy_ea" value="1" class="form_input block tac">
 						<a href="javascript:eaChg(2);" class="minus"></a>
 					</div>
 				</div>
@@ -197,27 +198,19 @@
 		</div>
 		<!--// 상품상세정보&관련상품 -->
 		<!-- 상품문의 -->
-		<div class="tabcnt_detail tabcnt_detail2 wrap_inner">
+		<div class="tabcnt_detail tabcnt_detail2">
 			{{$상품정보고시리스트}}
 			{{if(상품항목리스트)}}
 			{{$상품항목리스트}}
 			{{endif(상품항목리스트)}}
-			
 		</div>
 		<!-- //상품문의 -->
 		<!-- 추가정보(공통정보) -->
-		<div id="qna" class="tabcnt_detail tabcnt_detail3 wrap_inner">
+		<div id="qna" class="tabcnt_detail tabcnt_detail3">
 			<div class="detail_qnarev qnarev_list">
-				<div class="title_qnarev">
-					<h3>상품문의</h3>
-					<div class="btn">
-						<a href="{{$상품질답등록}}" class="write">글쓰기</a>
-						<a href="{{$상품질답보기}}" class="list">전체보기</a>
-					</div>
-				</div>
+				{{$상품질답리스트}}
 				{{$상품질답회원등록폼}}
 				{{$상품질답비회원등록폼}}
-				{{$상품질답리스트}}
 			</div>
 		</div>
 		<!-- //추가정보(공통정보) -->
@@ -327,5 +320,34 @@
 			}
 		});
 	});
+
+	$(function(){
+		//섭취시 주의사항, 전성분 토글
+		if($('#detail_title').size() > 0){
+			$('#detail .wrap_prd > .info > .list > tbody > tr:nth-child(2)').hide();
+		}
+
+		var dt3 = $(".tabcnt_detail2 .detail_title:nth-child(3)");
+		var dt5 = $(".tabcnt_detail2 .detail_title:nth-child(5)");
+		
+		dt3.click(function(){  
+			$(".tabcnt_detail2 .detail_summary:nth-child(4)").toggle();
+			if(dt3.hasClass("active")){
+				dt3.removeClass("active");
+			}else{
+				dt3.addClass('active');
+			}
+		})
+
+		dt5.click(function(){  
+			$(".tabcnt_detail2 .detail_summary:nth-child(6)").toggle();
+			if(dt5.hasClass("active")){
+				dt5.removeClass("active");
+			}else{
+				dt5.addClass('active');
+			}
+		})
+	});
+
 
 </script>
