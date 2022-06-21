@@ -201,6 +201,35 @@ function tabover(name, no) {
 	})
 }
 
+/* search 메뉴 토글 */
+function toggle_search(name) {
+	var obj_name = $('div.'+name);
+	if(obj_name.hasClass('is_show')) {
+		$('body').removeClass('view_nav');
+		obj_name.removeClass('is_show');
+	}
+	else {
+		$('body').addClass('view_nav');
+		obj_name.addClass('is_show');
+	}
+}
+
+/* 토글 slideup , down */
+function toggle_slide(selector, obj){
+	var search = $('#'+selector+'');
+	var obj = $(obj);
+	if (search.css('display') == 'none') {
+		$('body').addClass('view_nav');
+		search.slideDown();
+		obj.addClass('active');
+	} else {
+		search.slideUp();
+		obj.removeClass('active');
+		$('body').removeClass('view_nav');
+	}
+}
+
+
 /* 전체체크 */
 function cartCheckAll(checked) {
 	$(':checkbox[name^="cno["], :checkbox[name^="wno["]').attrprop('checked', checked);

@@ -1,0 +1,514 @@
+<style type="text/css">
+	header {z-index:60;}
+	footer {padding-bottom:140px;}
+	footer .dock {display:none;}
+	#detail .info > .quick_bar {z-index:50;}
+	#ch-plugin #ch-plugin-core .harELH {bottom:75px !important;}
+</style>
+<div id="detail">
+	{{$폼시작}}
+	{{if(타임세일타이머)}}
+	<div class="fake_timer_top">
+		<div class="timer_top">
+			<div class="title">남은시간 {{$타임세일타이머}}</div>
+			<div class="stock">남은수량 <strong>{{$남은수량}}</strong>개</div>
+		</div>
+	</div>
+	{{endif(타임세일타이머)}}
+	<!-- 상품 이미지 -->
+	<div class="prdimg">
+		<div id="mimg_div"><img id="mainImg" src="{{$상품중이미지}}" alt="{{$상품명}}"></div>
+		<div id="addimg" class="addimg">
+			{{$상품부가이미지리스트}}
+		</div>
+		<!-- 타임세일 -->
+		{{if(타임세일타이머)}}
+		<div class="stock">
+			<div class="stock_bar" style="width:{{$판매율}}%">
+				<div class="stock_tag">남은수량 <strong>{{$남은수량}}</strong>개</div>
+			</div>
+		</div>
+		{{endif(타임세일타이머)}}
+	</div>
+	<!-- //상품 이미지 -->
+	<!-- 상품정보 & 버튼 -->
+	<div class="info">
+		<p class="icon">{{$상품아이콘}}</p>
+		{{if(상품쿠폰리스트)}}
+			<span class="coupon" onclick="toggle_view('pop_coupon');setDimmed();">쿠폰다운</span>
+			{{$상품쿠폰리스트}}
+		{{endif(상품쿠폰리스트)}}
+		{{if(기타입력사항1)}}<p class="brand">{{$기타입력사항1}}</p>{{endif(기타입력사항1)}}
+		<p class="name">{{if(단독배송여부)}}[단독배송] {{endif(단독배송여부)}}{{$상품명}}</p>
+		<p class="summary">{{$상품요약설명}}</p>
+		{{if(기타입력사항2)}}
+		<dl class="etc mb10">
+			<dt>안내사항</dt>
+			<dd>{{$기타입력사항2}}</dd>
+		</dl>
+		{{endif(기타입력사항2)}}
+		{{if(기타입력사항3)}}
+		<dl class="etc">
+			<dt>유통기한</dt>
+			<dd>{{$기타입력사항3}}</dd>
+		</dl>
+		{{endif(기타입력사항3)}}
+		<div class="price">
+			{{if(소비자가격)}}
+			<dl>
+				<dt>정상가</dt>
+				<dd class="consumer consumer{{$할인적용여부}}">{{$화폐단위전}}{{$소비자가격}}{{$화폐단위후}}</dd>
+			</dl>
+			{{endif(소비자가격)}}
+			<dl>
+				<dt>판매가</dt>
+				<dd class="sell sell{{$할인적용여부}}">
+					{{$화폐단위전}}<strong>{{$판매가격}}</strong>{{$화폐단위후}} 
+					{{if(할인및인하율)}}<span class="per">{{$할인및인하율}}%</span>{{endif(할인및인하율)}}
+					{{if(개월당가격)}}<span class="month">({{$개월당가격}})</span>{{endif(개월당가격)}}
+					{{if(참조화폐사용)}}({{$참조화폐단위전}}<strong>{{$참조판매가격}}</strong>{{$참조화폐단위후}}){{endif(참조화폐사용)}}
+				</dd>
+			</dl>
+			<dl>
+				{{if(로그인후1)}}<dt>회원최저가</dt>{{endif(로그인후1)}}
+				{{if(로그인전1)}}<dt>총 금액</dt>{{endif(로그인전1)}}
+				<dd class="discount discount{{$할인적용여부}}">
+					{{$화폐단위전}}<strong>{{$할인후실판매가}}</strong>{{$화폐단위후}}
+					{{if(참조할인후실판매가)}}({{$참조화폐단위전}}<strong>{{$참조할인후실판매가}}</strong>{{$참조화폐단위후}}){{endif(참조할인후실판매가)}}
+				</dd>
+			</dl>
+		</div>
+		{{if(정기배송적용여부_상품별)}}
+		<div class="sbs">
+			<label><input type="radio" name="sbscr" value="N" class="form_input" onclick="sbscrCheck('N')" checked>일반배송</label>
+			<label><input type="radio" name="sbscr" value="v2" class="form_input" onclick="sbscrCheck('Y')">정기배송</label>
+		</div>
+		{{end(정기배송적용여부_상품별)}}
+		{{if(오늘출발)}}
+		<p class="today"><strong>오늘출발</strong><span>해당 상품은 평일 {{$오늘출발주문마감시간}}까지 결제 시 당일 배송이 가능합니다.</span></p>
+		{{endif(오늘출발)}}
+
+		<div class="btn_opt" onclick="toggle_slide('optbox',this), hideFakebtn()">
+			<span>옵션선택</span><span>최대 할인 구성 확인</span>
+		</div>
+		{{if(로그인후1)}}
+		<div class="cpn_bnr">
+			<p>{{$회원명}} 고객님을 위한 <strong>12만원 쿠폰팩 발급완료</strong></p>
+			<span>※ 주문서에서 적용 가능</span>
+		</div>
+		{{endif(로그인후1)}}
+		{{if(로그인전1)}}
+		<div class="cpn_bnr">
+			<a href="/member/login.php"><p>로그인 시 <strong>12만원 쿠폰팩</strong>자동 발급</p></a>
+		</div>
+		{{endif(로그인전1)}}
+		<div class="benefit">
+			<h3>에스더몰 <strong>회원혜택 4가지</strong></h3>
+			<div class="list">
+				<dl><dt>쿠폰팩</dt><dd>매월 회원전용 12만원 쿠폰팩 지급</dd></dl>
+				<dl><dt>배송안내</dt><dd>에스더몰 회원 배송비 0원</dd></dl>
+				<dl><dt>당일출고</dt><dd>평일 14시 전 주문시 당일출고</dd></dl>
+				<dl><dt>할부혜택</dt><dd><a onclick="toggle_view('credit_list',this), stopBodyScroll()">최대 8개월 무이자</a></dd></dl>
+			</div>
+			<div id="credit_list" class="credit_list popup_layer" onclick="toggle_view('credit_list',this), goBodyScroll()">
+				<h3 class="layer">무이자 할부 카드 확인 <a class="btn_close">닫기</a></h3>
+				<div class="layer_wrap">
+					{{$사용자배너242}}
+				</div>
+			</div>
+		</div>
+		<div id="disc_list" class="disc_list">
+			<h4>{{if(로그인후1)}}{{$회원명}}{{endif(로그인후1)}} {{if(로그인전1)}}회원{{endif(로그인전1)}}님을 위한 최저가 계산기</h4>
+			<table class="tbl_order">
+				<caption class="hidden"></caption>
+				<colgroup>
+					<col style="width:50%;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="total">
+						<th>총 상품금액</th>
+						<td>{{$화폐단위전}}<strong id="total_prd_prc_custom">{{$판매가격}}</strong>{{$화폐단위후}}</td>
+					</tr>
+					<tr class="toggle_shop">
+						<th>
+							{{if(이벤트할인금액)}}<p>이벤트 할인금액</p>{{endif(이벤트할인금액)}}
+							{{if(타임세일금액)}}<p>타임세일 할인금액</p>{{endif(타임세일금액)}}
+							{{if(로그인후1)}}{{if(회원할인금액)}}<p>회원 할인금액</p>{{endif(회원할인금액)}}{{endif(로그인후1)}}
+						</th>
+						<td class="org">
+							{{if(이벤트할인금액)}}<p>- <span id="total_sale2_prc_custom">0</span>원</p>{{endif(이벤트할인금액)}}
+							{{if(타임세일금액)}}<p>- <span id="total_sale3_prc_custom">0</span>원</p>{{endif(타임세일금액)}}
+							{{if(로그인후1)}}{{if(회원할인금액)}}<p>- <span id="total_sale4_prc_custom">0</span>원</p>{{endif(회원할인금액)}}{{endif(로그인후1)}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			{{if(쿠폰적용대상상품목록)}}
+			<div class="my_cpn">
+				<p onclick="showPrdCpnList(1);">즉시 할인쿠폰 확인</p>
+				<div id="_selected_cpn_name_box" class="usable_cpn_list"></div>
+			</div>
+			{{endif(쿠폰적용대상상품목록)}}
+		</div>
+		<ul class="button">
+			<li class="btn_wish"><a href="javascript:addWish(document.prdFrm)"><span>찜하기</span></a></li>
+			<li class="btn_share"><a onclick="toggle_view('share_box',this), stopBodyScroll()"><span>공유하기</span></a></li>
+		</ul>
+		<div id="share_box" class="share_box" onclick="toggle_view('share_box',this), goBodyScroll()">
+			<div class="share_box_inner">
+				<a class="btn_close">창닫기</a>
+				<p>SNS 상품공유</p>
+				<ul>
+					<li class="kakao">{{$카카오링크}}kakao</a></li>
+					<li class="twitter"><a href="{{$SNS연동주소(트위터)}}" target="_blank">트위터</a></li>
+					<li class="facebook"><a href="{{$SNS연동주소(페이스북)}}" target="_blank">페이스북</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="quick_bar shadow1">
+			<span class="btn_cart fake huge grayline"><a onclick="toggle_slide('optbox',this), hideFakebtn()">장바구니</a></span>
+			<span class="btn_cart real huge grayline"><a href="javascript:addCart(document.prdFrm,1)">장바구니</a></span>
+			<span class="box_btn btn_review huge grayline" onclick="tabmove('1'), hideOptbox()"><a>후기<span class="ea">{{$상품평개수}}</span></a></span>
+			<span class="box_btn btn_buy huge fake"><a onclick="toggle_slide('optbox',this), hideFakebtn()">최저가 옵션 확인 · 구매하기</a></span>
+			<span class="box_btn btn_buy huge real"><a href="javascript:addCart(document.prdFrm,2)">{{if(정상판매시내용)}}최저가 옵션 확인 · 구매하기{{endif(정상판매시내용)}}{{if(품절시내용)}}품절{{endif(품절시내용)}}</a></span>
+		</div>
+		<div id="optbox" class="optbox">
+			<!-- 고객사요청으로 주석처리
+			{{if(상품항목리스트)}}
+			{{$상품항목리스트}}
+			{{endif(상품항목리스트)}}
+			-->
+			<div class="optbox_wrap">
+				<a class="btn_close" onclick="toggle_slide('optbox',this), showFakebtn()">옵션창닫기</a>
+				<div class="opt_ea">
+					<div class="name_qty">수량</div>
+					<div class="box_qty">
+						<a href="javascript:eaChg(1);" class="plus"></a>
+						<input type="number" name="buy_ea" value="{{$최소주문수량}}" class="form_input block">
+						<a href="javascript:eaChg(2);" class="minus"></a>
+					</div>
+				</div>
+				<table class="list">
+					<tbody>
+						{{$상품옵션리스트}}
+					</tbody>
+				</table>
+				{{if(선택된멀티옵션리스트)}}
+				{{$선택된멀티옵션리스트}}
+				{{endif(선택된멀티옵션리스트)}}
+				{{if(로그인후1)}}
+				<div class="mileage">
+					<p>{{$회원아이콘}}등급 {{$회원명}} 님의 적립금 계산기</p>
+					<dl>
+						<dt>적립예정 금액</dt>
+						<dd>+ {{$총적립금}} 원</dd>
+					</dl>
+					<dl>
+						<dt>현재 보유하신 적립금</dt>
+						<dd>{{$회원보유적립금액}} 원</dd>
+					</dl>
+				</div>
+				<div class="optbox_bnr">{{$사용자배너241}}</div>
+				{{endif(로그인후1)}}
+				{{if(재입고알림사용유무)}}
+				<div class="restock">
+					<p><span class="i_info"></span> 재입고 알림 신청을 하시면 문자로 입고 소식을 알려드립니다.</p>
+					<span class="box_btn white block large"><a onclick="get_notify_restockPage('{{$디테일상품번호}}'); return false;">재입고 알림 신청</a></span>
+				</div>
+				{{endif(재입고알림사용유무)}}
+				<div class="pay">
+					<p>네이버페이 혹은 카카오페이로 주문 시 현재 보유 중이신<br><strong>12만원 쿠폰팩 사용이 불가</strong>합니다.</p>
+					<div class="npay">{{$네이버체크아웃버튼}}</div>
+					<div class="talkpay">{{$카카오페이구매버튼}}</div>
+					<div class="payco">{{$페이코즉시구매버튼}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //상품정보 & 버튼 -->
+	{{$폼끝}}
+	<!-- 상품 상세정보 -->
+	<div class="wrap_info">
+		<div class="tab_area">
+			<ul class="tab tab_detail">
+				<li><a onclick="tabmove('0')">상세정보</a></li>
+				<li><a onclick="tabmove('1')">구매후기</a></li>
+				<li><a onclick="tabmove('2')">제품문의</a></li>
+				<li><a onclick="tabmove('3')">유통기한</a></li>
+			</ul>
+		</div>
+		<!-- 상품상세정보&관련상품 -->
+		<div class="tabcnt_detail tabcnt_detail0 tabcnt_content">
+			<!-- 상세상단 안내용 배너 -->
+			<!--<div class="banner"><img src="https://esther.wisacdn.com/_data/editor_attach/board/gallery_3_temp_1645694147919/567b3e6efe4b8db55e981cff8d00c4ee.jpg" width="100%"></div>-->
+			<div class="detail_desc">{{$상품상세설명}}</div>
+			<!--{{!$상품정보고시리스트}}-->
+		</div>
+		<!--// 상품상세정보&관련상품 -->
+		<!-- 상품후기 -->
+		<div id="review" class="tabcnt_detail tabcnt_detail1 tabcnt_review">
+			<div class="detail_empty">
+				<h4>공병리뷰<span>({{$공병리뷰전체수}})</span></h4>
+				<p><span style="font-family: 나눔고딕, NanumGothic, sans-serif; font-size: 8pt;"><br>* 공병리뷰란? 제품을 배송 받자마자 작성하게 되어 <span style="color: rgb(252, 75, 1);">제품 만족도나 체감 효과에 대해 작성하기 어려웠던 기존 리뷰를 보완</span>하기 위한 에스더몰만의 새로운 리뷰 시스템으로, <span style="color: rgb(252, 75, 1);">구매확정 후 한 달이 지난 시점부터 작성할 수 있습니다.</span> 따라서 실제 섭취 경험을 토대로 보다 상세한 리뷰 작성과 열람이 가능합니다.</span></p>
+				
+				<div id="detail_empty_review_ajax_list" class="empty_review">
+					{{$공병리뷰리스트}}
+				</div>
+			</div>
+		</div>
+		<!-- //상품후기 -->
+		<!------------------------ 크리마 리뷰 --------------------->
+		<!------------------------ //크리마 리뷰 --------------------->
+
+		<!-- 상품문의 -->
+		<div id="qna" class="tabcnt_detail tabcnt_detail2 tabcnt_qna">
+			<h4 class="link" onclick="toggle_view('detail_qna',this), stopBodyScroll()">제품문의<span> ({{$상품질답개수}})</span></h4>
+			<div id="detail_qna" class="detail_qnarev qnarev_list popup_layer">
+				<h3 class="layer">제품문의</h3>
+				<a class="btn_close" onclick="toggle_view('detail_qna',this), goBodyScroll()">닫기</a>
+				<div class="layer_wrap">
+					<div class="title_qnarev">
+						<h4>제품문의 <span>({{$상품질답개수}})</span></h4>
+						<div class="btn">
+							<a href="{{$상품질답등록}}" class="write">글쓰기</a>
+							<a href="{{$상품질답보기}}" class="list">전체보기</a>
+						</div>
+					</div>
+					{{$상품질답회원등록폼}}
+					{{$상품질답비회원등록폼}}
+					{{$상품질답리스트}}
+				</div>
+			</div>
+		</div>
+		<!-- //상품문의 -->
+		<!-- 추천상품 -->
+		<div class="tabcnt_detail tabcnt_detail3 tabcnt_recom">
+			{{if(관련상품리스트)}}
+				<div class="relative">
+					<h3><p>기획세트로 구매하시면</p>할인율이 높아져요</h3>
+					{{$관련상품리스트}}
+				</div>
+			{{endif(관련상품리스트)}}
+			{{if(관련상품리스트2)}}
+				<div class="relative">
+					<h3 class="ai"><p>“{{$상품명}}” 구매한 고객들이 함께 많이 본 상품</p>똑똑한 AI 추천</h3>
+					{{$관련상품리스트2}}
+				</div>
+			{{endif(관련상품리스트2)}}
+		</div>
+		<!-- //추천상품 -->
+		<!-- 쇼핑정책 -->
+		<div class="tabcnt_detail tabcnt_policy">
+			<h4 class="link" onclick="toggle_view('detail_policy',this)">유통기한·정보고시</h4>
+			<div id="detail_policy" style="display: none;">
+				<div class="layer_wrap">
+					{{$상품정보고시리스트}}
+					{{if(배송정보)}}<div class="common_info">{{$배송정보}}</div>{{endif(배송정보)}}
+					{{if(반품취소안내)}}<div class="common_info">{{$반품취소안내}}</div>{{endif(반품취소안내)}}
+					{{if(AS안내)}}<div class="common_info">{{$AS안내}}</div>{{endif(AS안내)}}
+					
+				</div>
+			</div>
+		</div>
+		<!-- //쇼핑정책 -->
+		<!-- 최근 본 상품 -->
+		<div class="tabcnt_detail tabcnt_recent">
+			<h4>최근 본 상품</h4>
+			<div class="layer_wrap">{{$최근상품리스트}}</div>
+		</div>
+		<!-- //최근 본 상품 -->
+	</div>
+	<!-- //상품 상세정보 -->
+</div>
+<script type="text/javascript">
+	// 상품 수량조절
+	var f=document.prdFrm;
+	function eaChg(pm){
+		if (pm==1) {
+			f.buy_ea.value++;
+		}
+		else {
+			if (f.buy_ea.value<=1) {
+				return;
+			}
+			f.buy_ea.value--;
+		}
+		totalCal(f);
+	}
+
+	// 컬러칩 사용자 정의
+	function selectColorOption(idx, no) {
+		$('.optChipSet'+idx).removeClass('selected');
+		$('.optChipItem'+no).addClass('selected');
+	}
+	// 옵션 유무에 따른 수량 제어
+	if($('#detail .opt_wrap').size() > 0){
+		$('.opt_ea').hide();
+	}
+	// 판매율 50% 이하일 경우 남은수량 화살표 위치 변경
+	var stockBar = $('#detail .prdimg .stock .stock_bar');
+	var stockBarWidth = parseInt(stockBar.css('width'));
+	if (stockBarWidth < 50) {
+		stockBar.children('.stock_tag').addClass('left');
+	}
+	// 옵션박스 radio disabled
+	$('#detail .info .optbox table.list tr > td label').each(function(){
+		if($(this).find('input[type=radio]').attr('disabled') ){
+			$(this).addClass('out');
+		}
+	});
+
+	//옵션박스 체크 on 스타일
+	var optLists = $('#detail .info .optbox table.list tr > td label');
+	optLists.on('click', function(){
+		optLists.removeClass('on');
+		if($(this).children('input').is(':checked')){
+			$(this).addClass('on');
+		}
+	});
+
+	$(document).ready(function(){
+		$('header').addClass('detail');
+	});
+
+	// 판매율 50% 이하일 경우 남은수량 화살표 위치 변경
+	$('#detail .stock .stock_bar').each(function(){
+		var stockBarWidth = $(this).css('width');
+		stockBarWidth = parseInt(stockBarWidth);
+		if (stockBarWidth < 50) {
+			$(this).children('.stock_tag').addClass('left');
+		}
+	});
+
+
+	// 탭 이동
+	function tabmove(no) {
+		var pos = $('#detail .tabcnt_detail'+no).offset();
+		var extra_space = $('#detail .tab_area').height();
+		var extra_space2 = $('header .header_wrap').height();
+		var extra_space3 = $('#detail .timer_top').height();
+		var duration = "400";
+		$('html, body').animate({scrollTop : pos.top - extra_space - extra_space2 - extra_space3}, duration);
+	}
+	function scroll_page(){
+		var header_h = $('header .header_wrap').height()
+		var body_h = $(this).scrollTop() + header_h;
+		var tab_s = $('#detail .tab_area').offset().top;
+		var tab_h = $('#detail .tab_area').height();
+		//var timer_h = $('#detail .timer_top').height();
+		var timer_h = $('#detail .timer_top').css('display') == 'block' ? 40 : 0;
+
+		if( body_h + timer_h > tab_s ){
+			$('#detail .tab').addClass('fixed');
+			if($('#detail .timer_top').size() > 0){
+				$('#detail .tab.fixed').css('top', (header_h + timer_h));
+			}
+		} else {
+			$('#detail .tab').removeClass('fixed');
+			if($('#detail .timer_top').size() > 0){
+				$('#detail .tab.fixed').removeAttr('style');
+			}
+		}
+		var section_top = new Array();
+		$('.tabcnt_detail').each(function(idx){
+			section_top[idx] = Math.floor($(this).offset().top - tab_h - timer_h);
+		});
+		
+		$('.tab_detail li a').removeClass('active');
+
+		if(body_h >= section_top[0] && body_h < section_top[1]) {
+			$('.tab_detail li:nth-child(1) a').addClass('active');
+		} else if(body_h >= section_top[1] && body_h < section_top[2]) {
+			$('.tab_detail li:nth-child(2) a').addClass('active');
+		} else if(body_h >= section_top[2] && body_h < section_top[3]) {
+			$('.tab_detail li:nth-child(3) a').addClass('active');
+		} else if(body_h >= section_top[3]) {
+			$('.tab_detail li:nth-child(4) a').addClass('active');
+		}
+	}
+
+	$(window).ready(function(){
+		scroll_page();
+	});
+	$(window).scroll(function(){
+		scroll_page();
+
+		/* 헤더 , 하단바 고정 */
+		if ( $('#detail').size() > 0){
+			if ($('.rollingBnr_wrap').size() > 0)
+			{
+				if (y > 37){
+				$('#detail .timer_top').addClass('fixed');
+				}
+				else {
+					$('#detail .timer_top').removeClass('fixed');
+				}
+			}
+			else {
+			
+				if (y > 0){
+					$('#detail .timer_top').addClass('fixed');
+				}
+				else {
+					$('#detail .timer_top').removeClass('fixed');
+				}
+			}
+		}
+	});
+
+	// 최저가 계산기 옵션박스 안으로 삽입
+	var discList = $('#detail .info > .disc_list').html();
+	$('#detail .info > .disc_list').remove(); // 아이디 중복으로 원본 삭제
+	$('#detail .multi_opt .opt_total_wrap').prepend(discList);
+
+	function hideFakebtn(){
+		$('#detail .info > .quick_bar .btn_buy.fake').css('display','none');
+		$('#detail .info > .quick_bar .btn_buy.real').css('display','inline-block');
+		$('#detail .info > .quick_bar .btn_cart.fake').css('display','none');
+		$('#detail .info > .quick_bar .btn_cart.real').css('display','inline-block');
+	}
+	function showFakebtn(){
+		$('#detail .info > .quick_bar .btn_buy.fake').css('display','inline-block');
+		$('#detail .info > .quick_bar .btn_buy.real').css('display','none');
+		$('#detail .info > .quick_bar .btn_cart.fake').css('display','inline-block');
+		$('#detail .info > .quick_bar .btn_cart.real').css('display','none');
+	}
+
+	// optbox 열려있을 때 optbox 닫히면서 후기로 앵커이동
+	function hideOptbox(){
+		$('#optbox').slideUp();
+		showFakebtn();
+		$('body').removeClass('view_nav');
+	}
+
+	$(window).ready(function(){
+		// optbox 열려있을 때 dimmed 클릭하면 닫힘
+		$('#dimmed').on('click',function(){
+			if($('#optbox').css('display') == 'block'){
+				$('#optbox').slideUp();
+				 showFakebtn();
+			}
+		});
+	});
+	
+
+</script>
+
+<!-- cre.ma / 상품 번호 / 스크립트를 수정할 경우 연락주세요 (support@cre.ma) -->
+<script class="crema-product-code" data-product-code="{{$원본상품번호}}"></script>
+
+
+<!-- Start Script for IFDO (상품조회 분석) -->
+<script type='text/javascript'>
+var _NB_CT = ''; /* 카테고리명 */
+var _NB_PD = '{{$상품명}}'; /* 제품명 */
+if(typeof document.prdFrm.pno == 'object') var _NB_PC = document.prdFrm.pno.value; /* 제품코드 */
+var _NB_AMT = '{{$판매가격}}'; /* 제품가격 */
+var _NB_DAMT = ''; /* 제품할인가격 */
+function _LastMetaTag(a ,b) {var metas = document.getElementsByTagName('meta');var e='';for (var i=0; i<metas.length; i++) { if (metas[i].getAttribute(a) == b) { e= metas[i].getAttribute('content'); }};return e;};
+var _NB_IMG = _LastMetaTag('property','og:image'); /* 제품이미지 */
+var _NB_PD_USE = ''; /* 현재 상품이 품절인 경우 N 값을 넣어주세요 */
+</script><!-- End Script for IFDO -->
+
+
