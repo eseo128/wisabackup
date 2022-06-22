@@ -38,9 +38,9 @@
 				<li class="big tab">
 					<a onclick="toggle_view('mid_brand',this)">BRAND</a>
 					<ul id="mid_brand" class="mid_cate">
-						<li class="mid"><a href="/content/content.php?cont=brandstory">BRAND STROY</a></li> 
-						<li class="mid"><a href="/content/content.php?cont=koreanherbs">KOREAN HERBS</a></li> 
-						<li class="mid"><a href="/content/content.php?cont=history">HISTORY</a></li> 
+						<li class="mid"><a href="/content/content.php?cont=brandstory_m">BRAND STROY</a></li> 
+						<li class="mid"><a href="/content/content.php?cont=koreanherbs_m">KOREAN HERBS</a></li> 
+						<li class="mid"><a href="/content/content.php?cont=history_m">HISTORY</a></li> 
 					</ul>
 				</li>
 				<li class="big tab">
