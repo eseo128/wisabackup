@@ -311,14 +311,14 @@
 	});
 
 	$(function(){
-		// 옵션 유무에 따른 수량 제어
+		//섭취시 주의사항, 전성분 토글
 		if($('#detail_title').size() > 0){
 			$('#detail .wrap_prd > .info > .list > tbody > tr:nth-child(2)').hide();
 		}
 
 		var dt3 = $(".tabcnt_detail2 .detail_title:nth-child(3)");
 		var dt5 = $(".tabcnt_detail2 .detail_title:nth-child(5)");
-		//섭취시 주의사항, 전성분 토글
+		
 		dt3.click(function(){  
 			$(".tabcnt_detail2 .detail_summary:nth-child(4)").toggle();
 			if(dt3.hasClass("active")){

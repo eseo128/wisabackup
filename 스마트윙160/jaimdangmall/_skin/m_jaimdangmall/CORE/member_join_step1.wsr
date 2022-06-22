@@ -1,10 +1,11 @@
-<div id="join_agree" class="wrap_inner2">
+<div id="join_agree">
 	<!-- <div class="all_chk">
 		<p class="check check_chg">{{$가입페이지전체동의}}<label for="agree_all">전체동의</label></p>
 		<p class="msg">전체 동의는 필수 및 선택 정보에 대한 동의도 포함되어 있으며, 개별적으로도 동의를 선택할 수 있습니다.</p>
 	</div> -->
 	<p class="check check_chg">{{$이용약관동의}}<label for="ck_agree">[필수] 이용약관 동의</label></p>
-	<iframe name="" src="/content/content.php?cont=join_rull&mode=1" frameborder="0"></iframe>
+	<iframe name="" src="/content/content.php?cont=join_rull&mode=1" frameborder="0">
+	</iframe>
 	<p class="check check_chg">{{$개인정보취급방침동의}}<label for="ck_privacy">[필수] 개인정보 수집 및 이용 동의</label></p>
 	<table class="tbl_row">
 		<caption class="hidden">개인정보 수집·이용 동의</caption>

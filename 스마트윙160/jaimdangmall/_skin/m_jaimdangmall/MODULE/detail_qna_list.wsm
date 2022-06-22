@@ -4,7 +4,8 @@
 	<li>
 		<div class="subject" onClick="{{$링크}}">
 			<p class="title">{{$비밀글아이콘}} {{$파일아이콘}} {{$새글아이콘}} {{if(카테고리)}}[{{$카테고리}}]{{endif(카테고리)}} {{$글제목(링크없음)}}</p>
-			<p class="stat">{{$글작성자}} | {{$글등록일}} | {{$글답변전아이콘}}{{$글답변아이콘}}</p>
+			<p class="stat">{{$글답변전아이콘}}{{$글답변아이콘}}</p>
+			<p class="stat">{{$글작성자}} | {{$글등록일}}</p>
 		</div>
 		<div id="revQna{{$글고유번호}}" class="content">
 			<!-- 상품별 질문과 답변 - {{$상품질답리스트}} 연동 -->
@@ -13,19 +14,19 @@
 <!-- 반복구문끝 -->
 </ul>
 <div class="btn_wrap">
-	<div class="box_btn write_btn brown">
+	{{if(다음페이지링크)}}
+	<div class="box_btn more more_btn brown block wrap_inner2"><a href="#" onclick="prdMore('qna_area', 'shop/detail.php', 'qna_list', {'btn':'.more_btn'}); return false;">더 보기</a></div>
+	{{endif(다음페이지링크)}}
+	<div class="box_btn write_btn trans wrap_inner2">
 		<a href="{{$상품질답등록}}" class="write">문의하기</a>
 	</div>
-	{{if(다음페이지링크)}}
-	<div class="box_btn more more_btn brown"><a href="#" onclick="prdMore('qna_area', 'shop/detail.php', 'qna_list', {'btn':'.more_btn'}); return false;">더 보기</a></div>
-	{{endif(다음페이지링크)}}
 </div>
 <!-- 반복문끝 -->
 
 <!-- 데이터없음시작 -->
 <p class="empty">등록된 상품 문의가 없습니다.</p>
 <div class="btn_wrap">
-	<div class="box_btn write_btn brown">
+	<div class="box_btn write_btn brown block">
 		<a href="{{$상품질답등록}}" class="write">문의하기</a>
 	</div>
 </div>

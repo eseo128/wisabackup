@@ -1,0 +1,23 @@
+<div id="qnarev_list_all">
+	<div class="board_search">
+		<form name="" method="get" action="{{$현재페이지주소}}">
+			<select name="search_column">
+				<option value="1">작성자</option>
+				<option value="2">아이디</option>
+				<option value="3">제목</option>
+			</select>
+			<input type="text" name="rsearch_str" class="form_input block search" placeholder="검색어를 입력하세요.">
+			<input type="submit" value="검색하기" class="btn_search">
+		</form>
+	</div>
+	<ul id="qna_list_body" class="list_qnarev">
+		{{$질답공지리스트}}
+		{{$질답리스트}}
+	</ul>
+	{{if(다음페이지링크)}}
+	<div class="box_btn block more more_btn wrap_inner2"><a href="#" onclick="prdMore('qna_list_body', 'shop/product_qna_list.php', 'qna_total_list', {'btn':'.more_btn'}); return false;">더 보기</a></div>
+	{{endif(다음페이지링크)}}
+	<div class="box_btn block trans wrap_inner2"><a href="{{$상품질답등록}}">문의하기</a></div>
+	{{$상품질답회원등록폼}}
+	{{$상품질답비회원등록폼}}
+</div>
