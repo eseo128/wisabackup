@@ -203,7 +203,7 @@ function tabover(name, no) {
 
 /* search 메뉴 토글 */
 function toggle_search(name) {
-	var obj_name = $('div.'+name);
+	var obj_name = $('#box_search.'+name);
 	if(obj_name.hasClass('is_show')) {
 		$('body').removeClass('view_nav');
 		obj_name.removeClass('is_show');

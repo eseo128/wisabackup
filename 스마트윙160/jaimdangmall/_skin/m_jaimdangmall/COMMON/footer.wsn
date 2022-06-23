@@ -33,21 +33,9 @@
 		</div>
 	</div>
 </footer>
-</div>
 <div id="dimmed"></div>
 <script>
-//검색버튼 클릭시 2depth 숨김처리
-function notScroll(){
-	$(".toggle_search").click(function(){
-		if($(".toggle_search").hasClass("active")){
-			$("body").addClass("view_nav");
-		}else {
-			$("body").removeClass("view_nav");
-		}
-	});
-}
-
-	/* 헤더 스크롤 */
+/* 헤더 스크롤 */
 function hdchg(){
 	var y=$(window).scrollTop();
 	if( y > 0 ){

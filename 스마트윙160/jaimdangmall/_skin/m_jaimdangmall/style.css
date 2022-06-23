@@ -192,7 +192,7 @@ input[type=text], input[type=password], input[type=submit], input[type=button], 
 .i_info {display:inline-block; position:relative; top:4px; width:15px; height:15px; background:url('{{$이미지경로}}/common/icon_info.png') no-repeat center/15px; font-style:normal; font-weight:normal; line-height:1;}
 
 /* input 기본 스타일 */
-.form_input {height:34px; padding:4px 10px; border:1px solid #dcdcdc; background:#f9f5f4; color:#666; font-family:sans-serif; font-size:1rem; transition:all .3s ease;}
+.form_input {height:34px; padding:4px 10px; border:1px solid #dcdcdc; background:#fff; color:#666; font-family:sans-serif; font-size:1rem; transition:all .3s ease;}
 .form_input:focus {border-color:#000; outline:none !important;}
 .form_input.block {width:100% !important;}
 .form_input:-ms-input-placeholder {color:#666; font-family:sans-serif;}
@@ -204,7 +204,7 @@ input[type=text], input[type=password], input[type=submit], input[type=button], 
 textarea.form_input {height:auto;}
 
 /* 셀렉트 */
-select {max-width:100%; height:34px; padding:4px 6px; border:1px solid #dcdcdc; border-radius:0; background:url('{{$이미지경로}}/common/select_arrow.png') no-repeat 98% center/10px 6px #f9f5f4; color:#666; font:inherit; -webkit-appearance:none;}
+select {max-width:100%; height:34px; padding:4px 6px; border:1px solid #dcdcdc; border-radius:0; background:url('{{$이미지경로}}/common/select_arrow.png') no-repeat 98% center/10px 6px #fff; color:#666; font:inherit; -webkit-appearance:none;}
 select.block {width:100%;}
 select:focus {border-color:#000; outline:none !important;}
 
@@ -419,10 +419,10 @@ input[type=checkbox][disabled] + strong {opacity:.3;}
 .box_btn.w350 > * {width:350px;}
 
 /* 버튼스타일 - 색상 */
-.box_btn.white * {border-color:#c3c3c3; background:#fff; color:#666 !important;}
+.box_btn.white * {border-color:#936053; background:#f9f5f4; color:#936053 !important;}
 .box_btn.white:hover *,
 .box_btn.white:active *,
-.box_btn.white:focus * {background:#f5f5f5;}
+.box_btn.white:focus * {background:#f9f5f4;}
 .box_btn.gray * {border-color:#f5f5f5; background:#f5f5f5; color:#666 !important;}
 .box_btn.gray:hover *,
 .box_btn.gray:active *,
@@ -527,8 +527,7 @@ input[type=checkbox][disabled] + strong {opacity:.3;}
 /* 3-1. wrapper
 /*-----------------------------------------------------------------*/
 
-#wrapper {background:#f9f5f4; overflow-x: hidden;}
-#cnt {min-height:450px;}
+#cnt {min-height:450px; background:#f9f5f4;}
 .wrap_inner {padding:4.68%;} /* 컨텐츠 사이즈 */
 .wrap_inner2 {padding:0 5.5%;} /* 컨텐츠 사이즈 */
 .wrap_inner3 {padding:0 8.3%;} /* 컨텐츠 사이즈 */
@@ -538,7 +537,7 @@ body.view_nav {overflow:hidden;}
 /* 3-2. header
 /*-----------------------------------------------------------------*/
 
-header {position:relative; width:100%; height:60px; text-align:center;}
+header {position:relative; width:100%; height:60px; background:#f9f5f4; text-align:center;}
 header .gnb_box {display:flex; justify-content:center; align-items:center; position:absolute; top:0; z-index:5; width:100%; height:inherit; background:inherit; transition:0.5s background cubic-bezier(0,0,0,1);}
 header .gnb_box a.logo {display:inline-block; width:43px; height:20.5px; background:url("{{$이미지경로}}/logo/logo_black.png") no-repeat center/cover;}
 header .gnb_box .gnb li a {display:block; position:absolute; top:0; width:25px; height:60px; background-repeat:no-repeat; background-position:center; color:transparent; text-align:center;}
@@ -1114,10 +1113,14 @@ footer .btn_scroll a {display:block; height:60px; border-radius:50%; background-
 #qnarev_list_all .photo_sort .sort li a.selected {padding-left:13px; background:url('{{$이미지경로}}/common/bullet_check.png') no-repeat left center; color:#333; font-weight:bold;}
 #qnarev_list_all .board_search {clear:both; margin:0 5.5% 25px; border:1px solid #aaa;}
 #qnarev_list_all .board_search form {position:relative; padding:0 38px 0 65px; background: #fff; text-align:center;}
-#qnarev_list_all .board_search select {position:absolute; left:0; top:0; border:0; width:65px; height: 25px; background-color: #fff;}
-#qnarev_list_all .board_search input.form_input.search {height: 25px; border-width:0 1px; border-color: #aaa; background: #fff;}
+#qnarev_list_all .board_search select {position:absolute; left:0; top:0; border:0; width:65px; height: 25px; background-color: #fff; background-position: 90%; font-size: 0.917rem;}
+#qnarev_list_all .board_search input.form_input.search {height: 25px; border-width:0 1px; border-color: #aaa; background: #fff; font-size: 0.917rem;}
 #qnarev_list_all .board_search .btn_search {position:absolute; right:-1px; top:-1px; display:inline-block; width:70px; height:27px; border:0; background: #936053; color: #fff; font-size: 0.917rem; cursor:pointer;}
 #qnarev_list_all > .box_btn.more {margin:0 0 5px 0;}
+
+#qna_list .list_qnarev > li {padding: 15px;}
+#qna_list .list_qnarev > li > .subject {padding-bottom: 15px;}
+#qna_list .list_qnarev > li > .content {padding: 15px 0;}
 
 /* 상품문의 & 상품후기 & 마이페이지 상품문의 & 마이페이지 상품후기 - 상품정보(/shop/product_review.php & /shop/product_qna.php) */
 .qnarev_list > .prd {overflow:hidden; position:relative; padding-bottom:15px;}
@@ -1147,7 +1150,7 @@ footer .btn_scroll a {display:block; height:60px; border-radius:50%; background-
 .list_qnarev > li > .subject > p.stat {color:#666; font-size:0.833rem;}
 .list_qnarev > li > .subject > p.stat * {color:#666; font-size:0.833rem;}
 .list_qnarev > li > .subject > p.stat img {width:auto; height:11px; margin-top:3px; vertical-align:top;}
-.list_qnarev > li > .content {display:none; padding:15px; border-top:1px solid #dbdbdb; background:#fafafa;}
+.list_qnarev > li > .content {display:none; padding:15px; border-top:1px solid #dbdbdb; background:#f9f5f4;}
 .list_qnarev > li > .content .question {position:relative; min-height:45px; padding:0 0 15px 43px; border-bottom:1px solid #e1e1e1;}
 .list_qnarev > li > .content .question:before {display:inline-block; position:absolute; left:0; top:0; width:29px; height:29px; border-radius:50%; background-color:#777474; color:#fff; font-family:'arial'; font-size:1.167rem; text-align:center; line-height:29px; content:'Q';}
 .list_qnarev > li > .content .answer {position:relative; min-height:30px; margin:15px 0; padding-left:43px;}
@@ -1170,7 +1173,7 @@ footer .btn_scroll a {display:block; height:60px; border-radius:50%; background-
 .qnarev_write_popup > .close:before {position:absolute; left:0; top:16px; width:20px; height:2px; background-color:#b7b7b7; -ms-transform:rotate(-45deg); -webkit-transform:rotate(-45deg); transform:rotate(-45deg); content:'';}
 .qnarev_write_popup > .close:after {position:absolute; left:0; top:16px; width:20px; height:2px; background-color:#b7b7b7; -ms-transform:rotate(45deg); -webkit-transform:rotate(45deg); transform:rotate(45deg); content:'';}
 .qnarev_write_popup .qnarev_write {padding:15px;}
-.qnarev_write {overflow:auto; width:100%; height:100%; margin:30px auto 0; background:#f9f5f4; text-align:center;}
+.qnarev_write {overflow:auto; height:100%; margin:30px 5.5% 0 5.5%; background:#f9f5f4; text-align:center;}
 .qnarev_write form {display:inline-block; width:100%; text-align:left;}
 .qnarev_write fieldset > legend {display:block; width:100%; margin-bottom:25px; padding-bottom:15px; border-bottom:1px solid #000; font-size:1.167rem; font-weight:bold;}
 .qnarev_write fieldset > div {position:relative; margin-bottom:10px;}
@@ -1393,8 +1396,8 @@ footer .btn_scroll a {display:block; height:60px; border-radius:50%; background-
 /*-----------------------------------------------------------------*/
 
 /* 로그인 & 아이디 비밀번호 찾기 & 비밀번호 변경 */
-.box_member {width:100%; padding:0 5.5%;}
-.box_member .tab_member {padding:0 0 165px; font-size:0; text-align:center;}
+.box_member {width:100%; padding:0 5.5% 165px;}
+.box_member .tab_member {font-size:0; text-align:center;}
 .box_member .tab_member > li a {padding: 0; height: 48px; font-size: 1.25rem; line-height: 48px;}
 .box_member .tab_member > li a.active {display: none;}
 .box_member fieldset {position:relative;}
@@ -1421,6 +1424,7 @@ footer .btn_scroll a {display:block; height:60px; border-radius:50%; background-
 .box_member .find_pw_item_3 {display:none;}
 
 /* 로그인(/member/login.php) */
+#login {}
 #login .subtitle {padding: 30px 0 40px;}
 #login .join_btn > a {width: 100%; height: 48px; padding: 0; font-size: 1.25rem; line-height: 48px;}
 #login .login_text > span {display: block; margin: 17.5px 0 33px 0; color:#3f2625; font-size:0.917rem; font-weight: 700; text-align: center;}

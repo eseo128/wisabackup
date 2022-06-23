@@ -4,7 +4,6 @@
 <!-- crema.me / 로그인 회원 정보 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
 <i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
 <i id="crema-login-name" style="display:none;">{{$회원명}}</i>
-<div id="wrapper">
 <header>
 	<div class="gnb_box">
 		<a class="logo" href="/"></a>

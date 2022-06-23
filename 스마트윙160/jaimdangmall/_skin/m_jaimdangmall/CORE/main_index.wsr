@@ -1,5 +1,6 @@
 <style>
 	#cnt {margin-top: -60px;}
+	header {background: none;}
 	header .gnb_box a.logo {background: url("{{$이미지경로}}/logo/logo.png") no-repeat center/cover;}
 	header .gnb_box .gnb li.category a {background-image:url('{{$이미지경로}}/common/icon_category.png');}
 	header .gnb_box .gnb li.search a {background-image:url('{{$이미지경로}}/common/hd_search.png');}

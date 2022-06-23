@@ -26,7 +26,7 @@
 <!-- 데이터없음시작 -->
 <p class="empty">등록된 상품 문의가 없습니다.</p>
 <div class="btn_wrap">
-	<div class="box_btn write_btn brown block">
+	<div class="box_btn write_btn trans wrap_inner2">
 		<a href="{{$상품질답등록}}" class="write">문의하기</a>
 	</div>
 </div>

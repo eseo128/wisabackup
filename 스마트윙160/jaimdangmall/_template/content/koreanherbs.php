@@ -1,6 +1,7 @@
 <style>
     #cnt {padding-bottom:0;}
     #cnt .cntbody {width: 100%;}
+    #header {background: none;}
     #header .gnb * {color:#fff;}
     #header .gnb .left_menu > li.language > a {background:url('{{$이미지경로}}/common/language_arrow.png') no-repeat right center;}
     #header .gnb h1 > a {background:url('{{$이미지경로}}/logo/logo.png') no-repeat center;}

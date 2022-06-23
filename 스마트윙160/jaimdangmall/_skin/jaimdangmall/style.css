@@ -137,7 +137,7 @@ a:focus {text-decoration:none; cursor:pointer;}
 .i_info {display:inline-block; position:relative; top:4px; width:16px; height:16px; background:url('{{$이미지경로}}/common/icon_info.png') no-repeat center; font-style:normal; font-weight:normal; line-height:1;}
 
 /* input 기본 스타일 */
-.form_input {height:40px; padding:4px 10px; border:1px solid #dcdcdc; background:#f9f5f4; color:#666; font-family:'Crimson Pro', 'TrajanPro', 'AppleSDGothicNeo', 'NanumMyeongjo', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum, '돋움', sans-serif; font-size:12px; transition:all .3s ease;}
+.form_input {height:40px; padding:4px 10px; border:1px solid #dcdcdc; background:#fff; color:#666; font-family:'Crimson Pro', 'TrajanPro', 'AppleSDGothicNeo', 'NanumMyeongjo', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum, '돋움', sans-serif; font-size:12px; transition:all .3s ease;}
 .form_input:focus {border-color:#000; outline:none !important;}
 .form_input.block {width:100% !important;}
 .form_input:-ms-input-placeholder {color:#666; font-family:'Crimson Pro', 'TrajanPro', 'AppleSDGothicNeo', 'NanumMyeongjo', Malgun Gothic, '맑은 고딕', AppleGothic, Dotum, '돋움', sans-serif;}
@@ -151,7 +151,7 @@ a:focus {text-decoration:none; cursor:pointer;}
 textarea.form_input {height:auto;}
 
 /* 셀렉트 */
-select {max-width:100%; height:40px; padding:4px 6px; border:1px solid #dcdcdc; background:#f9f5f4; color:#666; font:inherit;}
+select {max-width:100%; height:40px; padding:4px 6px; border:1px solid #dcdcdc; background:#fff; color:#666; font:inherit;}
 select.block {width:100%;}
 select:focus {border-color:#000; outline:none !important;}
 
@@ -417,10 +417,10 @@ input[type=radio]:checked {background-image:url('{{$이미지경로}}/common/rad
 .box_btn.w350 > * {width:350px;}
 
 /* 버튼스타일 - 색상 */
-.box_btn.white * {border-color:#c3c3c3; background:#fff; color:#666 !important;}
+.box_btn.white * {border-color:#936053; background:#f9f5f4; color:#936053 !important;}
 .box_btn.white:hover *,
 .box_btn.white:active *,
-.box_btn.white:focus * {background:#f5f5f5;}
+.box_btn.white:focus * {background:#f9f5f4;}
 .box_btn.gray * {border-color:#f5f5f5; background:#f5f5f5; color:#666 !important;}
 .box_btn.gray:hover *,
 .box_btn.gray:active *,
@@ -542,7 +542,7 @@ input[type=radio]:checked {background-image:url('{{$이미지경로}}/common/rad
 /* 3-1. wrapper
 /*-----------------------------------------------------------------*/
 
-#wrapper {position:relative; min-width:1200px; background:#f9f5f4; text-align:left;}
+#wrapper {position:relative; min-width:1200px; text-align:left;}
 #container {overflow:hidden;}
 .dim {position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:19;}
 .dim2 {position:fixed; width:100%; height:100%; top:0; left:0; background-color:transparent; z-index:19;}
@@ -560,7 +560,7 @@ body.not_scroll .dim{display:block !important;}
 /* 3-2. header
 /*-----------------------------------------------------------------*/
 
-#header {position:relative; display:block; height:182px; background:transparent; z-index:22;}
+#header {position:relative; display:block; height:182px; background:#f9f5f4; z-index:22;}
 #header .gnb {position:absolute; top:0; width:100%; height:100px;}
 #header .gnb .wrap_inner2 {position:relative; text-align:center;}
 #header .gnb * {color:#000; font-size:14px; font-weight:300;}
@@ -631,7 +631,7 @@ body.not_scroll .dim{display:block !important;}
 /* 3-3. content
 /*-----------------------------------------------------------------*/
 
-#cnt {width:100%; min-height:1250px; padding-bottom:205px;}
+#cnt {width:100%; min-height:1250px; padding-bottom:205px; background:#f9f5f4;}
 #cnt .cntbody {position:relative; width:1200px; margin:0 auto;}
 
 /*-----------------------------------------------------------------*/
@@ -739,7 +739,7 @@ body.not_scroll .dim{display:block !important;}
 #big_section .sub_category li a:hover {color:#333;}
 
 /* 상품상세페이지(/shop/detail.php) */
-#detail {width:1180px; margin:0 auto; margin-top:50px;}
+#detail {width:1180px; margin:0 auto; padding-top:50px;}
 #detail * {font-family:'AppleSDGothicNeo';}
 #detail .wrap_prd {display:flex; justify-content:center; overflow:hidden; position:relative;}
 #detail .wrap_prd > .prdimg {position:relative; float:left; width:560px; margin-top:20px; margin-right:20px;}
@@ -922,9 +922,12 @@ body.not_scroll .dim{display:block !important;}
 #detail .tabcnt_detail3 .detail_qnarev #detail_qna_ajax_list .tbl_col.board > tbody > tr > td * {font-size:15px; font-weight:400;}
 #detail .tabcnt_detail3 .detail_qnarev #detail_qna_ajax_list .tbl_col.board > tbody > tr > td .empty {padding:0 !important;}
 #detail .tabcnt_detail3 .detail_qnarev #detail_qna_ajax_list .tbl_col.board > tbody > tr > td:nth-child(3) > img {width:66px;}
-#detail .tabcnt_detail3 .detail_qnarev #detail_qna_ajax_list .paging {margin-top:135px;}
-#detail .tabcnt_detail3 .detail_qnarev .qna_btn {display:block; position:absolute; bottom:95px; width:100%; text-align:center;}
-#detail .tabcnt_detail3 .detail_qnarev .qna_btn > a {display:inline-block; width:180px; height:50px; background-color:#936053; color:#fff; font-size:17px; line-height:50px; text-align:center;}
+#detail .tabcnt_detail3 .detail_qnarev #detail_qna_ajax_list .qna_btn {display:block; margin-top: 20px; text-align:center;}
+#detail .tabcnt_detail3 .detail_qnarev #detail_qna_ajax_list .qna_btn > a {display:inline-block; width:180px; height:50px; background-color:#936053; color:#fff; font-size:17px; line-height:50px; text-align:center;}
+#detail .tabcnt_detail3 .detail_qnarev #detail_qna_ajax_list .paging {margin-top:63px;}
+#detail .tabcnt_detail3 .qnarev_write {background: #fff;}
+#detail .tabcnt_detail3 .qnarev_write select,
+#detail .tabcnt_detail3 .qnarev_write .form_input {background: #fff;}
 #detail .detail_qnarev .title_qnarev {position:relative; margin-top:40px; padding-bottom:25px; border-bottom:1px solid #333;}
 #detail .detail_qnarev .title_qnarev.none {border-bottom:0;}
 #detail .detail_qnarev .title_qnarev > h3 {font-size:18px;}
@@ -1199,12 +1202,12 @@ body.not_scroll .dim{display:block !important;}
 #qnarev_list_all .board_search {clear:both; text-align:center;}
 #qnarev_list_all .board_search form {display:inline-block; position:relative; margin:80px auto 0; border-width:0; color:#666; font-size:13px; text-align:center;}
 #qnarev_list_all .board_search form * {height:25px; font-family:'NanumMyeongjo'; font-weight:700;}
-#qnarev_list_all .board_search select {padding:0; border:1px solid #936053; border-width:0 0 1px 0; width:100px;}
+#qnarev_list_all .board_search select {padding:0; border:1px solid #936053; border-width:0 0 1px 0; width:100px; background: #f9f5f4;}
 #qnarev_list_all .board_search input.form_input.search {width:200px; margin-left:10px; border:1px solid #936053; border-width:0 0 1px 0; background:#f9f5f4;}
 #qnarev_list_all .board_search .btn_search {display:inline-block; position:absolute; bottom:5px; right:0; width:18px; height:18px; border:0; background:url('{{$이미지경로}}/button/search_brown.png') no-repeat center/18px; text-indent:-9999px; cursor:pointer;}
 
 /* 상품문의 & 상품후기 & 마이페이지 상품문의 & 마이페이지 상품후기 - 상품정보(/shop/product_review.php & /shop/product_qna.php) */
-.qnarev_list .prd {overflow:hidden; position:relative; min-height:150px; padding:40px 50px; margin-bottom:32px; background:#fafbfb; color:#474645;}
+.qnarev_list .prd {overflow:hidden; position:relative; min-height:150px; padding:40px 50px; margin-bottom:32px; background:#f9f5f4; color:#474645;}
 .qnarev_list .prd .img {float:left; width:150px;}
 .qnarev_list .prd .img img {width:150px; height:auto;}
 .qnarev_list .prd .info {float:left; padding-left:40px; text-align:left;}
@@ -1472,6 +1475,9 @@ body.not_scroll .dim{display:block !important;}
 .box_member .tab_member > li a {position:relative; font-size:17px;cursor:pointer;}
 .box_member .tab_member > li a.active {color:#925f52; font-weight:700;}
 .box_member .tab_member > li a.active:after {display:inline-block; position:absolute; left:-10%; bottom:-5px; width:120%; height:1px; background-color:#925f52; content:'';}
+.box_member .find_id {padding: 0 30px; border: 1px solid #cacaca;}
+.box_member .find_pw {padding: 0 30px; border: 1px solid #cacaca;}
+.box_member .find_pw .box_btn * {height: 185px; line-height: 185px;}
 .box_member fieldset {position:relative;}
 .box_member fieldset legend {padding:25px 0; font-weight:bold;}
 .box_member fieldset .fld {position:relative; width:350px; margin-bottom:10px; font-size:0;}
