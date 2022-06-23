@@ -254,7 +254,7 @@ h3.title {padding:30px 0 20px;}
 .box_timer.big > .title {padding:5px 10px; font-size:12px;}
 .box_timer.big > .title:before {margin-top:3px;}
 .box_timer.big > ._timesale_timer * {font-size:13px; line-height:29px;}
-#detail .box_timer {float:right; margin-top:-40px;}
+#detail .box_timer {float:right; margin-top:-30px;}
 
 /* 이메일 자동 완성 */
 .auto_complete_dialog {display:none; position:absolute; z-index:10; width:100%; margin-top:-1px; padding:10px 0; border:1px solid #535353; background-color:#fff; word-break:break-all;}
@@ -776,8 +776,8 @@ body.not_scroll .dim{display:block !important;}
 #detail .wrap_prd > .info > .price .discount {display:none;}
 #detail .wrap_prd > .info > .price .discountY {display:inline-block;}
 #detail .wrap_prd > .info > .price .discountY .won {color:#925f52; font-size:30px;}
-#detail .wrap_prd > .info > .price .coupon {display:inline-block; padding-right:20px; background:url('{{$이미지경로}}/shop/download_coupon.png') no-repeat 90% center #676767; cursor:pointer;}
-#detail .wrap_prd > .info > .price .coupon strong {display:inline-block; padding:2px 5px; background:#363636; color:#fff; font-size:11px; font-weight:normal; letter-spacing:-1px;}
+#detail .wrap_prd > .info > .price .coupon {display:inline-block; margin-top: -30px; padding-right:25px; border: 1px solid #925f52; background:url('{{$이미지경로}}/shop/download_coupon2.png') no-repeat 95% center #f9f5f4; cursor:pointer; float: right;}
+#detail .wrap_prd > .info > .price .coupon strong {display:inline-block; padding: 0 0 0 4px; background:#f9f5f4; color:#936053; font-size:17px; font-weight:normal; letter-spacing:-1px;}
 #detail .wrap_prd > .info .pop_coupon {display:none; position:fixed; left:50%; top:100px; z-index:1001; width:650px; margin-left:-325px; padding:40px; border:1px solid #d9d9d9; background:#fff;}
 #detail .wrap_prd > .info .pop_coupon > h2 {color:#000; font-size:22px;}
 #detail .wrap_prd > .info .pop_coupon > .count {margin-top:20px; padding:15px 20px; background:#fafafa;}

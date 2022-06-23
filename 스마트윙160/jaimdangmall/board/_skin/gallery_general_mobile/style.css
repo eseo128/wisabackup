@@ -53,6 +53,10 @@
 #boardview > .boxview .content * {font-family:inherit; font-size:inherit; text-align:inherit; line-height:inherit;}
 #boardview > .boxview .content img {max-width:100%; height:auto;}
 #boardview > .btn {padding-top:15px; text-align:right;}
+.lc {background: #f9f5f4;}
+.lc .list_comment {background-color: #f9f5f4;}
+.lc .write_comment {background-color: #f9f5f4;}
+
 
 
 /*-----------------------------------------------------------------*/

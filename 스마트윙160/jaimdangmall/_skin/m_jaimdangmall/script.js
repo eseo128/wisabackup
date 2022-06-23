@@ -229,6 +229,19 @@ function toggle_slide(selector, obj){
 	}
 }
 
+/* 토글 slideup , down */
+function toggle_selectbox(selector, obj){
+	var search = $('#'+selector+'');
+	var obj = $(obj);
+	if (search.css('display') == 'none') {
+		obj.addClass('active');
+		search.slideDown(800);
+	} else {
+		obj.removeClass('active');
+		search.slideUp(800);
+	}
+}
+
 
 /* 전체체크 */
 function cartCheckAll(checked) {
@@ -273,9 +286,9 @@ $(window).scroll(function(){
 	}
 
 	if( y > 8.5 ){
-		$('header .gnb_box').addClass('fix');
+		$('header').addClass('fix');
 	} else {
-		$('header .gnb_box').removeClass('fix');
+		$('header').removeClass('fix');
 	}
 });
 function scrollup(){

@@ -20,7 +20,7 @@
 				{{if(참조할인후실판매가)}}({{$참조화폐단위전}}<strong>{{$참조할인후실판매가}}</strong>{{$참조화폐단위후}}){{endif(참조할인후실판매가)}}
 			</p>
 			{{if(상품쿠폰리스트)}}
-			<span class="coupon" onclick="toggle_view('pop_coupon');setDimmed();"><strong>쿠폰다운</strong></span>
+			<span class="coupon" onclick="toggle_view('pop_coupon');setDimmed();"><strong>쿠폰다운로드</strong></span>
 			{{$상품쿠폰리스트}}
 			{{endif(상품쿠폰리스트)}}
 			{{if(타임세일타이머)}}

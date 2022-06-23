@@ -2,7 +2,6 @@
 <div id="big_section">
 	<div class="prd_normal">
 		{{$사용자리스트7}}
-
 		</div>
 		{{$상품리스트}}
 	</div>

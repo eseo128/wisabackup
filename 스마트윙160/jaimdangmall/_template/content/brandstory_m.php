@@ -6,11 +6,11 @@
 	header .gnb_box .gnb li.search a {background-image:url('{{$이미지경로}}/common/hd_search.png');}
 	header .gnb_box .gnb li.cart a {background-image:url('{{$이미지경로}}/common/hd_cart.png');}
 	header .gnb_box .gnb li.cart a span {color:#fff;}
-	header .gnb_box.fix a.logo {background: url("{{$이미지경로}}/logo/logo_black.png") no-repeat center/cover;}
-	header .gnb_box.fix .gnb li.category a {top: 0; background-image:url('{{$이미지경로}}/common/icon_category_black.png');}
-	header .gnb_box.fix .gnb li.search a {top: 0; background-image:url('{{$이미지경로}}/common/hd_search_black.png');}
-	header .gnb_box.fix .gnb li.cart a {top: 0; background-image:url('{{$이미지경로}}/common/hd_cart_black.png');}
-	header .gnb_box.fix .gnb li.cart a span {color:#000;}
+	header.fix .gnb_box a.logo {background: url("{{$이미지경로}}/logo/logo_black.png") no-repeat center/cover;}
+	header.fix .gnb_box .gnb li.category a {top: 0; background-image:url('{{$이미지경로}}/common/icon_category_black.png');}
+	header.fix .gnb_box .gnb li.search a {top: 0; background-image:url('{{$이미지경로}}/common/hd_search_black.png');}
+	header.fix .gnb_box .gnb li.cart a {top: 0; background-image:url('{{$이미지경로}}/common/hd_cart_black.png');}
+	header.fix .gnb_box .gnb li.cart a span {color:#000;}
 </style>
 
 <div id="brandstory">
