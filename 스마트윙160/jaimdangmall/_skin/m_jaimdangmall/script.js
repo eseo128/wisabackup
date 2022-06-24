@@ -229,7 +229,7 @@ function toggle_slide(selector, obj){
 	}
 }
 
-/* 토글 slideup , down */
+/* menubox slideup , down */
 function toggle_selectbox(selector, obj){
 	var search = $('#'+selector+'');
 	var obj = $(obj);

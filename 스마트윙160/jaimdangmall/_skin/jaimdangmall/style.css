@@ -699,6 +699,8 @@ body.not_scroll .dim{display:block !important;}
 #main .signature .visual_progress {display:inline-block; overflow:hidden; width:83.3%; height:5px; margin:105px 0 140px; border-radius:10px; background-color:#e9dfdd; background-image:linear-gradient(to right, #936053, #936053); background-repeat:no-repeat; background-size:0 100%; transition:background-size 1s ease;}
 #main .signature .visual_progress_label {position:absolute; overflow:hidden; width:1px; height:1px; padding:0; margin:-1px; border:0; clip:rect(0,0,0,0);}
 #main .mid_bnr {position:relative;}
+#main .mid_bnr .video {overflow:hidden; position:relative; height:0; padding-bottom:56.25%;}
+#main .mid_bnr .video > iframe {position:absolute; top:0; bottom:0; left:0; width:100%; height:100%;}
 #main .mid_bnr img {width:100%;}
 #main .mid_bnr .shop_btn {display:block; width:100%; min-width:1200px; position:absolute; bottom:75px; text-align:center;}
 #main .mid_bnr .shop_btn > a > span {display:inline-block; width:250px; height:60px; border:1px solid #fff; color:#fff; font-family:'TrajanPro'; font-size:22px; line-height:60px;}
@@ -776,21 +778,20 @@ body.not_scroll .dim{display:block !important;}
 #detail .wrap_prd > .info > .price .discount {display:none;}
 #detail .wrap_prd > .info > .price .discountY {display:inline-block;}
 #detail .wrap_prd > .info > .price .discountY .won {color:#925f52; font-size:30px;}
-#detail .wrap_prd > .info > .price .coupon {display:inline-block; margin-top: -30px; padding-right:25px; border: 1px solid #925f52; background:url('{{$이미지경로}}/shop/download_coupon2.png') no-repeat 95% center #f9f5f4; cursor:pointer; float: right;}
+#detail .wrap_prd > .info > .price .coupon {display:inline-block; margin-top: -30px; padding-right:25px; border: 1px solid #925f52; background:url('{{$이미지경로}}/shop/download_coupon2.png') no-repeat 96% center #f9f5f4; cursor:pointer; float: right;}
 #detail .wrap_prd > .info > .price .coupon strong {display:inline-block; padding: 0 0 0 4px; background:#f9f5f4; color:#936053; font-size:17px; font-weight:normal; letter-spacing:-1px;}
-#detail .wrap_prd > .info .pop_coupon {display:none; position:fixed; left:50%; top:100px; z-index:1001; width:650px; margin-left:-325px; padding:40px; border:1px solid #d9d9d9; background:#fff;}
-#detail .wrap_prd > .info .pop_coupon > h2 {color:#000; font-size:22px;}
-#detail .wrap_prd > .info .pop_coupon > .count {margin-top:20px; padding:15px 20px; background:#fafafa;}
-#detail .wrap_prd > .info .pop_coupon > .list {overflow:auto; max-height:200px; margin-top:10px;}
-#detail .wrap_prd > .info .pop_coupon > .list > li {display:table; position:relative; width:100%; padding:15px; border-bottom:1px solid #e0e0e0; text-align:left;}
-#detail .wrap_prd > .info .pop_coupon > .list > li:first-child {border-top:1px solid #e0e0e0;}
-#detail .wrap_prd > .info .pop_coupon > .list > li > div {display:table-cell; vertical-align:middle; line-height:28px;}
-#detail .wrap_prd > .info .pop_coupon > .list > li > div.name {width:40%; font-weight:bold;}
-#detail .wrap_prd > .info .pop_coupon > .list > li > div.price {width:40%;}
-#detail .wrap_prd > .info .pop_coupon > .list > li > div.btn {width:20%; text-align:center;}
-#detail .wrap_prd > .info .pop_coupon > .list > li > div.btn span.box_btn * {min-width:100px;}
-#detail .wrap_prd > .info .pop_coupon > .list > li > div.btn span.fin {display:inline-block; min-width:100px; padding:4px 8px; border:1px solid #676767; background-color:#fff; color:#000;}
-#detail .wrap_prd > .info .pop_coupon > .close {display:inline-block; position:absolute; right:20px; top:20px; width:21px; height:21px; background:url('{{$이미지경로}}/button/hd_close.png') no-repeat center; text-indent:-9999px; cursor:pointer;}
+#detail .wrap_prd > .info .pop_coupon {display:none; position:fixed; left:50%; top:100px; z-index:1001; width:600px; margin-left:-325px; padding:60px 60px 60px 40px; background:#fff;}
+#detail .wrap_prd > .info .pop_coupon * {font-family: 'AppleSDGothicNeo';}
+#detail .wrap_prd > .info .pop_coupon > .count {color: #3f2625; font-size: 16px; font-weight: 700;}
+#detail .wrap_prd > .info .pop_coupon > .list {overflow:auto; max-height:220px; border: 1px solid #e8e8e8; border-width: 1px 0;}
+#detail .wrap_prd > .info .pop_coupon > .list > li {display: flex; justify-content: center; position:relative; width:100%; margin: 20px auto; border:1px solid #bbb; text-align:left;}
+#detail .wrap_prd > .info .pop_coupon > .list > li > ul {display: inline-block; width: 380px; padding: 40px 30px; text-align: left;}
+#detail .wrap_prd > .info .pop_coupon > .list > li > ul > li.name {display: block; color: #3f2625; font-size: 30px; font-weight:700;}
+#detail .wrap_prd > .info .pop_coupon > .list > li > ul > li.price {display: block; color: #3f2625; font-size: 16px;}
+#detail .wrap_prd > .info .pop_coupon > .list > li > div.btn {width:120px; background: #936053; color: #fff; font-size: 16px; font-weight: 700; text-align:center;}
+#detail .wrap_prd > .info .pop_coupon > .list > li > div.btn a {padding: 53px 20px; font-size: 16px; }
+#detail .wrap_prd > .info .pop_coupon > .list > li > div.btn span.fin {display: inline-block; color: #fff; font-size: 16px; line-height: 155px;}
+#detail .wrap_prd > .info .pop_coupon > .close {display:inline-block; width:100%; height:70px; margin-top: 20px; border:1px solid #936053; color: #936053; font-size: 26px; line-height: 70px; text-align: center; cursor:pointer;}
 #detail .wrap_prd > .info > .sbs {margin-top:15px; border:1px solid #e5e5e5; text-align:center;} 
 #detail .wrap_prd > .info > .sbs > label {display:inline-block; margin:0 15px; line-height:40px; cursor:pointer;}
 #detail .wrap_prd > .info > .today {margin:15px auto 0; padding:15px; border:1px solid #e5e5e5;}
@@ -1808,7 +1809,10 @@ body.not_scroll .dim{display:block !important;}
 .sbs_address > .btn {padding-top:20px; text-align:center;}
 
 /* 쿠폰(/mypage/coupon_down_list.php) */
-#coupon h3.title:first-child {padding-top:0;}
+#coupon .tbl_col > thead > tr > th {background: none;}
+#coupon .tbl_col > tbody > tr > td {font-size: 15px;}
+#coupon h3.title:first-child {color: #936053; font-family: 'NanumMyeongjo'; font-size: 36px; text-align: center;}
+#coupon h3.title:nth-child(2) {color: #936053; font-family: 'NanumMyeongjo'; font-size: 36px; text-align: center;}
 
 /* 소셜쿠폰(/mypage/sccoupon.php) */
 #sccoupon .box_mp .form_input {width:270px; margin-top:20px;}
@@ -1816,6 +1820,7 @@ body.not_scroll .dim{display:block !important;}
 
 /* 관심상품(/mypage/wish_list.php) */
 #wish_list * {font-size:15px;}
+#wish_list h3.title.first {font-size:36px;}
 #wish_list .btn {padding-top:30px; font-size:0; text-align:left;}
 #wish_list .btn .box_btn {margin-right:5px;}
 #wish_list .btn .box_btn.fr {margin-right:0;}

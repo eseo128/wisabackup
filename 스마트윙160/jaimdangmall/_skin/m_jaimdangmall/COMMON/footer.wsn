@@ -47,6 +47,5 @@ function hdchg(){
 
 $(document).ready(function (){
 	hdchg();
-	notScroll()
 });
 </script>

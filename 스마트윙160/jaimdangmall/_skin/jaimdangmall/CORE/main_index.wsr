@@ -27,7 +27,11 @@
 	</div>
 	<div class="mid_bnr">
 		<div class="wrap_inner">
-			<img src="{{$이미지경로}}/main/middle_bnr.png">
+			<!-- 비디오 영역 -->
+			<!-- <div class="video">
+				<iframe width="100vw" height="100vh" src="https://player.vimeo.com/video/719700110?h=7afb25b460?autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;&amp;muted=1&amp;background=1" frameborder="0" allowfullscreen="" allow="autoplay; fullscreen"></iframe>
+			</div> -->
+			<img src="{{$이미지경로}}/main/middle_bnr.png"> 
 			<div class="shop_btn"><a href="#"><span>SHOP NOW</span></a></div>
 		</div>
 	</div>
@@ -138,6 +142,7 @@ function bestSlide(no) {
 	});
 </script>
 <script type="text/javascript">
+	//스크롤 감도 조절
 	$(function(){
 		
 		var $window = $(window);		//Window object
