@@ -1,0 +1,148 @@
+		</div>
+	</div>
+	<!-- //중앙 -->
+	<!-- 하단 -->
+	<div id="footer">
+		<!-- 하단메뉴 -->
+		<div class="about">
+			<div class="about_box wrap_inner">
+				<div class="content">
+					<ul>
+						<li><a href="/content/content.php?cont=company">회사소개</a></li>
+						<li><a href="/content/content.php?cont=guide">이용안내</a></li>
+						<li><a href="/content/content.php?cont=uselaw">이용약관</a></li>
+						<li><a href="/content/content.php?cont=privacy"><strong>개인정보처리방침</strong></a></li>
+					</ul>
+				</div>
+				<div class="name"><span>LACTO</span></div>
+				<div class="tel" ><span>{{$회사전화번호}}</span></div>
+			</div>
+		</div>
+		<div class="quick">
+			<div class="quick_box wrap_inner">
+				<div class="bank_return">
+					<div class="bank">
+						<h3>Bank account.</h3>
+						{{$공통입금계좌정보}}
+					</div>
+					<div class="return">
+						<h3>Returns.</h3>
+						<span>반품주소 {{$반품지주소}}</span>
+					</div>
+				</div>
+				<div class="info">
+					<table>
+						<tr>
+							<td>Company.</td>
+							<td>{{$회사명}}</td>
+						</tr>
+						<tr>
+							<td>Ceo.</td>
+							<td>{{$대표자성명}}</td>
+						</tr>
+						<tr>
+							<td>Tel.</td>
+							<td>{{$회사전화번호}}</td>
+						</tr>
+						<tr>
+							<td>Email.</td>
+							<td><a href="mailto:{{$회사이메일}}">{{$회사이메일}}</a></td>
+						</tr>
+						<tr>
+							<td>Address.</td>
+							<td>{{$사업장주소}}</td>
+						</tr>
+						<tr>
+							<td>Business license number.</td>
+							<td>{{$사업자등록번호}} {{$사업자등록확인링크}}[사업자정보확인]</a></dd>
+						</tr>
+						<tr>
+							<td>Online business report number.</td>
+							<td>{{$통신판매신고번호}}</dd>
+						</tr>
+						<tr>
+							<td>Personal Information protection officer.</td>
+							<td>{{$보호관리책임자}}</dd>
+						</tr>
+						<tr>
+							<td>Hosting provider.</td>
+							<td>(주)위사</dd>
+						</tr>
+					</table>
+					<span>구매안전서비스 <a href="{{$에스크로가입확인}}">[에스크로 가입사실 확인]</a></span>
+				</div>
+				<div class="cs">
+					<ul class="time">
+						<li>AM 10:00 ~ PM 18:00 OFF</li>
+						<li>TIME PM12:00 ~ PM 01:00</li>
+						<li>DAY OFF (SATURDAY, SUNDAY, HOLIDAY)</li>
+					</ul>
+					<ul class="share">
+						<li><a href="#none" target="_blank"></a></li>
+						<li><a href="https://www.facebook.com/wisa.co.kr" target="_blank"></a></li>
+						<li><a href="#none" target="_blank"></a></li>
+						<li><a href="https://www.instagram.com/wisa.co.kr" target="_blank"></a></li>
+						<li><a href="#none" target="_blank"></a></li>
+						<li><a href="http://blog.naver.com/wisacorp/" target="_blank"></a></li>
+						<li><a href="http://twitter.com" target="_blank"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //하단메뉴 -->
+		<div class="shopinfo wrap_inner">
+			<p class="copyright">(c) {{$회사명}}. all rights reserved. <a href="https://by.wisa.co.kr/{{$사이트기본도메인}}" target="_blank" alt="위사 디자인&호스팅" title="위사 디자인&호스팅">designed & managed by <span>WISA.</span></a></p>
+		</div>
+		<div class="btn_scroll">
+			<a class="up" onclick="scrollup()">up</a>
+		</div>
+	</div>
+	<!-- //하단 -->
+</div>
+<!-- placeholder 스크립트 (삭제하시면 ie 하위브라우저에서 구현되지 않습니다.) -->
+<script src="{{$이미지경로}}/../placeholder.js"></script>
+<script>
+//검색버튼 클릭시 2depth 숨김처리
+$(".toggle_search").click(function(){
+	if($(".toggle_search").hasClass("active")){
+		$(".depth").addClass("dn");
+
+		$(".my .login > a").removeClass("active");
+		$(".my .login > a").attr("onclick", null);
+		$("#depth_login").css("display", "none");
+
+		$(".my .recent > a").removeClass("active");
+		$(".my .recent > a").attr("onclick", null);
+		$("#recent_box").css("display", "none");
+	}else {
+		$(".depth").removeClass("dn");
+		
+		$(".my .login > a").attr("onclick", "toggle_view('depth_login', this);");
+		$(".my .recent > a").attr("onclick", "toggle_view('recent_box',this);");
+	}
+});
+
+//스크롤탑 footer 고정
+function scroll_top() {
+	var body_top = $(window).scrollTop();
+	var w_height = $(window).height();
+	var ft_top = $('#footer').offset().top;
+	var obj = $('.btn_scroll');
+	if( body_top > 300 ){
+		$('.btn_scroll').fadeIn();
+		if(body_top + w_height > ft_top) {
+			obj.css('bottom', (body_top + w_height) - ft_top + 50);
+		} else {
+			obj.css('bottom', 40);
+		}
+	} else {
+		$('.btn_scroll').fadeOut();
+	}
+}
+$(window).ready(function(){
+	scroll_top();
+});
+$(window).scroll(function(){
+	scroll_top();
+});
+</script>

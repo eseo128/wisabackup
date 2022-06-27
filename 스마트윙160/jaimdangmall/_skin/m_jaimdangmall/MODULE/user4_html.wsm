@@ -1,0 +1,40 @@
+<style>
+	#cnt {display: flex; flex-direction: column;}
+</style>
+<div class="tbl_mypage">
+	<div class="area_box">
+		<div class="tbl_mypage_area mr30">
+			<div class="left"><h3>쇼핑혜택</h3></div>
+			<ul class="right">
+				<li class="dn{{$적립금사용유무}}"><a href="/mypage/milage.php">적립금</a></li>
+				<li class="dn{{$예치금사용유무}}"><a href="/mypage/emoney.php">예치금</a></li>
+				<!-- <li><a href="/mypage/coupon_down_list.php">쿠폰</a></li> -->
+				<li><a href="/mypage/sccoupon.php">소셜쿠폰</a></li>
+			</ul>
+		</div>
+		<div class="tbl_mypage_area">
+			<div class="left"><h3>MY</h3></div>
+			<ul class="right">
+				<li><a href="/mypage/wish_list.php">관심상품</a></li>
+				<li><a href="/mypage/review_list.php">나의 후기</a></li>
+				<li><a href="/mypage/qna_list.php">나의 문의</a></li>
+				<li class="dn"><a href="/mypage/counsel_list.php">1:1문의</a></li>
+			</ul>
+		</div>
+		<br>
+		<div class="tbl_mypage_area mr30">
+			<div class="left"><h3>주문관리</h3></div>
+			<ul class="right">
+				<li><a href="/mypage/order_list.php">주문조회</a></li>
+				<li class="dn{{$정기배송적용여부}}"><a href="/mypage/order_list.php?sbscr=Y">정기배송주문내역</a></li>
+			</ul>
+		</div>
+		<div class="tbl_mypage_area">
+			<div class="left"><h3>정보관리</h3></div>
+			<ul class="right">
+				<li><a href="/member/edit_step1.php">회원정보 수정</a></li>
+				<li><a href="/mypage/withdraw_step1.php">회원 탈퇴</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

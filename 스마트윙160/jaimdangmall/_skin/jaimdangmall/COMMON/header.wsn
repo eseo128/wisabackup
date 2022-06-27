@@ -36,7 +36,7 @@
 				</li>
 				<li class="shop"><a class="sub_link sub_shop" onclick="toggle_view('box_shop',this)">SHOP</a></li>
 				<li class="event"><a href="/board/?db=gallery_1">EVENT</a></li>
-				<li class="clinic"><a href="#">CLINIC</a></li>
+				<li class="clinic"><a href="http://jaimdang.com/" target="_blank">CLINIC</a></li>
 				<li class="info"><a class="sub_link sub_info" onclick="toggle_view('box_info',this)">INFO</a></li>
 			</ul>
 			<div id="box_brand" class="box box_brand">

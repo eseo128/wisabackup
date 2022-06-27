@@ -16,6 +16,7 @@
 <div id="brandstory">
     <div class="chapter_1 about_brand_main about_brand">
         <div class="video">
+            <div class="fakebox"></div>
             <iframe width="1903" height="1070" src="https://player.vimeo.com/video/719700110?h=7afb25b460?autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;&amp;muted=1&amp;background=1" frameborder="0" allowfullscreen="" allow="autoplay; fullscreen"></iframe>
         </div>
         <div class="text_box brand">
@@ -49,32 +50,31 @@
     </div>
 </div>
 <script type="text/javascript">
-//스크롤 감도 조절
-    $(function(){
+$(function(){
+    //스크롤 감도조절
+    var $window = $(window);        //Window object
+    
+    var scrollTime = 1.2;           //Scroll time
+    var scrollDistance = 250;       //Distance. Use smaller value for shorter scroll and greater value for longer scroll
         
-        var $window = $(window);        //Window object
-        
-        var scrollTime = 1.2;           //Scroll time
-        var scrollDistance = 250;       //Distance. Use smaller value for shorter scroll and greater value for longer scroll
+    window.addEventListener('mousewheel', wheelScrollEvent, {passive: false});
+    window.addEventListener('DOMMouseScroll', wheelScrollEvent, {passive: false});
+    
+    function wheelScrollEvent(event){
+        event.preventDefault();
+        // var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+        var delta = event.wheelDelta/120 || - event.detail/3;
+        var scrollTop = $window.scrollTop();
+        var finalScroll = scrollTop - parseInt(delta*scrollDistance);
             
-        window.addEventListener('mousewheel', wheelScrollEvent, {passive: false});
-    	window.addEventListener('DOMMouseScroll', wheelScrollEvent, {passive: false});
-    	
-    	function wheelScrollEvent(event){
-    		event.preventDefault();
-    		//var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-    		var delta = event.wheelDelta/120 || -event.detail/3;
-    		var scrollTop = $window.scrollTop();
-    		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
-    			
-    		TweenMax.to($window, scrollTime, {
-    			scrollTo : { y: finalScroll, autoKill:true },
-   				ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
-   				autoKill: true,
-   				overwrite: 5							
-   			});
-    	}
-    });
+        TweenMax.to($window, scrollTime, {
+            scrollTo : { y: finalScroll, autoKill:true },
+            ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
+            autoKill: true,
+            overwrite: 5							
+        });
+    }
+});
 </script>
 <script>
 	    //TweenMax.set($('.about_brand_main .text_box'), {x:-50, opacity:0});
@@ -105,53 +105,6 @@
 		});
 </script>
 <script>
-     var $video  = $('video'),
-     $window = $(window); 
-     $(window).on('load resize',function(){
-     	var height = $window.height();
-        $video.css('height', height);
-
-        var videoWidth = $video.width(),
-            windowWidth = $window.width(),
-            marginLeftAdjust =   (windowWidth - videoWidth) / 2;
-            //console.log(windowWidth, height);
-      if(windowWidth < height){
-       $video.css({
-            'height':height, 
-            'marginLeft' :marginLeftAdjust
-       });	
-      } else{
-      	$video.css('width','100'+'%');
-      	$video.css('height','auto');
-      	$video.css('margin',0);
-      }
-      	var windowHeight = $window.height();
-      	var positionH = windowHeight - 100 ; 
-      
-      $('.sound_control').css('top', positionH );
-      console.log(windowHeight, positionH );
-      
-     });
-     
-     $(function(){
-         $('.sound_control').on('click',function(e){
-          	$(this).toggleClass('on');
-          	soundCtl();
-          	e.preventDefault();
-          });
-     });
-
-     function soundCtl(){
-    	 if( $('.sound_control').hasClass('on') ){
-     		 $video.prop('muted', false); //unmute
-     		 $('.sound_control').text('소리정지');
-     	 }else{
-     		 $video.prop('muted', true); //mute
-     		 $('.sound_control').text('소리재생');
-     	 }
-    	 
-     }
- 
   //lnb 메뉴 on 표시
   $(function(){
         $('#header .lnb .category > li.brand').addClass('on');

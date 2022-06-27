@@ -139,4 +139,28 @@
 		notScroll();
 		subLink();
 	});
+
+	//스크롤탑 footer 고정
+	function scroll_top() {
+		var body_top = $(window).scrollTop();
+		var w_height = $(window).height();
+		var ft_top = $('#footer').offset().top;
+		var obj = $('.btn_scroll');
+		if( body_top > 300 ){
+			$('.btn_scroll').fadeIn();
+			if(body_top + w_height > ft_top + 250) {
+				obj.css('bottom', (body_top + w_height) - ft_top + 50);
+			} else {
+				obj.css('bottom', 270);
+			}
+		} else {
+			$('.btn_scroll').fadeOut();
+		}
+	}
+	$(window).ready(function(){
+		scroll_top();
+	});
+	$(window).scroll(function(){
+		scroll_top();
+	});
 </script>

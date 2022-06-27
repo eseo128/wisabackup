@@ -10,7 +10,7 @@
 			</ul>
 			<div class="btn">
 				{{if(비로그인상태)}}
-				<span class="box_btn"><a href="#none" style="cursor:default;">로그인 후<br>사용</a></span>
+				<span class="box_btn"><a href="#none" style="cursor:default;">로그인 후<br>사용 가능</a></span>
 				{{endif(비로그인상태)}}
 				{{if(쿠폰다운전)}}<span class="box_btn small"><a onclick="location.href='{{$쿠폰주소링크}}';">쿠폰<br>다운받기</a></span>{{endif(쿠폰다운전)}}
 				{{if(쿠폰다운후)}}<span class="fin">다운완료</span>{{endif(쿠폰다운후)}}

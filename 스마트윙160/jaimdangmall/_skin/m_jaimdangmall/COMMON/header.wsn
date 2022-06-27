@@ -85,7 +85,7 @@
 					</ul>
 				</li>
 				<li class="big"><a href="/board/?db=gallery_1">EVENT</a></li>
-				<li class="big"><a href="#">CLINIC</a></li>
+				<li class="big"><a href="http://jaimdang.com/medi/" target="_blank">CLINIC</a></li>
 				<li class="big tab">
 					<a onclick="toggle_view('mid_info',this)">INFO</a>
 					<ul id="mid_info" class="mid_cate">
@@ -100,7 +100,6 @@
 			<li><a href="https://www.instagram.com/jaimdang_official/" target="_blank">인스타그램</a></li>
 			<li><a href="https://pf.kakao.com/_xhxgxbxhs" target="_blank">카카오플친</a></li>
 			<li><a href="https://blog.naver.com/jaimdang" target="_blank">네이버블로그</a></li>
-			<li><a href="#">자임당바이오</a></li>
 		</ul>
 		<a class="close" onclick="toggle_nav('lnb'); return false;">닫기</a>
 	</nav>

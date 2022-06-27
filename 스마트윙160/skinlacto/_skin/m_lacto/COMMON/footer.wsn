@@ -1,0 +1,60 @@
+</section>
+<footer>
+	<ul class="menu">
+		<li><a href="/content/content.php?cont=company">회사소개</a></li>
+		<li><a href="/content/content.php?cont=guide">이용안내</a></li>
+		<li><a href="/content/content.php?cont=uselaw">이용약관</a></li>
+		<li class="grey"><a href="/content/content.php?cont=privacy">개인정보처리방침</a></li>
+	</ul>
+	<div>
+		<address class="info">
+			<h1>LACTO</h1>
+			<p><span>Company. </span>{{$회사명}}</p>
+			<p><span>Ceo. </span>{{$대표자성명}}</p>
+			<p><span>Tel. </span>{{$회사전화번호}}</p>
+			<p><span>Email. </span><a href="mailto:{{$회사이메일}}">{{$회사이메일}}</a></p>
+			<p><span>Address. </span>{{$사업장주소}}</span>
+			<p><span>Business license number. </span>{{$사업자등록번호}} {{$사업자등록확인링크}}[사업자정보확인]</a></span>
+			<p><span>Online business report number. </span>{{$통신판매신고번호}}</p>
+			<p><span>Personal Information protection officer. </span>{{$보호관리책임자}}</p>
+			<p><span>Hosting provider. </span>(주)위사</p>
+		</address>
+		<p class="copyright">(c){{$회사명}}. all rights reserved. <a href="https://by.wisa.co.kr/{{$사이트기본도메인}}" target="_blank" alt="위사 디자인&호스팅" title="위사 디자인&호스팅">designed & managed by <strong>WISA.</strong></a></p>
+		<ul class="share">
+			<li><a href="#none" target="_blank"><img src="{{$이미지경로}}/common/youtube.png" alt="youtube"></a></li>
+			<li><a href="https://www.facebook.com/wisa.co.kr" target="_blank"><img src="{{$이미지경로}}/common/facebook.png" alt="facebook"></a></li>
+			<li><a href="#none" target="_blank"><img src="{{$이미지경로}}/common/kakao.png" alt="kakao"></a></li>
+			<li><a href="https://www.instagram.com/wisa.co.kr" target="_blank"><img src="{{$이미지경로}}/common/instagram.png" alt="instagram"></a></li>
+			<li><a href="#none" target="_blank"><img src="{{$이미지경로}}/common/story.png" alt="story"></a></li>
+			<li><a href="http://blog.naver.com/wisacorp/" target="_blank"><img src="{{$이미지경로}}/common/blog.png" alt="blog"></a></li>
+			<li><a href="http://twitter.com" target="_blank"><img src="{{$이미지경로}}/common/twitter.png" alt="twitter"></a></li>
+		</ul>
+		<div class="quick">
+			<a onclick="toggle_view('quick_box', this)" class="more">more</a>
+			<div id="quick_box" class="quick_box">
+				<div class="box">
+					<h1>{{$회사전화번호}}</h1>
+				</div>
+				<div class="box">
+					<ul>
+						<li>am 10:00 ~ pm 18:00 off</li>
+						<li>time pm12:00 ~ pm 01:00</li>
+						<li>day off (Saturday, Sunday, Holiday)</li>
+					</ul>
+				</div>
+				<div class="box bank">
+					<h3>Bank account.</h3>
+					{{$공통입금계좌정보}}
+				</div>
+				<div class="box">
+					<h3>Returns.</h3>
+					<span>반품주소 {{$반품지주소}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="btn_scroll">
+			<a class="up" onclick="scrollup()">up</a>
+		</div>
+	</div>
+</footer>
+<div id="dimmed"></div>

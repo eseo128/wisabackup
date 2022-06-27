@@ -75,8 +75,8 @@
 		  type: 'fraction',
 		},
 		navigation: {
-		  nextEl: '.swiper_visual .swiper-button-next',
-		  prevEl: '.swiper_visual .swiper-button-prev',
+		  nextEl: '.swiper_visual .arrow.next',
+		  prevEl: '.swiper_visual .arrow.prev',
 		},
 	});
 

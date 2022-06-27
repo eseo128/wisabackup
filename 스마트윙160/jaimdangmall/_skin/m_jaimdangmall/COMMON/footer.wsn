@@ -34,18 +34,3 @@
 	</div>
 </footer>
 <div id="dimmed"></div>
-<script>
-/* 헤더 스크롤 */
-function hdchg(){
-	var y=$(window).scrollTop();
-	if( y > 0 ){
-		$('header').addClass('fix');
-	} else {
-		$('header').removeClass('fix');
-	}
-}
-
-$(document).ready(function (){
-	hdchg();
-});
-</script>

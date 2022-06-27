@@ -1,0 +1,22 @@
+{{$비회원로그인}}
+<div id="mypage" class="wrap_inner2"> 
+	<strong class="name">{{$회원명}}님의,</strong>
+	<div class="my_info">
+		<div class="my_info_left">
+			<h3>회원등급</h3>
+			<p>{{$회원등급}}</p>
+		</div>
+		<div class="my_info_right">
+			<ul>
+				<li class="dn{{$적립금사용유무}}"><a href="/mypage/milage.php"><span>적립금</span><span>￦<strong>{{$회원보유적립금액}}</strong></span></a></li>
+				<li class="dn{{$예치금사용유무}}"><a href="/mypage/emoney.php"><span>예치금</span><span>￦<strong>{{$회원보유예치금액}}</strong></span></a></li>
+				<li><a href="/mypage/coupon_down_list.php"><span>사용가능한 쿠폰</span><span><strong>{{$회원보유쿠폰개수}}</strong></span></a></li>
+				<li><a href="/shop/cart.php"><span>장바구니</span><span><strong>{{$장바구니개수}}</strong></span></a></li>
+				<li><a href="/mypage/wish_list.php"><span>관심상품</span><span><strong>{{$위시리스트개수}}</strong></span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="my_info_bottom btn">
+		<a class="box_btn" href="/member/edit_step1.php"><span>회원정보 수정</span></a>
+	</div>
+</div>
