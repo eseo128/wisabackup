@@ -1,0 +1,117 @@
+<style type="text/css" title="">
+#footer {margin-top:100px;}
+</style>
+<div id="main">
+	<div class="visual">
+		<div class="slide">
+			{{if(사용자배너23)}}<div class="slick-slide">{{$사용자배너23}}</div>{{endif(사용자배너23)}}
+			{{if(사용자배너24)}}<div class="slick-slide">{{$사용자배너24}}</div>{{endif(사용자배너24)}}
+			{{if(사용자배너25)}}<div class="slick-slide">{{$사용자배너25}}</div>{{endif(사용자배너25)}}
+			{{if(사용자배너26)}}<div class="slick-slide">{{$사용자배너26}}</div>{{endif(사용자배너26)}}
+			{{if(사용자배너27)}}<div class="slick-slide">{{$사용자배너27}}</div>{{endif(사용자배너27)}}
+			{{if(사용자배너28)}}<div class="slick-slide">{{$사용자배너28}}</div>{{endif(사용자배너28)}}											
+			{{if(사용자배너29)}}<div class="slick-slide">{{$사용자배너29}}</div>{{endif(사용자배너29)}}	
+			{{if(사용자배너30)}}<div class="slick-slide">{{$사용자배너30}}</div>{{endif(사용자배너30)}}	
+			{{if(사용자배너31)}}<div class="slick-slide">{{$사용자배너31}}</div>{{endif(사용자배너31)}}	
+			{{if(사용자배너32)}}<div class="slick-slide">{{$사용자배너32}}</div>{{endif(사용자배너32)}}	
+		</div>
+	</div>
+	<!-- <div class="main_notice">
+		{{$사용자리스트15}}
+	</div> -->
+	<div class="main_newsale">
+		<h2 class="subtitle">
+		NEW IN
+			<a href="/shop/big_section.php?cno1=1237">more +</a>
+		</h2>
+		{{$사용자리스트18}}
+		<div class="visual_progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+			<span class="visual_progress_label"></span>
+		</div>
+	</div>
+	<div class="wrap_inner">
+		<!-- best -->
+		{{$사용자리스트19}}
+		<!-- hot sale -->
+		{{$사용자리스트20}}
+		<!-- heart -->
+		{{if(사용자배너44)}}
+		<div class="main_heart">
+			<h2 class="subtitle">
+			HEART
+				<a href="/shop/big_section.php?cno1=1293">more +</a>
+			</h2>
+			<div class="heart_bnr">{{$사용자배너44}}</div>
+			<div class="heart_prd">
+				{{$사용자리스트21}}
+			</div>
+		</div>
+		{{endif(사용자배너44)}}
+		<!-- couple -->
+		{{$사용자리스트22}}
+		<!-- mid banner -->
+		<div class="mid_bnr">
+			{{if(사용자배너45)}}<div class="bnr_img left">{{$사용자배너45}}</div>{{endif(사용자배너45)}}
+			{{if(사용자배너46)}}<div class="bnr_img right">{{$사용자배너46}}</div>{{endif(사용자배너46)}}
+		</div>
+		<!-- SIGNATURE -->
+		{{$사용자리스트23}}
+		<!-- THEMA -->
+		<div class="main_thema">
+			<h2 class="subtitle">MD's Pick</h2>
+			<ul class="tab_thema">
+				<li class="first"><a onclick="tabover('thema', 0);" class="active">RING</a></li>
+				<li><a onclick="tabover('thema', 1);">BRACELET</a></li>
+				<li><a onclick="tabover('thema', 2);">NECKLACE</a></li>
+				<li><a onclick="tabover('thema', 3);">EARRING</a></li>
+				<li class="last"><a onclick="tabover('thema', 4);">ANKLET</a></li>
+			</ul>
+			<div class="tabcnt_thema tabcnt_thema0">{{$사용자리스트24}}</div>
+			<div class="tabcnt_thema tabcnt_thema1">{{$사용자리스트25}}</div>
+			<div class="tabcnt_thema tabcnt_thema2">{{$사용자리스트26}}</div>
+			<div class="tabcnt_thema tabcnt_thema3">{{$사용자리스트27}}</div>
+			<div class="tabcnt_thema tabcnt_thema4">{{$사용자리스트28}}</div>
+		</div>
+
+	</div>
+</div>
+<!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<div class="crema-popup"></div>
+<script type="text/javascript">
+	
+	$('.visual .slide').slick({
+		slidesToScroll: 1,
+		swipe: true,
+		arrows: true,
+		autoplay: true,
+		autoplaySpeed: 4000,
+		fade: true,
+		speed: 700,
+		dots: true,
+		customPaging: function (slider, i) {
+			return  '<a>'+(i + 1)+'</a>';
+		},
+	});
+
+	var visual = $('.main_newsale > .slide_box');
+	var progressBar = $('.main_newsale .visual_progress');
+	var progressBarLabel = $('.main_newsale .visual_progress_label');
+	var size = $('.main_newsale .slick-slide').size();
+	var calc = (1/size) * 100;
+	progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
+	visual.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+		var calc = ((nextSlide+1) / (slick.slideCount)) * 100;
+		progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
+		progressBarLabel.text(calc + '% completed');
+	});
+	visual.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 3000,
+		dots: false,
+		arrows: false,
+		infinite: true,
+	});
+
+</script>

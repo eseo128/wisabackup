@@ -73,6 +73,7 @@
 		pagination: {
 		  el: '.swiper_visual .swiper-pagination',
 		  type: 'fraction',
+		  
 		},
 		navigation: {
 		  nextEl: '.swiper_visual .arrow.next',

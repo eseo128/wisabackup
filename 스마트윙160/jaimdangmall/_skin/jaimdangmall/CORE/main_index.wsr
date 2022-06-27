@@ -84,7 +84,7 @@
 	var visual = $('.signature .slide');
 	var progressBar = $('.signature .visual_progress');
 	var progressBarLabel = $('.signature .visual_progress_label');
-	var size = $('.signature .slick-slide').size();
+	var size = $('.signature .box').size();
 	var calc = (1/size) * 100;
 	progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
 	visual.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
