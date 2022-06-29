@@ -1,0 +1,85 @@
+<style>
+	#cnt {margin-top: -50px;}
+</style>
+<div id="main">
+	<div class="swiper-container swiper_visual">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="{{$이미지경로}}/banner/visual01.png" alt="배너처리"></div>
+			<div class="swiper-slide"><img src="{{$이미지경로}}/banner/visual01.png" alt="배너처리"></div>
+			<div class="swiper-slide"><img src="{{$이미지경로}}/banner/visual01.png" alt="배너처리"></div>
+		</div>
+		<div class="swiper-pagination swiper-pagination-white"></div>
+	</div>
+	{{$사용자리스트12}}
+	<div class="mdpick">
+		<h2 class="subtitle wrap_inner">MD PICK</h2>
+		<div class="swiper-container tab_pick">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide pick0"><a onclick="tabover('pick',0);">조금 특별한 가구</a></li>
+				<li class="swiper-slide pick1"><a onclick="tabover('pick',1);">내 아이를 위한 선택</a></li>
+				<li class="swiper-slide pick2"><a onclick="tabover('pick',2);">컬러가 주는 영감</a></li>
+			</ul>
+		</div>
+		<div class="tab_wrap">
+			{{$사용자리스트13}}
+			{{$사용자리스트14}}
+			{{$사용자리스트15}}
+		</div>
+	</div>
+	{{$사용자리스트16}}
+	<div class="mid_bnr wrap_inner">
+		<div class="mid_box">
+			<img src="{{$이미지경로}}/banner/mid_bnr01.png" alt="배너처리">
+			<div class="info">
+				<strong>나만의 소확행, 작은 힐링 플레이스</strong>
+				<p>일상에 즐거움을, 공간엔 따스함을<br>내 하루를 더 기분 좋게 플러스</p>
+			</div>
+		</div>
+		<div class="mid_box">
+			<img src="{{$이미지경로}}/banner/mid_bnr02.png" alt="배너처리">
+			<div class="info">
+				<strong>이 여름 썸머, 여름을 담은 우리 집</strong>
+				<p>우리집 온도를 낮춰 줄 인테리어<br>청럄감 가득한 나만의 공간</p>
+			</div>
+		</div>
+	</div>
+	<!-- 인스타그램 연동 후 사용자리스트15 사용 -->
+	<div class="instagram">
+		<h2 class="subtitle">INSTAGRAM<a href="/https://www.instagram.com/wisa.co.kr/">@instagramididididi</a></h2>
+		<ul class="api">
+			<li class="no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/banner/insta01.png" alt="배너처리"></a></li>
+			<li class="no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/banner/insta02.png" alt="배너처리"></a></li>
+			<li class="no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/banner/insta03.png" alt="배너처리"></a></li>
+			<li class="no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/banner/insta04.png" alt="배너처리"></a></li>
+			<li class="no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/banner/insta05.png" alt="배너처리"></a></li>
+		</ul>
+	</div>
+	<!-- //인스타그램 연동 후 사용자리스트20 사용 -->
+</div>
+<!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<div class="crema-popup"></div>
+<script>
+	var swiper_visual = new Swiper('.swiper_visual', {
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+	});
+
+	var tab_pick = new Swiper('.tab_pick', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		centeredSlides: true,
+		initialSlide: 1,
+	});
+
+	$(document).ready(function (){
+		tabover('pick',1);
+	});
+
+</script>

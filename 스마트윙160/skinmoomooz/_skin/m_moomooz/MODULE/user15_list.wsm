@@ -1,0 +1,44 @@
+<!-- 반복문시작 -->
+<div class="tabcnt_pick tabcnt_pick2">
+	<div class="swiper-container swiper_pick2 swiper_pick">
+		<div class="swiper-wrapper">
+<!-- 반복구문시작 -->
+			<div class="swiper-slide prd_basic">
+			{{$기본상품박스}}
+			</div>
+<!-- 반복구문끝 -->
+		</div>
+		<div class="pick-next pick2-next"></div>
+      	<div class="pick-prev pick2-prev"></div>
+		<div class="swiper-pagination"></div>
+	</div>
+</div>
+<script>
+	var swiper_pick2 = new Swiper('.swiper_pick2', {
+		slidesPerView: 'auto',
+		spaceBetween: 15,
+		speed: 600,
+		centeredSlides: true,
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+		navigation: {
+          nextEl: ".pick2-next",
+          prevEl: ".pick2-prev",
+        },
+		observer: true,
+		observeParents: true,
+	});
+
+</script>
+<!-- 반복문끝 -->
+
+<!-- 데이터없음시작 -->
+
+<!-- 데이터없음끝 -->
