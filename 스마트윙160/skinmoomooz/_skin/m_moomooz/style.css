@@ -401,7 +401,7 @@ select:focus {border-color:#000; outline:none !important;}
 .prd_basic .box .price .sellY strong {font-weight: 400;}
 .prd_basic .box .price .discount {display:none;}
 .prd_basic .box .price .discountY {display:inline-block;}
-.prd_basic .box .summary {color:#999; word-break:break-all; word-wrap:break-word; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.prd_basic .box .summary {color:#999;}
 .prd_basic .box .today {display:inline-block; margin:10px auto 0px; padding:3px; background-color:#ebebeb; font-size:0.917rem;}
 .prd_basic .box .today * {font-size:inherit;}
 .prd_basic .box .today > span {color:#666; padding-left:5px;}
@@ -482,28 +482,32 @@ nav.lnb.is_show {visibility:visible; left:0;}
 /* 3-4. footer
 /*-----------------------------------------------------------------*/
 
-footer {padding:20px 0; text-align:center;}
-footer .share {padding:24px 0;}
-footer .share li {display:inline; padding:0 10px;}
-footer .share li img {width:16px; height:16px;}
-footer .quick {text-align:center;}
-footer .quick > div.box {padding-bottom:1px;}
-footer .quick > div.box h3 {height:41px; background:#f1f1f1; color:#333; font-family:'arial'; font-size:1.083rem; font-weight:normal; text-align:center; line-height:41px;}
-footer .quick > div.box h3.active {background:#e0e0e0;}
-footer .quick > div.box .quick_cnt {display:none; padding:15px 0;}
-footer .quick > div.box #quick_cs {color:#777;}
-footer .quick > div.box #quick_cs strong {display:block; padding-bottom:10px; font-size:1.167rem;}
-footer .quick > div.box #quick_return dd {padding-top:10px; color:#777;}
-footer .menu {padding-top:20px;}
+footer {background: #000; text-align:left;}
+footer * {font-family: '맑은고딕'; text-transform: uppercase;}
+footer .menu {padding: 20px 0; border-bottom: 1px solid #0f0f0f; text-align: center;}
 footer .menu li {display:inline;}
-footer .menu li a {display:inline-block; padding:5px 2px; font-size:0.833rem;}
+footer .menu li a {display:inline-block; position: relative; padding:0 15px; font-size:0.833rem;}
+footer .menu li.white a {color: #fff; font-weight: 700;}
+footer .menu li a:after {display: inline-block; position: absolute; right: 0; top: 3px; background: #333; width: 1px; height: 6px; content: '';}
+footer .menu li:last-child a:after {display: none;}
+footer .quick {padding: 5px 4.16% 30px;  border-bottom: 1px solid #0f0f0f; text-align:left;}
+footer .quick > div.box {padding-bottom:1px;}
+footer .quick > div.box .quick_title {padding-top: 25px; color: #333; font-size:1rem; font-weight: 700;}
+footer .quick > div.box .quick_summary {padding-top: 10px; font-size: 0.833rem;}
+footer .quick > div.box .quick_summary * {font-size: 0.833rem;}
+footer .quick > div.box.cs .quick_summary > strong {display: block; padding-bottom: 10px; color: #fff; font-size: 2.5rem; line-height: 1;}
+footer .quick > div.box.banking .quick_summary .bank li {line-height: 18px;}
+footer .ft_logo {width: 149px;}
+footer .share {padding:24px 0;}
+footer .share li {display:inline; padding-right:10px;}
+footer .share li img {width:22.5px; height:22.5px;}
 footer .info,
-footer .info * {color:#888; font-size:0.833rem; font-style:normal;}
+footer .info * {color:#333; font-size:0.833rem; font-style:normal;}
 footer .info {padding-top:10px;}
-footer .info span {position:relative; padding:0 10px; font-size:0.833rem;}
-footer .info span.bar:after {display:block; position:absolute; right:0; top:3px; width:1px; height:7px; background:#d5d5d5; content:'';}
+footer .info span {position:relative; padding-right:20px; font-size:0.833rem;}
+footer .info span.bar:after {display:block; position:absolute; right:10px; top:3px; width:1px; height:7px; background:#333; content:'';}
 footer .copyright,
-footer .copyright * {color:#777; font-size:0.833rem;}
+footer .copyright * {color:#333; font-size:0.833rem;}
 footer .copyright {padding-top:15px;}
 footer .copyright a strong,
 footer .copyright a:hover {color:#3fc0e5;}
@@ -528,7 +532,7 @@ footer .btn_scroll a.up {background-image:url('{{$이미지경로}}/common/bulle
 #main .swiper_visual .swiper-pagination-bullet-active {background-color: #ffb82e;}
 #main .bestitem {position: relative;}
 #main .bestitem .prd_basic .box {margin-bottom: 50px;}
-#main .mdpick {margin-top: 30px;}
+#main .mdpick {margin: 30px 0 40px 0;}
 #main .mdpick .tab_pick {margin-top: 15px; padding: 15px 30% 15px 35%; background: #f8f8f8; text-align: center;}
 #main .mdpick .tab_pick .swiper-slide > a {position: relative; color: #ddd; font-size: 1.083rem; text-overflow:ellipsis; white-space:nowrap;}
 #main .mdpick .tab_pick .swiper-slide > a.active {color: #000; font-weight: 700;}
@@ -558,16 +562,38 @@ footer .btn_scroll a.up {background-image:url('{{$이미지경로}}/common/bulle
 #main .mdpick .tab_wrap .swiper_pick .swiper-pagination * {margin: 0 8px; font-size: 1.667rem;}
 #main .mdpick .tab_wrap .swiper_pick .pick-next {position: absolute; width: 20px; height: 12px; top: auto; bottom: 5px; left: 33%; background:url('{{$이미지경로}}/button/pick_arrow_prev.png') no-repeat center center/20px; z-index:11;}
 #main .mdpick .tab_wrap .swiper_pick .pick-prev {position: absolute; width: 20px; height: 12px; top: auto; bottom: 5px; right: 33%; background:url('{{$이미지경로}}/button/pick_arrow_next.png') no-repeat center center/20px; z-index:11;}
-#main .instagram .link {padding-bottom:15px; text-align:center;}
-#main .instagram .link a {color:#999;}
-#main .instagram .api:after {display:block; clear:both; content:'';}
-#main .instagram .api > li {float:left; width:25%;}
-#main .instagram .api > li img {width:100%; height:auto;}
-#main .instagram .api > li video {max-width:100%; max-height:100%; vertical-align:top;}
-#main .instagram .api > li.no1 {width:50%;}
-#main .instagram .api > li.no6,
-#main .instagram .api > li.no8 {clear:both; clear:left;}
-#main .instagram .api > li.no10 {width:50%; margin-top:-25%;}
+#main .new {position: relative; padding-bottom: 45px; border-bottom:1px solid #eee;}
+#main .new .subtitle {padding: 30px 0 24px 4.16%;}
+#main .new .new_bnr {position: relative; padding-bottom: 122.5px;}
+#main .new .new_bnr img {width: 100vw; margin-left: calc(-50vw + 50%);}
+#main .new .new_bnr .info {width: 100%; position: absolute; bottom: 0; border-bottom:1px solid #eee; text-align:left;}
+#main .new .new_bnr .info .info_top {padding-bottom:15px; font-size:2.083rem; line-height:34px;}
+#main .new .new_bnr .info .info_top > strong {font-size:2.083rem;}
+#main .new .new_bnr .info .info_bottom {padding-bottom:15px; color:#999; font-size:1.083rem;}
+#main .prd_basic > li {padding-bottom: 15px;}
+#main .new .prd_basic {margin-top: 25px;}
+#main .new .prd_basic .box {display: flex;}
+#main .new .prd_basic .box .img {width: 37%;}
+#main .new .prd_basic .box .info {width: 63%; padding: 0 0 0 20px;}
+#main .new .prd_basic .box .img .icon {top: 7px;}
+#main .new .prd_basic .box .img .wish {top: 7px; right: 5px;}
+#main .new .prd_basic .box .img .wish a {width: 12px; height: 12px; background-size: 12px;}
+#main .new .prd_basic .box .info .cart {right: auto; left: 20px; bottom: 13px;}
+#main .new .prd_basic .box .name {padding: 12px 0 7px 0;}
+#main .new .prd_basic .box .price {padding-top: 10px;}
+#main .mid_bnr {margin-top: 60px;}
+#main .mid_bnr .mid_box img {width: 100%;}
+#main .mid_bnr .mid_box .info {padding: 25px;}
+#main .mid_bnr .mid_box .info > strong {display: inline-block; margin-bottom: 14px; font-size: 1.417rem;}
+#main .mid_bnr .mid_box .info > p {color: #999;}
+#main .instagram {padding-bottom: 80px;}
+#main .instagram .subtitle {padding: 30px 4.16% 24px 4.16%;}
+#main .instagram .subtitle > a {color: #ddd; font-size: 1rem; float: right;}
+#main .instagram .instagram_api {position: relative; padding-bottom: 22px;}
+#main .instagram .instagram_api .swiper-slide img {width: 100%;}
+#main .instagram .instagram_api .instagram_api_pagination {width: 91%;  background-color: #eee; height: 2px; top: auto; left: 4.16%; bottom: 0;}
+#main .instagram .instagram_api .instagram_api_pagination .swiper-pagination-progressbar-fill {background-color: #f22441; height: 2px;}
+
 
 
 /*-----------------------------------------------------------------*/

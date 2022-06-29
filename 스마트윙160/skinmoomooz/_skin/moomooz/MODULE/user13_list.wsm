@@ -1,0 +1,17 @@
+<!-- 반복문시작 -->
+<div class="tabcnt_pick tabcnt_pick0">
+	<div class="prd_basic slide_pick slide_pick0">
+<!-- 반복구문시작 -->
+		<div class="slick-slide">{{$기본상품박스}}</div>
+<!-- 반복구문끝 -->
+	</div>
+	<div class="visual_progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+		<span class="visual_progress_label"></span>
+	</div>
+</div>
+
+<!-- 반복문끝 -->
+
+<!-- 데이터없음시작 -->
+
+<!-- 데이터없음끝 -->

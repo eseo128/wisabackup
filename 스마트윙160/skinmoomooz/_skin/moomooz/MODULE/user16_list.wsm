@@ -1,0 +1,26 @@
+<!-- 반복문시작 -->
+<div class="new">
+	<div class="wrap_inner">
+		<h2 class="subtitle">NEW</h2>
+		<div class="new_bnr">
+			<img src="{{$이미지경로}}/banner/new_img.png" alt="배너처리">
+			<div class="info">
+				<p class="info_top">당신의 모든 일상을<br><strong>익숙한 듯 더 특별하게</strong></p>
+				<p class="info_bottom">자연 그대로의 질감과 컬러, 쉼이 있는 가구<br>완벽한 수납, 돋보이는 인테리어</p>
+				<a href="/shop/big_section.php?cno1=1009" class="more">more</a>
+			</div>
+		</div>
+		<ul class="prd_basic list">
+<!-- 반복구문시작 -->
+			<li>
+				{{$기본상품박스}}
+			</li>
+<!-- 반복구문끝 -->
+		</ul>
+	</div>
+</div>
+<!-- 반복문끝 -->
+
+<!-- 데이터없음시작 -->
+
+<!-- 데이터없음끝 -->
