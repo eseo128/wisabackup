@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="{{$이미지경로}}/../swiper-bundle.css">
+<script src="{{$이미지경로}}/../swiper-bundle.min.js"></script>
+<!-- crema.me / 로그인 회원 정보 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<header>
+	<div class="fix wrap_inner">
+		<h1><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a></h1>
+		<ul class="gnb">
+			<li class="cart"><a href="/shop/cart.php">Cart<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
+			<li class="category"><a href="#" onclick="toggle_nav('lnb'); return false;">Menu</a></li>
+		</ul>
+	</div>
+	<nav class="lnb">
+		<div class="wrap_inner">
+			<ul class="category">
+				<li class="fz20"><a href="/shop/big_section.php?cno1=1009">NEW</a></li>
+				<li class="fz20 point"><a href="/shop/big_section.php?cno1=1010">BEST</a></li>
+				<li><a href="/shop/big_section.php?cno1=1001">침대</a></li>
+				<li><a href="/shop/big_section.php?cno1=1002">소파</a></li>
+				<li class="big">
+					<a>수납장/장식장</a>
+					<ul class="depth mid_cate">
+						<li class="mid">
+							<a>거실수납시스템</a>
+							<ul class="depth2 sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1020">소분류 01</a></li>
+								<li><a href="/shop/big_section.php?cno1=1021">소분류 02</a></li>
+								<li><a href="/shop/big_section.php?cno1=1022">소분류 03</a></li>
+								<li><a href="/shop/big_section.php?cno1=1023">소분류 04</a></li>
+								<li><a href="/shop/big_section.php?cno1=1024">소분류 05</a></li>
+								<li><a href="/shop/big_section.php?cno1=1025">소분류 06</a></li>
+							</ul>
+						</li>
+						<li class="mid">
+							<a>거실장/찬장</a>
+							<ul class="depth2 sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1026">소분류 01</a></li>
+								<li><a href="/shop/big_section.php?cno1=1027">소분류 02</a></li>
+								<li><a href="/shop/big_section.php?cno1=1028">소분류 03</a></li>
+							</ul>
+						</li>
+						<li class="mid">
+							<a>장식장</a>
+							<ul class="depth2 sml_cate">
+								<li><a href="/shop/big_section.php?cno1=1029">소분류 01</a></li>
+								<li><a href="/shop/big_section.php?cno1=1030">소분류 02</a></li>
+								<li><a href="/shop/big_section.php?cno1=1031">소분류 03</a></li>
+								<li><a href="/shop/big_section.php?cno1=1032">소분류 04</a></li>
+								<li><a href="/shop/big_section.php?cno1=1033">소분류 05</a></li>
+								<li><a href="/shop/big_section.php?cno1=1034">소분류 06</a></li>
+							</ul>
+						</li>
+						<li><a href="/shop/big_section.php?cno1=1015">수납장</a></li>
+						<li><a href="/shop/big_section.php?cno1=1016">수납유닛/수납장</a></li>
+				</ul>
+				</li>
+				<li><a href="/shop/big_section.php?cno1=1004">서랍장/서랍유닛</a></li>
+				<li><a href="/shop/big_section.php?cno1=1005">의자</a></li>
+				<li class="mt15"><a href="/shop/promotion.php">PROMOTION</a></li>
+				<li class="big">
+					<a>COMMUNITY</a>
+					<ul class="depth depth_community mid_cate">
+						<li><a href="/board/?db=basic_1">공지사항</a></li>
+						<li><a href="/board/?db=basic_2">자주묻는질문</a></li>
+						<li><a href="/shop/product_qna_list.php">상품문의</a></li>
+						<li><a href="/shop/product_review_list.php">상품리뷰</a></li>
+						<li><a href="/board/?db=gallery_1">이벤트</a></li>
+					</ul>
+				</li>	
+			</ul>
+			<ul class="login">
+				{{$로그인전1}}
+				{{$로그인후1}}
+				<li><a href="/mypage/mypage.php">MYPAGE</a></li>
+			</ul>
+		</div>
+		
+		<a class="close" onclick="toggle_nav('lnb'); return false;">Close</a>
+	</nav>
+</header>
+<section id="cnt">
+	<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+	{{$사용자HTML1}}
+	<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+	<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+	{{$사용자HTML3}}
+	<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+	<!-- 마이페이지 메뉴 -->
+	{{$사용자HTML4}}
+	<!-- //마이페이지 메뉴 -->

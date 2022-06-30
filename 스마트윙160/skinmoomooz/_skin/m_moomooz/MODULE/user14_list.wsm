@@ -16,7 +16,7 @@
 <script>
 	var swiper_pick1 = new Swiper('.swiper_pick1', {
 		slidesPerView: 'auto',
-		spaceBetween: 0,
+		spaceBetween: 15,
 		speed: 600,
 		centeredSlides: true,
 		loop: true,

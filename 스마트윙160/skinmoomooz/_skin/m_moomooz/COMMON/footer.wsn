@@ -8,14 +8,14 @@
 	</ul>
 	<div class="quick wrap_inner">
 		<div class="box cs">
-			<h3 class="quick_title">Customer Center</h3>
+			<h3 class="quick_title">Customer Service</h3>
 			<p class="quick_summary">
 				<strong>{{$회사전화번호}}</strong>
 				10am~6pm (Lunch 12pm~1pm)<br>Sat, Sun, Holiday OFF
 			</p>
 		</div>
 		<div class="box returns">
-			<h3 class="quick_title">Returns</h3>
+			<h3 class="quick_title">RETURNS & EXCHANGES</h3>
 			<dl class="quick_summary">
 				<p>반품주소 {{$반품지주소}}</p>
 			</dl>
@@ -39,18 +39,27 @@
 			<li><a href="http://twitter.com" target="_blank"><img src="{{$이미지경로}}/common/twitter.png" alt="twitter"></a></li>
 		</ul>
 		<address class="info">
-			<span class="bar">상호 : {{$회사명}}</span><span>대표 : {{$대표자성명}}</span><br>
+			<span>상호 : {{$회사명}}</span><span>대표 : {{$대표자성명}}</span><br>
 			<span>사업자등록번호 : {{$사업자등록번호}} {{$사업자등록확인링크}}[사업자정보확인]</a></span><br>
 			<span>통신판매업신고번호 : {{$통신판매신고번호}}</span><br>
-			<span class="bar">이메일 : <a href="mailto:{{$회사이메일}}">{{$회사이메일}}</a></span><span>대표전화 : {{$회사전화번호}}</span><br>
+			<span>이메일 : <a href="mailto:{{$회사이메일}}">{{$회사이메일}}</a></span><span>대표전화 : {{$회사전화번호}}</span><br>
 			<span>주소 : {{$사업장주소}}</span><br>
 			<span>개인정보보호책임자 : {{$보호관리책임자}}</span><span>호스팅 제공자 : (주)위사</span><br>
 			<span>고객님은 안전거래를 위해 현금으로 결제 시<br>저희 쇼핑몰에 가입한 구매안전서비스를 이용하실 수 있습니다. <br><a href="{{$에스크로가입확인}}"><strong>[서비스 가입사실확인]</strong></a></span>
 		</address>
-		<p class="copyright">(c) <strong>{{$회사명}}</strong>. all rights reserved. <a href="https://by.wisa.co.kr/{{$사이트기본도메인}}" target="_blank" alt="위사 디자인&호스팅" title="위사 디자인&호스팅">designed & managed by <strong>WISA.</strong></a></p>
+		<p class="copyright">(c) {{$회사명}}. all rights reserved. <a href="https://by.wisa.co.kr/{{$사이트기본도메인}}" target="_blank" alt="위사 디자인&호스팅" title="위사 디자인&호스팅">designed & managed by <strong>WISA.</strong></a></p>
 	</div>
 	<div class="btn_scroll">
-		<a class="up" onclick="scrollup()">up</a>
+		<!-- <a class="up" onclick="scrollup()">up</a> -->
+		<a onclick="toggle_view('box_search',this)">검색</a>
+		<div id="box_search" class="box_search">
+			{{$상품검색폼시작}}
+			<div class="box">
+				<input type="search" name="search_str" value="" class="form_input block basic_search" autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="검색어를 입력해주세요">
+				<input type="image" src="{{$이미지경로}}/common/icon_search_red_on.png" alt="검색" class="btn">
+			</div>
+			{{$상품검색폼끝}}
+		</div>
 	</div>
 </footer>
 <div id="dimmed"></div>
