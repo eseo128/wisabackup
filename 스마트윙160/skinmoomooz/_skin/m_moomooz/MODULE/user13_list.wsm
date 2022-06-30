@@ -14,7 +14,7 @@
 	</div>
 </div>
 <script>
-	var swiper_pick0 = new Swiper('.swiper_pick0', {
+	var swiper_pick0 = new Swiper('.swiper_pick0', { 
 		slidesPerView: 'auto',
 		spaceBetween: 15,
 		speed: 600,
