@@ -79,6 +79,19 @@ function tabover(name, no) {
 	})
 }
 
+/* menubox slideup , down */
+function toggle_selectbox(selector, obj){
+	var search = $('#'+selector+'');
+	var obj = $(obj);
+	if (search.css('display') == 'none') {
+		obj.addClass('active');
+		search.slideDown(800);
+	} else {
+		obj.removeClass('active');
+		search.slideUp(800);
+	}
+}
+
 /* 스크롤 이동 */
 $(window).scroll(function(){
 	var y=$(this).scrollTop();

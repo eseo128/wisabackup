@@ -524,7 +524,7 @@ footer .btn_scroll .box_search .box .btn {position:absolute; right:10px; top:10p
 /* 4-1. 메인
 /*-----------------------------------------------------------------*/
 
-#main .subtitle {border: 0; font-size:1.667rem; font-weight:300; line-height:1; font-style: normal; text-align: left;}
+#main .subtitle {border:0; font-size:1.667rem; font-weight:300; line-height:1; font-style:normal; text-align:left;}
 #main .more {display:inline-block; height:20px; position:absolute; top:30px; right:4.16%; padding-right:28px; background:url('{{$이미지경로}}/common/more.png') no-repeat right 1px center/20px; color:#ddd; font-weight:700; line-height:20px; text-transform:uppercase;}
 #main .swiper_visual {padding-bottom:80px;}
 #main .swiper_visual .swiper-slide img {width:100%; height:auto;}
@@ -541,7 +541,7 @@ footer .btn_scroll .box_search .box .btn {position:absolute; right:10px; top:10p
 #main .mdpick .tab_wrap {margin-top:25px;}
 #main .mdpick .tab_wrap .tabcnt_pick {position:relative; padding-bottom:40px;}
 #main .mdpick .tab_wrap .swiper_pick {position:static; padding:0 11% 0 11%;}
-#main .mdpick .tab_wrap .swiper_pick .swiper-wrapper {align-items: flex-end;}
+#main .mdpick .tab_wrap .swiper_pick .swiper-wrapper {align-items:flex-end;}
 #main .mdpick .tab_wrap .swiper_pick .prd_basic .box .info {display:flex; flex-direction:column; justify-content:flex-end; width:100%; height:100%; position:absolute; top:0; background:linear-gradient(transparent, 80%, #000); z-index:10;}
 #main .mdpick .tab_wrap .swiper_pick .prd_basic .box .name {margin:0 20px;}
 #main .mdpick .tab_wrap .swiper_pick .prd_basic .box .name > a {color:#fff;}
@@ -550,7 +550,9 @@ footer .btn_scroll .box_search .box .btn {position:absolute; right:10px; top:10p
 #main .mdpick .tab_wrap .swiper_pick .prd_basic .box .info .cart {right:20px; bottom:22.5px;}
 #main .mdpick .tab_wrap .swiper_pick .prd_basic .box .info .cart a {background-image:url('{{$이미지경로}}/shop/icon_cart2_white.png'); background-size:16px;}
 #main .mdpick .tab_wrap .swiper_pick .swiper-slide-next,
-#main .mdpick .tab_wrap .swiper_pick .swiper-slide-prev {transform: scale(0.8);}
+#main .mdpick .tab_wrap .swiper_pick .swiper-slide-prev {transform:scaleY(0.8);}
+#main .mdpick .tab_wrap .swiper_pick .swiper-slide-next .box,
+#main .mdpick .tab_wrap .swiper_pick .swiper-slide-prev .box {position:absolute; bottom:0;}
 #main .mdpick .tab_wrap .swiper_pick .swiper-slide-prev .box .info,
 #main .mdpick .tab_wrap .swiper_pick .swiper-slide-prev .box .icon,
 #main .mdpick .tab_wrap .swiper_pick .swiper-slide-prev .box .wish,

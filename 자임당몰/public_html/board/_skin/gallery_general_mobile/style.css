@@ -1,0 +1,89 @@
+/*-----------------------------------------------------------------*/
+/* 목록
+/*-----------------------------------------------------------------*/
+
+#boardlist {padding-bottom: 175.5px;}
+#boardlist .board_search {clear:both; margin-bottom:15px; padding:7px 0; border:1px solid #e0e0e0;}
+#boardlist .board_search form {position:relative; padding:0 38px 0 75px;  text-align:center;}
+#boardlist .board_search select {position:Absolute; left:0; top:0; border:0; width:70px;}
+#boardlist .board_search input.form_input.search {border-width:0 1px;}
+#boardlist .board_search .btn_search {position:absolute; right:0; top:0; display:inline-block; width:38px; height:34px; border:0; background:url('/board/_skin/basic_general_mobile/img/btn_search.png') no-repeat center/18px; vertical-align:top; text-indent:-9999px; cursor:pointer;}
+#boardlist .category {width:100%; margin:15px 0; text-align:center;}
+#boardlist .category > ul {border-top:1px solid #e0e0e0;}
+#boardlist .category > ul > li {float:left; width:33.33%;}
+#boardlist .category > ul > li > a {display:block; position:relative; height:34px; border:1px solid #e0e0e0; border-width:0 1px 1px 0; color:#888; line-height:34px;}
+#boardlist .category > ul > li:nth-child(3n-2) > a {border-width:0 1px 1px 1px;}
+#boardlist .category > ul > li.cate_all > a,
+#boardlist .category > ul > li.selected > a {background:#fafafa; color:#333; font-weight:bold;}
+#boardlist .category:after {display:block; clear:both; content:'';}
+#boardlist .list {display:table; width:100%; margin-bottom: 20px;}
+#boardlist .list li {display:inline-block; width:100%; padding:25px 0 25px 0; border-bottom: 1px solid #d4cccb; text-align:left; vertical-align:top;}
+#boardlist .list li:first-child {padding-top: 0;}
+#boardlist .list li .box {overflow:hidden;}
+#boardlist .list li .box.end {opacity:0.5;}
+#boardlist .list li .box .img {overflow:hidden;}
+#boardlist .list li .box .img img {width:100%; height:auto;}
+#boardlist .list li .box .subject img {height:16px; vertical-align:top;}
+#boardlist .list li .box .subject a {color:#0f0f0f; font-family:'NanumMyeongjo'; font-size:1.5rem; font-weight:400; letter-spacing:-0.05rem;}
+#boardlist .list li .box .ing_end {display:inline-block; width:90px; height:19px; margin:15px 0 5px 0; border:1px solid #3f2625; border-radius:30px; color:#3f2625; font-size:0.917rem; font-weight: 700; line-height:19px; text-align:center;}
+#boardlist .list li .box .date {color:#925f52; font-family: 'AppleSDGothicNeo'; font-size:0.833rem; font-weight: 700;}
+#boardlist .list li.notice {position:relative; width:100%; padding:0 80px 10px 0; text-align:left;}
+#boardlist .list li.notice .date {position:absolute; right:0; top:0;}
+#boardlist .list:after {display:block; clear:both; content:'';}
+
+
+/*-----------------------------------------------------------------*/
+/* 열람
+/*-----------------------------------------------------------------*/
+
+#boardview > .info {border:1px solid #e0e0e0; border-width:1px 0;}
+#boardview > .info .subject {padding:15px;}
+#boardview > .info .subject p {padding-top:5px;}
+#boardview > .info .subject p:first-child {padding-top:0;}
+#boardview > .info .subject .title {width:100%;}
+#boardview > .info .subject .title img {width:auto; height:10px; vertical-align:middle;}
+#boardview > .info .subject .stat,
+#boardview > .info .subject .stat a,
+#boardview > .info .subject .file,
+#boardview > .info .subject .file a,
+#boardview > .info .subject .add {font-size:0.917rem;}
+#boardview > .info .subject .stat img {width:auto; height:10px; vertical-align:middle;}
+#boardview > .boxview {padding:15px; border-bottom:1px solid #e0e0e0; text-align:left;}
+#boardview > .boxview .content {word-break:break-all; word-wrap:break-word;}
+#boardview > .boxview .content * {font-family:inherit; font-size:inherit; text-align:inherit; line-height:inherit;}
+#boardview > .boxview .content img {max-width:100%; height:auto;}
+#boardview > .btn {padding-top:15px; text-align:right;}
+.lc {background: #f9f5f4;}
+.lc .list_comment {background-color: #f9f5f4;}
+.lc .write_comment {background-color: #f9f5f4;}
+
+
+
+/*-----------------------------------------------------------------*/
+/* 쓰기
+/*-----------------------------------------------------------------*/
+
+#boardwrite fieldset > div {position:relative; margin-bottom:10px;}
+#boardwrite fieldset > div:last-child {margin-bottom:0;}
+#boardwrite fieldset > div > label {display:none;}
+#boardwrite fieldset > div.name {min-height:34px; padding-right:180px; line-height:34px; font-weight:bold;}
+#boardwrite fieldset > div.name .form_input {width:90%;}
+#boardwrite fieldset > div.name .check {position:absolute; right:0; top:10px;}
+#boardwrite fieldset > div.contents {background:#fff;}
+#boardwrite fieldset select {width:100%;}
+#boardwrite .btn {padding-top:15px;}
+
+
+/*-----------------------------------------------------------------*/
+/* 비밀번호 확인
+/*-----------------------------------------------------------------*/
+
+#boardpw {margin:15px; border:1px solid #e0e0e0; background:#fafafa; text-align:center !important;}
+#boardpw h3 {padding-bottom:15px;}
+#boardpw p {margin-bottom:10px; color:#888;}
+#boardpw .form_input {margin-bottom:10px;}
+
+
+/*-----------------------------------------------------------------*/
+/* 댓글목록, 댓글쓰기 - 스킨공통css 적용
+/*-----------------------------------------------------------------*/

@@ -1,0 +1,32 @@
+<style>
+	#cnt .cntbody {width:100%;}
+</style>
+<h2 class="subtitle">{{$카테고리명}}</h2>
+<div id="big_section">
+	<!-- 상품정렬 -->
+	<div class="total_sort wrap_inner2">
+		<div class="sort">
+			<span class="sort_text">선택사항</span>
+			<div class="sort_opt">
+				{{$상품정렬선택리스트}}
+			</div>
+		</div>
+	</div>
+	<!--// 상품정렬 -->
+	{{$상품리스트}}
+	{{$페이지선택}}
+</div>
+<script>
+	// 상품정렬 
+	var sortText = $('.sort .sort_opt strong').text();
+		$('.sort .sort_text').text(sortText);
+		$('.sort').on('click', function(){
+			$('.sort .sort_opt').slideToggle(1000);
+		});
+
+    //lnb 메뉴 on 표시
+    $(function(){
+        $('#header .lnb .category > li.shop').addClass('on');
+    });
+
+</script>
