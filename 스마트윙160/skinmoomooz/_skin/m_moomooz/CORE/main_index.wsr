@@ -12,7 +12,7 @@
 	</div>
 	{{$사용자리스트12}}
 	<div class="mdpick">
-		<h2 class="subtitle wrap_inner">MD PICK</h2>
+		<h2 class="subtitle wrap_inner2">MD PICK</h2>
 		<div class="swiper-container tab_pick">
 			<ul class="swiper-wrapper">
 				<li class="swiper-slide pick0"><a onclick="tabover('pick',0);">조금 특별한 가구</a></li>
@@ -93,6 +93,10 @@
 	var mid_bnr = new Swiper('.mid_bnr', {
 		slidesPerView: 1.1,
 		spaceBetween: 15,
+		autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
 		loop: true,
 	});
 
@@ -101,6 +105,10 @@
 		slidesPerView: 2.3,
 		spaceBetween: 15,
 		loop: true,
+		autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
 		pagination: {
           el: ".instagram_api_pagination",
           type: "progressbar",

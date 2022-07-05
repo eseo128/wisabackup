@@ -4,7 +4,7 @@
 <i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
 <i id="crema-login-name" style="display:none;">{{$회원명}}</i>
 <header>
-	<div class="fix wrap_inner">
+	<div class="fix wrap_inner2">
 		<h1><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a></h1>
 		<ul class="gnb">
 			<li class="cart"><a href="/shop/cart.php">Cart<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
@@ -12,7 +12,7 @@
 		</ul>
 	</div>
 	<nav class="lnb">
-		<div class="wrap_inner">
+		<div class="wrap_inner2">
 			<ul class="category">
 				<li class="fz20"><a href="/shop/big_section.php?cno1=1009">NEW</a></li>
 				<li class="fz20 point"><a href="/shop/big_section.php?cno1=1010">BEST</a></li>

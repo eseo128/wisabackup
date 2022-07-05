@@ -41,7 +41,10 @@
 		</tbody>
 	</table>
 	<div class="boxview">
-		<div id="boardcnt">{{$글내용}}</div>
+		<div id="boardcnt">{{$글내용}}
+		{{$글분류명}}
+		</div>
+		
 	</div>
 	{{$관련상품리스트}}
 	<div class="btn">

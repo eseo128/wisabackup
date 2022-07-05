@@ -1,0 +1,174 @@
+<style type="text/css" title="">
+#cnt {margin-top:-182px; padding-bottom:0;} 
+#cnt .cntbody {width:100%;}
+#header {background: none;}
+#header .gnb * {color:#fff;}
+#header .gnb h1 > a {background:url('{{$이미지경로}}/logo/logo.png') no-repeat center;}
+#header .gnb .left_menu > li.language > a {background:url('{{$이미지경로}}/common/language_arrow.png') no-repeat right center;}
+#header .gnb .right_menu > li .toggle_search {background:url('{{$이미지경로}}/button/hd_search.png') no-repeat center;}
+#header .lnb * {color:#fff;}
+#header .lnb .category > li > a:hover::after {display:inline-block; position:absolute; bottom:-2px; right:0; width:100%; height:1px; background-color:#fff; content:'';}
+#header .lnb.fixed .category > li > a:hover::after {background-color:#000;}
+</style>
+
+<div id="main">
+	<div class="visual_fade wrap_inner">
+		<div class="box">
+			{{if(사용자배너1)}}<div>{{$사용자배너1}}</div>{{endif(사용자배너1)}}
+			{{if(사용자배너2)}}<div>{{$사용자배너2}}</div>{{endif(사용자배너2)}}
+			{{if(사용자배너3)}}<div>{{$사용자배너3}}</div>{{endif(사용자배너3)}}
+		</div>
+	</div>
+	<div class="signature">
+		<div class="wrap_inner">
+			<h2 class="subtitle">JAIMDANG SIGNATURE</h2>
+			{{$사용자리스트12}}
+		</div>
+	</div>
+	<div class="mid_bnr">
+		<div class="wrap_inner">
+			<!-- 비디오 영역 -->
+			<!-- <div class="video">
+				<iframe width="100vw" height="100vh" src="https://player.vimeo.com/video/719700110?h=7afb25b460?autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;&amp;muted=1&amp;background=1" frameborder="0" allowfullscreen="" allow="autoplay; fullscreen"></iframe>
+			</div> -->
+			<img src="{{$이미지경로}}/main/middle_bnr.png"> 
+			<div class="shop_btn"><a href="#"><span>SHOP NOW</span></a></div>
+		</div>
+	</div>
+	<div class="best">
+		<div class="wrap_inner">
+			<div class="prd_basic tab_best">
+				<div class="title_section">
+					<h2 class="subtitle">BEST</h2>
+					<p class="summary">키워드 별 가장 사랑 받고 있는 자임당 베스트</p>
+				</div>
+				<ul>
+					<li><a onclick="bestSlide(0);">#프리미엄</a></li>
+					<li><a onclick="bestSlide(1);">#공미</a></li>
+					<li><a onclick="bestSlide(2);">#체력증진</a></li>
+					<li><a onclick="bestSlide(3);">#다이어트</a></li>
+				</ul>
+			</div>
+			<div class="tab_wrap">
+				{{$사용자리스트13}}
+				{{$사용자리스트14}}
+				{{$사용자리스트15}}
+				{{$사용자리스트16}}
+			</div>
+		</div>
+	</div>
+	<div class="crema-popup"></div>
+	<div class="story">
+		<h2 class="subtitle">JAIMDANG STORY</h2>
+		<p>한방 전문가가 직접 만드는 건강식품 브랜드<br>자연에 가까운 제품을 만듭니다.</p>
+	</div>
+</div>
+<!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<div class="crema-popup"></div>
+<script type="text/javascript">
+	//메인 비쥬얼 슬라이드
+	$('.visual_fade > .box').slick({
+		slidesToShow:1,
+		slidesToScroll:1,
+		dots:true,			// 페이지네이션 노출 유무
+		infinite:true,		// 무한 루프 유무
+		speed:500,			// 이벤트 속도
+		fade:true,			// 옵션
+		cssEase:'linear',	// CSS3 에니메이션
+		autoplay:true,		// 자동진행
+		autoplaySpeed:3000,// 자동진행 속도
+		customPaging:function (slider, i) {
+			return  (i + 1)+ ' / ' + (slider.slideCount);
+		},
+	});
+
+	//메인 JAIMDANG SIGNATURE 슬라이드
+	var visual = $('.signature .slide');
+	var progressBar = $('.signature .visual_progress');
+	var progressBarLabel = $('.signature .visual_progress_label');
+	var size = $('.signature .box').size();
+	var calc = (1/size) * 100;
+	progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
+	visual.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+		var calc = ((nextSlide+1) / (slick.slideCount)) * 100;
+		progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
+		progressBarLabel.text(calc + '% completed');
+	});
+	visual.slick({
+		slidesToShow:4,
+		slidesToScroll:1,
+		autoplay:true,
+		autoplaySpeed:2000,
+		dots:false,
+		arrows:false,
+		infinite:true,
+	});
+
+
+	//메인 md best 탭&슬라이드
+	function bestSlide(no) {
+		var tabs = $('.tab_best li');
+		tabs.each(function(idx) {
+			var detail = $('.tabcnt_best'+idx);
+			var visual = detail.find('.slide_best');
+
+			if(no == idx) {
+				detail.show();
+				$(this).find('a').addClass('active');
+				var slides = $('.tabcnt_best'+idx);
+				if(slides.hasClass('is_active') == false){
+					slides.find('.slide_best').slick({
+						slidesToShow:3,
+						slidesToScroll:1,
+						dots:true,
+						arrows:true,
+						infinite:true,
+						autoplay:true,
+						autoplaySpeed:2000,
+						speed:400,
+						cssEase:'ease-in-out',
+						customPaging:function (slider, i) {
+							return  (i + 1)+ ' / ' + (slider.slideCount);
+						},
+					});
+					slides.addClass('is_active');
+				}
+			} else {
+				$(this).find('a').removeClass('active');
+				detail.hide();
+			}
+		});
+	}
+
+	$(document).ready(function(){
+		bestSlide(0);
+	});
+</script>
+<script type="text/javascript">
+	//스크롤 감도 조절
+	$(function(){
+		
+		var $window = $(window);		//Window object
+		
+		var scrollTime = 1.2;			//Scroll time
+		var scrollDistance = 500;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
+			
+		window.addEventListener('mousewheel', wheelScrollEvent, {passive: false});
+		window.addEventListener('DOMMouseScroll', wheelScrollEvent, {passive: false});
+		
+		function wheelScrollEvent(event){
+			event.preventDefault();
+			//var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+			var delta = event.wheelDelta/120 || -event.detail/3;
+			var scrollTop = $window.scrollTop();
+			var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+				
+			TweenMax.to($window, scrollTime, {
+				scrollTo : { y: finalScroll, autoKill:true },
+				   ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
+				   autoKill: true,
+				   overwrite: 5							
+			   });
+		}
+	});        
+</script>

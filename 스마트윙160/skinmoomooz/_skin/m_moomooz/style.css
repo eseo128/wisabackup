@@ -430,7 +430,8 @@ select:focus {border-color:#000; outline:none !important;}
 /* 3-1. wrapper
 /*-----------------------------------------------------------------*/
 
-.wrap_inner {padding:0 4.16%;} /* 컨텐츠 사이즈 */
+.wrap_inner {padding:4.16%;} /* 컨텐츠 사이즈 */
+.wrap_inner2 {padding:0 4.16%;} /* 컨텐츠 사이즈 */
 body.view_nav {overflow:hidden;}
 body.view_nav #dimmed {display:block;}
 
@@ -589,7 +590,7 @@ footer .btn_scroll .box_search .box .btn {position:absolute; right:10px; top:10p
 #main .mid_bnr .mid_box .info {padding:25px;}
 #main .mid_bnr .mid_box .info > strong {display:inline-block; margin-bottom:14px; font-size:1.417rem;}
 #main .mid_bnr .mid_box .info > p {color:#999;}
-#main .instagram {padding-bottom:80px;}
+#main .instagram {padding:15px 0 80px 0;}
 #main .instagram .subtitle {padding:30px 4.16% 24px 4.16%;}
 #main .instagram .subtitle > a {color:#ddd; font-size:1rem; font-weight:700; float:right; text-transform:uppercase;}
 #main .instagram .instagram_api {position:relative; padding-bottom:22px;}

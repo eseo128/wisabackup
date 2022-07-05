@@ -465,7 +465,6 @@ function maskingId(id) {
 		} else {
 			$('#big_section .midcate').removeClass('fixed');
 		}
-	
 	});
 
 	//특정 문자를 포함하고 있으면 css 변경
@@ -500,3 +499,76 @@ function maskingId(id) {
 				break;
 		}
     }
+
+	//종료된 이벤트 투명도 조절
+	$(function(){
+		$('.ing_end').each(function(){
+			var a = $(this).text();
+			var box = $(this).closest('.box');
+			var link = $(this).siblings('.subject');
+			if(a == "종료된 이벤트"){
+				box.addClass('end'); 
+				link.addClass('end'); 
+			}else {
+				box.removeClass('end'); 
+				link.removeClass('end'); 
+			}
+		});
+	});
+
+
+	//dim 터치시 gnb 닫아짐
+    function closeGnb(){
+		$(".sub_link").removeClass("active");
+		$('#header .box_sub').css('opacity','0');	
+		setTimeout(function(){
+			$('#header .box').css('display','none');
+			$('.dim').fadeOut();
+			$('#header').removeClass('sub_on');
+		}, 600);
+		setTimeout(function(){
+			$('#header .box').hide();		
+			$('#header .box_sub').hide();		
+		}, 600);
+    }
+
+	//gnb 열림
+	function subLink(){
+		$(".sub_link").click(function(){
+			if($(".sub_link").hasClass("active")){
+				$("#header").addClass("sub_on");
+				$('.dim').fadeIn();
+			}else {
+				$("#header").removeClass("sub_on");
+				$('.dim').fadeOut();
+			}
+
+			$(document).on('mouseenter','.dim',function(){
+				closeGnb();
+			});
+		});
+
+		//스크롤탑 footer 고정
+	function scroll_top() {
+		var body_top = $(window).scrollTop();
+		var w_height = $(window).height();
+		var ft_top = $('#footer').offset().top;
+		var obj = $('.btn_scroll');
+		if( body_top > 300 ){
+			$('.btn_scroll').fadeIn();
+			if(body_top + w_height > ft_top + 250) {
+				obj.css('bottom', (body_top + w_height) - ft_top + 50);
+			} else {
+				obj.css('bottom', 270);
+			}
+		} else {
+			$('.btn_scroll').fadeOut();
+		}
+	}
+	$(window).ready(function(){
+		scroll_top();
+	});
+	$(window).scroll(function(){
+		scroll_top();
+	});
+}

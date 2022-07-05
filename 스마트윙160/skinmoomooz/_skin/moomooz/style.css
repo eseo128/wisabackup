@@ -552,7 +552,7 @@ h3.title {padding:30px 0 20px;}
 #header .lnb .menu_sub.cate_closet .depth > li {display:inline-block; margin:0; width:190px;}
 #header .lnb .menu_sub.cate_closet .depth > li > a {display:inline-block; padding-bottom:5px; color:#000; font-size:16px; font-weight:700;}
 #header .lnb .menu_sub.cate_closet .depth > li > a:hover {color:#f22441;}
-#header .lnb .menu_sub.cate_closet .depth > li > .depth2 > li > a {position:relative; color:#666; font-size:14px; font-weight:400; line-height:34px;}
+#header .lnb .menu_sub.cate_closet .depth > li > .depth2 > li > a {position:relative; color:#666; font-family: '맑은 고딕'; font-size:14px; font-weight:400; line-height:34px;}
 #header .lnb .menu_sub.cate_closet .depth > li > .depth2 > li > a:hover:after {position:absolute; left:0; bottom:0; display:inline-block; width:100%; height:4px; background:#f22441; opacity:0.2; content:'';}
 #header .lnb .menu_sub.cate_closet h2::after {position:absolute; top:7px; right:0; width:1px; height:220px; background:#eee; content:'';}
 #header .lnb.fixed {position:fixed; left:0; top:0; z-index:20; width:100%; border:0; background:#f33c52;}
@@ -584,7 +584,7 @@ h3.title {padding:30px 0 20px;}
 #footer .shopinfo .info * {color:#999;}
 #footer .shopinfo .info span {position:relative; margin-right:10px; line-height:25px;}
 #footer .shopinfo .info span.last > a {font-weight:700;}
-#footer .shopinfo .info .about {padding-bottom:15px;}
+#footer .shopinfo .info .about {padding-bottom:10px;}
 #footer .shopinfo .info .about > li {display:inline-block; margin-right:25px;}
 #footer .shopinfo .info .about > li > a {color:#999;}
 #footer .shopinfo .info .about > li.bold > a {color:#000; font-weight:700;}
@@ -592,10 +592,10 @@ h3.title {padding:30px 0 20px;}
 #footer .shopinfo .info .copyright a strong,
 #footer .shopinfo .info .copyright a:hover {color:#3fc0e5;}
 #footer .shopinfo .return {width:227px;}
-#footer .shopinfo .return > h3 {padding-bottom:15px;}
+#footer .shopinfo .return > h3 {padding-bottom:10px;}
 #footer .shopinfo .return > dl * {color:#999; line-height:25px;}
 #footer .shopinfo .bank {width:207px;}
-#footer .shopinfo .bank > h3 {padding-bottom:15px;}
+#footer .shopinfo .bank > h3 {padding-bottom:10px;}
 #footer .shopinfo .bank > ul * {color:#999; line-height:25px;}
 #footer .btn_scroll {display:none; position:fixed; right:0; top:50%; z-index:20; width:44px; margin-top:-44px; border:1px solid #dbdbdb;}
 #footer .btn_scroll a {display:block; width:44px; height:44px; background-repeat:no-repeat; background-position:center; background-color:#fff; font-size:0; text-align:center; cursor:pointer;}

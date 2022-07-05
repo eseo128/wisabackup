@@ -1,0 +1,36 @@
+</section>
+<footer>
+	<div class="wrap_inner2">
+		<img class="ft_logo" src="{{$이미지경로}}/logo/ft_logo.png">
+		<p class="tel">{{$회사전화번호}}</p>
+		<ul class="menu">
+			<li><a href="/content/content.php?cont=company">회사소개</a></li>
+			<li><a href="/content/content.php?cont=guide">이용안내</a></li>
+			<li><a href="/content/content.php?cont=uselaw">회원약관</a></li>
+			<li><a href="/content/content.php?cont=privacy">개인정보 취급방침</a></li>
+		</ul>
+		<ul class="info">
+			<li><span>서울특별시 강남구 도산대로 163 자임당</span></li>
+			<li>
+				<ul>
+					<li><span>T. {{$회사전화번호}}</span></li>
+					<li><span>E. {{$회사이메일}}</span></li>
+					<li><span>F. {{$회사팩스번호}}</span></li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li><span>상호 : {{$회사명}}</span></li>
+					<li><span>대표자 : {{$대표자성명}}</span></li>
+				</ul>
+			</li>
+			<li><span>사업자등록번호 : {{$사업자등록번호}} </span></li>
+			<li><span>통신판매업신고 : {{$통신판매신고번호}}</span></li>
+		</ul>
+		<p class="copyright">Copyright ⓒ 2022 자임당 All right reserved.</p>
+		<div class="btn_scroll">
+			<a class="up" onclick="scrollup()">TOP</a>
+		</div>
+	</div>
+</footer>
+<div id="dimmed"></div>

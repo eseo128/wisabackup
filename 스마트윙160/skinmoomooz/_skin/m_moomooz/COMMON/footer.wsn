@@ -1,12 +1,12 @@
 </section>
 <footer>
-	<ul class="menu wrap_inner">
+	<ul class="menu wrap_inner2">
 		<li><a href="/content/content.php?cont=company">회사소개</a></li>
 		<li><a href="/content/content.php?cont=guide">이용안내</a></li>
 		<li><a href="/content/content.php?cont=uselaw">이용약관</a></li>
 		<li class="white"><a href="/content/content.php?cont=privacy">개인정보처리방침</a></li>
 	</ul>
-	<div class="quick wrap_inner">
+	<div class="quick wrap_inner2">
 		<div class="box cs">
 			<h3 class="quick_title">Customer Service</h3>
 			<p class="quick_summary">
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="wrap_inner">
+	<div class="wrap_inner2">
 		<img class="ft_logo" src="{{$이미지경로}}/logo/logo_white.png">
 		<ul class="share">
 			<li><a href="#" target="_blank"><img src="{{$이미지경로}}/common/youtube.png" alt="youtube"></a></li>
