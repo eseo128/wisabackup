@@ -1,0 +1,25 @@
+<!-- 반복문시작 -->
+<div class="frame">
+	<a href="{{$장바구니비우기}}" class="delete_all">전체삭제</a>
+	<ul class="list">
+<!-- 반복구문시작 -->
+			<li>
+				{{$상품이미지(링크포함)}}
+				<div class="info">
+					<p class="prd_name">{{$상품명(링크포함)}}</p>
+					<p class="price">{{$화폐단위전}}<span>{{$상품가격}}</span>{{$화폐단위후}}</p>
+				</div>
+				<span class="del">{{$상품삭제}}<img src="{{$이미지경로}}/button/delete_s2.png" alt="삭제"></a></span>
+			</li>
+<!-- 반복구문끝 -->
+	</ul>
+</div>
+<div class="btn">
+	<span class="box_btn block white"><a href="/shop/cart.php">장바구니</a></span>
+	<span class="box_btn block black"><a href="{{$주문하기}}">바로구매</a></span>
+</div>
+<!-- 반복문끝 -->
+
+<!-- 데이터없음시작 -->
+<div class="empty">장바구니가 비었습니다.</div>
+<!-- 데이터없음끝 -->

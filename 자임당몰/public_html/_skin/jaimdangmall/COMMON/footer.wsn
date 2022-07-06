@@ -176,4 +176,16 @@
 	$(window).scroll(function(){
 		scroll_top();
 	});
+
+	/* 토글 퀵메뉴 */
+function toggle_quick(name) {
+	var quick = $('.side_quick#'+name);
+	if($('.side_quick#'+name).hasClass('active')) {
+		quick.removeClass('active');
+	}
+	else {
+		quick.addClass('active');
+		$('.side_quick').not(quick).removeClass('active');
+	}
+}
 </script>

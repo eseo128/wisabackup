@@ -553,7 +553,7 @@ input[type=radio]:checked {background-image:url('{{$이미지경로}}/common/rad
 #wrapper {position:relative; min-width:1200px; text-align:left;}
 #container {overflow:hidden;}
 .dim {position:fixed; width:100%; height:100%; top:0; left:0; background-color:rgba(0,0,0,0.5); z-index:19;}
-.dim2 {position:fixed; width:100%; height:100%; top:0; left:0; background-color:transparent; z-index:19;}
+.dim2 {position:fixed; width:100%; height:100%; top:0; left:0; background-color:transparent; z-index:17;}
 .wrap_inner {width:100%; min-width:1200px; margin:0 auto;} /* 컨텐츠 사이즈 */
 .wrap_inner2 {width:83.3%; margin:0 auto;} /* 컨텐츠 사이즈 */
 body {overflow:overlay;}
@@ -1400,6 +1400,12 @@ body.not_scroll #wrapper {height:100vh; overflow:hidden;}
 .quickcart .list .frame table td .del {position:absolute; right:0; top:10px;}
 .quickcart .list .box_price {padding:10px; border:1px solid #e0e0e0; border-width:1px 0; background:#f8f8f8;}
 .quickcart .list .btn > span {margin-top:10px;}
+
+#quick_cart {visibility:hidden; display: flex; flex-direction: column; position: fixed; top: 0; right: 0; width: 500px; height: 100vh; background: #fff; z-index: 30; opacity:0; transform:translate(100%,0); -webkit-transform:translate(100%,0); -moz-transform:translate(100%,0); transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s;}
+#quick_cart.active {visibility:visible; opacity:1; transform:translate(0,0); -webkit-transform:translate(0,0); -moz-transform:translate(0,0);}
+#quick_cart .quick_cart_top {position: relative; background: #a98075;}
+#quick_cart .quick_cart_top .del {position: absolute; top: 25px; right: 20px;}
+#quick_cart .quick_cart_top .quick_title {display: block; padding: 75px 30px 30px 30px; font-size: 30px; color: #fff;}
 
 /* 개별상품쿠폰 레이어 */
 #prdCouponArea {margin-left:-285px !important;}

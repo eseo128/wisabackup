@@ -1,0 +1,364 @@
+<div id="detail">
+	{{$폼시작}}
+	<!-- 디테일 상단 -->
+	<div class="wrap_prd">
+		<!-- 이미지 & sns -->
+		<div class="addimg">
+			{{$상품부가이미지리스트}}
+		</div>
+		<div class="img_sns">
+			<div id="mimg_div" class="img">
+				{{$상품이미지}}
+				<div class="img_zoom">
+					<div class="btn_zoom"><a href="{{$크게보기}}"><span class="zoom">MOUSE OVER TO ZOOM</span></a></div>
+					<div class="dimmed"></div>
+				</div>
+			</div>
+			<!-- sns링크 -->
+			<ul class="sns">
+				<li><a href="javascript:;" onclick="window.open('{{$SNS연동주소(페이스북)}}','','width=804,height=504');"><img src="{{$이미지경로}}/shop/sns_facebook.gif" alt="페이스북" title="페이스북"></a></li>
+				<li><a href="javascript:;" onclick="window.open('{{$SNS연동주소(트위터)}}','','width=804,height=504');"><img src="{{$이미지경로}}/shop/sns_twitter.gif" alt="트위터" title="트위터"></a></li>
+				<!--
+				{{if(카카오링크사용여부)}}
+				<li><a href="javascript:;" onclick="window.open('{{$카카오링크}}','','width=804,height=504');"><img src="{{$이미지경로}}/shop/sns_twitter.gif" alt="카카오톡" title="카카오톡"></a></li>
+				{{end(카카오링크사용여부)}}
+				-->
+			</ul>
+			<!-- //sns링크 -->
+			<!-- 상품 문의,후기 -->
+			<ul class="rev_qna">
+				<li><a href="#tab_review">Review (<span>{{$상품평개수}}</span>)</a></li>
+				<li><a href="#tab_qna">Q&A (<span>{{$상품질답개수}}</span>)</a></li>
+			</ul>
+			<!-- //상품 문의,후기 -->
+			<div class="prd_move">
+				<div class="prd_prev">{{$이전상품보기}}&lt;&nbsp;이전상품보기</a></div>
+				<div class="prd_next">{{$다음상품보기}}다음상품보기&nbsp;&gt;</a></div>
+			</div>
+			{{$상품쿠폰리스트}}
+		</div>
+		<!-- //이미지 & sns -->
+		<!-- 상품정보리스트 & 버튼 -->
+		<div class="list_btn">
+			<!-- 상품정보 -->
+			<h3 class="name">{{$상품명}}</h3>
+			<p class="summary">{{$상품요약설명}}</p>
+			<!-- <p class="icon">{{$상품아이콘}}</p> -->
+			{{if(소비자가격)}}
+			<p class="box_price">
+				<span class="sell_name">{{$소비자가격명칭}}</span>
+				<span class="sell_price"><strong>{{$화폐단위전}} </strong><strong><del>{{$소비자가격}}</del> </strong><strong> {{$화폐단위후}}</strong></span>
+			</p>
+			{{end(소비자가격)}} 
+			<p class="box_price">
+				<span class="sell_name">{{$판매가격명칭}}</span>
+				<span class="sell_price">
+					{{if(판매가인하율)}}<span class="percent">{{$판매가인하율}}%</span>{{endif(판매가인하율)}}					
+					<strong>{{$화폐단위전}} </strong><strong><!-- 판매가격에 id="sell_prc_str" 을 삭제 하시면 옵션추가금액이 적용된 가격이 나오지 않습니다. -->{{$판매가격}}</strong><strong> {{$화폐단위후}}</strong>
+				</span>
+			</p>
+			
+			<table cellspacing="0" cellpadding="0" class="list_table">
+				<colgroup>
+					<col style="width:157px;">
+					<col>
+				</colgroup>
+				<tbody>
+					{{if(타임세일타이머)}}
+					<tr>
+						<th scope="row">타임세일타이머</th>
+						<td class="time_prc">{{$타임세일타이머}}</td>
+					</tr>
+					{{end(타임세일타이머)}}
+					{{if(타임세일금액)}}
+					<tr>
+						<th scope="row">타임세일 판매가격</th>
+						<!--td class="time_prc">- {{$화폐단위전}} {{$타임세일금액}} {{$화폐단위후}}</td-->
+						<td class="time_prc"> {{$타임세일시할인비율}}%&nbsp;&nbsp;&nbsp;&nbsp;{{$화폐단위전}} {{$할인후실판매가}}{{$화폐단위후}}</td>
+						
+					</tr>
+					{{end(타임세일금액)}}
+					{{if(상품코드)}}
+					<tr>
+						<th scope="row">상품코드</th>
+						<td>{{$상품코드}}</td>
+					</tr>
+					{{end(상품코드)}}
+					<!-- 
+					<tr>
+						<th>상품상태</th>
+						<td>{{$품절시내용}}{{$정상판매시내용}}</td>
+					</tr>
+					<tr>
+						<th>카테고리</th>
+						<td>{{$카테고리명}}</td>
+					</tr> 
+					
+
+					<tr>
+						<th scope="row">적립금</th>
+						<td>{{$화폐단위전}} {{$적립금}} {{$화폐단위후}}</td>
+					</tr>
+					-->
+										
+					{{if(네이버마일리지API아이디)}}
+					<tr class="naverchkmilage">
+						<th scope="row">네이버 마일리지</th>
+						<td>
+							<span style="color:#679900; font-weight:bold;" id="accumRate"></span> 적립 
+							<img src='http://checkout.wisa.ne.kr/_img/ic_naver_on.png' style='vertical-align:top;' onclick='divNvInfoClick()'>
+						</td>
+					</tr>
+					{{end(네이버마일리지API아이디)}}
+					<tr>
+						<th>배송비</th>
+						<td>{{$화폐단위전}} {{$상품별배송비}} {{$화폐단위후}}</td>
+					</tr>
+					{{if(회원할인가격)}}
+					<tr>
+						<th scope="row">회원할인가격</th>
+						<td>{{$화폐단위전}} {{$회원할인가격}} {{$화폐단위후}}</td>
+					</tr>
+					{{end(회원할인가격)}}
+					{{if(이벤트금액)}}
+					<tr>
+						<th scope="row">이벤트금액</th>
+						<td>{{$화폐단위전}} {{$이벤트금액}} {{$화폐단위후}}</td>
+					</tr>
+					{{end(이벤트금액)}}
+					{{if(상품항목리스트)}}
+					{{end(상품항목리스트)}}
+					{{$상품항목리스트}}
+				</tbody>
+			</table>
+			<div class="list_div">
+				<div class="box_qty">
+					<input type="text" name="buy_ea" value="{{$최소주문수량}}" class="input">
+					<p class="up"><a href="javascript:eaChg(1);"><img src="{{$이미지경로}}/button/ea_up.gif" alt="수량 추가"></a></p>
+					<p class="down"><a href="javascript:eaChg(2);"><img src="{{$이미지경로}}/button/ea_down.gif" alt="수량 감소"></a></p>
+				</div>
+				{{$상품옵션리스트}}
+			</div>
+			<!-- //상품정보 -->
+			{{if(멀티옵션사용여부)}}
+			{{if(선택된멀티옵션리스트)}}
+			{{$선택된멀티옵션리스트}}
+			{{end(선택된멀티옵션리스트)}}
+			{{endif(멀티옵션사용여부)}}
+			<!-- 버튼 -->
+			<div class="list_div">
+				<div class="order_memo">
+					<p class="tit_memo">- 상품주문 (네이버페이 결제는 상품주문 메모를 지원하지 않습니다.)</p>
+					<textarea name="cstr" rows="" cols="" placeholder=""></textarea>
+				</div>
+			</div>
+			<ul class="btn">
+				<li>
+					{{if(정상판매시내용)}}
+					<div class="box_btn"><a href="#" onclick="addCart(document.prdFrm,2); return false;">바로구매</a></div>
+					{{end(정상판매시내용)}}
+					{{if(품절시내용)}}
+					<div class="box_btn gray"><a href="#" onclick="addCart(document.prdFrm,2); return false;">품절</a></div>
+					{{end(품절시내용)}}
+				</li>
+				<li class="cart"><div class="box_btn gray"><a href="#" onclick="addCart(document.prdFrm,1); return false;">장바구니</a></div></li>
+				<li><div class="box_btn gray"><a href="#" onclick="addWish(document.prdFrm); return false;">관심상품</a></div></li>	
+			</ul>
+			<div class="btn_checkout">{{$네이버체크아웃버튼}}</div>
+
+			<!-- //버튼 -->
+		</div>
+		<!-- //상품정보리스트 & 버튼 -->
+	</div>
+	<!--// 디테일 상단 -->
+	{{$폼끝}}
+	<!-- 상품 상세정보 -->
+	<div class="wrap_info">
+		<!-- 상품상세정보 -->
+		<div class="tab" id="tab_detail">
+			<ul>
+				<li class="over"><a onclick="move_tab('#tab_detail');">상품설명</a></li>
+				<li><a onclick="move_tab('#tab_rel');">관련상품</a></li>
+				<li><a onclick="move_tab('#tab_leno');">레노후기</a></li>
+				<li><a onclick="move_tab('#tab_review');">상품후기</a></li>
+				<li><a onclick="move_tab('#tab_qna');">상품문의</a></li>
+				<li><a onclick="move_tab('#tab_common');">배송/교환/반품/환불</a></li>
+			</ul>
+		</div>
+		<!-- 상단전체배너 시작 -->
+		<div class="detail_info"> {{$사용자배너164}} </div>
+		<!-- 상단전체배너 끝 -->
+		<div class="detail_info">{{$상품정보고시리스트}}{{$상품상세설명}}</div>
+		<!--// 상품상세정보 -->
+		<!-- 관련상품 -->
+		<div class="tab" id="tab_rel">
+			<ul>
+				<li><a onclick="move_tab('#tab_detail');">상품설명</a></li>
+				<li class="over"><a onclick="move_tab('#tab_rel');">관련상품</a></li>
+				<li><a onclick="move_tab('#tab_leno');">레노후기</a></li>
+				<li><a onclick="move_tab('#tab_review');">상품후기</a></li>
+				<li><a onclick="move_tab('#tab_qna');">상품문의</a></li>
+				<li><a onclick="move_tab('#tab_common');">배송/교환/반품/환불</a></li>
+			</ul>
+		</div>
+		{{if(관련상품리스트)}}
+		<p class="tit_related">관련상품</p>
+		{{$관련상품리스트}}
+		<div class="btn_with">
+			<span class="box_btn middle"><a href="{{$관련상품장바구니담기}}">선택상품 장바구니</a></span>
+			<span class="box_btn middle"><a href="{{$관련상품구매하기}}">선택상품 구매</a></span>
+		</div>
+		{{end(관련상품리스트)}}
+		{{if(관련상품리스트2)}}
+		<p class="tit_related">함께하면 좋은 상품</p>
+		{{$관련상품리스트2}}
+		<div class="btn_with">
+			<span class="box_btn middle"><a href="{{$관련상품장바구니담기2}}">선택상품 장바구니</a></span>
+			<span class="box_btn middle"><a href="{{$관련상품구매하기2}}">선택상품 구매</a></span>
+		</div>
+		{{end(관련상품리스트2)}}
+		<!--// 관련상품 -->
+
+		<!-- 레노 후기 -->
+		<div class="tab" id="tab_leno">
+			<ul>
+				<li><a onclick="move_tab('#tab_detail');">상품설명</a></li>
+				<li><a onclick="move_tab('#tab_rel');">관련상품</a></li>
+				<li class="over"><a onclick="move_tab('#tab_leno');">레노후기</a></li>
+				<li><a onclick="move_tab('#tab_review');">상품후기</a></li>
+				<li><a onclick="move_tab('#tab_qna');">상품문의</a></li>
+				<li><a onclick="move_tab('#tab_common');">배송/교환/반품/환불</a></li>
+			</ul>
+		</div>
+		<a id="review"></a>
+		<div>
+			{{$레노후기리스트}}
+			<div class="btn_qnarev">
+				<span class="box_btn middle small white"><a href="/board/index.php?db=gallery_3">모두보기</a></span>
+			</div>
+			{{$레노후기페이지선택}}
+		</div>
+
+		<!-- 구매 후기 -->
+		<div class="tab" id="tab_review">
+			<ul>
+				<li><a onclick="move_tab('#tab_detail');">상품설명</a></li>
+				<li><a onclick="move_tab('#tab_rel');">관련상품</a></li>
+				<li><a onclick="move_tab('#tab_leno');">레노후기</a></li>
+				<li class="over"><a onclick="move_tab('#tab_review');">상품후기</a></li>
+				<li><a onclick="move_tab('#tab_qna');">상품문의</a></li>
+				<li><a onclick="move_tab('#tab_common');">배송/교환/반품/환불</a></li>
+			</ul>
+		</div>
+		<a id="review"></a>
+		<div class="crema-hide">
+			<div id="detail_review_ajax_list">
+			{{$상품평리스트}}
+			</div>
+			<div class="btn_qnarev">
+				<span class="box_btn middle"><a href="{{$상품평등록}}">상품후기쓰기</a></span>
+				<span class="box_btn middle small white"><a href="{{$상품평보기}}">모두보기</a></span>
+			</div>
+			{{$상품평페이지선택}}
+			{{$상품평회원등록폼}}
+			{{$상품평비회원등록폼}}
+		</div>
+		<!-- crema.me / 상품 리뷰 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+		<div id="crema-product-reviews" class="crema-product-reviews" data-product-code="{{$디테일상품번호}}"></div>
+		<!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+		<div class="crema-popup"></div>
+		<!-- //구매 후기 -->
+
+		<!-- 상품 문의 -->
+		<div class="tab" id="tab_qna">
+			<ul>
+				<li><a onclick="move_tab('#tab_detail');">상품설명</a></li>
+				<li><a onclick="move_tab('#tab_rel');">관련상품</a></li>
+				<li><a onclick="move_tab('#tab_leno');">레노후기</a></li>
+				<li><a onclick="move_tab('#tab_review');">상품후기</a></li>
+				<li class="over"><a onclick="move_tab('#tab_qna');">상품문의</a></li>
+				<li><a onclick="move_tab('#tab_common');">배송/교환/반품/환불</a></li>
+			</ul>
+		</div>
+		<a id="qna"></a>
+		<div id="detail_qna_ajax_list">
+		{{$상품질답리스트}}
+		</div>
+		<div class="btn_qnarev">
+			<span class="box_btn middle"><a href="{{$상품질답등록}}">상품문의하기</a></span>
+			<span class="box_btn middle white"><a href="{{$상품질답보기}}">모두보기</a></span>
+		</div>
+		{{$상품질답페이지선택}}
+		{{$상품질답회원등록폼}}
+		{{$상품질답비회원등록폼}}
+		<!-- //상품 문의 -->
+
+		<!-- 추가정보(공통정보) -->
+		<div class="tab" id="tab_common">
+			<ul>
+				<li><a onclick="move_tab('#tab_detail');">상품설명</a></li>
+				<li><a onclick="move_tab('#tab_rel');">관련상품</a></li>
+				<li><a onclick="move_tab('#tab_leno');">레노후기</a></li>
+				<li><a onclick="move_tab('#tab_review');">상품후기</a></li>
+				<li><a onclick="move_tab('#tab_qna');">상품문의</a></li>
+				<li class="over"><a onclick="move_tab('#tab_common');">배송/교환/반품/환불</a></li>
+			</ul>
+		</div>
+		{{if(배송정보)}}<div class="common_info">{{$배송정보}}</div>{{end(배송정보)}}
+		{{if(반품취소안내)}}<div class="common_info">{{$반품취소안내}}</div>{{end(반품취소안내)}}
+		{{if(AS안내)}}<div class="common_info">{{$AS안내}}</div>{{end(AS안내)}}
+		<!-- //추가정보(공통정보) -->
+	</div>
+</div>
+
+
+<script language="Javascript">
+// 상품 수량조절
+var f=document.prdFrm;
+function eaChg(pm){
+	if (pm==1) {
+		f.buy_ea.value++;
+	}
+	else {
+		if (f.buy_ea.value<=1) {
+			return;
+		}
+		f.buy_ea.value--;
+	}
+}
+// 관련상품 수량조절
+function eaChg2(pm, f){
+	if (pm==1){
+		f.value++;
+	}else	{
+		if (f.value<=1){
+			return;
+		}f.value--;
+	}
+}
+
+function move_tab(obj) {
+	var pos = $(obj).offset();
+	var extra_space = 103;
+	var duration = "400";
+	if($(window).scrollTop() <= 0){
+		$('html, body').animate({scrollTop : pos.top - 182}, duration);
+	} else {
+		$('html, body').animate({scrollTop : pos.top - extra_space}, duration);
+	}
+}
+
+//부가이미지 조절 override function
+function attatchAddImage(obj, w) {
+	$('#mainImg').css({width:"auto"});
+	if(w > 0) $('#mainImg').width(w);
+
+	$('#mainImg').attr('src', obj.src);
+	$('#mainImg').attr('upfile1', $(obj).attr('upfile1'));
+}
+// 컬러칩 사용자 정의
+function selectColorOption(idx, no) {
+	$('.optChipSet'+idx).removeClass('selected');
+	$('.optChipItem'+no).addClass('selected');
+}
+</script>

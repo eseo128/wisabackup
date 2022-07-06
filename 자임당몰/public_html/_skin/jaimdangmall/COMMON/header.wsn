@@ -23,7 +23,7 @@
 					{{$로그인전1}}
 					{{$로그인후1}}
 					<li><a href="/mypage/mypage.php">Mypage</a></li>
-					<li><a href="/shop/cart.php">Cart(<span class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</span>)</a></li>
+					<li><a onclick="toggle_quick('quick_cart'); return false;">Cart(<span class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</span>)</a></li>
 					<li><span class="toggle_search" onclick="toggle_search('box_search',this)">검색</span></li>
 				</ul>
 			</div>
@@ -130,6 +130,17 @@
 				</div>
 			</div>
 		</div>
+		<!-- 퀵카트 -->
+		<div id="quick_cart" class="side_quick side_quick_cart">
+			<div class="quick_cart_top">
+				<span class="del"><a onclick="toggle_quick('quick_cart'); return false;"><img src="{{$이미지경로}}/button/quick_cart_close.png"></a></span>
+				<span class="quick_title">VIEW CART</span>
+			</div>
+			<ul class="quick_cart_bottom">
+				{{$퀵카트장바구니리스트}}
+			</ul>
+		</div>
+		<!-- //퀵카트 -->
 	</div>
 	<!-- //상단-->
 	<!-- 중앙 -->

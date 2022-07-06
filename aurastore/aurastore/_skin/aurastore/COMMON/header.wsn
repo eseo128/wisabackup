@@ -1,0 +1,229 @@
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
+	<!-- 상단 -->
+	<div id="notice">
+		<div class="wrap_inner">
+			<p>★ 모바타 트리플 이벤트! 신규 가입 2,000원 적립금(즉시사용가능)  / 첫 구매 완료 시 10%할인쿠폰 증정 / 카카오톡 플러스 친구 3,000원 쿠폰★</p>
+			<a onclick="todayclose()" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<div id="header">
+		<div class="wrap_inner">
+			<h1 class="logo"><a href="/"><img src="{{$이미지경로}}/logo/auraLOGO.png" alt="{{$쇼핑몰명}}"></a></h1>
+		</div>
+		<div class="gnb">
+			<div class="wrap_inner">
+				<a href="#" class="btn_allmenu">전체메뉴</a>
+				<ul class="menu category">
+					<li class="viewsub">
+						<a href="/content/content.php?cont=brand">brand</a>
+						<div class="banner_wrap">
+							<div class="inner w190">
+								<a href="/content/content.php?cont=brand">brand</a>
+								<ul class="list w190">
+									<li><a href="/content/content.php?cont=brand">브랜드스토리</a></li>
+									<li><a href="/content/content.php?cont=history">히스토리</a></li>
+									<li><a href="/content/content.php?cont=product">제품라인</a></li>
+									<li><a href="/content/content.php?cont=philosophy">경영철학</a></li>
+								</ul>
+							</div>
+							<ul class="banner_list">
+								{{if(사용자배너45)}}<li>{{$사용자배너45}}</li>{{endif(사용자배너45)}}
+								{{if(사용자배너46)}}<li>{{$사용자배너46}}</li>{{endif(사용자배너46)}}
+								{{if(사용자배너47)}}<li>{{$사용자배너47}}</li>{{endif(사용자배너47)}}
+							</ul>
+						</div>
+					</li>
+					<li class="viewsub">
+						<a href="/shop/big_section.php?cno1=1001">shop</a>
+						<div class="banner_wrap">
+							<div class="inner w190">
+								<a href="/shop/big_section.php?cno1=1001">shop</a>
+								<ul class="list">
+									{{$사용자리스트5}}
+								</ul>
+							</div>
+							<ul class="banner_list">
+								{{if(사용자배너48)}}<li>{{$사용자배너48}}</li>{{endif(사용자배너48)}}
+								{{if(사용자배너49)}}<li>{{$사용자배너49}}</li>{{endif(사용자배너49)}}
+								{{if(사용자배너50)}}<li>{{$사용자배너50}}</li>{{endif(사용자배너50)}}
+							</ul>
+						</div>
+					</li>
+					<li class="viewsub">
+						<a href="/board/?db=gallery_1&cate=17">event</a>
+						<div class="banner_wrap">
+							<div class="inner w190">
+								<a href="/board/?db=gallery_1">event</a>
+								<ul class="list">
+									<li><a href="/board/?db=gallery_1&cate=17">진행중인 이벤트</a></li>
+								<li><a href="/board/?db=gallery_1&cate=18">종료된 이벤트</a></li>
+								<li><a href="/board/?db=gallery_1&cate=19">당첨자 발표</a></li>
+								</ul>
+							</div>
+							<ul class="banner_list">
+								{{if(사용자배너51)}}<li>{{$사용자배너51}}</li>{{endif(사용자배너51)}}
+								{{if(사용자배너52)}}<li>{{$사용자배너52}}</li>{{endif(사용자배너52)}}
+								{{if(사용자배너53)}}<li>{{$사용자배너53}}</li>{{endif(사용자배너53)}}
+								
+							</ul>
+						</div>
+					</li>
+					<!-- <li>
+						<a href="/content/content.php?cont=%20regulaDelivery" class="reg_dlv">정기배송</a>
+					</li> -->
+					<li class="viewsub">
+						<a href="/board/?db=basic_1">community</a>
+						<ul class="list">
+							<li><a href="/board/?db=basic_1">공지사항</a></li>
+							<li><a href="/mypage/qna_list.php">Q&A</a></li>
+							<li><a href="/board/?db=basic_2">FAQ</a></li>
+							<li><a href="/mypage/counsel_list.php">1:1상담</a></li>
+							<li><a href="/content/content.php?cont=membership">멤버십혜택</a></li>
+							<li><a href="/board/?db=blog_1">리얼톡톡</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="menu utility">
+					<li>
+						<div id="box_search" class="search">
+							{{$상품검색폼시작}}
+							<input type="text" name="search_str" value="" class="form_input block basic_search">
+							<input type="image" src="{{$이미지경로}}/common/icon_search.png" alt="검색" class="btn">
+							{{$상품검색폼끝}}
+							<div class="placeholder">
+								<span class="text">모바타 샴푸 프리미엄</span>
+								<a href="/shop/search_result.php?search_str=모바타+샴푸+프리미엄&x=0&y=0" class="btn"></a>
+							</div>
+						</div>
+					</li>
+					<li class="viewsub">
+						<a href="/mypage/mypage.php" class="btn_mypage">마이페이지</a>
+						<ul class="list mypage">
+							{{$로그인전1}}{{$로그인후1}}
+							<li><a href="/mypage/mypage.php" class="gray">마이페이지</a></li>
+							<li><a href="/mypage/order_list.php">주문배송조회</a></li>
+							<li class="dn{{$적립금사용유무}}"><a href="/mypage/milage.php" class="bdrn">적립금</a></li>
+							<li><a href="/mypage/coupon_down_list.php">쿠폰</a></li>
+							<li><a href="/mypage/review_list.php" class="bdrn">나의 상품후기</a></li>
+							<li><a href="/mypage/counsel_list.php">1:1문의</a></li>
+							{{if(로그인전1)}}<li><a href="/member/join_step1.php">회원가입</a></li>{{endif(로그인전1)}}
+						</ul>
+					</li>
+					<li>
+						<a href="#" onclick="toggle_nav('latest_table');" class="btn_recent">최근본상품</a>
+					</li>
+					<li>{{$퀵카트1출력영역}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="gnb fixed">
+			<div class="wrap_inner">
+				<a href="#" class="btn_allmenu">전체메뉴</a>
+				<h1 class="logo"><a href="/"><img src="{{$이미지경로}}/logo/logo_white.png" alt="{{$쇼핑몰명}}"></a></h1>
+				<ul class="menu utility">
+					<li>
+						<div id="box_search" class="search">
+							{{$상품검색폼시작}}
+							<input type="text" name="search_str" value="" class="form_input block basic_search">
+							<input type="image" src="{{$이미지경로}}/common/icon_search_white.png" alt="검색" class="btn">
+							{{$상품검색폼끝}}
+							<div class="placeholder">
+								<span class="text">모바타 샴푸 프리미엄</span>
+								<a href="/shop/search_result.php?search_str=모바타+샴푸+프리미엄&x=0&y=0" class="btn"></a>
+							</div>
+						</div>
+					</li>
+					<li class="viewsub">
+						<a href="/mypage/mypage.php" class="btn_mypage">마이페이지</a>
+						<ul class="list mypage">
+							{{$로그인전1}}{{$로그인후1}}
+							<li><a href="/mypage/mypage.php" class="gray">마이페이지</a></li>
+							<li><a href="/mypage/order_list.php">주문배송조회</a></li>
+							<li class="dn{{$적립금사용유무}}"><a href="/mypage/milage.php" class="bdrn">적립금</a></li>
+							<li><a href="/mypage/coupon_down_list.php">쿠폰</a></li>
+							<li><a href="/mypage/review_list.php" class="bdrn">나의 상품후기</a></li>
+							<li><a href="/mypage/counsel_list.php">1:1문의</a></li>
+							{{if(로그인전1)}}<li><a href="/member/join_step1.php">회원가입</a></li>{{endif(로그인전1)}}
+						</ul>
+					</li>
+					<li>
+						<a href="#" onclick="toggle_nav('latest_table');" class="btn_recent">최근본상품</a>
+					</li>
+					<li>
+						<div class="quickcart">
+							<a href="#" onclick="openQuickCart2(1, 'click');" class="btn_quickcart">장바구니<strong class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</strong></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="all_menu">
+			<div class="wrap_inner">
+				<ul class="menu">
+					<li class="viewsub">
+						<a href="/content/content.php?cont=brand">brand</a>
+						<ul class="list">
+							<li><a href="/content/content.php?cont=brand">브랜드스토리</a></li>
+							<li><a href="/content/content.php?cont=history">히스토리</a></li>
+							<li><a href="/content/content.php?cont=product">제품라인</a></li>
+							<li><a href="/content/content.php?cont=philosophy">경영철학</a></li>
+						</ul>
+					</li>
+					<li class="viewsub">
+						<a href="/shop/big_section.php?cno1=1001">shop</a>
+						<ul class="list">
+							{{$사용자리스트5}}
+						</ul>
+					</li>
+					<li class="viewsub">
+						<a href="/board/?db=gallery_1&cate=17">event</a>
+						<ul class="list">
+							<li><a href="/board/?db=gallery_1&cate=17">진행중인 이벤트</a></li>
+							<li><a href="/board/?db=gallery_1&cate=18">종료된 이벤트</a></li>
+							<li><a href="/board/?db=gallery_1&cate=19">당첨자 발표</a></li>
+						</ul>
+					</li>
+					<!-- <li>
+						<a href="/content/content.php?cont=%20regulaDelivery" class="reg_dlv">정기배송</a>
+					</li> -->
+					<li class="viewsub">
+						<a href="/board/?db=basic_1">community</a>
+						<ul class="list">
+							<li><a href="/board/?db=basic_1">공지사항</a></li>
+							<li><a href="/mypage/qna_list.php">Q&A</a></li>
+							<li><a href="/board/?db=basic_2">FAQ</a></li>
+							<li><a href="/mypage/counsel_list.php">1:1상담</a></li>
+							<li><a href="/content/content.php?cont=membership">멤버십혜택</a></li>
+							<li><a href="/board/?db=blog_1">리얼톡톡</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="banner_wrap">
+					{{if(사용자배너1)}}<li>{{$사용자배너1}}</li>{{endif(사용자배너1)}}
+					{{if(사용자배너2)}}<li>{{$사용자배너2}}</li>{{endif(사용자배너2)}}
+				</ul>
+			</div>
+		</div>
+		<div class="right_table latest_table">
+			<div class="title">
+				<p>최근 본 상품 (<span class="count"></span>)</p>
+			</div>
+			{{$최근상품리스트}}
+		</div>
+	</div>
+	<!-- //상단-->
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		{{$사용자HTML1}}
+		{{$사용자HTML3}}
+		<!-- BRAND, COMUNITY 하위분류 -->
+		{{$사용자HTML13}}
+		<!-- //BRAND, COMUNITY 하위분류 -->
+		<!-- 마이페이지 메뉴 -->
+		{{$사용자HTML4}}
+		<!-- //마이페이지 메뉴 -->

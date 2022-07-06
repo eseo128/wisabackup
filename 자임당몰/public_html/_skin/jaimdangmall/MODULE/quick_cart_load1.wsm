@@ -1,0 +1,5 @@
+<div class="quickcart">
+	<a href="#" onclick="{{$퀵카트클릭스크립트}}">장바구니 (<strong class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</strong>)</a>
+	<span class="box_btn trans cart"><a href="#" onclick="openQuickCart2(1, 'click');">장바구니</a></span>
+	{{$퀵카트장바구니리스트}}
+</div>

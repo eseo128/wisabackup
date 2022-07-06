@@ -1,0 +1,224 @@
+<script type="text/javascript">
+    // F12 버튼 방지
+    //$(document).ready(function(){
+    //    $(document).bind('keydown',function(e){
+    //        if ( e.keyCode == 123 /* F12 */) {
+    //            e.preventDefault();
+    //            e.returnValue = false;
+    //        }
+    //    });
+    //});
+    
+    // 우측 클릭 방지
+    //document.onmousedown=disableclick;
+    status="Right click is not available.";
+    
+    function disableclick(event){
+        if (event.button==2) {
+            //alert(status);
+            return false;
+        }
+    }
+</script>
+
+<body>
+
+
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+
+{{if(사용자배너130)}}<div id="top_bnr" class="top_bnr">{{$사용자배너130}}<span class="close" onclick="todayclose();"></span></div>{{endif(사용자배너130)}}
+<div id="wrapper" class="{{$페이지그룹클래스}}">
+<!-- 상단 -->	
+<div id="header" class="{{$페이지그룹클래스}}">
+	<div class="header_wrap">
+		<nav class="gnb">
+			<div class="dropdown">
+				<h1 class="logo"><a href="/"><span class="hidden">{{$쇼핑몰명}}</span></a></h1>		
+				<ul class="cate">
+					{{$GNB커스텀카테고리}}
+					<li class="title"><a href="/shop/big_section.php{{$GNB커스텀아울렛카테고리번호}}" {{$GNB커스텀아울렛활성화클래스}}>OUTLET</a>
+						{{$GNB커스텀아울렛리스트}}
+					</li>
+					<li class="title"><a href="/content/content.php?cont=company" {{$GNB커스텀어바웃활성화클래스}} class="gnb_about_idf">ABOUT IDF</a>
+						<div class="lnb_wrap">
+							<div class="box">
+								<ul>
+									<li><a href="/content/content.php?cont=company">회사소개</a></li>
+									<li><a href="/content/content.php?cont=lookbook">브랜드 캠페인</a></li>
+									<li><a href="/board/?db=gallery_2">브랜드 필름</a></li>
+								</ul>
+								{{$GNB커스텀어바웃리스트}}
+							</div>
+						</div>
+					</li>
+					<div class="gnb_info">
+						<ul>
+							{{$로그인전1}}{{$로그인후1}}
+							<li class="icon mypage">
+								<a href="/mypage/mypage.php"><span class="hidden">마이페이지</span></a>
+								<div class="viewsub">
+									<ul class="list">
+										<li><a href="/mypage/mypage.php">마이페이지</a></li>
+										<li><a href="/mypage/order_list.php">주문내역조회</a></li>
+										<li><a href="/mypage/coupon_down_list.php">쿠폰조회</a></li>
+										<li><a href="/mypage/wish_list.php">위시리스트</a></li>
+										<li><a href="/mypage/review_list.php">상품후기</a></li>
+										<li><a href="/mypage/counsel_list.php">1:1문의</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon cart"><a onclick="toggle_quick('quick_cart'); return false;"><span class="hidden">장바구니</span><span class="ea_cart front_cart_rows quick_cart_cnt">({{$장바구니개수}})</span></a></li>
+							<li class="icon search"><a onclick="toggle_quick('smart_search'); return false;"><span class="hidden">검색</span></a></li>
+						</ul>
+					</div>
+				</ul>
+			</div>
+		</nav>
+		<!-- 검색 -->
+		<div id="smart_search" class="side_quick side_quick_search">
+			<div class="inner">
+				<div class="close" onclick="toggle_quick('smart_search');"><span class="hidden">닫기</span></div>
+				{{$상품검색폼시작}}
+				<div class="search_option">
+					<div class="toggle_box opt_brand box">
+						<div class="title" onclick="toggle_view('smt_sch_opt_brand', this, 'slide');">브랜드</div>
+						<div class="cnt" id="smt_sch_opt_brand">
+							<ul class="checks">
+								<li><input type="radio" name="big" value="" id="sch_opt_brand_chk_0" onclick="$('.search_option .shesmiss').hide();$('.search_option .list').hide();$('.search_option .sistina').hide();"><label for="sch_opt_brand_chk_0">ALL</label></li>
+								<li><input type="radio" name="big" value="1075" id="sch_opt_brand_chk_1" onclick="$('.search_option .shesmiss').show();$('.search_option .list').hide();$('.search_option .sistina').hide();"><label for="sch_opt_brand_chk_1">SHESMISS</label></li>
+								<li><input type="radio" name="big" value="1077" id="sch_opt_brand_chk_2" onclick="$('.search_option .shesmiss').hide();$('.search_option .list').show();$('.search_option .sistina').hide();"><label for="sch_opt_brand_chk_2">LIST</label></li>
+								<li><input type="radio" name="big" value="1137" id="sch_opt_brand_chk_3" onclick="$('.search_option .shesmiss').hide();$('.search_option .list').hide();$('.search_option .sistina').show();"><label for="sch_opt_brand_chk_3">SISTINA</label></li>
+							</ul>
+						</div>
+					</div>
+					<div class="toggle_box opt_category box">
+						<div class="title" onclick="checkBrand(); ">카테고리</div>
+						<div class="cnt" id="smt_sch_opt_cate">
+							<ul class="checks">
+								{{$스마트서치카테고리}}
+							</ul>
+						</div>
+					</div>
+					<div class="input_keyword box">
+						<input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="검색어를 입력해주세요">
+						<input type="image" src="{{$이미지경로}}/button/quick_search_run.png" alt="검색" class="btn">
+						<span class="close clearable_clear"></span>
+						<input type="image" src="{{$이미지경로}}/button/hd_search.png" alt="검색" class="search">
+					</div>
+				</div>
+				{{$상품검색폼끝}}
+			</div>
+		</div>
+		<!-- //검색 -->
+		<!-- 퀵카트 -->
+		<div id="quick_cart" class="side_quick side_quick_cart">
+			<div class="inner">
+				<div class="close" onclick="toggle_quick('quick_cart');"><span class="hidden">닫기</span></div>
+				<div class="title">장바구니<span class="ea_cart front_cart_rows quick_cart_cnt"></span></div>
+				<!-- 일반택배 -->
+				<div class="tabcnt_quick_cart0">
+					{{$퀵카트일반택배리스트}}
+				</div>
+				<!-- //일반택배 -->
+				<!-- 매장픽업 -->
+				<div class="tabcnt_quick_cart1">
+					{{$퀵카트매장픽업리스트}}
+				</div>
+				<!-- //매장픽업 -->
+			</div>		
+		</div>
+		<!-- //퀵카트 -->
+	</div>
+	<div class="header_dimmed" onclick="toggle_quick('smart_search');"></div>
+	<div class="header_dimmed2" onclick="toggle_quick('quick_cart');"></div>
+	<script type="text/javascript">
+		$(function(){
+			$.extend({
+			getUrlVars: function() {
+				var vars = [], hash;
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).toUpperCase().split('&');
+					for (var i = 0; i < hashes.length; i++) {
+						hash = hashes[i].split('=');
+						vars.push(hash[0]);
+						vars[hash[0]] = hash[1];
+					}
+					return vars;
+				},
+				getUrlVar: function(name) {
+					return $.getUrlVars()[name.toUpperCase()];
+				}
+			}); 
+			var cont = $.getUrlVar('cont');
+			var cno1 = $.getUrlVar('cno1');
+			$(document).ready(function() {
+				if (cont=='MAIN_SISTINA_NEW' || cno1=='1150') {
+					$('.sistina').addClass('active');
+				}
+
+				if (cont=='COMPANY' || cont=='CONTINUE' || cont=='MNG_GUIDE') {
+					$('.gnb_about_idf').addClass('active');
+				}
+			});
+		});
+		// search 옵션
+		var $inp = $('.basic_search'),
+			$cle = $('.clearable_clear');
+
+		$inp.on("input", function(){
+			$cle.toggle(!!this.value);
+		});
+
+		$cle.on("touchstart click", function(e) {
+			e.preventDefault();
+			$inp.val("").trigger("input");
+		});
+
+		//장바구니 0 옵션
+		if ($('#header .gnb .gnb_info > ul > li.icon .front_cart_rows').html() == '('+0+')'){
+			$('#header .gnb .gnb_info > ul > li.icon .front_cart_rows').hide();
+		}
+	</script>
+	</div>
+	<!-- //상단 -->
+
+
+
+	<!-- //상단 띠배너 -->
+	{{if(사용자배너96)}}
+	<div class="line_banner dn" style="position: fixed; background-color: #872824; height: 49px; z-index: 50; width: 100%; text-align: center;">
+		{{$사용자배너96}}
+	</div>
+	<div class="dn" style="padding-bottom:49px;"></div>
+	{{end(사용자배너96)}}
+	<!----->
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		{{$사용자HTML1}}
+		<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(카테고리) 사용자코드 -->
+		{{$사용자HTML2}}
+		<!-- //서브 타이틀 텍스트(카테고리) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+		{{$사용자HTML3}}
+		<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+		<!-- 마이페이지 메뉴 사용자코드 -->
+		{{if(lnb마이페이지메뉴)}}
+		<div class="mypage_lnb">
+			<div class="group_title">MYPAGE</div>
+			{{$lnb마이페이지메뉴}}
+		</div>
+		{{endif(lnb마이페이지메뉴)}}
+		<!-- //마이페이지 메뉴 사용자코드 -->
+		<!-- 고객센터 메뉴 사용자코드 -->
+		{{if(lnb고객센터메뉴)}}
+		<div class="cscenter_lnb">
+			<div class="group_title">고객센터</div>
+			{{$lnb고객센터메뉴}}
+		</div>
+		{{endif(lnb고객센터메뉴)}}
+		<!-- //고객센터 메뉴 사용자코드 -->
