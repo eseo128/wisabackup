@@ -1,0 +1,101 @@
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
+	<!-- 상단 -->
+	<div id="header">
+		<div class="fix">
+			<div class="wrap_inner">
+				<h1><a href="/">Day By Day.</a></h1>
+				<ul class="lnb">
+					<li class="eng"><a href="/shop/big_section.php?cno1=1009">NEW</a></li>
+					<li class="eng"><a href="/shop/big_section.php?cno1=1010">BEST</a></li>
+					<li><a href="/shop/big_section.php?cno1=1001">눈 건강</a></li>
+					<li><a href="/shop/big_section.php?cno1=1002">면역 건강</a></li>
+					<li class="list"><a href="/shop/big_section.php?cno1=1003">장 건강</a></li>
+					<li><a href="/shop/big_section.php?cno1=1004">간&피로</a></li>
+					<li><a href="/shop/big_section.php?cno1=1005">프로틴</a></li>
+					<li><a href="/shop/promotion.php">프로모션</a></li>
+					<li class="viewsub"><a>커뮤니티</a></li>
+				</ul>
+				<ul class="gnb">
+					<li class="mypage">
+						<a href="/mypage/mypage.php">마이페이지</a>
+						<ul class="list">
+							{{$로그인전1}}{{$로그인후1}}
+						</ul>
+					</li>
+					<li class="search"><a onclick="toggle_view('box_search',this)">검색</a></li>
+					<li class="wish"><a href="/mypage/wish_list.php">관심상품</a></li>
+					<li class="cart"><a href="/shop/cart.php">장바구니 (<strong class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</strong>)</a></li>
+				</ul>
+			</div>
+			<div class="category_depth category_depth0">
+				<div class="depth_wrap">
+					<dl>
+						<dt><a href="">프로바이오틱스</a></dt>
+					</dl>
+					<dl>
+						<dt><a href="">프로바이오틱스</a></dt>
+						<dd><a href="/shop/big_section.php?cno1=1013">바이오 틱스 1</a></dd>
+						<dd><a href="/shop/big_section.php?cno1=1034">바이오 틱스 2</a></dd>
+					</dl>
+					<dl>
+						<dt><a href="">포스트바이오틱스</a></dt>
+					</dl>
+					<dl>
+						<dt><a href="">신바이오틱스</a></dt>
+					</dl>
+					<dl>
+						<dt><a href="">멀티바이오틱스</a></dt>
+						<dd><a href="/shop/big_section.php?cno1=1018">멀티바이오틱스 1</a></dd>
+						<dd><a href="/shop/big_section.php?cno1=1018">멀티바이오틱스 2</a></dd>
+						<dd><a href="/shop/big_section.php?cno1=1018">멀티바이오틱스 3</a></dd>
+						<dd><a href="/shop/big_section.php?cno1=1018">멀티바이오틱스 4</a></dd>
+					</dl>
+					<dl>
+						<dt><a href="">다이어트/유산균</a></dt>
+						<dd><a href="/shop/big_section.php?cno1=1018">다이어트 유산균1</a></dd>
+						<dd><a href="/shop/big_section.php?cno1=1018">다이어트 유산균2</a></dd>
+						<dd><a href="/shop/big_section.php?cno1=1018">다이어트 유산균3</a></dd>
+					</dl>
+					<dl>
+						<dt><a href="">질 유래 유산균</a></dt>
+					</dl>
+					<dl>
+						<dt><a href="">구강 특허 유산균</a></dt>
+					</dl>
+				</div>
+			</div>
+			<!-- 커뮤니티 depth 레이아웃 -->
+			<div class="community_depth">
+				<ul>
+					<li><a href="/board?db=basic_1">NOTICE</a></li>
+					<li><a href="/shop/product_qna_list.php">Q&A</a></li>
+					<li><a href="/board?db=basic_2">FAQ</a></li>
+					<li><a href="/shop/product_review_list.php">REVIEW</a></li>
+					<li><a href="/board?db=gallery_1">EVENT</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //상단-->
+	<!-- 텍스트 배너 연동 -->
+		<div id="ad_banner" class="wrap_inner">
+		<a href="/member/join_step1.php">새해결심 Day By Day와 다시 시작하세요! 가입시 할인 혜택 ~66%</a>
+		<p class="btn" onclick="todayclose()">닫기</p>
+	</div>
+	<!-- 텍스트 배너 연동 -->
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		{{$사용자HTML1}}
+		<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+		{{$사용자HTML3}}
+		<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+		<!-- 마이페이지 메뉴 -->
+		{{$사용자HTML4}}
+		<!-- //마이페이지 메뉴 -->

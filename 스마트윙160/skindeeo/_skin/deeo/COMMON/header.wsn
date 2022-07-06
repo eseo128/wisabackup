@@ -1,0 +1,58 @@
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
+	<!-- 상단 -->
+	<div id="header">
+		<div class="gnb wrap_inner">
+			<h1 class="logo"><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="logo"></a></h1>
+			<div id="box_search" class="search">
+				{{$상품검색폼시작}}
+				<div class="box">
+					<input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="검색어를 입력하세요">
+					<input type="image" src="{{$이미지경로}}/button/hd_search.png" alt="검색" class="btn">
+				</div>
+				{{$상품검색폼끝}}
+			</div>
+			<ul class="menu">
+				{{$로그인전1}}{{$로그인후1}}
+				<li><a href="/shop/cart.php">장바구니</a></li>
+			</ul>
+		</div>
+		<div class="lnb">
+			<div class="wrap_inner">
+				<ul class="category">
+					<li><a href="/shop/big_section.php?cno1=1009">NEW</a></li>
+					<li><a href="/shop/big_section.php?cno1=1010">BEST</a></li>
+					{{$사용자리스트5}}
+				</ul>
+				<ul class="lnb_right">
+					<li class="community">
+						<a href="/board/?db=basic_1">커뮤니티</a>
+						<ul class="depth depth_community">
+							<li><a href="/board/?db=basic_1">공지사항</a></li>
+							<li><a href="/board/?db=basic_2">자주묻는질문</a></li>
+							<li><a href="/shop/product_qna_list.php">상품문의</a></li>
+							<li><a href="/shop/product_review_list.php">상품리뷰</a></li>
+							<li><a href="/board/?db=gallery_1">이벤트</a></li>
+						</ul>
+					</li>
+					<li><a href="/shop/promotion.php">프로모션</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //상단-->
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		{{$사용자HTML1}}
+		<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+		{{$사용자HTML3}}
+		<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+		<!-- 마이페이지 메뉴 -->
+		{{$사용자HTML4}}
+		<!-- //마이페이지 메뉴 -->
