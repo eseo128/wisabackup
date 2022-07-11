@@ -1,0 +1,71 @@
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
+	<!-- 220117 띠배너 -->
+	{{if(사용자배너120)}}
+	<div class="top_bnr">
+		{{$사용자배너120}}
+	</div>
+	{{end(사용자배너120)}}
+	<!-- 상단 -->
+	<div id="header">
+		<div class="gnb">
+			<h1 class="logo"><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a></h1>
+			<ul class="category">
+				<!-- <li><a href="/content/content.php?cont=brand">BRAND</a></li> -->
+				<li><a href="/content/content.php?cont=lab">CELONIA Lab.</a></li>
+				<li><a href="/content/content.php?cont=new_best">BEST</a></li>
+				<li><a href="/shop/big_section.php?cno1=1001">SHOPPING</a></li>
+				<li><a href="/board/?db=gallery_2">EVENT</a></li>
+				<li><a href="/board/?db=gallery_4">NEWS</a></li>
+			</ul>
+			<ul class="menu">
+				{{$로그인전1}}
+				{{$로그인후1}}
+				<li class="icon search"><a href="javascript:;" onclick="search_view();">검색</a></li>
+				<li class="icon my"><a href="/mypage/mypage.php">마이페이지</a></li>
+				<li class="icon cart"><a href="/shop/cart.php">장바구니 <span class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</span></a></li>
+			</ul>
+			<div id="box_search" class="box_search">
+				{{$상품검색폼시작}}
+				<div class="inner">
+					<span class="close" onclick="search_view();">닫기</span>
+					<div class="box">
+						<input type="text" name="search_str" value="" class="form_input block basic_search" onkeyup="relation_search_keyword_make($(this))" placeholder="검색어를 입력하세요.">
+						<input type="image" src="{{$이미지경로}}/common/layer_search.png" alt="검색" class="btn">
+					</div>
+					<div class="keyword hot_keyword" id='best_keyword'>
+						<h5>인기검색어</h5>
+						{{$인기검색어}}
+					</div>
+					<div class="keyword auto_search" id="relation_search_form">
+						<ul class="list" id='relation_search'>
+						</ul>
+					</div>
+				</div>
+				{{$상품검색폼끝}}
+			</div>
+		</div>
+	</div>
+	<!-- //상단-->
+	{{$연관검색어 스크립트}}
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		{{$사용자HTML1}}
+		<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(카테고리) 사용자코드 -->
+		{{$사용자HTML2}}
+		<!-- //서브 타이틀 텍스트(카테고리) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+		{{$사용자HTML3}}
+		<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+		<!-- 마이페이지 메뉴 -->
+		{{$사용자HTML4}}
+		<!-- //마이페이지 메뉴 -->
+		
+		
+	

@@ -185,6 +185,19 @@ function toggle_view(selector, obj){
 	}
 }
 
+/* 토글 */
+function toggle_slide(selector, obj){
+	var search = $('#'+selector+'');
+	var obj = $(obj);
+	if (search.css('display') == 'none') {
+		search.slideDown();
+		obj.addClass('active');
+	} else {
+		search.slideUp();
+		obj.removeClass('active');
+	}
+}
+
 /* 탭뷰 */
 function tabover(name, no) {
 	var tabs = $('.tab_'+name+'').find('li');
@@ -294,4 +307,24 @@ $(window).scroll(function(){
 function scrollup(){
 	$('html, body').animate({scrollTop:0}, 'slow');
 }
+
+// 헤더 상단 카테고리 자동 노출
+$(window).load(function(){
+	$('header nav.lnb .big_cate li[data-cate-level]').each(function(){
+		if ($(this).data('cate-level') == 1) {
+			if($(this).next().data('cate-level') > 1) $(this).addClass('mid').addClass('ib');
+		}else if ($(this).data('cate-level') == 2) {
+			if($(this).next().data('cate-level') > 1) $(this).append('<ul class="sml"><li class="all"><a href="'+$(this).find('>a').attr('href')+'">전체보기</a></li></ul>').addClass('sml_cate');
+		}else if($(this).data('cate-level') > 1 && $(this).prev().find('> ul')) {
+			$(this).prev('li[data-cate-level="2"]').find('> ul').append($(this));
+		}
+	});
+
+	// 한방 앞 br_box 추가
+	$('li[data-cate-code]').each(function(){
+		if ($(this).attr('data-cate-code') == '1002') {
+			$(this).before('<div class="br_box"></div>');
+		}
+	});
+})
 

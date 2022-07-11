@@ -1,0 +1,26 @@
+<!-- 반복문시작 -->
+<ul class="latest">
+<!-- 반복구문시작 -->
+	<li>
+		<div class="img">{{$상품이미지(링크포함)}}</div>
+		<div class="name">{{$상품명(링크포함)}}</div>
+	</li>
+<!-- 반복구문끝 -->
+</ul>
+	
+<script type="text/javascript">
+	
+	$('.latest').slick({
+	rows:1,
+	infinite: true,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	arrows:true,
+	dots: false,
+	variableWidth : true,
+});
+</script>
+<!-- 반복문끝 -->
+<!-- 데이터없음시작 -->
+<!-- 데이터없음끝 -->
+	

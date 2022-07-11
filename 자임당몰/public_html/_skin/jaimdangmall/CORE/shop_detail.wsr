@@ -142,11 +142,11 @@
 						{{if(정상판매시내용)}}바로 구매{{endif(정상판매시내용)}}
 						{{if(품절시내용)}}품절{{endif(품절시내용)}}
 						</a></span>
-						<!-- <div class="pay">
+						<div class="pay">
 							<div class="npay">{{$네이버체크아웃버튼}}</div>
 							<div class="talkpay">{{$카카오페이구매버튼}}</div>
 							<div class="payco">{{$페이코즉시구매버튼}}</div>
-						</div> -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -383,4 +383,13 @@
 			first_view = true;
 		})
 	});
+
+	//아이폰일때만 아래 옵션박스 css 수정
+	$(function(){
+		var varUA = navigator.userAgent.toLowerCase();
+		if(varUA.indexOf("iphone")>-1){
+		$("#detail .info > .quick_bar").css("padding","10px 10px 25px 10px");
+		}
+	});
+	
 </script>

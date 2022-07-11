@@ -1,0 +1,154 @@
+<style type="text/css" title="">
+#cnt .cntbody {width:100%;}
+</style>
+<div id="main">
+	<div class="visual_fade"> 
+		<div class="box">
+			<div class="slick-slide"><a href="#"><img src="{{$이미지경로}}/banner/visual01.png" alt="배너처리"></a><div class="slideCount"></div></div>
+			<div class="slick-slide"><a href="#"><img src="{{$이미지경로}}/banner/visual02.png" alt="배너처리"></a><div class="slideCount"></div></div>
+		</div> 
+		<div class="bar_box">
+			<div class="pro-bar pro-ani"></div> 
+		</div>     
+		<div class="text_box">
+			<h3>CERAMIC BOWL</h3>
+			<h1>BRUNELLO</h1>
+			<p>It’s handcrafted in Italy from ceramic to a tapered silhouette,<br>
+				then rests on a rounded base. Place it in the middle of a neutral<br>
+				table setting to complete the refined mood.
+			</p>
+			<img src="{{$이미지경로}}/button/new_blank.png">
+		</div>
+	</div>
+	<div class="visual_new">
+		<div class="box">
+			<div class="slick-slide"><a href="#"><img src="{{$이미지경로}}/banner/new01.png" alt="배너처리"></a></div>
+			<div class="slick-slide"><a href="#"><img src="{{$이미지경로}}/banner/new02.png" alt="배너처리"></a></div>
+			<div class="slick-slide"><a href="#"><img src="{{$이미지경로}}/banner/new01.png" alt="배너처리"></a></div>
+		</div>
+		<div class="text_box">
+			<h1>PEACH<br>PINK AND WHITE</h1>
+			<p>LITTLE JEWELLERY FOR YOUR HOME<br>
+				Each piece is unique and HANDMADE BY ME in my small ceramic<br>
+				studio in Lisbon with joy and a special attention to detail.
+			</p>
+			<a href="/board/?db=gallery_1"><img src="{{$이미지경로}}/button/new_blank.png"></a>
+		</div>
+	</div>
+	{{$사용자리스트12}}
+	{{$사용자리스트13}}
+	{{$사용자리스트14}}
+	<!-- 인스타그램 연동 후 사용자리스트15 사용 -->
+	<div class="instagram">
+		<div class="wrap_inner">
+			<h2 class="subtitle">INSTAGRAM <a href="#">insta_deeo</a></h2>
+			<a href="https://www.instagram.com/wisa.co.kr/" class="more">more</a>
+			<ul class="api">
+				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta01.png" alt="배너처리"></a></li>
+				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta02.png" alt="배너처리"></a></li>
+				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta03.png" alt="배너처리"></a></li>
+				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta01.png" alt="배너처리"></a></li>
+				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta02.png" alt="배너처리"></a></li>
+				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta03.png" alt="배너처리"></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- //인스타그램 연동 후 사용자리스트20 사용 -->
+</div>
+<!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<div class="crema-popup"></div>
+<script type="text/javascript">
+	//visual 슬라이드 페이징 처리
+	$(document).ready(function (){
+		var slideCount = $('.slideCount');
+		var slickSlide = $('.visual_fade > .box');
+
+
+		slickSlide.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+		//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+		var i = (currentSlide ? currentSlide : 0) + 1;
+		$(this).find('.slideCount').html('<span class="slideCountItem"> 0' + i + '</span> ' + ' <span class="slideCountAll"> 0' + slick.slideCount + '</span>');
+		});
+
+		//visual 슬라이드 프로그레스바 처리
+		let time = 0;
+		let interval ;
+		let timeSet ; 
+		let duration=3;
+
+		$(".visual_fade > .box").on('afterChange',function(){
+		time=0;
+		duration=3;
+			$(".pro-bar").addClass('pro-ani');
+		$(".pro-ani").css({
+			'animation-duration': '3s',
+		})
+			timeSet = setInterval(function(){
+			duration--;
+			},1000)
+		});
+		$(".visual_fade > .box").on('beforeChange',function(){
+			$(".pro-bar").removeClass('pro-ani');
+			clearInterval(timeSet); 
+		});
+
+		$(".visual_fade > .box").on('mouseenter',function(){
+		interval = setInterval(function(){
+			time=time+1;
+		},1000)
+		})
+
+		$(".visual_fade").on('mouseleave ',function(){
+		clearInterval(interval); 
+		$(".pro-ani").css({
+			'animation-duration': duration+ time +'s',
+		})
+		duration = duration+ time; 
+		console.log(duration, time)
+		time = 0;
+		})
+
+		// visual 슬라이드
+		$('.visual_fade > .box').slick({
+		dots: true,			// 페이지네이션 노출 유무
+		infinite: true,		// 무한 루프 유무
+		speed: 500,			// 이벤트 속도
+		fade: true,			// 옵션
+		cssEase: 'linear',	// CSS3 에니메이션
+		autoplay: true,		// 자동진행
+		autoplaySpeed: 3000,// 자동진행 속도
+		pauseOnHover:false, // 슬라이드 호버시 정지
+		});
+
+		// new 슬라이드
+		$('.visual_new > .box').slick({ 
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			dots: true,
+			infinite: true,
+			speed: 300,
+			cssEase: 'linear',	// CSS3 에니메이션
+			autoplay: true,
+			autoplaySpeed: 3000,
+			variableWidth: true,
+			centerMode:true,
+			adaptiveHeight: true,
+		});
+
+		// 인스타그램 슬라이드
+		$('.api').slick({ 
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			dots: true,
+			infinite: true,
+			speed: 300,
+			cssEase: 'linear',	// CSS3 에니메이션
+			autoplay: true,
+			autoplaySpeed: 3000,
+			variableWidth: true,
+			centerMode:true,
+			adaptiveHeight: true,
+		});
+	});
+	
+</script>

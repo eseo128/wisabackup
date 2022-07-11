@@ -120,3 +120,14 @@ function scrollup(){
 function scrolldown(){
 	$('html, body').animate({scrollTop:$(document).height()}, 'slow');
 }
+
+// 헤더 상단 카테고리 자동 노출
+$(window).load(function(){
+	$('#header .lnb .box_shop .area li[data-cate-level]').each(function(){
+		if ($(this).data('cate-level') == 2) {
+			if($(this).next().data('cate-level') > 1) $(this).append('<ul class="mid_cate"><li class="all sml"><a href="'+$(this).find('>a').attr('href')+'">전체보기</a></li></ul>').addClass('mid');
+		}else if($(this).data('cate-level') > 1 && $(this).prev().find('> ul')) {
+			$(this).prev('li[data-cate-level="2"]').find('> ul').append($(this));
+		}
+	});
+})

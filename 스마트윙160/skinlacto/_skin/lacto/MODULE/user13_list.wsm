@@ -1,0 +1,56 @@
+<!-- 반복문시작 -->
+<div class="new_collection wrap_inner">
+	<div class="left">
+		<a href="#none">
+			<img src="{{$이미지경로}}/main/video_img.png">
+		<!-- <iframe width="740" height="460" src="https://www.youtube.com/embed/ChM7Fw0QMUI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+		</a>
+	</div>
+	<div class="right">
+		<h2 class="subtitle"><strong>New</strong> Collection</h2>
+		<a href="/shop/big_section.php?cno1=1009" class="more">more</a>
+		<span class="content">피부 친화적인 성분, 순수한 식물성 원료를 바탕으로<br>제조함으로써 피부 채식주의를 실현</span>
+		<div class="prd_basic mini slide new_clt">
+<!-- 반복구문시작 -->
+			<div class="box {{$상품품절}}">
+				<div class="img">
+					<div class="prdimg">{{$상품이미지(링크포함)}}</div>
+					<!-- 상품품절 영역 -->
+					<div class="soldout" onclick="location.href='{{$상품링크}}'">Sold out</div>
+					<!-- //상품품절 영역 -->
+				</div>
+				<div class="info">
+					<div class="wish">{{$위시담기}}</a></div>
+					<div class="price">
+						{{if(상품소비자가격)}}
+						<p class="consumer consumer{{$할인적용여부}}">{{$화폐단위전}}{{$상품소비자가격}}{{$화폐단위후}}</p>
+						{{endif(상품소비자가격)}}
+						<p class="sell sell{{$할인적용여부}}"><strong>{{$화폐단위전}}￦{{$상품가격}}{{$화폐단위후}} {{if(참조상품가격)}}({{$참조화폐단위전}}{{$참조상품가격}}{{$참조화폐단위후}}){{endif(참조상품가격)}}</strong></p>
+						<p class="discount discount{{$할인적용여부}}"><strong>{{$화폐단위전}}{{$할인후실판매가}}{{$화폐단위후}} {{if(참조할인후실판매가)}}({{$참조화폐단위전}}{{$참조할인후실판매가}}{{$참조화폐단위후}}){{endif(참조할인후실판매가)}}</strong></p>
+					</div>
+					{{if(할인및인하율)}}
+					<span class="per"><strong>{{$할인및인하율}}</strong>%</span>
+					{{endif(할인및인하율)}}
+				</div>
+				<p class="name">{{if(단독배송여부)}}[단독배송] {{endif(단독배송여부)}}{{$상품명(링크포함)}}</p>
+			</div>
+<!-- 반복구문끝 -->
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('.prd_basic.slide.new_clt').slick({
+		slidesToShow: 3,	// 한 줄 상품갯수
+		slidesToScroll: 1,	// 슬라이드 되는 갯수
+		swipe: false,		// 스와이프 기능 true, false
+		dots: false,		// 페이지네이션의 노출 true, false
+		arrows:true,		// 좌우슬라이드의 버튼 노출 true, false
+		autoplay: false,		// 자동슬라이드 true, false
+		autoplaySpeed: 2000,// 슬라이드속도
+	});
+</script>
+<!-- 반복문끝 -->
+
+<!-- 데이터없음시작 -->
+
+<!-- 데이터없음끝 -->

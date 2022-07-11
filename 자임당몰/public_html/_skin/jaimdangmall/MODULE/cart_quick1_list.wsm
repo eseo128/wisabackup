@@ -3,24 +3,35 @@
 	<table>
 		<caption class="hidden">장바구니</caption>
 		<colgroup>
-			<col style="width:100px">
-			<col>
+			<col style="width:210px">
+			<col style="width:290px">
 		</colgroup>
 		<thead>
 			<tr>
-				<th scope="col">상품이미지</th>
-				<th scope="col">상품정보</th>
+				<th scope="col"></th>
+				<th scope="col"></th> 
 			</tr>
 		</thead>
 		<tbody>
 <!-- 반복구문시작 -->
 			<tr>
-				<td>{{$상품이미지(링크포함)}}<span class="del">{{$상품삭제}}<img src="{{$이미지경로}}/button/delete_s.png" alt="삭제"></a></span></td>
+				<td>{{$상품이미지(링크포함)}}</td>
 				<td class="info">
-					<p>{{$상품명(링크포함)}}</p>
-					<p>{{$상품옵션정보(추가가격포함)}}</p>
-					<p><strong>{{$화폐단위전}}{{$상품총가격}}{{$화폐단위후}}</strong><span>({{$구매수량}}개)</span></p>
+					<p class="title">{{$상품명(링크포함)}}</p>
+					<p class="option">{{$상품옵션정보}}</p>
+					<p class="price"><strong><span class="won">{{$화폐단위전}}</span>{{$상품총가격}}{{$화폐단위후}}</strong></p>
 					{{if(입점업체명)}}<p class="mall">{{$입점업체명}} 배송상품</p>{{endif(입점업체명)}}
+					<span class="del">{{$상품삭제}}<img src="{{$이미지경로}}/button/quick_cart_opt_del.png" alt="삭제"></a></span>
+					<div class="qty">
+						<div class="box_qty">
+							<input type="text" name="buy_ea[]" value="1" id="" class="form_input" isplaceholderinited="true">
+							<div class="btn_ea">
+								<a href="#" onclick="; return false;" class="ea_up"></a>
+								<a href="#" onclick="; return false;" class="ea_down"></a>
+							</div>
+						</div>
+						<span class="btn_edit"><a href="javascript:updateCart(document.cartFrm);">변경</a></span>
+					</div>
 				</td>
 			</tr>
 <!-- 반복구문끝 -->
@@ -37,28 +48,33 @@
 		<tbody>
 			<tr>
 				<th scope="row">주문금액</th>
-				<td>{{$화폐단위전}}{{$장바구니합계금액}}{{$화폐단위후}}</td>
+				<td><span class="won">{{$화폐단위전}}</span>{{$장바구니합계금액}}{{$화폐단위후}}</td>
 			</tr>
 			<tr>
 				<th scope="row">배송비</th>
-				<td>{{$화폐단위전}}<span id="dlv_prc_cart">{{$장바구니배송비(단위없음)}}</span>{{$화폐단위후}}</td>
+				<td><span class="won">{{$화폐단위전}}</span><span id="dlv_prc_cart">{{$장바구니배송비(단위없음)}}</span>{{$화폐단위후}}</td>
 			</tr>
 			{{if(적립금)}}
 			<tr>
 				<th scope="row">적립금</th>
-				<td>{{$화폐단위전}}{{$적립금}}{{$화폐단위후}}</td>
+				<td><span class="won">{{$화폐단위전}}</span>{{$적립금}}{{$화폐단위후}}</td>
 			</tr>
 			{{endif(적립금)}}
-			<tr>
-				<th scope="row" class="total">결제금액</th>
-				<td>{{$화폐단위전}}<span class="price" id="total_order_price_cartlist">{{$장바구니결제금액}}</span>{{$화폐단위후}} {{if(참조장바구니결제금액)}}({{$참조화폐단위전}}{{$참조장바구니결제금액}}{{$참조화폐단위후}}){{endif(참조장바구니결제금액)}}</td>
-			</tr>
 		</tbody>
 	</table>
 </div>
+<div class="total_box">
+	<span scope="row" class="total_title">합계</span>
+	<div class="total_price"><span class="won">{{$화폐단위전}}</span><span class="price" id="total_order_price_cartlist">{{$장바구니결제금액}}</span>{{$화폐단위후}} {{if(참조장바구니결제금액)}}({{$참조화폐단위전}}{{$참조장바구니결제금액}}{{$참조화폐단위후}}){{endif(참조장바구니결제금액)}}</div>
+</div>
 <div class="btn">
-	<span class="box_btn block"><a href="{{$주문하기}}">전체상품 주문하기</a></span>
-	<span class="box_btn block white"><a href="/shop/cart.php">장바구니 전체보기</a></span>
+	<span class="box_btn block white huge2"><a href="/shop/cart.php">장바구니</a></span>
+	<span class="box_btn block huge2"><a href="{{$주문하기}}">바로 구매</a></span>
+</div>
+<div class="pay">
+	<div class="npay">{{$네이버체크아웃버튼}}</div>
+	<div class="talkpay">{{$카카오페이구매버튼}}</div>
+	<div class="payco">{{$페이코즉시구매버튼}}</div>
 </div>
 <!-- 반복문끝 -->
 

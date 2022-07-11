@@ -28,7 +28,7 @@
 			</div>
 			<div class="about">
 				<ul>
-					<li><a href="/content/content.php?cont=company">회사소개</a></li>
+					<li><a href="/content/content.php?cont=brandstory">회사소개</a></li>
 					<li><a href="/content/content.php?cont=guide">이용안내</a></li>
 					<li><a href="/content/content.php?cont=uselaw">이용약관</a></li>
 					<li><a href="/content/content.php?cont=privacy">개인정보처리방침</a></li>
@@ -178,14 +178,16 @@
 	});
 
 	/* 토글 퀵메뉴 */
-function toggle_quick(name) {
-	var quick = $('.side_quick#'+name);
-	if($('.side_quick#'+name).hasClass('active')) {
-		quick.removeClass('active');
+	function toggle_quick(name) {
+		var quick = $('.side_quick#'+name);
+		if($('.side_quick#'+name).hasClass('active')) {
+			quick.removeClass('active');
+			$('body').removeClass('not_scroll');
+		}
+		else {
+			quick.addClass('active');
+			$('.side_quick').not(quick).removeClass('active');
+			$('body').addClass('not_scroll');
+		}
 	}
-	else {
-		quick.addClass('active');
-		$('.side_quick').not(quick).removeClass('active');
-	}
-}
 </script>

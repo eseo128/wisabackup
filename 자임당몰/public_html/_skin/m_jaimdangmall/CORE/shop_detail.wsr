@@ -1,6 +1,6 @@
 <style>
 	footer {padding-bottom: 100px;}
-	footer .btn_scroll {bottom:85px;}
+	footer .btn_scroll {bottom:120px;}
 </style>
 <div id="detail">
 	{{$폼시작}}
@@ -248,7 +248,7 @@
 		$('html, body').animate({scrollTop : pos.top - extra_space - extra_space2}, duration);
 	}
 	function scroll_page(){
-		var body_h = $(this).scrollTop()+$('header .fix').height();
+		var body_h = $(this).scrollTop()+$('header .gnb_box').height();
 		var tab_s = $('#detail .tab_area').offset().top;
 		var tab_h = $('#detail .tab_area').height();
 

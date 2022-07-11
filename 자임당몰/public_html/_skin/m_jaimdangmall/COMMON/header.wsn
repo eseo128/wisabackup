@@ -10,7 +10,7 @@
 		<ul class="gnb">
 			<li class="category"><a href="#" onclick="toggle_nav('lnb'); return false;">카테고리</a></li>
 			<li class="search"><a class="toggle_search" href="#" onclick="toggle_search('box_right'); return false;">검색</a></li>
-			<li class="cart"><a href="/shop/cart.php">장바구니<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
+			<li class="cart"><a onclick="toggle_quick('quick_cart'); return false;">장바구니<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
 		</ul>
 		<div id="box_search" class="box_search box_right">
 			{{$상품검색폼시작}}
@@ -18,7 +18,7 @@
 			<p>SEARCH</p>
 			<div class="box">
 				<input type="search" name="search_str" value="" class="form_input block basic_search" autocorrect="off" autocomplete="off" autocapitalize="off" placeholder="검색어를 입력해주세요">
-				<input type="image" src="{{$이미지경로}}/common/search_brown.png" alt="검색" class="btn">
+				<input type="image" src="{{$이미지경로}}/common/trans.png" alt="검색" class="btn">
 			</div>
 			{{$상품검색폼끝}}
 		</div>
@@ -26,7 +26,7 @@
 	<nav class="lnb wrap_inner2">
 		<ul class="language">
 			<li class="underline"><a href="#">kr</a></li>
-			<li><a href="https://en.jaimdangmall.com/">en</a></li>
+			<li><a href="https://en.jaimdangmall.com/" target="_blank">en</a></li>
 		</ul>
 		<ul class="login">
 			{{$로그인전1}}
@@ -35,7 +35,7 @@
 		<div>
 			<ul class="big_cate">
 				<li class="big tab">
-					<a onclick="toggle_view('mid_brand',this)">BRAND</a>
+					<a onclick="toggle_slide('mid_brand',this)">BRAND</a>
 					<ul id="mid_brand" class="mid_cate">
 						<li class="mid"><a href="/content/content.php?cont=brandstory_m">BRAND STROY</a></li> 
 						<li class="mid"><a href="/content/content.php?cont=koreanherbs_m">KOREAN HERBS</a></li> 
@@ -43,55 +43,21 @@
 					</ul>
 				</li>
 				<li class="big tab">
-					<a onclick="toggle_view('mid_shop',this)">SHOP</a>
+					<a onclick="toggle_slide('mid_shop',this)">SHOP</a>
 					<ul id="mid_shop" class="mid_cate">
 						<li class="mid"><a href="/shop/big_section.php?cno1=1009">BEST</a></li>
 						<li class="mid"><a href="/shop/big_section.php?cno1=1010">NEW</a></li>
-						<li class="mid flex">
-							<a href="/shop/big_section.php?cno1=1001">공미</a>
-							<ul class="sml_cate">
-								<li class="sml_title"><a href="/shop/big_section.php?cno1=1020">유형별</a></li>
-								<li><a href="/shop/big_section.php?cno1=1012">차</a></li>
-								<li><a href="/shop/big_section.php?cno1=1019">효소</a></li>
-								<li><a href="/shop/big_section.php?cno1=1020">전체보기</a></li>
-							</ul>
-							<ul class="sml_cate">
-								<li class="sml_title"><a href="/shop/big_section.php?cno1=1013">고민별</a></li>
-								<li><a href="/shop/big_section.php?cno1=1021">붓기</a></li>
-								<li><a href="/shop/big_section.php?cno1=1022">체력</a></li>
-								<li><a href="/shop/big_section.php?cno1=1023">디톡스</a></li>
-								<li><a href="/shop/big_section.php?cno1=1013">전체보기</a></li>
-							</ul>
-						</li>
-						<li class="mid flex">
-							<a href="/shop/big_section.php?cno1=1002">한방</a>
-							<ul class="sml_cate">
-								<li class="sml_title"><a href="/shop/big_section.php?cno1=1017">유형별</a></li>
-								<li><a href="/shop/big_section.php?cno1=1024">소환</a></li>
-								<li><a href="/shop/big_section.php?cno1=1025">대환</a></li>
-								<li><a href="/shop/big_section.php?cno1=1017">전체보기</a></li>
-							</ul>
-							<ul class="sml_cate">
-								<li class="sml_title"><a href="/shop/big_section.php?cno1=1018">고민별</a></li>
-								<li><a href="/shop/big_section.php?cno1=1026">피부</a></li>
-								<li><a href="/shop/big_section.php?cno1=1027">체력</a></li>
-								<li><a href="/shop/big_section.php?cno1=1028">여성건강</a></li>
-								<li><a href="/shop/big_section.php?cno1=1029">남성건강</a></li>
-								<li><a href="/shop/big_section.php?cno1=1030">노화</a></li>
-								<li><a href="/shop/big_section.php?cno1=1031">관절</a></li>
-								<li><a href="/shop/big_section.php?cno1=1018">전체보기</a></li>
-							</ul>
-						</li>
+						{{$사용자리스트5}}
 					</ul>
 				</li>
 				<li class="big"><a href="/board/?db=gallery_1">EVENT</a></li>
 				<li class="big"><a href="http://jaimdang.com/medi/" target="_blank">CLINIC</a></li>
 				<li class="big tab">
-					<a onclick="toggle_view('mid_info',this)">INFO</a>
+					<a onclick="toggle_slide('mid_info',this)">INFO</a>
 					<ul id="mid_info" class="mid_cate">
-						<li><a href="/shop/product_review_list.php">REVIEW</a></li>
-						<li><a href="/shop/product_qna_list.php">QNA</a></li>
-						<li><a href="/board/?db=basic_1">NOTICE</a></li>
+						<li class="mid"><a href="/shop/product_review_list.php">REVIEW</a></li>
+						<li class="mid"><a href="/shop/product_qna_list.php">QNA</a></li>
+						<li class="mid"><a href="/board/?db=basic_1">NOTICE</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -103,6 +69,17 @@
 		</ul>
 		<a class="close" onclick="toggle_nav('lnb'); return false;">닫기</a>
 	</nav>
+	<!-- 퀵카트 -->
+	<div id="quick_cart" class="side_quick side_quick_cart">
+		<div class="quick_cart_top">
+			<span class="del"><a onclick="toggle_quick('quick_cart'); return false;"><img src="{{$이미지경로}}/button/quick_cart_close.png"></a></span>
+			<span class="quick_title">VIEW CART</span>
+		</div>
+		<ul class="quick_cart_bottom">
+			<div class="wing_quick_cart_layer1"></div>
+		</ul>
+	</div>
+	<!-- //퀵카트 -->
 </header>
 <section id="cnt">
 	<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->

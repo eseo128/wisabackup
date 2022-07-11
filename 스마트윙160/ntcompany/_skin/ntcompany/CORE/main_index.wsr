@@ -1,0 +1,190 @@
+<style type="text/css" title="">
+#cnt {padding-bottom:0;}
+#cnt .cntbody {width:100%;}
+</style>
+<div id="main">
+	<!-- visual 영역 -->
+	<div class="swiper-container slide_visual">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide slide0">
+				<div class="box">
+					<h2>기업이 성장할 수 있는 <span>발판을 만드는 것</span><span class="bold">'위드원'이 당신을 위해 <span>하는 일입니다.</span></span></h2>
+					<p class="summary">‘경영지원전문가’ 다수 소속</p>
+				</div>
+			</div>
+			<div class="swiper-slide slide1">
+				<div class="box">
+					<h3>인사노무관련<br><strong>최적의 솔루션</strong></h3>
+					<p class="summary">고객의 입장에서 생각하고 경청하는<br><strong>신뢰할 수 있는 동반자</strong>가 되도록 <span>최선을 다할 것을 약속드립니다.</span></p>
+					<p class="summary2">[AD]</p>
+					<p class="summary3">한국공인노무사회 등록 노동법률 · 노동사건 전문</p>
+					<p class="summary4"><span class="name">류 형 식</span> 공인노무사</p>
+				</div>
+			</div>
+			<div class="swiper-slide slide2">
+				<div class="box">
+					<img src="{{$이미지경로}}/main/visual2_txt.png" id="slide2_boximg">
+				</div>
+			</div>
+		</div>
+		<div class="swiper-pagination visual_pagination"></div>
+		<!--고객사 요청으로 버튼 삭제
+		<div class="btn">
+			<div class="swiper-button-prev ventures_prev big"></div>
+			<div class="swiper-button-next ventures_next big"></div>
+		</div>
+		-->
+	</div>
+	<!-- 엔티컴퍼니가 만든 자문사례 -->
+	<div class="count wrap_inner transition fadeup">
+		<p class="summary">실력과 혁신적인 자문서비스로 자문사례를 채워갑니다.</p>
+		<p class="title">위드원이 <span>만들어낸 자문사례</span></p>
+		<ul class="list">
+			<li>
+				<p class="memo">경영자문사례</p>
+				<p class="number"><strong>315</strong>건</p>
+			</li>
+			<li>
+				<p class="memo">주간 상담문의</p>
+				<p class="number"><strong>157</strong>건</p>
+			</li>
+			<li>
+				<p class="memo">경영지원전문가</p>
+				<p class="number"><strong>21</strong>인</p>
+			</li>
+		</ul>
+	</div>
+	<!-- 위드원 공지 -->
+	<div class="news transition fadeup">
+		<div class="wrap_inner">
+			<h2>위드원 공지</h2>
+			<span class="more"><a href="/board?db=basic_1">more</a></span>
+			<table class="board_col">
+				<caption class="hidden">LATEST NEWS</caption>
+				<colgroup>
+					<col style="width:8%">
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">글번호</th>
+						<th scope="col">제목</th>
+					</tr>
+				</thead>
+				{{$사용자리스트3}}
+			</table>
+		</div>
+	</div>
+	<!-- 기업마당 -->
+	<div class="business transition fadeup">
+		<div class="wrap_inner">
+			<p class="summary">기업마당</p>
+		</div>
+		{{$사용자리스트4}}
+	</div>
+	<!-- contact -->
+	<div class="contact transition fadeup">
+		<div class="wrap_inner">
+			<h2>CONTACT US</h2>
+			<ul class="list">
+				<li>
+					<h3>address</h3>
+					<p>{{$사업장주소}}<br>둔산의 아침 6층 603호</p>
+				</li>
+				<li>
+					<h3>Tel</h3>
+					<p>{{$회사전화번호}}</p>
+				</li>
+				<li>
+					<h3>E-mail</h3>
+					<p>{{$회사이메일}}</p>
+
+				</li>
+			</ul>
+		</div>
+		<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1351.0073858743967!2d127.38087804836802!3d36.35459716803116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35654bdf050f4833%3A0xb7a9bc5befb54ffe!2z64yA7KCE6rSR7Jet7IucIOyEnOq1rCDrkZTsgrDrj5kg64yA642V64yA66GcMjQy67KI6ri4IDE1!5e0!3m2!1sko!2skr!4v1635744118518!5m2!1sko!2skr" frameborder="0" allowfullscreen="" loading="lazy"></iframe> -->
+	</div>
+	<!-- qna -->
+	<div class="qna transition fadeup">
+		<div class="wrap_inner">
+			<h2>위드원 전문가 무료상담</h2>
+			<span>배정된 전문가가 직접 1:1로 자문을 진행하여 <br class="mo">만족도 높은 결과로 보답합니다.</span>
+			<span class="box_btn"><a onclick="$('.layer_qna').show();">무료상담 신청하기</a></span>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// visual
+	var slide_visual = new Swiper('.slide_visual', {
+		loop: true,
+		 autoplay: {
+		 	delay: 5000,
+		 	disableOnInteraction: false,
+		 },
+		pagination: {
+			el: '.visual_pagination',
+			type: 'fraction',
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
+	// business
+	var slide_business = new Swiper('.slide_business', {
+		slidesPerView: 2.3,
+		spaceBetween: 0,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			720: {
+				slidesPerView: 1.2,
+			},
+		},
+	});
+	function move_scroll(no) {
+		var pos = $(no).offset();
+		var extra_space = $('header').height();
+		var duration = "400";
+		$('html, body').animate({scrollTop : pos.top - extra_space}, duration);
+	}
+	// 스크롤 섹션 활성화
+	var count_status = null;
+	$(window).load(function(){
+		contScroll = function(type){
+			var transition = $('.transition');
+			transition.each(function(){
+				var y = $(window).scrollTop();
+				var a = Math.floor($(this).offset().top-($(window).height()/1.5));
+				var ac = Math.floor($('.count').offset().top-($(window).height()/1.5));
+				if( y >= a ) {
+					$(this).addClass('active');
+				}
+				if (y >= ac) {
+					if(count_status == false) return;
+					count_status = false;
+					$('.count .number > strong').addClass('n_count');
+					nCount();
+
+				}
+			});
+		}
+		$(window).scroll(function() {
+			contScroll();
+		});
+	});
+	setTimeout(function() {
+		contScroll();
+	}, 500);
+
+	// 문의하기
+	function checkMainMariWrite(f) {
+		f.target=hid_frame
+		return checkMariWrite(f);
+	}
+
+</script>

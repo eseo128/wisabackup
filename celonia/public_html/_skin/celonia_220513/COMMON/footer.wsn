@@ -1,0 +1,123 @@
+		</div>
+	</div>
+	<!-- //중앙 -->
+	<!-- 하단 -->
+	<div id="footer">
+		<div class="notice">
+			<div class="wrap_inner2">
+				{{$사용자리스트11}}
+			</div>
+		</div>
+		<div class="info_wrap">
+			<div class="wrap_inner2">
+				<!-- 하단메뉴 -->
+				<div class="about_share">
+					<ul class="about">
+						<!-- <li><a href="/content/content.php?cont=story">회사소개</a></li> -->
+						<li><a href="/content/content.php?cont=privacy"><strong>개인정보처리방침</strong></a></li>
+						<li><a href="/content/content.php?cont=uselaw">이용약관</a></li>
+						<li><a href="/board/?db=basic_1">공지사항</a></li>
+						<li><a href="/content/content.php?cont=benefit">회원혜택</a></li>
+						<li><a href="/shop/big_section.php?cno1=1032">임직원서비스</a></li>
+						<li><a href="/shop/big_section.php?cno1=1031">패밀리서비스</a></li>
+						<li><a href="/a" target="_blank">파트너센터</a></li>
+					</ul>
+					<div class="link site">
+						<h2>관련사이트</h2>
+						<ul>
+							<li><a href="http://www.celino.co.kr/" target="_blank">셀리노 브랜드 사이트</a></li>
+							<li><a href="http://www.medi-post.co.kr/" target="_blank">메디포스트</a></li>
+							<li><a href="http://www.celltree.co.kr/" target="_blank">셀트리 제대혈은행</a></li>
+						</ul>
+					</div>
+					<ul class="share">
+						<li><a href="https://www.instagram.com/celonia_official" target="_blank"><img src="{{$이미지경로}}/common/icon_instagram.png" alt="instagram"></a></li>
+						<li><a href=" https://post.naver.com/celinokorea" target="_blank"><img src="{{$이미지경로}}/common/icon_naver.png" alt="naver"></a></li>
+					</ul>
+				</div>
+				<!-- //하단메뉴 -->
+				<div class="shopinfo">
+					<div class="cs">
+						<h5>CS CENTER</h5>
+						<strong>{{$회사전화번호}}</strong>
+					</div>
+					<!-- 쇼핑몰정보 및 에스크로 -->
+					<address class="info">
+						<span class="first">상호. {{$회사명}}</span>
+						<span>대표. {{$대표자성명}}</span>
+						<span>사업자등록번호. {{$사업자등록번호}}</span>
+						<span>통신판매업신고번호. {{$통신판매신고번호}}</span><br>
+						<span class="first">전화. {{$회사전화번호}}</span>
+						<span>주소. {{$사업장주소}}</span>
+						<span>개인정보보호책임자. {{$보호관리책임자}} ({{$보호관리이메일}})</span>
+						<span>호스팅 제공자 : (주)위사</span><br>
+						<span class="first">고객님은 안전거래를 위해 현금으로 결제 시 저희 쇼핑몰에 가입한 구매안전서비스를 이용하실 수 있습니다.</span>
+					</address>
+					<div class="link">
+						{{$사업자등록확인링크}}사업자정보 확인</a>
+						<a href="{{$에스크로가입확인}}">서비스 가입사실 확인</a>
+					</div>
+					<!-- //쇼핑몰정보 및 에스크로 -->
+					<p class="copyright">(c) {{$회사명}}. all rights reserved. <a href="http://by.wisa.co.kr/{{$사이트기본도메인}}" target="_blank" alt="위사 디자인&호스팅" title="위사 디자인&호스팅">designed & managed by <strong>WISA.</strong></a></p>
+					<p class="sm_info"><a href="/content/content.php?cont=story#store">셀리노의 화장품은 전문 피부과, 병의원, 에스테틱 및 스파, 온라인 그리고 면세점에서 만나실 수 있습니다.</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="btn_scroll">
+			<a class="up" onclick="scrollup()">TOP</a>
+		</div>
+	</div>
+	<!-- //하단 -->
+</div>
+<!-- placeholder 스크립트 (삭제하시면 ie 하위브라우저에서 구현되지 않습니다.) -->
+<script src="{{$이미지경로}}/../placeholder.js"></script>
+
+<script src="{{$이미지경로}}/../jquery.rwdImageMaps.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$('img[usemap]').rwdImageMaps();
+});
+</script>
+<style type="text/css" title="">
+	img[usemap] {border:none; height:auto; max-width:100%; width:auto}
+</style>
+
+<!-- Enliple Tracker Start -->
+<script type="text/javascript">
+    (function(a,g,e,n,t){a.enp=a.enp||function(){(a.enp.q=a.enp.q||[]).push(arguments)};n=g.createElement(e);n.async=!0;n.defer=!0;n.src="https://cdn.megadata.co.kr/dist/prod/enp_tracker_self_hosted.min.js";t=g.getElementsByTagName(e)[0];t.parentNode.insertBefore(n,t)})(window,document,"script");
+    enp('create', 'common', 'celonia', { device: 'W' });    
+    enp('send', 'common', 'celonia');
+</script>
+<!-- Enliple Tracker End -->
+
+<!-- AceCounter Log Gathering Script V.8.0.2019080601 -->
+<script language='javascript'>
+	var _AceGID=(function(){var Inf=['gtc19.acecounter.com','8080','BS4A43488376998','AW','0','NaPm,Ncisy','ALL','0']; var _CI=(!_AceGID)?[]:_AceGID.val;var _N=0;var _T=new Image(0,0);if(_CI.join('.').indexOf(Inf[3])<0){ _T.src =( location.protocol=="https:"?"https://"+Inf[0]:"http://"+Inf[0]+":"+Inf[1]) +'/?cookie'; _CI.push(Inf);  _N=_CI.length; } return {o: _N,val:_CI}; })();
+	var _AceCounter=(function(){var G=_AceGID;var _sc=document.createElement('script');var _sm=document.getElementsByTagName('script')[0];if(G.o!=0){var _A=G.val[G.o-1];var _G=(_A[0]).substr(0,_A[0].indexOf('.'));var _C=(_A[7]!='0')?(_A[2]):_A[3];var _U=(_A[5]).replace(/,/g,'_');_sc.src=(location.protocol.indexOf('http')==0?location.protocol:'http:')+'//cr.acecounter.com/Web/AceCounter_'+_C+'.js?gc='+_A[2]+'&py='+_A[4]+'&gd='+_G+'&gp='+_A[1]+'&up='+_U+'&rd='+(new Date().getTime());_sm.parentNode.insertBefore(_sc,_sm);return _sc.src;}})();
+</script>
+<noscript><img src='http://gtc19.acecounter.com:8080/?uid=BS4A43488376998&je=n&' border='0' width='0' height='0' alt=''></noscript>
+<!-- AceCounter Log Gathering Script End -->
+
+<!-- ADN Tracker[공통] start -->
+<script type="text/javascript">
+var adn_param = adn_param || [];
+adn_param.push([{ 	
+ ui:'102534',
+ ut:'Home'
+}]);
+</script>
+<script type="text/javascript" async src="//fin.rainbownine.net/js/adn_tags_1.0.0.js"></script>
+<!-- ADN Tracker[공통] end -->
+
+<!-- ADN 크로징 설치 pc start -->
+<script type="text/javascript">
+var adn_panel_param = adn_panel_param || [];
+adn_panel_param.push([{
+ ui:'102534',	
+ ci:'1025340002',
+ gi:'31543'
+}]);
+</script>
+<script type="text/javascript" async src="//fin.rainbownine.net/js/adn_closingad_1.1.1.js"></script>
+<!-- ADN 크로징 설치 end -->

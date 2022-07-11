@@ -4,7 +4,7 @@
 		<img class="ft_logo" src="{{$이미지경로}}/logo/ft_logo.png">
 		<p class="tel">{{$회사전화번호}}</p>
 		<ul class="menu">
-			<li><a href="/content/content.php?cont=company">회사소개</a></li>
+			<li><a href="/content/content.php?cont=brandstory_m">회사소개</a></li>
 			<li><a href="/content/content.php?cont=guide">이용안내</a></li>
 			<li><a href="/content/content.php?cont=uselaw">회원약관</a></li>
 			<li><a href="/content/content.php?cont=privacy">개인정보 취급방침</a></li>
@@ -34,3 +34,18 @@
 	</div>
 </footer>
 <div id="dimmed"></div>
+<script>
+	/* 토글 퀵메뉴 */
+	function toggle_quick(name) {
+		var quick = $('.side_quick#'+name);
+		if($('.side_quick#'+name).hasClass('active')) {
+			quick.removeClass('active');
+			$('body').removeClass('view_nav');
+		}
+		else {
+			quick.addClass('active');
+			$('.side_quick').not(quick).removeClass('active');
+			$('body').addClass('view_nav');
+		}
+	}
+</script>

@@ -79,43 +79,16 @@
 						<ul>
 							<li class="big">
 								<a href="/shop/big_section.php?cno1=1001">공미</a> 
-								<ul class="mid_cate">
-									<li class="mid"><a href="/shop/big_section.php?cno1=1012">유형별</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1012">차</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1019">효소</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1020">전체보기</a></li>
-								</ul>
-								<ul class="mid_cate">
-									<li class="mid"><a href="/shop/big_section.php?cno1=1013">고민별</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1021">붓기</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1022">체력</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1023">디톡스</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1013">전체보기</a></li>
-								</ul>
 							</li>
+								{{$사용자리스트5}}
 						</ul>
 					</div>
 					<div class="area">
 						<ul>
 							<li class="big">
 								<a href="/shop/big_section.php?cno1=1002">한방</a> 
-								<ul class="mid_cate">
-									<li class="mid"><a href="/shop/big_section.php?cno1=1017">유형별</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1024">소환</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1025">대환</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1017">전체보기</a></li>
-								</ul>
-								<ul class="mid_cate">
-									<li class="mid"><a href="/shop/big_section.php?cno1=1018">고민별</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1026">피부</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1027">체력</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1028">여성건강</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1029">남성건강</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1030">노화</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1031">관절</a></li>
-									<li class="sml"><a href="/shop/big_section.php?cno1=1018">전체보기</a></li>
-								</ul>
 							</li>
+							{{$사용자리스트19}}
 						</ul>
 					</div>							
 				</div>
@@ -137,7 +110,7 @@
 				<span class="quick_title">VIEW CART</span>
 			</div>
 			<ul class="quick_cart_bottom">
-				{{$퀵카트장바구니리스트}}
+				<div class="wing_quick_cart_layer1"></div>
 			</ul>
 		</div>
 		<!-- //퀵카트 -->

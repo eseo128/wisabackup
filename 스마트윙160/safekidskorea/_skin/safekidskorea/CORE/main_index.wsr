@@ -1,0 +1,281 @@
+<style type="text/css" title="">
+#cnt .cntbody {width:100%; padding:0;}
+</style>
+<div id="main">
+	<!-- visual -->
+	<div class="swiper-container slide_visual">
+		<div id="fraction" class="swiper-fraction"></div>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide slide1">
+				<div class="box left">
+					<h2><span>해피스쿨</span></h2>
+					<p class="summary">선물 받고 체험으로 익히는 교통안전교육</p>
+					<a href="/board/?db=industry&no=7495&mari_mode=view@view">자세히 보기</a>
+				</div>
+			</div>
+			<div class="swiper-slide slide2">
+				<div class="box left">
+					<h2><span>아이즈업! 보행안전교육</span></h2>
+					<p class="summary">보행 중 전자기기 사용자제 안전교육</p>
+					<a href="/board/?db=industry&no=7492&mari_mode=view@view">자세히 보기</a>
+				</div>
+			</div>
+			<div class="swiper-slide slide3">
+				<div class="box left">
+					<h2><span>안전365</span></h2>
+					<p class="summary">매월 다른 주제로 진행되는 어린이 안전교육</p>
+					<a href="/board/?db=industry&no=7494&mari_mode=view@view">자세히 보기</a>
+				</div>
+			</div>
+			<div class="swiper-slide slide5">
+				<div class="box left">
+					<h2><span>보건 안전 영상</span></h2>
+					<p class="summary">어린이와 어른의 보건 안전 영상</p>
+					<a href="/board/?db=video">자세히 보기</a>
+				</div>
+			</div>
+			<div class="swiper-slide slide4">
+				<div class="box left">
+					<h2><span>후원하기</span></h2>
+					<p class="summary">어린이 안전은 우리의 소중한 미래입니다</p>
+					<a href="/content/content.php?cont=sponsor">자세히 보기</a>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-button-next"></div>
+     	<div class="swiper-button-prev"></div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<!-- 사업소개 -->
+	<div class="section industry">
+		<div class="wrap_inner">
+			<div class="section_name">
+				<h2>사업소개</h2>
+				<h3>어린이 안전을 위한 다양한 사업을 진행합니다.</h3>
+			</div>
+			<a href="/board/?db=industry" class="more">더보기</a>
+		</div>
+			{{$사용자리스트3}}
+		</div>
+	</div>
+	<!-- 공지사항&뉴스 -->
+	<div class="section board transition fadeup">
+		<div class="wrap_inner">
+			<!-- <div class="board_lnb" style="display: none;">
+				<div class="section_name">
+					<h2>공지사항&소식</h2>
+					<h3>세이프 키즈 코리아에서 배포하는 보도 자료입니다.</h3>
+				</div>
+				<ul class="lnb_ul tab_board">
+					<li class="lnb_li lnb_li_active">
+						<a onclick="tabover('board', 0)" title="공지사항">공지사항</a>
+					</li>
+					<li class="lnb_li">
+						<a onclick="tabover('board', 1)" title="소식">소식</a>
+					</li>
+				</ul>
+			</div> -->
+			<div class="board_list">
+				<!-- 공지사항 -->
+				<div class="board_notice tabcnt_board0">
+					<div class="section_name">
+						<h2 class="board_title">공지사항</h2>
+						<!-- <h3 class="board_summary">&nbsp;</h3> -->
+					</div>
+					<a href="/board/?db=notice" title="공지사항 바로가기" class="board_more"><img src="{{$이미지경로}}/main/more_btn.png" alt="더보기"></a>
+						{{$사용자리스트4}}
+				</div>
+				<!-- 공지사항 -->
+				<!-- 소식 -->
+				<div class="board_news tabcnt_board1">
+					<div class="section_name">
+						<h2 class="board_title">보도자료</h2>
+						<!-- <h3 class="board_summary">&nbsp;</h3> -->
+					</div>
+					<a href="/board/?db=s" title="소식 바로가기" class="board_more"><img src="{{$이미지경로}}/main/more_btn.png" alt="더보기"></a>
+						{{$사용자리스트5}}
+				</div>
+				<!-- 소식 -->
+			</div>
+		</div>
+	</div>
+	<!-- 활동갤러리 -->
+	<div class="section gallery transition fadeup wrap_inner">
+		<div class="section_name">
+			<h2>활동갤러리</h2>
+			<h3>지금 세이프키즈의 활동을 확인하세요!</h3>
+		</div>
+		<a href="/board/?db=gallery" class="more">더보기</a>
+		{{$사용자리스트6}}
+	</div>
+	<!-- 안전 -->
+	<div class="section safe transition fadeup">
+		<div class="wrap_inner">
+			<div class="section_name">
+				<h2>어린이 안전사고 제로화</h2>
+				<h3>세이프키즈는 어린이가 안전한 세상을 꿈꿉니다.</h3>
+			</div>
+			<a href="/board/?db=basic_1" class="mo_more"><img src="{{$이미지경로}}/main/more.png"></a>
+		</div>
+		<ul class="safe_img_box">
+			<div class="wrap_inner">
+				<ul>
+					<li class="no1">
+						<a href="http://safekidskorea.mywisa.com/board/?db=basic_1&no=7556&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp=](http://safekidskorea.mywisa.com/board/?db=basic_1&no=7556&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp="><img src="{{$이미지경로}}/main/safe_icon01.png" alt="교통안전" onmouseover="this.src='{{$이미지경로}}/main/safe_icon01_on.png'" onmouseout="this.src='{{$이미지경로}}/main/safe_icon01.png'"></a>
+						<span>교통안전</span>
+					</li>
+					<li class="no2">
+						<a href="http://safekidskorea.mywisa.com/board/?db=basic_1&no=7557&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp="><img src="{{$이미지경로}}/main/safe_icon02.png" alt="화재안전" onmouseover="this.src='{{$이미지경로}}/main/safe_icon02_on.png'" onmouseout="this.src='{{$이미지경로}}/main/safe_icon02.png'"></a>
+						<span>화재안전</span>
+					</li>
+					<li class="no3">
+						<a href="http://safekidskorea.mywisa.com/board/?db=basic_1&no=7558&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp="><img src="{{$이미지경로}}/main/safe_icon03.png" alt="생활안전" onmouseover="this.src='{{$이미지경로}}/main/safe_icon03_on.png'" onmouseout="this.src='{{$이미지경로}}/main/safe_icon03.png'"></a>
+						<span>생활안전</span>
+					</li>
+					<li class="no4">
+						<a href="http://safekidskorea.mywisa.com/board/?db=basic_1&no=7559&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp="><img src="{{$이미지경로}}/main/safe_icon04.png" alt="학교안전" onmouseover="this.src='{{$이미지경로}}/main/safe_icon04_on.png'" onmouseout="this.src='{{$이미지경로}}/main/safe_icon04.png'"></a>
+						<span>학교안전</span>
+					</li>
+					<li class="no5">
+						<a href="http://safekidskorea.mywisa.com/board/?db=basic_1&no=7560&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp="><img src="{{$이미지경로}}/main/safe_icon05.png" alt="물놀이안전" onmouseover="this.src='{{$이미지경로}}/main/safe_icon05_on.png'" onmouseout="this.src='{{$이미지경로}}/main/safe_icon05.png'"></a>
+						<span>물놀이안전</span>
+					</li>
+					<li class="no6">
+						<a href="http://safekidskorea.mywisa.com/board/?db=basic_1&no=7561&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp="><img src="{{$이미지경로}}/main/safe_icon06.png" alt="승용스포츠안전" onmouseover="this.src='{{$이미지경로}}/main/safe_icon06_on.png'" onmouseout="this.src='{{$이미지경로}}/main/safe_icon06.png'"></a>
+						<span>승용스포츠안전</span>
+					</li>
+					<li class="no7">
+						<a href="http://safekidskorea.mywisa.com/board/?db=basic_1&no=7562&mari_mode=view%40view&cate=&page=1&search=&search_str=&temp="><img src="{{$이미지경로}}/main/safe_icon07.png" alt="놀이안전" onmouseover="this.src='{{$이미지경로}}/main/safe_icon07_on.png'" onmouseout="this.src='{{$이미지경로}}/main/safe_icon07.png'"></a>
+						<span>놀이안전</span>
+					</li>
+				</ul>
+			</div>
+		</ul>
+	</div>
+	<!-- 동영상 -->
+	<div class="section video transition fadeup">
+		<div class="wrap_inner">
+			<div class="video_box">
+				<div class="video_box_inner" name="playCover">
+					<div class="yt_box" id="player" title="동영상 보기">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/vzUJfRsL5jg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="section_name">
+					<h2>어린이 안전 영상<a href="/board/?db=video" class="mo_more">더보기</a></h2>
+					<h3>세이프키즈 안전 영상 함께 시청하세요.</h3>
+					<a href="/board/?db=video" class="more">더보기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	// intro
+	const fraction = document.getElementById("fraction");
+	const slides = document.querySelectorAll(".slide_visual .swiper-slide");
+	const slideCount = slides.length;
+	const swiper = new Swiper(".slide_visual", {
+		autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+		pagination: {
+			el: ".swiper-pagination",
+			type: "bullets"
+			
+		},
+		// Navigation arrows
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev"
+		},
+		// , on: {
+		// 	slideChange: () => {
+		// 	fraction.innerHTML = "<span><strong>"+ (swiper.realIndex + 1) + "</strong> / " + slideCount + "</span>";
+		// 	}
+		// },
+		
+		// loop: true,
+	});
+	const swiper2 = new Swiper(".slide_visual", {
+	pagination: {
+			el: ".swiper-fraction",
+			type: "fraction"
+		},
+	});
+
+	swiper.controller.control = swiper2;
+	
+	// 사업소개
+	var slide_industry = new Swiper('.slide_industry', {
+		slidesPerView: 3,
+		spaceBetween: 20,
+		autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+		navigation: {
+			nextEl: ".swiper-button-next-industry",
+			prevEl: ".swiper-button-prev-industry"
+		},
+		breakpoints: {
+			720: {
+				slidesPerView: 1.2,
+				spaceBetween: 15,
+			},
+		},
+		loop: true,
+	});
+	
+	// 활동갤러리
+	// var slide_gallery = new Swiper('.slide_gallery', {
+	// 	slidesPerView: 3,
+	// 	spaceBetween: 20,
+	// 	navigation: {
+	// 		nextEl: ".swiper-button-next-gallery",
+	// 		prevEl: ".swiper-button-prev-gallery"
+	// 	},
+	// 	breakpoints: {
+	// 		720: {
+	// 			slidesPerView: 1.5,
+	// 		},
+	// 	},
+	// });
+
+	
+	// 스크롤 섹션 활성화
+	$(window).load(function(){
+		contScroll = function(type){
+			var transition = $('.transition');
+			transition.each(function(){
+				var y = $(window).scrollTop();
+				var a = Math.floor($(this).offset().top-($(window).height()/1.5));
+				if( y >= a ) {
+					$(this).addClass('active');
+				}
+			});
+		}
+		$(window).scroll(function() {
+			contScroll();
+		});
+	});
+	setTimeout(function() {
+		contScroll();
+	}, 500);
+
+	//메인페이지 공지사항 - [공지]
+	$(document).ready(function (){
+		var notice = $('#main .board .board_list .board_notice .board_post .post_ul .post_notice').length;
+		var post3 = $('#main .board .board_list .board_notice .board_post .post_ul .post_li:nth-of-type(3)');
+		var post4 = $('#main .board .board_list .board_notice .board_post .post_ul .post_li:nth-of-type(4)');
+
+		if(notice == 1){
+			post4.addClass('dn');
+		}else if(notice == 2){
+			post3.addClass('dn');
+			post4.addClass('dn');
+		}
+	});
+
+</script>
