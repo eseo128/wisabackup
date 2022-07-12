@@ -38,11 +38,13 @@
 	{{$사용자리스트12}}
 	{{$사용자리스트13}}
 	{{$사용자리스트14}}
-	<!-- 인스타그램 연동 후 사용자리스트15 사용 -->
+	<!-- 인스타그램 연동 후 사용자리스트17 사용 -->
 	<div class="instagram">
-		<div class="wrap_inner">
-			<h2 class="subtitle">INSTAGRAM <a href="#">insta_deeo</a></h2>
-			<a href="https://www.instagram.com/wisa.co.kr/" class="more">more</a>
+		<div class="instagram_box">
+			<div class="instagram_box_left">
+				<h2 class="subtitle">INSTAGRAM</h2>
+				<a href="#" class="content">insta_deeo</a>
+			</div>
 			<ul class="api">
 				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta01.png" alt="배너처리"></a></li>
 				<li class="slick-slide no{{$순서}}"><a href="{{$링크}}" target="_blank"><img src="{{$이미지경로}}/etc/insta02.png" alt="배너처리"></a></li>
@@ -53,7 +55,7 @@
 			</ul>
 		</div>
 	</div>
-	<!-- //인스타그램 연동 후 사용자리스트20 사용 -->
+	<!-- //인스타그램 연동 후 사용자리스트17 사용 -->
 </div>
 <!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
 <div class="crema-popup"></div>
@@ -112,7 +114,7 @@
 		$('.visual_fade > .box').slick({
 		dots: true,			// 페이지네이션 노출 유무
 		infinite: true,		// 무한 루프 유무
-		speed: 500,			// 이벤트 속도
+		speed: 300,			// 이벤트 속도
 		fade: true,			// 옵션
 		cssEase: 'linear',	// CSS3 에니메이션
 		autoplay: true,		// 자동진행
@@ -137,17 +139,15 @@
 
 		// 인스타그램 슬라이드
 		$('.api').slick({ 
-			slidesToShow: 3,
-			slidesToScroll: 1,
-			dots: true,
-			infinite: true,
-			speed: 300,
-			cssEase: 'linear',	// CSS3 에니메이션
-			autoplay: true,
-			autoplaySpeed: 3000,
-			variableWidth: true,
-			centerMode:true,
-			adaptiveHeight: true,
+			slidesToShow:3,
+			slidesToScroll:1,
+			dots:false,
+			arrows:true,
+			infinite:true,
+			autoplay:false,
+			autoplaySpeed:3000,
+			speed:300,
+			cssEase:'ease-in-out',
 		});
 	});
 	

@@ -1,0 +1,104 @@
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
+	<!-- 상단 -->
+	<div id="header">
+		<div class="gnb">
+			<h1><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a></h1>
+			<ul class="category">
+				<li><a href="/shop/big_section.php?cno1=1010">BEST</a></li>
+				<li><a href="/shop/big_section.php?cno1=1009">NEW</a></li>
+				<li>
+					<a href="/shop/big_section.php?cno1=1001">SKINCARE</a>
+				</li>
+				<li>
+					<a href="/shop/big_section.php?cno1=1002">FACE</a>
+				</li>
+				</li>
+				<li class="lips">
+					<a>LIPS</a>
+					<ul id="depth_lips" class="depth_lips depth">
+						<li><a href="/shop/big_section.php?cno1=1012">립스틱</a></li>
+						<li><a href="/shop/big_section.php?cno1=1013">립틴트</a></li>
+						<li class="depth2_parent">
+							<a onclick="toggle_view('depth2_lipgloss', this)">립글로스</a>
+							<ul id="depth2_lipgloss" class="depth2_lipgloss depth2">
+								<li><a href="/shop/big_section.php?cno1=1018">소분류 1</a></li>
+								<li><a href="/shop/big_section.php?cno1=1019">소분류 2</a></li>
+							</ul>
+						</li>
+						<li class="depth2_parent">
+							<a onclick="toggle_view('depth2_lipbalm', this)">립밤</a>
+							<ul id="depth2_lipbalm" class="depth2_lipbalm depth2">
+								<li><a href="/shop/big_section.php?cno1=1020">소분류 1</a></li>
+								<li><a href="/shop/big_section.php?cno1=1021">소분류 2</a></li>
+								<li><a href="/shop/big_section.php?cno1=1022">소분류 3</a></li>
+							</ul>
+						</li>
+						<li><a href="/shop/big_section.php?cno1=1016">립라이너</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/shop/big_section.php?cno1=1004">CHEEKS</a>
+				</li>
+				<li>
+					<a href="/shop/big_section.php?cno1=1005">EYES</a>
+				</li>
+				<li class="grey">
+					<a href="/shop/promotion.php">PROMOTION</a>
+				</li>
+				<li class="community grey"> 
+					<a>COMMUNITY</a>
+					<ul id="depth_community" class="depth_community depth">
+						<li><a href="/board?db=basic_1">Notice</a></li>
+						<li><a href="/shop/product_qna_list.php">Q&A</a></li>
+						<li><a href="/board?db=basic_2">FAQ</a></li>
+						<li><a href="/shop/product_review_list.php">Reivew</a></li>
+						<li><a href="/board?db=gallery_1">Event</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="my">
+				<li class="login">
+					<a onclick="toggle_view('depth_login', this)">Login</a>
+					<ul id="depth_login" class="depth_login depth">
+						{{$로그인전1}}{{$로그인후1}}
+					</ul>
+				</li>
+				<li class="recent"><a onclick="toggle_view('recent_box',this)" class="">최근 본 상품<strong>{{$최근본상품개수}}</strong></a></li>
+				<li class="cart"><a href="/shop/cart.php">Cart<span class="ea_cart front_cart_rows quick_cart_cnt"><strong>{{$장바구니개수}}</strong></span></a></li>
+				<li class="hd_search"><a class="toggle_search" onclick="toggle_view('box_search',this)">검색</a></li>
+			</ul>
+			{{if(최근상품리스트)}}
+			<div id="recent_box" class="recent_box">
+				<div>
+					{{$최근상품리스트}}
+				</div>
+			</div>
+			{{endif(최근상품리스트)}}
+			<div id="box_search" class="search">
+				{{$상품검색폼시작}}
+				<div class="box">
+					<a onclick="toggle_view('box_search',this)">close</a>
+					<input type="text" name="search_str" value="" class="form_input basic_search" placeholder="검색어를 입력해주세요">
+					<input type="image" src="{{$이미지경로}}/button/hd_search.png" alt="검색" class="btn">
+				</div>
+				{{$상품검색폼끝}}
+			</div>
+		</div>
+	</div>
+	<!-- //상단-->
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		{{$사용자HTML1}}
+		<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+		{{$사용자HTML3}}
+		<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+		<!-- 마이페이지 메뉴 -->
+		{{$사용자HTML4}}
+		<!-- //마이페이지 메뉴 --> 

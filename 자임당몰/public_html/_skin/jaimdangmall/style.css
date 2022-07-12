@@ -681,7 +681,7 @@ body.not_scroll #wrapper {height:100vh; overflow:hidden;}
 #recent_layer .list .latest .slick-slide {display:flex; width:100px; flex-direction:column;}
 #recent_layer .list .latest .slick-slide .img {width:100px; height:160px;}
 #recent_layer .list .latest .slick-slide .img img {width:80px; height:110px; margin:30px 10px 20px;}
-#recent_layer .list .latest .slick-slide .name a {display:inline-block; width:100px; color:#343433; font-size:16px; line-height:20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; 
+#recent_layer .list .latest .slick-slide .name a {display:inline-block; width:100px; color:#343433; font-size:16px; letter-spacing: -0.05rem; line-height:20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; 
 }
 #recent_layer .list .latest .slick-prev {display:inline-block; position:absolute; bottom:15px; left:40px; width:5px; height:8px; background:url('{{$이미지경로}}/button/recent_arrow_prev.png') no-repeat center; z-index:20;}
 #recent_layer .list .latest .slick-next {display:inline-block; position:absolute; bottom:15px; right:40px; width:5px; height:8px; background:url('{{$이미지경로}}/button/recent_arrow_next.png') no-repeat center; z-index:20;}
@@ -2006,40 +2006,38 @@ body.not_scroll #wrapper {height:100vh; overflow:hidden;}
 
 /* 브랜드스토리 */
 #brandstory {margin-top:-182px;}
-#brandstory .about_brand_main {position:relative; width:100%; min-height:1070px; background-attachment:fixed; background-size:cover;}
-#brandstory .about_brand {width:100%; min-height:1070px; background-attachment:fixed; background-size:cover; position:relative; overflow:hidden; box-sizing:border-box;}
-#brandstory .about_brand.chapter_1 {background-size:cover; background-attachment:fixed;}
+#brandstory .about_brand_main {position:relative; width:100%; min-height: 0; padding-bottom:56.25%; background-attachment:fixed; background-size:cover;}
+#brandstory .about_brand {width:100%; min-height: 0; padding-bottom:56.25%; background-attachment:fixed; background-size:cover; position:relative; overflow:hidden; box-sizing:border-box;}
+#brandstory .about_brand.chapter_1 {overflow:hidden; position:relative; height:0; min-height: 0; padding-bottom:56.25%; background-size:cover; background-attachment:fixed;}
+#brandstory .about_brand.chapter_1 .video {overflow:hidden; position:relative; height:0; padding-bottom:56.25%;}
+#brandstory .about_brand.chapter_1 .video iframe {position:absolute; top:0; bottom:0; left:0; width:100%; height: 100%;}
 #brandstory .about_brand.chapter_2 {background:url('{{$이미지경로}}/etc/brandstory02.jpg') center 0 no-repeat; background-size:cover; background-attachment:fixed;}
 #brandstory .about_brand.chapter_3 {background:url('{{$이미지경로}}/etc/brandstory03.jpg') center 0 no-repeat; background-size:cover; background-attachment:fixed;}
-#brandstory .about_brand .text_box {position:absolute; top:430px; left:160px;}
+#brandstory .about_brand .text_box {position:absolute; top:40%; left:160px;}
 #brandstory .about_brand .text_box h4 {position:relative; padding-bottom:40px; font-family:'NanumMyeongjo'; font-size:36px; font-weight:300; z-index:1;}
 #brandstory .about_brand .text_box .text p {font-size:20px;}
-#brandstory .about_brand.chapter_1 {height:1070px;}
-#brandstory .about_brand.chapter_1 .text_box {top:440px;}
-#brandstory .about_brand.chapter_1 .video .fakebox {position:absolute; width:100%; height:1070px; background:transparent; z-index:2;}
+#brandstory .about_brand.chapter_1 .text_box {top:41%;}
+#brandstory .about_brand.chapter_1 .video .fakebox {position:absolute; top: 0; width:100%; overflow:hidden; height:0; padding-bottom:56.25%; background:transparent; z-index:2;}
 #brandstory .about_brand.chapter_1 .text_box * {color:#fff;}
-#brandstory .about_brand.chapter_2 {min-height:1070px;}
 #brandstory .about_brand.chapter_2 .text_box * {color:#c2a898;}
-#brandstory .about_brand.chapter_3 {min-height:970px;}
 #brandstory .about_brand.chapter_3 .text_box * {color:#3f2625;}
 
 /* 코리안허브 */
 #koreanherbs {margin-top:-182px;}
-#koreanherbs .about_brand_main {position:relative; width:100%; height:1070px; background-attachment:fixed; background-size:cover; }
-#koreanherbs .about_brand {width:100%; min-height:1070px; background-attachment:fixed; background-size:cover; position:relative; overflow:hidden; box-sizing:border-box;}
-#koreanherbs .about_brand.chapter_1 {background-size:cover; background-attachment:fixed;}
+#koreanherbs .about_brand_main {position:relative; width:100%; min-height: 0; padding-bottom:56.25%; background-attachment:fixed; background-size:cover;}
+#koreanherbs .about_brand {width:100%; min-height: 0; padding-bottom:56.25%; background-attachment:fixed; background-size:cover; position:relative; overflow:hidden; box-sizing:border-box;}
+#koreanherbs .about_brand.chapter_1 {overflow:hidden; position:relative; height:0; min-height: 0; padding-bottom:56.25%; background-size:cover; background-attachment:fixed;}
+#koreanherbs .about_brand.chapter_1 .video {overflow:hidden; position:relative; height:0; padding-bottom:56.25%;}
+#koreanherbs .about_brand.chapter_1 .video iframe {position:absolute; top:0; bottom:0; left:0; width:100%; height: 100%;}
 #koreanherbs .about_brand.chapter_2 {background:url('{{$이미지경로}}/etc/brandstory02.jpg') center 0 no-repeat; background-size:cover; background-attachment:fixed;}
 #koreanherbs .about_brand.chapter_3 {background:url('{{$이미지경로}}/etc/brandstory03.jpg') center 0 no-repeat; background-size:cover; background-attachment:fixed;}
-#koreanherbs .about_brand .text_box {position:absolute; top:430px; left:160px;}
-#koreanherbs .about_brand .text_box h4 {position:relative; padding-bottom:40px; font-family:'NanumMyeongjo'; font-size:36px; z-index:1;}
+#koreanherbs .about_brand .text_box {position:absolute; top:40%; left:160px;}
+#koreanherbs .about_brand .text_box h4 {position:relative; padding-bottom:40px; font-family:'NanumMyeongjo'; font-size:36px; font-weight:300; z-index:1;}
 #koreanherbs .about_brand .text_box .text p {font-size:20px;}
-#koreanherbs .about_brand.chapter_1 {height:1070px;}
-#koreanherbs .about_brand.chapter_1 .text_box {top:440px;}
+#koreanherbs .about_brand.chapter_1 .text_box {top:41%;}
+#koreanherbs .about_brand.chapter_1 .video .fakebox {position:absolute; top: 0; width:100%; overflow:hidden; height:0; padding-bottom:56.25%; background:transparent; z-index:2;}
 #koreanherbs .about_brand.chapter_1 .text_box * {color:#fff;}
-#koreanherbs .about_brand.chapter_1 .video .fakebox {position:absolute; width:100%; height:1070px; background:transparent; z-index:2;}
-#koreanherbs .about_brand.chapter_2 {min-height:1070px;}
 #koreanherbs .about_brand.chapter_2 .text_box * {color:#c2a898;}
-#koreanherbs .about_brand.chapter_3 {min-height:970px;}
 #koreanherbs .about_brand.chapter_3 .text_box * {color:#3f2625;}
 
 /*-----------------------------------------------------------------*/

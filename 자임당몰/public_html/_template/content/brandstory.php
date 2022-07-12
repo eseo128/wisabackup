@@ -17,7 +17,7 @@
     <div class="chapter_1 about_brand_main about_brand">
         <div class="video">
             <div class="fakebox"></div>
-            <iframe width="1903" height="1070" src="https://player.vimeo.com/video/719700110?h=7afb25b460?autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;&amp;muted=1&amp;background=1" frameborder="0" allowfullscreen="" allow="autoplay; fullscreen"></iframe>
+            <iframe width="1900" height="1070" src="https://player.vimeo.com/video/719700110?h=7afb25b460?autoplay=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;&amp;muted=1&amp;background=1" frameborder="0" allowfullscreen="" allow="autoplay; fullscreen;"></iframe>
         </div>
         <div class="text_box brand">
             <h4>자연에 스스로를 맡기다</h4>

@@ -1,20 +1,37 @@
 <!-- 반복문시작 -->
 <div class="review">
-	<div class="wrap_inner">
-		<h2 class="subtitle">best review</h2>
-		<ul class="list">
+	<div class="wrap_inner2">
+		<div class="slide_review">
 <!-- 반복구문시작 -->
-			<li>
+			<div>
 				<div class="img"><a onclick="{{$글링크(레이어)}}">{{$상품이미지}}</a></div>
-				<p class="grade"><span class="gradebox small point{{$상품평점수}}"></span></p>
-				<p class="prd">{{$상품명(링크포함)}}</p>
-				<p class="contents"><a onclick="{{$글링크(레이어)}}">{{$글내용}}</a></p>
-				<p class="date">{{$글작성자}} | {{$글작성일}}</p>
-			</li>
+				<div class="info">
+					<p class="title">{{$글제목}}</p>
+					<p class="category">cutlery-cutlery</p>
+					<p class="contents"><a onclick="{{$글링크(레이어)}}">{{$글내용(태그포함)}}</a></p>
+					<span class="grade"><span class="gradebox small point{{$상품평점수}}"></span></span>
+					<span class="date">{{$글작성자}}님 <span>|</span> {{$글작성일}}</span>
+				</div>
+			</div>
 <!-- 반복구문끝 -->
-		</ul>
+		</div>
+		<div class="graybox"></div>
 	</div>
 </div>
+<script type="text/javascript">
+	$('.slide_review').slick({
+		slidesToShow:1,
+		slidesToScroll:1,
+		dots:false,
+		arrows:true,
+		infinite:true,
+		autoplay:true,
+		autoplaySpeed:3000,
+		speed:300,
+		fade: true,			// 옵션
+		cssEase: 'linear',
+	});
+</script>
 <!-- 반복문끝 -->
 <!-- 데이터없음시작 -->
 <!-- 데이터없음끝 -->

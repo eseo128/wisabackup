@@ -1,13 +1,54 @@
 <!-- 반복문시작 -->
 <div class="mdpick">
-	<div class="wrap_inner">
-		<ul class="prd_basic mini col2">
+	<div class="wrap_inner2">
+		<ul class="prd_basic col2">
 <!-- 반복구문시작 -->
 			<li>{{$기본상품박스}}</li>
 <!-- 반복구문끝 -->
 		</ul>
+		<div class="slide_mdpick">
+			<div class="box">
+				<div class="slick-slide">
+					<a href="#"><img src="{{$이미지경로}}/banner/mdpick_slide01.png" alt="배너처리"></a>
+					<div class="slide_text">
+						<p class="title">ROMO SERIES</p>
+						<h1>table d’hote<br>BOWL</h1>
+						<p class="date">2020.9.15 ~ 20.11.30</p>
+					</div>
+				</div>
+				<div class="slick-slide">
+					<a href="#"><img src="{{$이미지경로}}/banner/mdpick_slide02.png" alt="배너처리"></a>
+					<div class="slide_text">
+						<p class="title">ROMO SERIES</p>
+						<h1>table d’hote<br>BOWL</h1>
+						<p class="date">2020.9.15 ~ 20.11.30</p>
+					</div>
+				</div>
+				<div class="slick-slide">
+					<a href="#"><img src="{{$이미지경로}}/banner/mdpick_slide03.png" alt="배너처리"></a>
+					<div class="slide_text">
+						<p class="title">ROMO SERIES</p>
+						<h1>table d’hote<br>BOWL</h1>
+						<p class="date">2020.9.15 ~ 20.11.30</p>
+					</div>
+				</div>
+			</div> 
+		</div>
 	</div>
 </div>
+<script>
+	// visual 슬라이드
+	$('.slide_mdpick > .box').slick({
+		dots: true,			// 페이지네이션 노출 유무
+		infinite: true,		// 무한 루프 유무
+		speed: 300,			// 이벤트 속도
+		fade: true,			// 옵션
+		cssEase: 'linear',	// CSS3 에니메이션
+		autoplay: true,		// 자동진행
+		autoplaySpeed: 3000,// 자동진행 속도
+		pauseOnHover:false, // 슬라이드 호버시 정지
+		});
+</script>
 <!-- 반복문끝 -->
 
 <!-- 데이터없음시작 -->
