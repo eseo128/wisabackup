@@ -1,0 +1,166 @@
+<h2 class="subtitle list">{{$카테고리명}}</h2>
+<style>
+#cnt .cntbody {min-width:1200px; width:100%; max-width:1840px; margin:0 auto;}
+</style>
+<div id="big_section">
+	<!-- 리스트배너 -->
+	<div class="list_slide">
+		<div class="list_box">
+			{{if(사용자배너96)}}<div class="slick-slide">{{$사용자배너96}}</div>{{endif(사용자배너96)}}
+			{{if(사용자배너97)}}<div class="slick-slide">{{$사용자배너97}}</div>{{endif(사용자배너97)}}
+			{{if(사용자배너98)}}<div class="slick-slide">{{$사용자배너98}}</div>{{endif(사용자배너98)}}
+		</div>
+	</div>
+	<div class="list_slide_best">
+		<div class="list_box_best">
+			{{if(사용자배너102)}}<div class="slick-slide">{{$사용자배너102}}</div>{{endif(사용자배너102)}}
+			{{if(사용자배너103)}}<div class="slick-slide">{{$사용자배너103}}</div>{{endif(사용자배너103)}}
+			{{if(사용자배너104)}}<div class="slick-slide">{{$사용자배너104}}</div>{{endif(사용자배너104)}}
+		</div>
+	</div>
+	<div class="list_slide_outlet">
+		<div class="list_box_outlet">
+			{{if(사용자배너109)}}<div class="slick-slide">{{$사용자배너109}}</div>{{endif(사용자배너109)}}
+			{{if(사용자배너110)}}<div class="slick-slide">{{$사용자배너110}}</div>{{endif(사용자배너110)}}
+			{{if(사용자배너111)}}<div class="slick-slide">{{$사용자배너111}}</div>{{endif(사용자배너111)}}
+		</div>
+	</div>
+	<h2 class="subtitle eshop">{{$카테고리명}}</h2>
+	<!-- //리스트배너 -->
+	<!-- 상품정렬 -->
+	<div class="search_sort">
+		<div class="box_search">
+			{{$상품검색폼시작}}
+			<div class="box">
+				<input type="text" name="search_str" value="" class="form_input basic_search">
+				<input type="image" src="{{$이미지경로}}/shop/list_search.png" alt="검색" class="btn">
+			</div>
+			{{$상품검색폼끝}}
+		</div>
+		{{if(사용자리스트6)}}
+		<!-- 카테고리 추천 -->
+		<div class="best_area">
+			{{$사용자리스트6}}
+		</div>
+		<!-- //카테고리 추천 -->
+		{{endif(사용자리스트6)}}
+		{{if(사용자리스트7)}}
+		<!-- 기본매장분류 하위분류 -->
+		<ul class="sub_category">
+			<li class="cno{{$중분류코드}} all"><a href="/shop/big_section.php?cno1={{$중분류코드}}">전체</a></li>
+			{{$사용자리스트7}}
+		</ul>
+		<!-- //기본매장분류 하위분류 -->
+		{{endif(사용자리스트7)}}
+		{{if(사용자리스트15)}}
+		<!-- 이분류 하위분류 -->
+		<ul class="sub_category">
+			<li class="cno{{$대분류코드}}"><a href="/shop/big_section.php?cno1={{$대분류코드}}">전체</a></li>
+			{{$사용자리스트15}}
+		</ul>
+		<!-- //이분류 하위분류 -->
+		{{endif(사용자리스트15)}}
+		{{if(사용자리스트16)}}
+		<!-- 삼분류 하위분류 -->
+		<ul class="sub_category">
+			<li class="cno{{$대분류코드}}"><a href="/shop/big_section.php?cno1={{$대분류코드}}">전체</a></li>
+			{{$사용자리스트16}}
+		</ul>
+		<!-- //삼분류 하위분류 -->
+		{{endif(사용자리스트16)}}
+		<div class="sort_wrap">
+			<p class="total">{{$총상품개수}} 아이템</p>
+			<div class="sort">
+				<span class="sort_title" onclick="toggle_view('big_section_sort', this)"></span>
+				<ul id="big_section_sort">
+					{{$상품정렬선택리스트}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--// 상품정렬 -->
+	{{$상품리스트}}
+	<!-- 인스타그램 -->
+	{{$사용자리스트17}}
+	<!-- //인스타그램 -->
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if ('{{$카테고리코드}}' == 1001)
+		{
+			$('h2.subtitle.eshop').show();
+			$('h2.subtitle.list').hide();
+			$('.list_slide').show();
+		} else if ('{{$카테고리코드}}' == 1028)
+		{
+			$('h2.subtitle.eshop').show();
+			$('h2.subtitle.list').hide();
+			$('.list_slide').hide();
+			$('.list_slide_best').show();
+		}  else if ('{{$카테고리코드}}' == 1086)
+		{
+			$('h2.subtitle.eshop').show();
+			$('h2.subtitle.list').hide();
+			$('.list_slide').hide();
+			$('.list_slide_outlet').show();
+		} else {
+			$('h2.subtitle.eshop').hide();
+			$('h2.subtitle.list').show();
+			$('.list_slide').hide();
+		}
+	});
+	
+	$('.list_slide > .list_box').slick({
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 500,
+		autoplay: true,
+		autoplaySpeed: 3000,
+	});
+
+	$('.list_slide_best > .list_box_best').slick({
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 500,
+		autoplay: true,
+		autoplaySpeed: 3000,
+	});
+
+	$('.list_slide_outlet > .list_box_outlet').slick({
+		dots: true,
+		arrows: true,
+		infinite: true,
+		speed: 500,
+		autoplay: true,
+		autoplaySpeed: 3000,
+	});
+	
+	$(document).ready(function(){
+		var category_code = '{{$카테고리코드}}';
+		var big_code = '{{$대분류코드}}';
+		var url = location.href.replace(/.*\?/, '').split('&');
+		var cno = '';
+		for(var key in url) {
+			tmp = url[key].split('=');
+			if(tmp[0] == 'cno1') cno = tmp[1];
+		}
+		if(cno) {
+			if(category_code == cno) $('.sub_category li.cno'+cno).addClass('active');
+		}
+		if(category_code == '1001') {
+			$('.sub_category .all').hide();
+		} else if(category_code == '1086') {
+			$('.sub_category .all').hide();
+		} else if (category_code == '1012' || category_code ==  '1013') {
+			$('.sub_category li.cno'+cno+' a').attr("href", "/shop/big_section.php?cno1=1001")
+		} else if (category_code == '1087' || category_code == '1088' || category_code == '1093') {
+			$('.sub_category li.cno'+cno+' a').attr("href", "/shop/big_section.php?cno1=1086")
+		}
+	});
+
+	// sort 영역
+	var sortTitle = $('#big_section_sort strong').text();
+	$('#big_section .sort_wrap .sort .sort_title').text(sortTitle);
+</script>

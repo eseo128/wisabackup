@@ -1,0 +1,242 @@
+<!-- eshop slide  -->
+<div class="eshop_slide swiper-container">
+	<div class="swiper-wrapper">
+		{{if(사용자배너99)}}<div class="swiper-slide">{{$사용자배너99}}</div>{{endif(사용자배너99)}}
+		{{if(사용자배너100)}}<div class="swiper-slide">{{$사용자배너100}}</div>{{endif(사용자배너100)}}
+		{{if(사용자배너101)}}<div class="swiper-slide">{{$사용자배너101}}</div>{{endif(사용자배너101)}}
+	</div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</div>
+<!-- //eshop slide  -->
+<!-- eshop slide best  -->
+<div class="eshop_slide_best swiper-container">
+	<div class="swiper-wrapper">
+		{{if(사용자배너105)}}<div class="swiper-slide">{{$사용자배너105}}</div>{{endif(사용자배너105)}}
+		{{if(사용자배너106)}}<div class="swiper-slide">{{$사용자배너106}}</div>{{endif(사용자배너106)}}
+		{{if(사용자배너107)}}<div class="swiper-slide">{{$사용자배너107}}</div>{{endif(사용자배너107)}}
+	</div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</div>
+<!-- //eshop slide best -->
+<!-- eshop slide outlet  -->
+<div class="eshop_slide_outlet swiper-container">
+	<div class="swiper-wrapper">
+		{{if(사용자배너112)}}<div class="swiper-slide">{{$사용자배너112}}</div>{{endif(사용자배너112)}}
+		{{if(사용자배너113)}}<div class="swiper-slide">{{$사용자배너113}}</div>{{endif(사용자배너113)}}
+		{{if(사용자배너114)}}<div class="swiper-slide">{{$사용자배너114}}</div>{{endif(사용자배너114)}}
+	</div>
+	<div class="swiper-pagination"></div>
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+</div>
+<!-- //eshop slide outlet -->
+<h2 class="subtitle">{{$카테고리명}}</h2>
+<div id="big_section">
+	{{if(사용자리스트6)}}
+	<!-- 카테고리 추천 -->
+	<div class="wrap_inner best_area">
+		{{$사용자리스트6}}
+	</div>
+	<!-- //카테고리 추천 -->
+	{{endif(사용자리스트6)}}
+	{{if(사용자리스트7)}}
+	<!-- 기본매장분류 하위분류 -->
+	<ul class="sub_category">
+		<li class="cno{{$중분류코드}} all"><a href="/shop/big_section.php?cno1={{$중분류코드}}">전체</a></li>
+		{{$사용자리스트7}}
+	</ul>
+	<!-- //기본매장분류 하위분류 -->
+	{{endif(사용자리스트7)}}
+	{{if(사용자리스트15)}}
+	<!-- 이분류 하위분류 -->
+	<ul class="sub_category">
+		<li class="cno{{$대분류코드}}"><a href="/shop/big_section.php?cno1={{$대분류코드}}">전체</a></li>
+		{{$사용자리스트15}}
+	</ul>
+	<!-- //이분류 하위분류 -->
+	{{endif(사용자리스트15)}}
+	{{if(사용자리스트16)}}
+	<!-- 삼분류 하위분류 -->
+	<ul class="sub_category">
+		<li class="cno{{$대분류코드}}"><a href="/shop/big_section.php?cno1={{$대분류코드}}">전체</a></li>
+		{{$사용자리스트16}}
+	</ul>
+	<!-- //삼분류 하위분류 -->
+	{{endif(사용자리스트16)}}
+	<div class="wrap_inner2 prd_normal">
+		<div class="box_search">
+			{{$상품검색폼시작}}
+			<div class="box">
+				<input type="text" name="search_str" value="" class="form_input basic_search">
+				<input type="image" src="{{$이미지경로}}/shop/list_search.png" alt="검색" class="btn">
+			</div>
+			{{$상품검색폼끝}}
+		</div>
+		<div class="sort_wrap">
+			<p class="total">{{$총상품개수}} 아이템</p>
+			<div class="sort">
+				<span class="sort_title" onclick="toggle_view('big_section_sort', this)"></span>
+				<ul id="big_section_sort">
+					{{$상품정렬선택리스트}}
+				</ul>
+			</div>
+		</div>
+		{{$상품리스트}}
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if ('{{$카테고리코드}}' == 1028)
+		{
+			$('.eshop_slide_best').addClass('active');
+			$('.subtitle').addClass('active');
+		} else {
+			$('.eshop_slide_best').removeClass('active');
+			$('.subtitle').removeClass('active');
+		}
+	});
+	
+	$(document).ready(function(){
+		if ('{{$카테고리코드}}' == 1001) {
+			$('.eshop_slide').addClass('active');
+		} else {
+			$('.eshop_slide').removeClass('active');
+		}
+	});
+
+	$(document).ready(function(){
+		if ('{{$카테고리코드}}' == 1086)
+		{
+			$('.eshop_slide_outlet').addClass('active');
+			$('.subtitle').addClass('active');
+		} else {
+			$('.eshop_slide_outlet').removeClass('active');
+			$('.subtitle').removeClass('active');
+		}
+	});
+	
+	if($('.eshop_slide .swiper-slide').length > 1) {
+		var eshop_slide = new Swiper('.eshop_slide', {
+			loop: true,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	}
+
+	if($('.eshop_slide_best .swiper-slide').length > 1) {
+		var eshop_slide = new Swiper('.eshop_slide_best', {
+			loop: true,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	}
+
+	if($('.eshop_slide_outlet .swiper-slide').length > 1) {
+		var eshop_slide = new Swiper('.eshop_slide_outlet', {
+			loop: true,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	}
+
+	var skin_img_url = '{{$이미지경로}}';
+	$(document).ready(function() {
+		if(getCookie('prd_normal_config')){
+			var skinType = getCookie('prd_normal_config');
+			var skinNo = skinType.substr(skinType.lastIndexOf('s')+1);
+			chgListSkin('prd_normal', skinNo);
+		}
+	});
+
+	$(document).ready(function(){
+		var category_code = '{{$카테고리코드}}';
+		var big_code = '{{$대분류코드}}';
+		var url = location.href.replace(/.*\?/, '').split('&');
+		var cno = '';
+		for(var key in url) {
+			tmp = url[key].split('=');
+			if(tmp[0] == 'cno1') cno = tmp[1];
+		}
+		if(cno) {
+			if(category_code == cno) $('.sub_category li.cno'+cno).addClass('active');
+		}
+		if(category_code == '1001') {
+			$('.sub_category .all').hide();
+		} else if(category_code == '1086') {
+			$('.sub_category .all').hide();
+		}
+	});
+
+	// sort 영역
+	var sortTitle = $('#big_section_sort strong').text();
+	$('#big_section .sort_wrap .sort .sort_title').text(sortTitle);
+
+
+	// 뒤로가기로 페이지에 진입했을때, 스크롤 이동을 브라우저 기능을 사용하지 않고, 수동으로 처리  ======================
+	var varUA = navigator.userAgent.toLowerCase();
+	
+	// ios만 처리
+	if(varUA.indexOf("iphone") > -1||varUA.indexOf("ipad") > -1||varUA.indexOf("ipod") > -1 ){
+	    var big_section_session_storage_name = "BigSectionScrollTop";
+	    var BigSectionScrollTop = sessionStorage.getItem(big_section_session_storage_name);
+
+	    // 이벤트 처리
+	    window.onpageshow = function(event) {
+	        if( event.persisted || (window.performance && window.performance.navigation.type == 2)){
+	            window.history.scrollRestoration = 'manual';
+	            $(window).ready(function(){
+	                if(BigSectionScrollTop !== null){
+	                    $(window).scrollTop(BigSectionScrollTop);
+	                    setTimeout(function(){
+	                        $(window).scrollTop(BigSectionScrollTop);
+	                    },100);
+	                }
+	            });
+	        }
+	    }
+	    sessionStorage.removeItem(big_section_session_storage_name);
+
+	    // 페이지 떠날때, 현재 스크롤 위치 저장
+	    window.addEventListener('pagehide', function(e){
+	        sessionStorage.setItem(big_section_session_storage_name , document.documentElement.scrollTop);
+	    });
+	}
+	// 뒤로가기로 페이지에 진입했을때, 스크롤 이동을 브라우저 기능을 사용하지 않고, 수동으로 처리  ======================
+	
+	
+	
+</script>

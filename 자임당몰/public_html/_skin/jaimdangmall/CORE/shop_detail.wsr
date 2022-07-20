@@ -375,21 +375,10 @@
 		// 바깥 클릭시 option_fix 숨기기
 		$('.dim2').click(function(){
 			$('.dim2').hide();
-			setTimeout(function(){
-				$('.option_fix').css('opacity','0')
-     		},500) 
 			$('.option_fix').css('bottom','-1000px');
 			$('.option_fix_button').removeClass('active');
 			first_view = true;
 		})
 	});
 
-	//아이폰일때만 아래 옵션박스 css 수정
-	$(function(){
-		var varUA = navigator.userAgent.toLowerCase();
-		if(varUA.indexOf("iphone")>-1){
-		$("#detail .info > .quick_bar").css("padding","10px 10px 25px 10px");
-		}
-	});
-	
 </script>

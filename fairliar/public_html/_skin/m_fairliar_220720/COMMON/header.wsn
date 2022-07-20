@@ -1,0 +1,172 @@
+<style>
+    .cloud-shoplive.LiveMiniPreview {
+        width: 150px;
+        height: 220px;
+        bottom: 24px;
+        right: 220px;
+    }
+</style>
+
+
+<div style="display: none;" ><span id="cloud-shoplive-user-id">{{$회원아이디}}</span><span id="cloud-shoplive-user-name">{{$회원명}}</span></div>
+<script type="text/javascript" src="https://static.shoplive.cloud/shoplive.js"></script>
+<script>cloud.shoplive.init({ accessKey: 'IqvFDQn9cp56zHw1nvdg', platform: 'WISA' });</script>
+
+
+<link rel="stylesheet" href="{{$이미지경로}}/../swiper.css">
+<script src="{{$이미지경로}}/../swiper.min.js"></script>
+<!-- crema.me / 로그인 회원 정보 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<script type='text/javascript'>
+    !function (w,d,s,u,t,ss,fs) {
+        if(w.ex2cts)return;t=w.ex2cts={};if(!window.t) window.t = t;
+        t.push = function() {t.callFunc?t.callFunc.apply(t,arguments) : 
+t.cmd.push(arguments);};
+        t.cmd=[];ss = document.createElement(s);ss.async=!0;ss.src=u;
+        fs=d.getElementsByTagName(s)[0];fs.parentNode.insertBefore(ss,fs);
+    }(window,document,'script','//st2.exelbid.com/js/cts2.js');
+    ex2cts.push('init', '616e23de8d0fd8bf758b4570' ,'.fairliar.com');
+</script>
+<!-- 상단 배너 -->
+<div id="topbnr">
+	<p> {{$사용자배너79}}<p>
+	<span class="close" onclick="todayclose()"></span>
+</div>
+<!-- //상단 배너 -->
+
+<header>
+	<div class="fix">
+		<div class="gnb">
+			<h1><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a></h1>
+			<ul class="icon_menu">
+				<li class="category"><a href="#" onclick="toggle_nav('lnb', this); return false;">카테고리</a></li>
+				<li class="search"><a class="toggle_search" onclick="toggle_view('box_search',this)"></a></li>
+				<li class="my"><a href="/mypage/mypage.php">마이페이지</a></li>
+				<li class="cart"><a href="/shop/cart.php">장바구니<span class="front_cart_rows">{{$장바구니개수}}</span></a></li>
+			</ul>
+		</div>
+		<ul class="top_menu">
+			<li><a href="/content/content.php?cont=brand_story">BRAND</a></li>
+			<li><a href="/content/content.php?cont=store">STORES</a></li>
+			<li><a href="/board/?db=gallery_3">CAMPAIGN</a></li>
+			<li><a href="/content/content.php?cont=explore">EXPLORE</a></li>
+			<li><a href="/shop/big_section.php?cno1=1001">E-SHOP</a></li>
+		</ul>
+		<div id="box_search" class="search" style="display: none;">
+			{{$상품검색폼시작}}
+				<div class="box">
+					<input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="상품명을 입력하세요.">
+					<a href="" class="btn srch"><img src="{{$이미지경로}}/common/hd_search.png" alt=""></a>
+					<input type="image" src="{{$이미지경로}}/common/hd_search.png" alt="검색" class="btn srch2">
+				</div>
+			{{$상품검색폼끝}}
+		</div>
+	</div>
+	<nav class="lnb">
+		<div class="cate_wrap">
+			<ul>
+				<li class="child">
+					<span>여성</span>
+					{{$사용자리스트5}}
+				</li>
+				<li class="child">
+					<span>남성</span>
+					{{$사용자리스트18}}
+				</li>
+				<li class="child red"><a onclick="toggle_nav_cate('depth_outlet');">OUTLET</a></li>
+				<li class="child"><a onclick="toggle_nav_cate('depth_brand');">BRAND</a></li>
+				<li class="child"><a onclick="toggle_nav_cate('depth_campaign');">CAMPAIGN</a></li>
+				<li class="child"><a onclick="toggle_nav_cate('depth_news');">NEWS</a></li>
+			</ul>
+		</div>
+		<div id="depth_brand" class="depth_wrap">
+			<p class="title">BRAND<span class="back" onclick="toggle_nav_cate_close();">뒤로가기</span></p>
+			<div class="depth">
+				<ul>
+					<li><a href="/content/content.php?cont=brand_story">BRAND STORY</a></li>
+					<li><a href="/content/content.php?cont=store">STORES</a></li>
+					<li><a href="/content/content.php?cont=sponsorship">SPONSORSHIP</a></li>
+				</ul>
+				{{$사용자배너83}}
+			</div>
+		</div>
+		<div id="depth_campaign" class="depth_wrap">
+			<p class="title">CAMPAIGN<span class="back" onclick="toggle_nav_cate_close();">뒤로가기</span></p>
+			<div class="depth">
+				<ul>
+					<li class="black"><a href="/board/?db=gallery_3">LOOKBOOK</a></li>
+					<li><a href="/board/?db=gallery_4">INSPIRATIONS</a></li>
+				</ul>
+				{{$사용자배너84}}
+			</div>
+		</div>
+		<div id="depth_news" class="depth_wrap">
+			<p class="title">NEWS<span class="back" onclick="toggle_nav_cate_close();">뒤로가기</span></p>
+			<div class="depth">
+				<ul>
+					<li><a href="/board/?db=gallery_5">NOTICES</a></li>
+					<li><a href="/board/?db=gallery_2">PRESS & MEDIA</a></li>
+					<li><a href="/content/content.php?cont=LIVE_New">FAIRLIAR TV</a></li>
+				</ul>
+				{{$사용자배너85}}
+			</div>
+		</div>
+		<div id="depth_outlet" class="depth_wrap">
+			<p class="title red">OUTLET<span class="back" onclick="toggle_nav_cate_close();">뒤로가기</span></p>
+			<div class="depth">
+				<ul class="mid">
+					<li class="child2">
+						<span>여성</span>
+						{{$사용자리스트20}}
+					</li>
+					<li class="child2">
+						<span>남성</span>
+						{{$사용자리스트21}}
+					</li>
+					<li class="child2">
+						<span>컬러</span>
+						{{$사용자리스트22}}
+					</li>
+					<li class="bdb_none">
+						<dl>
+							<dt>OUTLET new</dt>
+							<dd>{{$사용자배너115}}</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="info_wrap">
+			<ul class="icon_menu">
+				<li class="store"><a href="/content/content.php?cont=store">부티크찾기</a></li>
+				<li class="cs"><a onclick="csScroll()">고객서비스</a></li>
+				<li class="wish"><a href="/mypage/wish_list.php">WISHLIST</a></li>
+				<li class="language"><a href="#" onclick="toggle_view('language');">SHIPPING : 대한민국</a></li>
+			</ul>
+			<p class="msg">온라인 품절 상품은 부티크 주문서비스로 배송 및 픽업 예약하세요.</p>
+			<div id="nav_search" class="search">
+				{{$상품검색폼시작}}
+					<div class="box">
+						<input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="상품명을 입력하세요.">
+						<input type="image" src="{{$이미지경로}}/common/hd_search.png" alt="검색" class="btn">
+					</div>
+				{{$상품검색폼끝}}
+			</div>
+			<ul class="login">
+				{{$로그인전1}}
+				{{$로그인후1}}
+			</ul>
+		</div>
+	</nav>
+</header>
+<section id="cnt">
+	<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+	{{$사용자HTML1}}
+	<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+	<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+	{{$사용자HTML3}}
+	<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+	<!-- 마이페이지 메뉴 -->
+	{{$사용자HTML4}}
+	<!-- //마이페이지 메뉴 -->

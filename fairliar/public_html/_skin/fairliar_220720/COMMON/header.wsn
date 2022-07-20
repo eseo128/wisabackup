@@ -1,0 +1,163 @@
+<style>
+    .cloud-shoplive.LiveMiniPreview {
+        width: 150px;
+        height: 220px;
+        bottom: 200px;
+        right: 24px;
+    }
+</style>
+
+
+<div style="display: none;" ><span id="cloud-shoplive-user-id">{{$회원아이디}}</span><span id="cloud-shoplive-user-name">{{$회원명}}</span></div>
+<script type="text/javascript" src="https://static.shoplive.cloud/shoplive.js"></script>
+<script>cloud.shoplive.init({ accessKey: 'IqvFDQn9cp56zHw1nvdg', platform: 'WISA' });</script>
+
+
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
+	<!-- 상단 배너 -->
+	<div id="topbnr">
+		<p> {{$사용자배너78}} </p>
+		<span class="close" onclick="todayclose()"></span>
+	</div>
+	
+	<!-- //상단 배너 -->
+	<!-- 상단 -->
+	<div id="header">
+		<div class="wrap_inner">
+			<div class="gnb">
+				<div class="language_cs">
+					<ul>
+						<li class="language" onclick="toggle_view('tool_lg', this);">
+							<p>SHIPPING : 대한민국 (KR₩)</p>
+							<div id="tool_lg" class="tool_lg">
+								<div class="tool_log_content">
+									<a href="https://fairliar.myshopify.com/" target="_blank"><span>INTERNATIONAL SHIPPING (US$)<br>FREE SHIPPING ON ORDERS $500+</span></a>
+									<a href="https://fairliarusa.com" target="_blank" class="united"><span>FREE UNITED SHIPPING ON ODERS $149+</span></a>
+								</div>
+							</div>
+						</li>
+						<li class="cs"><a onclick="csScroll()">고객 서비스</a></li>
+						<li class="store"><a href="/content/content.php?cont=store">부티크 찾기</a></li>
+					</ul>
+				</div>
+				<h1><a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a></h1>
+				<div class="icon_menu">
+					<ul>
+						<li class="search">
+							<a class="toggle_search" onclick="toggle_view('box_search',this)"></a>
+							<div id="box_search" class="search" style="display: none;">
+								{{$상품검색폼시작}}
+									<div class="box">
+										<input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="상품명을 입력하세요.">
+										<a href="" class="btn srch"><img src="{{$이미지경로}}/common/hd_search.png" alt="검색"></a>
+										<input type="image" src="{{$이미지경로}}/common/hd_search.png" alt="검색" class="btn srch2">
+									</div>
+								{{$상품검색폼끝}}
+								<span class="close" onclick="toggle_view('box_search');">닫기</span>
+							</div>
+						</li>
+						<li class="wish"><a href="/mypage/wish_list.php">위시리스트</a></li>
+						<li class="my">
+							<a href="/mypage/mypage.php">마이페이지</a>
+							<ul class="depth">
+								{{$로그인전1}}
+								{{$로그인후1}}
+								<li><a href="/mypage/mypage.php">마이페이지</a></li>
+							</ul>
+						</li>
+						<li class="cart"><a href="/shop/cart.php">장바구니<span class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="lnb">
+				<li class="child">
+					<a href="/content/content.php?cont=brand_story" onmouseover="$('.depth.brand').show();" onmouseleave="$('.depth.brand').hide();">BRAND</a>
+					<div class="depth brand" onmouseover="$(this).show();" onmouseleave="$(this).hide();">
+						<div class="depth_box">
+							<h1>ABOUT FAIRLIAR</h1>
+							<ul>
+								<li><a href="/content/content.php?cont=brand_story">BRAND STORY</a></li>
+								<li><a href="/content/content.php?cont=store">STORES</a></li>
+								<li><a href="/content/content.php?cont=sponsorship">SPONSORSHIP</a></li>
+							</ul>
+							{{$사용자배너80}}
+						</div>
+					</div>
+				</li>
+				<!-- <li><a href="/content/content.php?cont=store">STORES</a></li> -->
+				<li class="child">
+					<a href="/board/?db=gallery_3" onmouseover="$('.depth.campaign').show();" onmouseleave="$('.depth.campaign').hide();">CAMPAIGN</a>
+					<div class="depth campaign" onmouseover="$(this).show();" onmouseleave="$(this).hide();">
+						<div class="depth_box">
+							<h1>CAMPAIGN</h1>
+							<ul>
+								<li><a href="/board/?db=gallery_3">LOOKBOOK</a></li>
+								<li><a href="/board/?db=gallery_4">INSPIRATIONS</a></li>
+							</ul>
+							{{$사용자배너81}}
+						</div>
+					</div>
+				</li>
+				<li class="child">
+					<a href="/content/content.php?cont=explore" onmouseover="$('.depth.explore').show();" onmouseleave="$('.depth.explore').hide();">NEWS</a>
+					<div class="depth explore" onmouseover="$(this).show();" onmouseleave="$(this).hide();">
+						<div class="depth_box">
+							<h1>NEWS</h1>
+							<ul>
+								<li><a href="/board/?db=gallery_5">NOTICES</a></li>
+								<li><a href="/board/?db=gallery_2">PRESS & MEDIA</a></li>
+								<li><a href="/content/content.php?cont=LIVE_New">FAIRLIAR TV</a></li>
+							</ul>
+							{{$사용자배너82}}
+						</div>			
+				</li>
+				<li class="child">
+					<a href="/shop/big_section.php?cno1=1001" onmouseover="$('.depth.shop').show();" onmouseleave="$('.depth.shop').hide();">E-SHOP</a>
+					<div class="depth shop" onmouseover="$(this).show();" onmouseleave="$(this).hide();">
+						<div class="wrap_inner">
+							<dl>
+								<dt>전인지 프로 COLLECTION</dt>
+								<dd>{{$사용자배너55}}</dd>
+							</dl>
+							{{$사용자리스트5}}
+							{{$사용자리스트18}}
+							{{$사용자리스트13}}
+							{{$사용자리스트14}}
+						</div>
+					</div>
+				</li>
+				<li class="child red">
+					<a href="/shop/big_section.php?cno1=1086" onmouseover="$('.depth.outlet').show();" onmouseleave="$('.depth.outlet').hide();">OUTLET</a>
+					<div class="depth outlet" onmouseover="$(this).show();" onmouseleave="$(this).hide();">
+						<div class="wrap_inner">
+							<dl>
+								<dt>FAIRLIAR OUTLET</dt>
+								<dd>{{$사용자배너108}}</dd>
+							</dl>
+							{{$사용자리스트20}}
+							{{$사용자리스트21}}
+							{{$사용자리스트22}}
+						</div>
+					</div>
+				</li>
+			</div>
+		</div>
+	</div>
+	<div id="hd_dimmed"></div>
+	<!-- //상단-->
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		{{$사용자HTML1}}
+		<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+		{{$사용자HTML3}}
+		<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+		<!-- 마이페이지 메뉴 -->
+		{{$사용자HTML4}}
+		<!-- //마이페이지 메뉴 -->

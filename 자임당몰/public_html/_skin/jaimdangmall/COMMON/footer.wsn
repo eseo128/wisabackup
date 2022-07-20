@@ -183,11 +183,20 @@
 		if($('.side_quick#'+name).hasClass('active')) {
 			quick.removeClass('active');
 			$('body').removeClass('not_scroll');
+			$('.dim2').hide();
 		}
 		else {
 			quick.addClass('active');
 			$('.side_quick').not(quick).removeClass('active');
 			$('body').addClass('not_scroll');
+			$('.dim2').show();
 		}
+
+		$('.dim2').click(function(){
+			quick.removeClass('active');
+			$('body').removeClass('not_scroll');
+			$('.dim2').hide();
+		})
 	}
-</script>
+	
+	</script>

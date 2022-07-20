@@ -58,6 +58,7 @@
 						<li class="mid"><a href="/shop/product_review_list.php">REVIEW</a></li>
 						<li class="mid"><a href="/shop/product_qna_list.php">QNA</a></li>
 						<li class="mid"><a href="/board/?db=basic_1">NOTICE</a></li>
+						<li class="mid"><a href="/board/?db=basic_3">NEWS</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -75,9 +76,90 @@
 			<span class="del"><a onclick="toggle_quick('quick_cart'); return false;"><img src="{{$이미지경로}}/button/quick_cart_close.png"></a></span>
 			<span class="quick_title">VIEW CART</span>
 		</div>
-		<ul class="quick_cart_bottom">
-			<div class="wing_quick_cart_layer1"></div>
-		</ul>
+		<div class="quick_cart_bottom">
+			<!-- 퀵카트 배너 영역 (시작) -->
+			<div class="quick_banner">
+				{{if(사용자배너6)}}{{$사용자배너6}}{{endif(사용자배너6)}}
+			</div>
+			<!-- 퀵카트 배너 영역 (끝) -->
+			<div class="list">
+					<form name="cartFrm1" method="post" action="http://m.jaimdangmall.mywisa.co.kr/main/exec.php" target="_self" style="margin:0px">
+						<input type="hidden" name="exec_file" value="cart/cart.exe.php">
+						<input type="hidden" name="exec" value="">
+						<input type="hidden" name="is_quickcart" value="1">
+						<input type="hidden" name="m_quick_check" value="Y">
+						<div class="frame">
+							<table>
+								<caption class="hidden">장바구니</caption>
+								<colgroup>
+									<col style="width:210px">
+									<col style="width:290px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col"></th>
+										<th scope="col"></th> 
+									</tr>
+								</thead>
+								<tbody>
+									<!-- 상품 시작 -->
+									{{$모바일퀵카트상품정보}}
+									<!-- 상품 끝 -->
+								</tbody>
+							</table>
+						</div>
+						<div class="box_price">
+							{{if(현재회원카트상품있음)}}
+							<table class="tbl_order2" style="width:100%;">
+								<caption class="hidden">총 주문 가격</caption>
+								<colgroup>
+									<col style="width:50%;">
+									<col style="width:50%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">주문금액</th>
+										<td style="float:right;">
+											<span class="won">￦</span>
+											<span id="quick_won">{{$모바일퀵카트주문금액}}</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">배송비</th>
+										<td style="float:right;">
+											<span class="won">￦</span>
+											<span id="dlv_prc_cart">{{$모바일퀵카트배송비}}</span>
+										</td>
+									</tr>									
+								</tbody>
+							</table>
+							{{endif(현재회원카트상품있음)}}
+						</div>
+
+						<div class="total_box">
+							{{if(현재회원카트상품있음)}}
+							<span scope="row" class="total_title">합계</span>
+							<div class="total_price"><span class="won">￦</span><span class="price" id="total_order_price_cartlist">{{$모바일퀵카트합계}}</span> </div>			
+							{{endif(현재회원카트상품있음)}}
+						</div>			
+						<div class="btn" id="cart_btn">
+							{{if(현재회원카트상품있음)}}
+							<span class="box_btn block white huge2"><a href="/shop/cart.php">장바구니</a></span>
+							<span class="box_btn block huge2"><a href="javascript:orderCart(document.cartFrm1);">바로 구매</a></span>
+							{{endif(현재회원카트상품있음)}}
+						</div>
+						<div class="pay">
+							<div class="npay">{{$네이버체크아웃버튼}}</div>
+							<div class="talkpay">{{$카카오페이구매버튼}}</div>
+							<div class="payco">{{$페이코즉시구매버튼}}</div>
+						</div>
+						{{if(현재회원카트상품없음)}}
+							<div class="empty" style="margin-top:50px;">장바구니가 비었습니다.</div>
+						{{endif(현재회원카트상품없음)}}
+						<input type="hidden" name="cart_rows" value="1"><input type="hidden" id="partner_data" name="partner_data" value="0">
+					</form>
+			</div>
+		</div>
 	</div>
 	<!-- //퀵카트 -->
 </header>
