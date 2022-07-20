@@ -80,7 +80,6 @@
 	//md_pick 슬라이드
 	var tab_pick = new Swiper('.tab_pick', {
 		slidesPerView: 'auto',
-		spaceBetween: 10,
 		centeredSlides: true,
 		initialSlide: 1,
 	});

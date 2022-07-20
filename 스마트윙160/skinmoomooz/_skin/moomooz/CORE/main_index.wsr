@@ -62,10 +62,9 @@
 		dots: true,			// 페이지네이션 노출 유무
 		infinite: true,		// 무한 루프 유무
 		speed: 500,			// 이벤트 속도
-		fade: true,			// 옵션
 		cssEase: 'linear',	// CSS3 에니메이션
 		autoplay: true,		// 자동진행
-		autoplaySpeed: 3000,// 자동진행 속도
+		autoplaySpeed: 2000,// 자동진행 속도
 	});
 
 	$(document).ready(function(){
@@ -76,8 +75,10 @@
 	//메인 md pick 탭&슬라이드
 	function pickSlide(no) {
 		var tabs = $('.tab_pick li');
+		
 		tabs.each(function(idx) {
 			var detail = $('.tabcnt_pick'+idx);
+			
 			var visual = detail.find('.slide_pick');
 			var progressBar = detail.find('.visual_progress');
 			var progressBarLabel = detail.find('.visual_progress_label');
@@ -88,6 +89,7 @@
 				detail.show();
 				$(this).find('a').addClass('active');
 				var slides = $('.tabcnt_pick'+idx);
+				
 				if(slides.hasClass('is_active') == false){
 					slides.find('.slide_pick').slick({
 						slidesToShow: 3,
@@ -103,6 +105,7 @@
 						nextArrow: false,
 						cssEase: 'ease-in-out',
 					});
+
 					slides.find('.slide_pick').on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
 						var calc = ((nextSlide+1) / (slick.slideCount)) * 100;
 						progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
@@ -115,7 +118,10 @@
 				detail.hide();
 			}
 		});
+		//겹침 방지
+		$('.slide_pick').slick('setPosition');
 	}
+	
 	$(document).ready(function(){
 		pickSlide(0);
 	});
