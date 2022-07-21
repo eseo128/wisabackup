@@ -124,8 +124,9 @@ t.cmd.push(arguments);};
 						<span>남성</span>
 						{{$사용자리스트21}}
 					</li>
-					<li class="child2">
-						<span>컬러</span>
+					<!-- COLOR 히든처리 dn 클래스 추가-->
+					<li class="child2 dn">
+						<span>COLOR</span>
 						{{$사용자리스트22}}
 					</li>
 					<li class="bdb_none">

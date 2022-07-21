@@ -1,0 +1,92 @@
+<style type="text/css">
+header {display:none;}
+.subtitle {display:none;}
+/* 하단고정 숨김 */
+.fix_menu {display:none !important; opacity:0 !important;}
+/* //하단고정 숨김 */
+</style>
+<div id="login" class="box_member">
+	<div class="logo"><img src="{{$이미지경로}}/logo/common_logo.png" alt="로고"></div>
+	<h2 class="login_title">로그인</h2>
+	<ul class="login_tab">
+		<li class="member_login on">회원 로그인</li>
+		<li class="member_ordsearch">비회원 주문조회</li>
+	</ul>
+	{{$비회원주문하기구문}}
+	{{$로그인실패구문}}
+	{{$로그인폼시작}}
+		<fieldset class="login_field">
+			<legend class="hidden">회원 로그인</legend>
+			<div class="fld">
+				<label for="login_id">아이디</label>
+				<input type="text" name="member_id" value="{{$자동로그인아이디}}" maxlength="50" id="login_id" class="form_input member block" placeholder="아이디">
+			</div>
+			<div class="fld">
+				<label for="login_pwd">비밀번호</label>
+				<input type="password" name="pwd" value="{{$자동로그인비밀번호}}" {{if(비밀번호최대길이)}}maxlength="{{$비밀번호최대길이}}"{{endif(비밀번호최대길이)}} id="login_pwd" class="form_input member block" placeholder="비밀번호">
+			</div>
+			<div class="savessl">
+				<div class="hidden">
+					<input type="checkbox" name="setOpenSSL" id="member_ssl" checked onclick="return false;"><label for="member_ssl">보안접속</label>
+				</div>
+				<input type="checkbox" name="id_save" value="Y" {{$자동로그인아이디체크}} id="member_id_save"><label for="member_id_save">아이디저장</label>
+				<input type="checkbox" name="pw_save" value="Y" {{$자동로그인비밀번호체크}} id="member_pwd_save"><label for="member_pwd_save">비밀번호저장</label>
+			</div>
+			<p class="joinfind"><a href="/member/find_step1.php#id"><span>ID</span>아이디 찾기</a> <a href="/member/find_step1.php#pw"><span class="line">*</span>비밀번호 찾기</a></p>
+			<span class="box_btn block large2 strong black"><input type="submit" value="로그인"></span>
+			{{if(SNS로그인버튼사용)}}
+			<div class="simple">
+				{{if(네이버로그인버튼)}}<a href="#" onclick="naverLogin(); return false;" class="naver">네이버로 로그인</a>{{endif(네이버로그인버튼)}}
+				{{if(카카오톡로그인버튼)}}<a href="#" onclick="loginWithKakao(); return false;" class="kakao">카카오톡으로 로그인</a>{{endif(카카오톡로그인버튼)}}
+				{{if(페이스북로그인버튼)}}<a href="#" onclick="facebookLogin(); return false;" class="facebook">페이스북으로 로그인</a>{{endif(페이스북로그인버튼)}}
+				{{if(페이코로그인버튼)}}<a href="#" onclick="paycoLogin(); return false;" class="payco">페이코로 로그인</a>{{endif(페이코로그인버튼)}}
+				{{if(위메프로그인버튼)}}<a href="#" onclick="wonderLogin(); return false;" class="wemake">위메프로 로그인</a>{{endif(위메프로그인버튼)}}
+				{{if(애플로그인버튼)}}<a href="#" onclick="appleLogin(); return false;" class="apple">Apple로 로그인</a>{{endif(애플로그인버튼)}}
+			</div>
+			{{end(SNS로그인버튼사용)}}
+		</fieldset>
+	{{$로그인폼끝}}
+	{{$주문조회폼시작}}
+		<fieldset class="ord_field">
+			<legend class="hidden">비회원 주문조회</legend>
+			<div class="fld">
+				<label for="login_order_no">주문번호</label>
+				<input type="text" name="ono" id="login_order_no" class="form_input member block" placeholder="주문번호">
+			</div>
+			<div class="fld">
+				<label for="login_phone">전화번호</label>
+				<input type="text" name="phone" id="login_phone" class="form_input member block" placeholder="전화번호">
+			</div>
+			<div class="savessl hidden">
+				<input type="checkbox" name="setOpenSSL" id="nonmember_ssl" checked onclick="return false;"> <label for="nonmember_ssl">보안접속</label>
+			</div>
+			<span class="box_btn block large2 black strong"><input type="submit" value="주문조회"></span>
+		</fieldset>
+	{{$주문조회폼끝}}
+	<div class="joinmember">
+		<h3>회원가입</h3>
+		<p>아직도 대현인사이드의 회원이 아니신가요?<br>회원가입 후 대현인사이드 회원만의 특별 혜택을 누리세요.</p>
+		<span class="box_btn large2 strong block white2"><a href="/member/join_step1.php">회원가입</a></span>
+	</div>
+</div>
+{{$네이버로그인스크립트}}
+{{$페이스북로그인스크립트}}
+{{$카카오톡로그인스크립트}}
+{{$페이코로그인스크립트}}
+{{$위메프로그인스크립트}}
+
+<script type="text/javascript">
+	$('.member_login').click(function(){
+		$('.member_login').addClass('on');
+		$('.member_ordsearch').removeClass('on');
+		$('.login_field').show();
+		$('.ord_field').hide();
+	});
+
+	$('.member_ordsearch').click(function(){
+		$('.member_login').removeClass('on');
+		$('.member_ordsearch').addClass('on');
+		$('.login_field').hide();
+		$('.ord_field').show();
+	});
+</script>

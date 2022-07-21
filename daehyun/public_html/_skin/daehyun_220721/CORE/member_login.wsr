@@ -1,0 +1,98 @@
+<style>
+.tab_content {text-align:center;font-size:0;}
+input[type="checkbox"] {}
+input[type="radio"] {display:none;} /* input을 안보이게 처리 */
+input[type="radio"] + label {display:inline-block; padding:14px; background:#FFF; color:#a3a3a3; cursor:pointer; width:233px; font-size:16px; margin:0 -3px 50px -3px; border:1px solid #d4d4d4; border-bottom: 1px solid #000;} /* 버튼 공통 속성 */
+input[type="radio"]:checked + label {background:#000; color:#fff; border:1px solid #000;} /* 선택된 버튼속성 */
+.conbox {height:510px; margin:0 auto; display:none; box-sizing:border-box;} /* 컨텐츠박스 공통 속성 */
+input[id="tab01"]:checked ~ .con1 {display:block;} /* 인풋에 체크가 해당 요소보이게 설정 */
+input[id="tab02"]:checked ~ .con2 {display:block;}
+input[id="tab03"]:checked ~ .con3 {display:block;}
+</style>
+<div id="login" style="padding-top:0px;">
+	<input type="radio" name="tabmenu" id="tab01" checked>
+	<label for="tab01">회원 로그인</label>
+	<input type="radio" name="tabmenu" id="tab02">
+	<label for="tab02">비회원 주문조회</label>
+	<div class="box_member login conbox con1">
+		{{$로그인폼시작}}
+		<input type="hidden" name="setOpenSSL" value="Y" checked>
+			<fieldset>
+				<legend class="hidden">회원 로그인</legend>
+				{{$로그인실패구문}}
+				<div class="fld">
+					<label for="login_id">아이디</label>
+					<input type="text" name="member_id" value="{{$자동로그인아이디}}" maxlength="50" id="login_id" class="form_input member block" placeholder="아이디">
+				</div>
+				<div class="fld last">
+					<label for="login_pwd">비밀번호</label>
+					<input type="password" name="pwd" value="{{$자동로그인비밀번호}}" {{if(비밀번호최대길이)}}maxlength="{{$비밀번호최대길이}}"{{endif(비밀번호최대길이)}} id="login_pwd" class="form_input member block" placeholder="비밀번호">
+				</div>
+				<div class="savessl">
+					<p class="save_id"><input type="checkbox" name="id_save" value="Y" {{$자동로그인아이디체크}} id="member_id_save"> <label for="member_id_save">아이디저장</label>
+					&nbsp;
+					 <input type="checkbox" name="pw_save" value="Y" {{$자동로그인비밀번호체크}} id="member_pwd_save"> <label for="member_pwd_save">비밀번호저장</label></p>
+					<p class="find">
+						<span><a href="/member/find_step1.php#id">아이디 찾기</a></span>
+						<span class="last"><a href="/member/find_step1.php#pw">비밀번호 찾기</a></span>
+					</p>
+				</div>
+				<span class="box_btn block huge"><input type="submit" value="로그인"></span>
+			</fieldset>
+		{{$로그인폼끝}}
+		{{if(SNS로그인버튼사용)}}
+		<div class="simple">
+			<div class="simple_btn">
+				<a href="#" onclick="naverLogin(); return false;" class="naver">네이버로 로그인</a>
+				<a href="#" onclick="loginWithKakao(); return false;" class="kakao">카카오로 로그인</a>
+				<!--{{if(페이스북로그인버튼)}}<a href="#" onclick="facebookLogin(); return false;" class="facebook">페이스북으로 로그인</a>{{endif(페이스북로그인버튼)}}-->
+				<!--{{if(페이코로그인버튼)}}<a href="#" onclick="paycoLogin(); return false;" class="payco">페이코로 로그인</a>{{endif(페이코로그인버튼)}}-->
+				{{if(애플로그인버튼)}}<a href="#" onclick="appleLogin(); return false;" class="apple">Apple로 로그인</a>{{endif(애플로그인버튼)}}
+			</div>
+		</div>
+		{{end(SNS로그인버튼사용)}}
+		<div class="joinfind">
+			<p class="title" style="padding-bottom:30px">회원가입</p>
+			<p class="msg">아직도 대현인사이드의 회원이 아니신가요?<br>회원가입 후 대현인사이드 회원만의 특별 혜택을 누리세요.<span class="box_btn w120 large white"><a href="/member/join_step1.php">회원가입</a></span></p>
+		</div>
+
+	</div>
+	<div class="box_member conbox con2">
+		{{$주문조회폼시작}}
+		<input type="hidden" name="setOpenSSL" value="Y" checked>
+			<fieldset>
+			<!--
+				<legend>비회원 주문조회</legend>
+			-->
+				<div class="fld">
+					<label for="login_order_no">주문번호</label>
+					<input type="text" name="ono" id="login_order_no" class="form_input member block" placeholder="주문번호">
+				</div>
+				<div class="fld last">
+					<label for="login_phone">전화번호</label>
+					<input type="text" name="phone" id="login_phone" class="form_input member block" placeholder="휴대폰번호">
+				</div>
+				<div class="past_order">
+				    <br>
+				</div>
+				<span class="box_btn block huge chk"><input type="submit" value="주문조회"></span>
+				{{$비회원주문하기구문}}
+			</fieldset>
+		{{$주문조회폼끝}}
+		<div class="joinfind">
+			<p class="title" style="padding-bottom:30px">회원가입</p>
+			<p class="msg">아직도 대현인사이드의 회원이 아니신가요?<br>회원가입 후 대현인사이드 회원만의 특별 혜택을 누리세요.<span class="box_btn w120 large white"><a href="/member/join_step1.php">회원가입</a></span></p>
+		</div>
+	</div>
+</div>
+{{$네이버로그인스크립트}}
+{{$페이스북로그인스크립트}}
+{{$카카오톡로그인스크립트}}
+{{$페이코로그인스크립트}}
+<script type="text/javascript">
+	$(window).ready(function(){
+		if ($('.simple a').length == 0) {
+			$('.simple').hide();
+		}
+	});
+</script>

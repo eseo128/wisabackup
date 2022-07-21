@@ -1,0 +1,129 @@
+<style type="text/css">
+h2.subtitle:after {display:none;}
+.subtitle p {margin-top:14px; color:#777; font-size:14px; letter-spacing:-0.05rem; text-align:center;}
+#join_agree .offline {margin-top:30px; text-align:left;}
+#join_agree .offline .title {margin-bottom:18px; padding:0 15px; font-size:13px; font-weight:700; letter-spacing:-0.05rem;}
+#join_agree .offline .check {position:relative;}
+#join_agree .offline .check span {position:absolute; top:14px; right:0; padding-right:13px;}
+#join_agree .offline .check label {font-size:13px; font-weight:700; letter-spacing:-0.05rem;}
+#join_agree .offline .scroll {margin-bottom:35px;}
+#join_agree .offline table {margin-bottom:42px; border:1px solid #e0e0e0; border-width:1px 0;}
+#join_agree .offline table tr th {padding:6px 0 6px 30px; border:0; font-size:13px; letter-spacing:-0.05rem;}
+#join_agree .offline table tr:first-child th {padding:16px 0 6px 30px;}
+#join_agree .offline table tr:last-child th {padding:6px 0 16px 30px;}
+#join_agree .offline table tr td {padding:6px 0 6px 30px; border:0; font-size:13px; letter-spacing:-0.05rem;}
+#join_agree .offline table tr:first-child td {padding:16px 0 6px 30px;}
+#join_agree .offline table tr:last-child td {padding:6px 0 16px 30px;}
+#join_agree .offline table.offline_tel tr th {padding:6px 0 6px 30px;}
+#join_agree .offline table.offline_tel tr td {padding:6px 0 6px 30px;}
+#join_agree .offline table tr th {padding:6px 0 6px 30px; border:0; font-size:13px; letter-spacing:-0.05rem;}
+#join_agree .offline table tr td input {vertical-align:middle;}
+#join_agree .offline table tr td button {height:30px; margin-left:2px; padding:0 20px; border:none; background:#000; color:#fff; vertical-align:middle;}
+#join_agree .offline .agree_btn {margin:0 0 50px; padding:0 15px;}
+#join_agree .offline .agree_btn p {margin:0 0 22px; font-size:13px; letter-spacing:-0.05rem;}
+#join_agree .offline .agree_btn ul {text-align:center;}
+#join_agree .offline .agree_btn ul li {display:inline-block; padding:0 17px;}
+#join_agree .offline .agree_btn ul li label {font-size:13px; letter-spacing:-0.05rem;}
+#join_agree .offline .agree_btn ul li input {margin-top:2px;}
+#join_agree .offline table tr td input::placeholder {color:#979797; font-size:10px;}
+#erpcheck_msg {display:block; color:#ff0000;}
+</style>
+<h2 class="subtitle">대현인사이드 통합회원 가입 안내 <p>대현인사이드 & 대현 오프라인 매장 통합회원만<br> 이용 가능합니다.<br>
+대현인사이드의 통합회원이 되어 더 많은<br>혜택을 누려보세요.</p></h2>
+
+<div id="join_agree">
+	<div class="offline">
+		<p class="title">오프라인 매장 회원정보</p>
+		<table class="tbl_row" id="erp_info">
+			<caption class="hidden">오프라인 매장 회원정보</caption>
+			<colgroup>
+				<col style="width:30%;">
+				<col>
+			</colgroup>
+			{{if(기존통합확인)}}
+			<tr>
+				<th>이름</th>
+				<td class="tal">{{$이름}}</td>
+			</tr>
+			<tr>
+				<th>생년월일</th>
+				<td class="tal">{{$생년월일}}</td>
+			</tr>
+			<tr>
+				<th>휴대전화번호</th>
+				<td>{{$휴대전화}}</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td>{{$주소}}</td>
+			</tr>
+			{{end(기존통합확인)}}
+			{{if(기존통합미확인)}}
+				<tr>
+					<th colspan="2">고객님의 회원정보(이름, 휴대전화번호)와 일치하는 오프라인 매장 회원을 찾을 수 없습니다.</th>
+				</tr>
+			{{end(기존통합미확인)}}
+		</table>
+		{{if(SNS체크)}}
+			<p class="title">오프라인 회원여부 확인</p>
+			<table class="tbl_row" id="erp_info2">
+				<caption class="hidden"></caption>
+				<colgroup>
+					<col style="width:30%;">
+					<col>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>전화번호</th>
+						<td><input class="form_input" type="input" name="join_erp_cell" placeholder="- 하이픈 없이 입력해주세요." value=""><button onclick="erpCellCheck('{{$회원번호}}');">체크</button><span id="erpcheck_msg"><span></td>
+					</tr>
+				</tbody>
+			</table>
+		{{end(SNS체크)}}
+
+	{{if(기존통합확인)}}
+		<input type="checkbox" name="hidden" id="join_erp_total_agree" class="join1_chk" value="Y">
+		<div class="agree_btn">
+			<p>고객님은 대현 오프라인 매장 회원에 이미 가입된 회원으로써, 기존 회원정보를 기준으로 회원통합 절차를 진행하실 수 있습니다. 동의 하시겠습니까?</p>
+			<ul class="radio">
+				<li><label><input type="radio" name="join_erp_agree" value="Y">동의</label></li>
+				<li><label><input type="radio" name="join_erp_agree" value="N">미동의</label></li>
+			</ul>
+		</div>
+		{{end(기존통합확인)}}
+		{{if(기존통합미확인)}}
+		<p class="check"><label for="ck_agree"><input type="checkbox" name="join_erp_total_agree" id="join_erp_total_agree" class="join1_chk" value="Y">통합회원 가입 약관 (필수)</label><span class="more">전체보기</span></p>
+		<div class="scroll">
+			<iframe name="" src="/content/content.php?cont=join_rull&mode=1" frameborder="0"></iframe>
+		</div>
+		<div class="agree_btn">
+			<ul class="radio">
+				<input type="hidden" name="join_erp_agree" value="Y">
+			</ul>
+		</div>
+		{{end(기존통합미확인)}}
+		<input type="hidden" name="join_erp_member_no" value="{{$오프라인회원번호}}">
+		<input type="hidden" name="join_erp_success" value="{{$오프라인성공여부}}">
+		<input type="hidden" name="join_erp_cell_check" value="">
+	</div>
+	<div class="btn">
+		<span class="box_btn w150 large strong"><a href="javascript:joinErpAgree();">통합회원가입</a></span>
+		<span class="box_btn w150 large white strong"><a href="/member/login.php">거부</a></span>
+	</div>
+</div>
+
+<script type="text/javascript">
+var table_l = $('table#erp_info tr').length;
+if (table_l == 1){
+	$('#join_agree .offline table#erp_info tr th').css('padding','16px 0 16px 30px');
+	$('#join_agree .offline table#erp_info tr td').css('padding','16px 0 16px 30px');
+}
+var table_l2 = $('#erp_info2 tr').length;
+if (table_l2 == 1){
+	$('#erp_info2 tr th').css('padding','16px 0 16px 30px');
+	$('#erp_info2 tr td').css('padding','16px 0 16px 30px');
+}
+$('#join_agree .offline table tr td button').click(function(){
+	$('#erpcheck_msg').css('margin-top','10px');
+});
+</script>

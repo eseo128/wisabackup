@@ -1,0 +1,67 @@
+<div id="join_agree">
+	<p class="check">
+		<label for="ck_agree">{{$이용약관동의}}이용약관 동의(필수)</label>
+		<a href="/content/content.php?cont=uselaw">전체보기</a> 
+	</p>
+	<div class="scroll" style="display: none;">
+		<iframe name="" src="/content/content.php?cont=join_rull&mode=1" frameborder="0"></iframe>
+	</div>
+	<p class="check bdn">
+		<label for="ck_privacy">{{$개인정보취급방침동의}}개인정보 수집·이용 동의(필수)</label>
+		<a href="/content/content.php?cont=privacy">전체보기</a>
+	</p>
+	<table class="tbl_row" style="display: none;">
+		<caption class="hidden">개인정보 수집·이용 동의</caption>
+		<colgroup>
+			<col style="width:25%;">
+			<col>
+		</colgroup>
+		<tr>
+			<th>수집하는 개인정보 항목</th>
+			<td class="tal">(필수) 이메일, 비밀번호, 이름, 휴대전화번호, 주소, 본인인증<br>(선택) 생년월일, 성별, 평생회원동의, 선호하는 브랜드, 가입경로</td>
+		</tr>
+		<tr>
+			<th>수집 및 이용목적</th>
+			<td class="tal">회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 가입 의사 확인 , 불만처리 등 민원처리 , 고지사항 전달</td>
+		</tr>
+		<tr>
+			<th>보유 및 이용기간</th>
+			<td>
+				회원탈퇴 단, 관계 법령에 따라 개인정보를 보존해야 하는 경우, 회사는 해당 법령에서 정한 기간동안 보관합니다.<br><br>
+				※ 동의를 거부할 수 있으나 거부 시 회원가입이 불가능합니다.
+			</td>
+		</tr>
+	</table>
+	{{if(만14세이상가입동의)}}
+	<p class="check"><label for="14_up_agree">{{$만14세이상가입동의}}만 14세 이상입니다.(필수)</label></p>
+	{{endif(만14세이상가입동의)}}
+	{{if(사업자회원사용)}}
+	<form name="member_type_frm" class="member_type">
+		<label for="member_type1"><input type="radio" name="member_type" value="1" id="member_type1" checked>개인회원</label>
+		<label for="member_type2"><input type="radio" name="member_type" value="2" id="member_type2">사업자회원</label>
+	</form>
+	{{endif(사업자회원사용)}}
+	<div class="btn btn_col">
+		<span class="box_btn block large"><a href="{{$회원가입동의}}">동의</a></span>
+		<span class="box_btn block large white"><a href="javascript:history.back()">거부</a></span>
+	</div>
+	{{if(SNS로그인버튼사용)}}
+	<div class="simple">
+		<div class="simple_content">
+			<h3>간편회원가입</h3>
+			<p>기존 사용중인 SNS계정으로 간편하게 회원가입 가능합니다.</p>
+		</div>
+		{{if(네이버로그인버튼)}}<a href="#" onclick="naverLogin(); return false;" class="naver">네이버로 회원가입</a>{{endif(네이버로그인버튼)}}
+		{{if(페이스북로그인버튼)}}<a href="#" onclick="facebookLogin(); return false;" class="facebook">페이스북으로 회원가입</a>{{endif(페이스북로그인버튼)}}
+		{{if(카카오톡로그인버튼)}}<a href="#" onclick="loginWithKakao(); return false;" class="kakao">카카오톡으로 회원가입</a>{{endif(카카오톡로그인버튼)}}
+		{{if(페이코로그인버튼)}}<a href="#" onclick="paycoLogin(); return false;" class="payco">페이코로 회원가입</a>{{endif(페이코로그인버튼)}}
+		{{if(위메프로그인버튼)}}<a href="#" onclick="wonderLogin(); return false;" class="wemake">위메프로 회원가입</a>{{endif(위메프로그인버튼)}}
+		{{if(애플로그인버튼)}}<a href="#" onclick="appleLogin(); return false;" class="apple">Apple로 회원가입</a>{{endif(애플로그인버튼)}}
+	</div>
+	{{end(SNS로그인버튼사용)}}
+</div>
+{{$네이버로그인스크립트}}
+{{$페이스북로그인스크립트}}
+{{$카카오톡로그인스크립트}}
+{{$페이코로그인스크립트}}
+{{$위메프로그인스크립트}}

@@ -1,0 +1,14 @@
+<!-- 반복문시작 -->
+<dl>
+	<dt><a href="/shop/big_section.php?cno1=1093">COLOR</a></dt>
+<!-- 반복구문시작 -->
+	<dd>{{$분류명(링크포함)}}</dd>
+<!-- 반복구문끝 -->
+</dl>
+<!-- 반복문끝 -->
+
+<!-- 데이터없음시작 -->
+<dl>
+	<dt><a href="/shop/big_section.php?cno1=1093">COLOR</a></dt>
+</dl>
+<!-- 데이터없음끝 -->

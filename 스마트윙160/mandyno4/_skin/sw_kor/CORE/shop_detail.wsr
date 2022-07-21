@@ -1,0 +1,511 @@
+<div id="detail">
+	<!-- 상단 -->
+	{{$폼시작}}
+	<div class="wrap_prd">
+		<div class="navi">
+			<ul class="navi_box">
+				<li><a href="/"><i class="xi-home-o"></i></a></li>
+				<li><a href="/shop/big_section.php?cno1=1001">제품구매</a></li>
+				
+				<div class="big_cate_box">
+					<li class="big_cate big_cate_1001 dn"><a onclick="toggle_view('mid_cate_box',this)">전체보기</a></li>
+					<li class="big_cate big_cate_1016 dn"><a onclick="toggle_view('mid_cate_box',this)">건강기능식품</a></li>
+					<li class="big_cate big_cate_1017 dn"><a onclick="toggle_view('mid_cate_box',this)">기타가공품 외</a></li>
+					<li class="big_cate big_cate_1018 dn"><a onclick="toggle_view('mid_cate_box',this)">화장품</a></li>
+					<li class="big_cate big_cate_1024 dn"><a onclick="toggle_view('mid_cate_box',this)">기타</a></li>
+					<li class="big_cate big_cate_1012 dn"><a onclick="toggle_view('mid_cate_box',this)">test</a></li>
+					<ul class="mid_cate_box" id="mid_cate_box">
+						<li class="mid_cate mid_cate_1001"><a href="/shop/big_section.php?cno1=1001">전체보기</a></li>
+						<li class="mid_cate mid_cate_1016"><a href="/shop/big_section.php?cno1=1016">건강기능식품</a></li>
+						<li class="mid_cate mid_cate_1017"><a href="/shop/big_section.php?cno1=1017">기타가공품 외</a></li>
+						<li class="mid_cate mid_cate_1018"><a href="/shop/big_section.php?cno1=1018">화장품</a></li>
+						<li class="mid_cate mid_cate_1024"><a href="/shop/big_section.php?cno1=1024">기타</a></li>
+						<li class="mid_cate mid_cate_1012"><a href="/shop/big_section.php?cno1=1012">test</a></li>
+					</ul>
+				</div>
+				
+				<li><a href="#">{{$상품명}}</a></li>
+			</ul>
+			
+		</div>
+		
+		<!-- 상품 이미지 -->
+		<div class="prdimg">
+			<!-- <div id="mimg_div" class="img">
+				<a href="{{$크게보기}}">{{$상품이미지}}</a>
+			</div> -->
+			<!-- 썸네일 스와이퍼 -->
+			{{$상품부가이미지리스트}}
+			<!-- //썸네일 스와이퍼 -->
+		</div>
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+		<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+		<script type="text/javascript">
+			if($('.detail_related_slide').length){
+				$('.detail_related_slide').each(function(index){
+		
+					//setting
+					$(this).addClass('detail_related_slide'+index);
+					$('.detail_related_slide'+index).find('.load_element').append('<div class="swiper-container slide_bt"></div><div class="swiper-scrollbar"></div>');
+					$('.detail_related_slide'+index+' .slide_top').find('.swiper-wrapper').clone().appendTo('.detail_related_slide'+index+' .slide_bt');
+					$('.detail_related_slide'+index).find('.slide_txt').find('p').first().addClass('active');
+		
+					var detailSlideBt = new Swiper('.detail_related_slide'+index+' .slide_bt', {
+						direction: "vertical",
+						loop: false,
+						spaceBetween: 4,
+						slidesPerView: 5,
+						freeMode: true,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
+						scrollbar: {
+						el: ".swiper-scrollbar",
+						},
+					});
+		
+					var detailSlideTop = new Swiper('.detail_related_slide'+index+' .slide_top', {
+						slidesPerView: 1,
+						loop: false,
+						navigation: {
+							nextEl: '.detail_related_slide'+index+' .arrow_next',
+							prevEl: '.detail_related_slide'+index+' .arrow_prev',
+						},
+						// pagination: {
+						// 	el: '.detail_related_slide'+index+' .pagination',
+						// 	type: 'fraction'
+						// },
+						thumbs: {
+							swiper: detailSlideBt
+						},
+						on: {
+							slideChange: function () {
+								$('.detail_related_slide'+index).find('.slide_txt > p').removeClass('active');
+								$('.detail_related_slide'+index).find('.slide_txt > p').eq(this.activeIndex).addClass('active');
+							}
+						}
+					});
+				});
+			}
+		</script>
+		<!-- //상품 이미지 -->
+		<!-- 상품정보 & 버튼 -->
+		<div class="info">
+			<h3 class="name">{{if(단독배송여부)}}[단독배송] {{endif(단독배송여부)}}{{$상품명}} {{$상품아이콘}}</h3>
+			<div class="count_share">
+				<!-- <p class="count"><a onclick="tabmove('1')" class="p_cursor">Review <span>{{$상품평개수}}</span></a>  |  <a onclick="tabmove('2')" class="p_cursor">Q&A <span>{{$상품질답개수}}</span></a></p> -->
+				<span class="icon"></span>
+				<div class="sns">
+					<a href="javascript:;" onclick="window.open('{{$SNS연동주소(페이스북)}}','','width=804,height=504');" class="facebook">페이스북</a>
+					<a href="javascript:;" onclick="window.open('{{$SNS연동주소(트위터)}}','','width=804,height=504');" class="twitter">트위터</a>
+					<a href="javascript:;" onclick="window.open('{{$SNS연동주소(카카오링크)}}','','width=804,height=504');" class="kakao">카카오링크</a>
+					<a href="javascript:;" onclick="window.open('{{$SNS연동주소(카카오스토리)}}','','width=804,height=504');" class="kakaostory">카카오스토리</a>
+				</div>	
+			</div>
+			<p class="summary">{{$상품요약설명}}</p>
+			<div class="price">
+				<!-- <span class="discount discount{{$할인적용여부}}">
+					{{$화폐단위전}}<strong>{{$할인후실판매가}}</strong>{{$화폐단위후}}
+					{{if(참조할인후실판매가)}}({{$참조화폐단위전}}<strong>{{$참조할인후실판매가}}</strong>{{$참조화폐단위후}}){{endif(참조할인후실판매가)}}
+				</span> -->
+				{{if(상품쿠폰리스트)}}
+				<span class="coupon" onclick="toggle_view('pop_coupon');setDimmed();"><strong>쿠폰다운</strong></span>
+				{{$상품쿠폰리스트}}
+				{{endif(상품쿠폰리스트)}}
+			</div>
+			{{if(타임세일타이머)}}
+			<div class="box_timer big"><span class="title">타임세일</span>{{$타임세일타이머}}</div>
+			{{endif(타임세일타이머)}}
+			
+			{{if(정기배송적용여부_상품별)}}
+			<div class="sbs">
+				<label><input type="radio" name="sbscr" value="N" class="form_input" onclick="sbscrCheck('N')" checked>일반배송</label>
+				<label><input type="radio" name="sbscr" value="v2" class="form_input" onclick="sbscrCheck('Y')">정기배송</label>
+			</div>
+			{{end(정기배송적용여부_상품별)}}
+			{{if(오늘출발)}}
+			<p class="today"><strong>오늘출발</strong> <span>해당 상품은 평일 {{$오늘출발주문마감시간}}까지 결제 시 당일 배송이 가능합니다.</span></p>
+			{{endif(오늘출발)}}
+			<table class="list">
+				<colgroup>
+					<col style="width:30%;">
+					<col>
+				</colgroup>
+				<tbody>
+					{{if(소비자가격)}}
+					<tr>
+						<th scope="row">소비자가</th>
+						<td>
+							<span class="consumer consumer{{$할인적용여부}}">{{$화폐단위전}}{{$소비자가격}}{{$화폐단위후}}</span>
+						</td>
+					</tr>
+					{{endif(소비자가격)}}
+					{{if($판매가인하율))}}
+					<tr>
+						<th scope="row">할인율</th>
+						<td>
+							<span class="saleper saleper{{$할인적용여부}}">{{$판매가인하율}}%</span>
+						</td>
+					</tr>
+					{{if($판매가인하율))}}
+					<tr>
+						<th scope="row">할인판매가</th>
+						<td>
+							{{$화폐단위전}}<strong>{{$판매가격}}{{$화폐단위후}}</strong>
+							{{if(참조화폐사용)}}({{$참조화폐단위전}}<strong>{{$참조판매가격}{{$참조화폐단위후}})}</strong>{{endif(참조화폐사용)}}		
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">예상적립금</th>
+						<td>
+							{{$적립금}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="option_fix">
+				<div class="option_fix_box">
+					<div class="option_fix_button">
+						<span class="option_fix_button_arrow">옵션선택</span>
+					</div>
+				</div>
+				<div class="option_fix_content">
+					<h3 class="name2">{{if(단독배송여부)}}[단독배송] {{endif(단독배송여부)}}{{$상품명}} {{$상품아이콘}}</h3>
+					<div class="option_left">
+						<table class="option_fix_list">
+							<colgroup>
+								<col style="width:30%;">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">수량</th>
+									<td class="restock_wrap">
+										<div class="box_qty">
+											<input type="text" name="buy_ea" value="{{$최소주문수량}}" class="form_input">
+											<div class="btn_ea">
+												<a href="javascript:eaChg(1);" class="ea_up"></a>
+												<a href="javascript:eaChg(2);" class="ea_down"></a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								{{$상품옵션리스트}}
+							</tbody>
+						</table>
+						{{$사용자배너9}}
+					
+						{{if(선택된멀티옵션리스트)}}{{endif(선택된멀티옵션리스트)}}
+						{{$선택된멀티옵션리스트}}
+				
+						<!-- 버튼 -->
+						{{if(재입고알림사용유무)}}
+						<div class="restock">
+							<p><span class="i_info"></span> 재입고 알림 신청을 하시면 문자로 입고 소식을 알려드립니다.</p>
+							<a onclick="get_notify_restockPage('{{$디테일상품번호}}'); return false;">재입고 알림 신청</a>
+						</div>
+						{{endif(재입고알림사용유무)}}
+					</div>
+
+					<div class="btn">
+						<span class="box_btn large orange2 wish {{$위시리스트담김}}"><a href="javascript:addWish(document.prdFrm);"></a></span>
+						<span class="box_btn large orange2 cart"><a href="javascript:addCart(document.prdFrm,1);">장바구니 담기</a></span>
+						<span class="box_btn large orange buy"><a href="javascript:addCart(document.prdFrm,2);">
+						{{if(정상판매시내용)}}바로구매{{endif(정상판매시내용)}}
+						{{if(품절시내용)}}품절{{endif(품절시내용)}}
+						</a></span>
+						<div class="pay">
+							<div class="npay">{{$네이버체크아웃버튼}}</div>
+							<div class="talkpay">{{$카카오페이구매버튼}}</div>
+							<div class="payco">{{$페이코즉시구매버튼}}</div>
+						</div>
+					</div>
+				</div>					
+			</div>
+
+			<!-- //버튼 -->
+			
+		</div>
+		<!-- //상품정보 & 버튼 -->
+	</div>
+	{{$폼끝}}
+	<!--// 상단 -->
+	<!-- 상품 상세정보 -->
+	<div class="wrap_info">
+		<div class="wrap_inner">
+			<div class="tab_area tab_fix_area">
+				<ul class="tab tab_detail tab_fix">
+					<li><a onclick="tabmove('0')" class="active">상품상제정보</a></li>
+					<li><a onclick="tabmove('1')">상품일반정보</a></li>
+					<li><a onclick="tabmove('2')">안심인증</a></li>
+					<li><a onclick="tabmove('3')">상품후기</a></li>
+					<li><a onclick="tabmove('4')">상품문의</a></li>
+					<!-- <li><a onclick="tabmove('3')">Order info.</a></li> -->
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 상품상세정보&관련상품 -->
+		<div class="tabcnt_detail tabcnt_detail0">
+			{{$더보기형상품상세설명}}
+			{{if(관련상품리스트)}}
+			<h3 class="title_related">Related products</h3>
+			{{$관련상품리스트}}
+			<div class="btn_bottom">
+				<span class="box_btn w125"><a href="{{$관련상품장바구니담기}}">장바구니 담기</a></span>
+				<span class="box_btn white w125"><a href="{{$관련상품구매하기}}">선택상품 구매</a></span>
+			</div>
+			{{endif(관련상품리스트)}}
+		</div>
+		<div class="tab_area">
+			<ul class="tab tab_detail">
+				<li><a onclick="tabmove('0')" class="active">상품상제정보</a></li>
+				<li><a onclick="tabmove('1')">상품일반정보</a></li>
+				<li><a onclick="tabmove('2')">안심인증</a></li>
+				<li><a onclick="tabmove('3')">상품후기</a></li>
+				<li><a onclick="tabmove('4')">상품문의</a></li>
+				<!-- <li><a onclick="tabmove('3')">Order info.</a></li> -->
+			</ul>
+		</div>
+		<div class="tabcnt_detail tabcnt_detail1">
+			<ul class="tab tab_intro">
+				{{if(상품정보고시리스트)}}<li><a onclick="tabover('intro', 0);" class="active">상품정보고시 안내</a></li>{{endif(상품정보고시리스트)}}
+				<li><a onclick="tabover('intro', 1);">배송/교환/반품 안내</a></li>
+			</ul>
+			<div class="tabcnt_intro0">
+				{{$상품정보고시리스트}}
+			</div>
+			<div class="tabcnt_intro1">
+				{{if(배송정보)}}<div class="common_info">{{$배송정보}}</div>{{endif(배송정보)}}
+				{{if(반품취소안내)}}<div class="common_info">{{$반품취소안내}}</div>{{endif(반품취소안내)}}
+			</div>	
+		</div>
+		<div class="tab_area">
+			<ul class="tab tab_detail">
+				<li><a onclick="tabmove('0')" class="active">상품상제정보</a></li>
+				<li><a onclick="tabmove('1')">상품일반정보</a></li>
+				<li><a onclick="tabmove('2')">안심인증</a></li>
+				<li><a onclick="tabmove('3')">상품후기</a></li>
+				<li><a onclick="tabmove('4')">상품문의</a></li>
+				<!-- <li><a onclick="tabmove('3')">Order info.</a></li> -->
+			</ul>
+		</div>
+		<!--// 안심인증 -->
+		<div class="tabcnt_detail tabcnt_detail2">
+			<div class="optain">
+				<p>인증관련 내용</p>
+			</div>
+		</div>
+		<!--// 상품상세정보&관련상품 -->
+		<!-- 상품후기 -->
+		<div class="tabcnt_detail tabcnt_detail3">
+			<img src="{{$이미지경로}}/banner/review_queen.jpg" alt="">
+			<div class="detail_qnarev crema-hide">
+				<div class="title_qnarev">
+					<h3>상품후기</h3>
+					<div class="btn">
+						{{if(상품평작성권한)}}<a onclick="{{$상품평등록(레이어)}}" class="write">글쓰기</a>{{endif(상품평작성권한)}}
+						<a href="/shop/product_review_list.php" class="list">전체보기</a>
+					</div>
+				</div>
+				<div class="summary">
+					<div class="count">
+						<h4>전체 상품후기수</h4>
+						<p><strong>{{$상품평개수}}</strong>건</p>
+					</div>
+					<div class="grade">
+						<h4>총 평점</h4>
+						<span class="icon"><i style="width:{{$상품평평균평점%}}%"></i></span>
+						<p class="average"><strong>{{$상품평평균평점}}</strong> / 5</p>
+					</div>
+					<div class="ratio">
+						<h4>평점 비율</h4>
+						{{$상품평점수리스트}}
+					</div>
+				</div>
+				{{$사용자리스트8}}
+				<div id="detail_review_ajax_list">
+					{{$상품평리스트}}
+				</div>
+			</div>
+			<!-- crema.me / 상품 리뷰 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+			<div id="crema-product-reviews" class="crema-product-reviews" data-product-code="{{$원본상품번호}}"></div>
+			<!-- crema.me / 팝업을 띄우는 코드 / 스크립트를 수정할 경우 연락주세요 (support@crema.me) -->
+			<div class="crema-popup"></div>
+		</div>
+		<!-- //상품후기 -->
+		<div class="tab_area">
+			<ul class="tab tab_detail">
+				<li><a onclick="tabmove('0')" class="active">상품상제정보</a></li>
+				<li><a onclick="tabmove('1')">상품일반정보</a></li>
+				<li><a onclick="tabmove('2')">안심인증</a></li>
+				<li><a onclick="tabmove('3')">상품후기</a></li>
+				<li><a onclick="tabmove('4')">상품문의</a></li>
+				<!-- <li><a onclick="tabmove('3')">Order info.</a></li> -->
+			</ul>
+		</div>
+		<!-- 상품문의 -->
+		<div class="tabcnt_detail tabcnt_detail4">
+			<div class="detail_qnarev qnarev_list">
+				<div class="title_qnarev">
+					<div class="btn">
+						<div class="box_btn orange2"><a href="{{$상품질답보기}}" class="list">전체보기</a></div>
+						<div class="box_btn orange"><a href="{{$상품질답등록}}" class="write">글쓰기</a></div>
+					</div>
+				</div>
+				<div id="detail_qna_ajax_list">
+				{{$상품질답리스트}}
+				</div>
+			</div>
+		</div>
+		<!-- //상품문의 -->
+		<!-- 추가정보(공통정보) -->
+		<!--<div class="tabcnt_detail tabcnt_detail3">
+			{{if(AS안내)}}<div class="common_info">{{$AS안내}}</div>{{endif(AS안내)}}
+		</div> -->
+		<!-- //추가정보(공통정보) -->
+	</div>
+	<!-- //상품 상세정보 -->
+</div>
+<script language="Javascript">
+	// 상품 수량조절
+	var f=document.prdFrm;
+	function eaChg(pm){
+		if (pm==1) {
+			f.buy_ea.value++;
+		}
+		else {
+			if (f.buy_ea.value<=1) {
+				return;
+			}
+			f.buy_ea.value--;
+		}
+		totalCal(f);
+	}
+
+	// 컬러칩 사용자 정의
+	function selectColorOption(idx, no) {
+		$('.optChipSet'+idx).removeClass('selected');
+		$('.optChipItem'+no).addClass('selected');
+	}
+
+	// 탭 이동
+	function tabmove(no) {
+		var pos = $('#detail .tabcnt_detail'+no).offset();
+		var extra_space = $('#detail .tab_area').height();
+		var duration = "400";
+		$('html, body').animate({scrollTop : pos.top - extra_space}, duration);
+	}
+	function scroll_page(){
+		var body_h = $(this).scrollTop();
+		var tab_s = $('#detail .tab_fix_area').offset().top;
+		var tab_h = $('#detail .tab_fix_area').height();
+
+		if( body_h > tab_s ){
+			$('#detail .tab').addClass('fixed');
+		} else {
+			$('#detail .tab').removeClass('fixed');
+		}
+
+		var section_top = new Array();
+		$('.tabcnt_detail').each(function(idx){
+			section_top[idx] = Math.floor($(this).offset().top - tab_h);
+		});
+		
+		$('.tab_detail li a').removeClass('active');
+
+		if(body_h >= section_top[0] && body_h < section_top[1]) {
+			$('.tab_detail li:nth-child(1) a').addClass('active');
+		} else if(body_h >= section_top[1] && body_h < section_top[2]) {
+			$('.tab_detail li:nth-child(2) a').addClass('active');
+		} else if(body_h >= section_top[2] && body_h < section_top[3]) {
+			$('.tab_detail li:nth-child(3) a').addClass('active');
+		} else if(body_h >= section_top[3]) {
+			$('.tab_detail li:nth-child(4) a').addClass('active');
+		}
+	}
+
+	$(window).ready(function(){
+		scroll_page();
+	});
+	$(window).scroll(function(){
+		scroll_page();
+	});
+
+	// setTimeout(function() {
+	// 	$('.tabcnt_intro1').css('display','none');
+	// }, 100);
+
+	$(document).ready(function(){
+        tabover('intro', 0);
+	});
+
+
+	//간편옵션 선택
+	var first_view = true;
+ 	 $(window).scroll(function(){
+		var y = $(this).scrollTop();
+		var formprdFrm = $('#detail .wrap_info').offset().top;
+		var optBox = $('#detail .wrap_prd > .info');
+		var opt_H = optBox.height();
+
+    //$(optBox).css('min-height', opt_H);
+
+    if  (y > formprdFrm - 60) {  
+			$('.option_fix_button').attr('style','display:inline-block;');
+			$('.option_fix').addClass('fixed');
+			if(first_view) $('.option_fix > .option_fix_content').hide();
+		}else{
+			$('.option_fix_button').attr('style','display:none;');
+			$('.option_fix').removeClass('fixed');
+			$('.option_fix_content').show();
+		}
+	});
+  $('.option_fix_button').click(function(){
+		if(first_view){
+			$('.option_fix_content').show();
+			$(this).addClass('active');
+			first_view = false;
+		}else{
+			$('.option_fix_content').hide();
+			$(this).removeClass('active');
+			first_view = true;
+		}
+	});
+
+	$('.navi').each(function() {
+	var text = $(this).html();
+	$(this).html(text.replaceAll('&gt;', '<span>|</span>'));
+	});
+	$('.navi').each(function() {
+	var text = $(this).html();
+	$(this).html(text.replaceAll('Home', '<a href="/"><i class="xi-home-o"></i></a>'));
+	});
+
+	$(document).ready(function (){
+		
+		const midcatenum = "{{$상품중분류코드}}";
+
+		if(midcatenum == "1016"){
+			$('.big_cate_1016').removeClass('dn');
+			$('.mid_cate_1016').addClass('active');
+		}
+		else if(midcatenum == "1017"){
+			$('.big_cate_1017').removeClass('dn');
+			$('.mid_cate_1017').addClass('active');
+		}
+		else if(midcatenum == "1018"){
+			$('.big_cate_1018').removeClass('dn');
+			$('.mid_cate_1018').addClass('active');
+		}
+		else if(midcatenum == "1024"){
+			$('.big_cate_1024').removeClass('dn');
+			$('.mid_cate_1024').addClass('active');
+		}
+		else if(midcatenum == "1012"){
+			$('.big_cate_1012').removeClass('dn');
+			$('.mid_cate_1012').addClass('active');
+		}
+
+});
+
+</script>

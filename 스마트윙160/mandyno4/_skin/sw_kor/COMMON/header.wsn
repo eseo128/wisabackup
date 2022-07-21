@@ -1,0 +1,183 @@
+<link rel="stylesheet" href="{{$이미지경로}}/../xeicon.css">
+<link rel="stylesheet" href="{{$이미지경로}}/../swiper.css">
+<script src="{{$이미지경로}}/../swiper.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<script src="{{$이미지경로}}/../slick.min.js"></script>
+<script src="{{$이미지경로}}/../jquery.sticky.js"></script>
+
+<link rel="stylesheet" type="text/css" href="{{$이미지경로}}/../slick.css">
+<i id="crema-login-username" style="display:none;">{{$회원아이디}}</i>
+<i id="crema-login-name" style="display:none;">{{$회원명}}</i>
+<div id="wrapper">
+	<!-- 상단 -->
+	<div id="top_pop">
+		<div class="wrap_inner">
+			<span>셀럽들의 다이어트 비법은?</span>
+			<a onclick="todayclose()" class="btn_close">닫기</a>
+		</div>
+	</div>
+	<div id="header">
+		<div class="inner">
+			<div class="wrap_inner">
+				<div class="logo">
+					<a href="/"><img src="{{$이미지경로}}/logo/logo.png" alt="{{$쇼핑몰명}}"></a>
+				</div>
+				<!-- header 왼쪽 메뉴 -->
+				<div class="lnb">
+					<ul>
+						<li>
+							<a href="{{$사이트주소}}/shop/big_section.php?cno1=1001">Brand</a>
+							<ul class="list brand">
+								<li><a href="/shop/big_section.php?cno1=1002">CEO메시지</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1003">회사소개</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1004">오시는길</a></li> 
+							</ul>
+						</li>
+						<li>
+							<a href="/shop/big_section.php?cno1=1005" onmouseover="$('.depth_all').show();" onmouseleave="$('.depth_all').hide();">Product</a>
+						</li> 
+						<li><a href="http://mandyno4.mywisa.com/board/?db=gallery_1">Event</a></li> 
+						<li><a href="/shop/big_section.php?cno1=1007">Promotion</a></li> 
+						<li>
+							<a href="/shop/big_section.php?cno1=1008">Community</a>
+							<ul class="list community">
+								<li><a href="/shop/big_section.php?cno1=1009">Notice</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1010">FAQ</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1011">Q&A</a></li> 
+								<li><a href="/shop/product_review_list.php">Review</a></li> 
+							</ul>
+						</li> 
+					</ul>
+				</div>
+				<!-- header 오른쪽 메뉴 -->
+				<div class="gnb">
+					<ul>
+						<li class="search">
+							<a class="toggle_search" onclick="toggle_view('box_search',this)"></a>
+						</li>
+						<li class="mypage">
+							<a href="/mypage/mypage.php">마이페이지</a>
+							<ul class="list my">
+								{{$로그인전1}}{{$로그인후1}}
+							</ul>
+						</li>
+						<li class="cart">
+							<a href="/shop/cart.php">
+								장바구니<strong class="ea_cart front_cart_rows quick_cart_cnt">{{$장바구니개수}}</strong>
+							</a>
+						</li>
+					</ul>	
+				</div>
+				<div id="box_search" class="search">
+					{{$상품검색폼시작}}
+						<div class="box">
+							<input type="text" name="search_str" value="" class="form_input block basic_search" placeholder="검색어를 입력해주세요">
+							<input type="image" src="{{$이미지경로}}/common/bro_search.png" alt="검색" class="btn">
+						</div>
+					{{$상품검색폼끝}}
+				</div>
+			</div>
+			<div class="list product depth_all" onmouseover="$(this).show();" onmouseleave="$(this).hide();">
+				<div class="depth_inner">
+					<ul class="product_left">
+						<li>
+							<a href="http://mandyno4.mywisa.com/board/?db=gallery_1">New</a>
+						</li>
+						<li>
+							<a href="/shop/big_section.php?cno1=1010">Best</a>
+						</li>
+					</ul>
+					<ul class="product_right">
+						<li>
+							<a href="http://mandyno4.mywisa.com/board/?db=gallery_1">Set</a>
+							<ul class="list_3dep">
+								<li><a href="/shop/big_section.php?cno1=1036">전체보기</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1037">에너지 패키지</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1038">다이어트 패키지</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1039">홈트 패키지</a></li> 
+							</ul>
+						</li> 
+						<li>
+							<a href="/shop/big_section.php?cno1=1025">Energy</a>
+							<ul class="list_3dep">
+								<li><a href="/shop/big_section.php?cno1=1040">전체보기</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1041">식단관리</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1042">단백질</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1043">보충제</a></li> 
+							</ul>
+						</li> 
+						<li>
+							<a href="/shop/big_section.php?cno1=1026">Diet</a>
+							<ul class="list_3dep">
+								<li><a href="/shop/big_section.php?cno1=1044">전체보기</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1045">다이어트 식단</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1046">다이어트 도시락</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1047">다이어트 간식</a></li> 
+							</ul>
+						</li> 
+						<li>
+							<a href="/shop/big_section.php?cno1=1027">ACC</a>
+							<ul class="list_3dep">
+								<li><a href="/shop/big_section.php?cno1=1048">전체보기</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1049">쉐이커</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1050">텀블러</a></li> 
+							</ul>
+						</li> 
+						<li>
+							<a href="/shop/big_section.php?cno1=1028">Fitness</a>
+							<ul class="list_3dep">
+								<li><a href="/shop/big_section.php?cno1=1051">전체보기</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1052">아령</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1053">요가매트</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1054">벤치프레스</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1055">레그프레스</a></li> 
+								<li><a href="/shop/big_section.php?cno1=1056">짐볼</a></li> 
+							</ul>
+						</li> 
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// HEADER 제어
+$(document).ready(function(){
+	// 현재 URL
+	var url = document.location.href;
+
+	// new
+	if (url.match('1009') || url.match('introduction')) {
+		$('#header').addClass('active');
+		$('#header .wrap_inner .lnb > ul > li.new ').addClass('active');
+		if(url.match('1009')) {
+			$('#header .depth_wrap .cate > li').addClass('active');
+		}else if (url.match('1009')) {
+			$('#header .depth_wrap .cate > li.introduction').addClass('active');
+		}
+	}
+
+});
+
+
+$(document).ready(function() {
+						$('.quick_cart_parent1').bind({
+							'mouseenter':function(){openQuickCart(1, 'stopFadeout')},
+						});
+					})
+					
+
+	</script>
+	<!-- //상단-->
+	<!-- 중앙 -->
+	<div id="cnt">
+		<div class="cntbody">
+		<!-- 서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		{{$사용자HTML1}}
+		<!-- //서브 타이틀 텍스트(일반페이지) 사용자코드 -->
+		<!-- 서브 타이틀 텍스트(게시판) 사용자코드 -->
+		{{$사용자HTML3}}
+		<!-- //서브 타이틀 텍스트(게시판) 사용자코드 -->
+		<!-- 마이페이지 메뉴 -->
+		{{$사용자HTML4}}
+		<!-- //마이페이지 메뉴 -->

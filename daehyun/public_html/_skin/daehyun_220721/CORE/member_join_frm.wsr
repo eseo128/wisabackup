@@ -1,0 +1,83 @@
+<div id="join_input">
+	{{$폼시작}}
+		<input type="hidden" name="setOpenSSL" value="Y" checked>
+		<fieldset>
+			<legend>기본정보입력(필수)</legend>
+			<div class="box">
+				{{$가입시아이디}}
+				{{$정보수정아이디}}
+				<div class="email">
+                    {{if(회원가입)}}
+					<label for="join_email">이메일</label>
+					<input type="text" name="email1" value="{{$이메일1}}" id="join_email" class="form_input first" placeholder="이메일">
+					<span>@</span>
+					<input type="text" name="email2" value="{{$이메일2}}" class="form_input second" autocomplete="new-password">
+					<select name="email3" onChange="chgEmail(this.form.email2,this,'')">
+						<option value="">이메일 선택</option>
+						<option value="gmail.com">gmail.com</option>
+						<option value="naver.com">naver.com</option>
+						<option value="daum.net">daum.net</option>
+						<option value="hanmail.net">hanmail.net</option>
+						<option value="nate.com">nate.com</option>
+						<option value="lycos.co.kr">lycos.co.kr</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="outlook.com">outlook.com</option>
+						<option value="korea.com">korea.com</option>
+						<option value="yahoo.co.kr">yahoo.co.kr</option>
+						<option value="dreamwiz.com">dreamwiz.com</option>
+						<option value="" selected>직접 입력</option>
+					</select>
+                    {{endif(회원가입)}}
+                    {{if(정보수정)}}
+                    <input type="hidden" name="email1" value="{{$이메일1}}" id="join_email" class="form_input first" placeholder="이메일">
+                    <input type="hidden" name="email2" value="{{$이메일2}}" class="form_input second" autocomplete="new-password">
+                    {{endif(정보수정)}}
+					<p class="msg"><input type="checkbox" name="mailing" value="Y" id="join_mailing" {{$메일동의체크}}> <label for="join_mailing">이메일 정보 수신</label></p>
+				</div>
+				<div>
+					<label for="join_pw">비밀번호</label>
+					<input type="password" name="pwd[]" id="join_pw" class="form_input block" {{if(비밀번호최대길이)}}maxlength="{{$비밀번호최대길이}}"{{endif(비밀번호최대길이)}} placeholder="비밀번호" autocomplete="new-password">
+					<p class="warning">최소 {{$비밀번호최소길이}}{{if(비밀번호최대길이)}} ~ 최대 {{$비밀번호최대길이}}{{endif(비밀번호최대길이)}}자리 {{if(비밀번호설정)}}({{$비밀번호설정}}){{endif(비밀번호설정)}}</p>
+				</div>
+				<div class="line">
+					<label for="join_pw2">비밀번호 확인</label>
+					<input type="password" name="pwd[]" id="join_pw2" class="form_input block" {{if(비밀번호최대길이)}}maxlength="{{$비밀번호최대길이}}"{{endif(비밀번호최대길이)}} placeholder="비밀번호 확인" autocomplete="new-password">
+					<p class="warning">비밀번호를 한번 더 입력해주세요.</p>
+				</div>
+				{{$가입시성명}}
+				{{$정보수정성명}}
+				{{$정보수정닉네임}}
+				<div>
+					<label for="join_cell">휴대전화번호</label>
+					<input type="text" name="cell" value="{{$휴대전화}}" id="join_cell" class="form_input block remove_dash" placeholder="휴대전화번호">
+					<p class="msg"><input type="checkbox" name="sms" value="Y" id="join_sms" {{$SMS동의체크}}> <label for="join_sms">SMS 정보 수신</label></p>
+				</div>
+				{{$주소}}
+				{{$평생회원동의}}
+				{{$가입시개인확인방법}}
+			</div>
+		</fieldset>
+		<!-- 
+		<fieldset>
+			<legend>기본정보입력(선택)</legend>
+			<div class="box">
+				{{$생년월일}}
+				{{$성별}}
+			</div>
+		</fieldset>
+		-->
+		
+
+
+
+
+		{{$기업회원추가입력}}
+		{{$추가필드리스트}}
+		{{$가입시추천인}}
+		{{$정보수정추천인}}
+		<div class="btn">
+			<span class="box_btn w150 large strong"><input type="submit" value="확인"></span>
+			<span class="box_btn w150 large white strong"><a href="/">취소</a></span>
+		</div>
+	{{$폼끝}}
+</div>

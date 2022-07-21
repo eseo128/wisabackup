@@ -1,0 +1,74 @@
+<div id="join_input" class="simple">
+	<div id="join_agree">
+		<p class="check">
+			<label for="ck_agree">{{$이용약관동의}}이용약관 동의(필수)</label>
+			<a href="/content/content.php?cont=uselaw">전체보기</a> 
+		</p>
+		<iframe name="" src="/content/content.php?cont=join_rull&mode=1" frameborder="0" style="display: none;"></iframe>
+		<p class="check bdn">
+			<label for="ck_privacy">{{$개인정보취급방침동의}}개인정보 수집·이용 동의(필수)</label>
+			<a href="/content/content.php?cont=privacy">전체보기</a>
+		</p>
+		<table class="tbl_row" style="display: none;">
+			<caption class="hidden">개인정보 수집·이용 동의</caption>
+			<colgroup>
+				<col style="width:30%;">
+				<col>
+			</colgroup>
+			<tr>
+				<th>수집하는 개인정보 항목</th>
+				<td class="tal">이름 , 로그인ID , 비밀번호 , 자택 전화번호 , 자택 주소 , 휴대전화번호 , 이메일</td>
+			</tr>
+			<tr>
+				<th>수집 및 이용목적</th>
+				<td class="tal">회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 가입 의사 확인 , 불만처리 등 민원처리 , 고지사항 전달</td>
+			</tr>
+			<tr>
+				<th>보유 및 이용기간</th>
+				<td>
+					회원탈퇴 단, 관계 법령에 따라 개인정보를 보존해야 하는 경우, 회사는 해당 법령에서 정한 기간동안 보관합니다.<br><br>
+					※ 동의를 거부할 수 있으나 거부 시 회원가입이 불가능합니다.
+				</td>
+			</tr>
+		</table>
+		{{if(만14세이상가입동의)}}
+		<p class="check"><label for="14_up_agree">{{$만14세이상가입동의}}만 14세 이상입니다.(필수)</label></p>
+		{{endif(만14세이상가입동의)}}
+	</div>
+	{{$api가입폼시작}}
+		<input type="hidden" name="setOpenSSL" value="Y" checked>
+		<fieldset>
+			<legend>기본정보입력(필수)</legend>
+			<div class="box">
+				<div class="addbtn">
+					<label for="join_email">통합 Email</label>
+					<input type="input" name="member_id" value="{{$SNS가입이메일}}" id="join_email" class="form_input block" placeholder="아이디">
+					<p class="warning">아이디로 사용할 E-mail 주소 또는 통합할 기존 아이디를 입력해주세요.</p>
+					<a href="#" onclick="checkSnsDupl(document.joinFrm.member_id, document.joinFrm.sns_type );return false;" class="check">중복확인</a>
+				</div>
+				<div class="sns_pwd" style="display:none;">
+					<label for="pw1">비밀번호</label>
+					<input type="password" name="pwd[]" id="pw1" class="form_input block" {{if(비밀번호최대길이)}}maxlength="{{$비밀번호최대길이}}"{{endif(비밀번호최대길이)}} placeholder="비밀번호" 
+ autocomplete="new-password">
+				</div>
+				<div class="sns_pwd" style="display:none;">
+					<label for="pw2">비밀번호 확인</label>
+					<input type="password" name="pwd[]" id="pw2" class="form_input block" {{if(비밀번호최대길이)}}maxlength="{{$비밀번호최대길이}}"{{endif(비밀번호최대길이)}} placeholder="비밀번호 확인"  autocomplete="new-password">
+					<p class="warning">비밀번호를 한번 더 입력해주세요.</p>
+				</div>
+				<div id="intergrated_filedset">
+					<div class="name">
+						<label for="join_name">이름</label>
+						<input type="text" name="name" value="{{$SNS가입이름}}" id="join_name" class="form_input block" placeholder="이름">
+						<p class="warning">성명(한글 본명)을 입력해주세요.</p>
+					</div> 
+					<p class="msg"><input type="checkbox" name="sms" value="Y" id="join_sms" {{$SMS동의체크}}> <label for="join_sms">SMS 정보 수신</label></p>
+				</div>
+			</div>
+		</fieldset>
+		<div class="btn">
+			<span class="box_btn w150 large strong"><input type="submit" value="확인"></span>
+			<span class="box_btn w150 large white strong"><a href="/">취소</a></span>
+		</div>
+	{{$api가입폼끝}}
+</div>
